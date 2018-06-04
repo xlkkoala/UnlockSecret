@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  BaseTabbarController.h
 //  UnlockSecret
 //
-//  Created by xlk on 2018/6/2.
+//  Created by xlk on 2018/3/20.
 //  Copyright © 2018年 com.xlk. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BaseTabbarController : UITabBarController
 
 @end
-

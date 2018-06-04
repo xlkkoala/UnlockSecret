@@ -8,13 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */; };
-		5EBE82B420C2D73200C5B0D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82B320C2D73200C5B0D9 /* ViewController.m */; };
 		5EBE82B720C2D73200C5B0D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE82B520C2D73200C5B0D9 /* Main.storyboard */; };
 		5EBE82B920C2D73400C5B0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE82B820C2D73400C5B0D9 /* Assets.xcassets */; };
 		5EBE82BC20C2D73400C5B0D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE82BA20C2D73400C5B0D9 /* LaunchScreen.storyboard */; };
 		5EBE82BF20C2D73400C5B0D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82BE20C2D73400C5B0D9 /* main.m */; };
 		5EBE82C920C2D73400C5B0D9 /* UnlockSecretTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82C820C2D73400C5B0D9 /* UnlockSecretTests.m */; };
 		5EBE82D420C2D73400C5B0D9 /* UnlockSecretUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82D320C2D73400C5B0D9 /* UnlockSecretUITests.m */; };
+		5EBE83CB20C2DA2E00C5B0D9 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82E320C2DA2D00C5B0D9 /* NSString+Base64.m */; };
+		5EBE83CC20C2DA2E00C5B0D9 /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82E420C2DA2D00C5B0D9 /* NSData+Encryption.m */; };
+		5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82E520C2DA2D00C5B0D9 /* NSString+CommonCryptor.m */; };
+		5EBE83CE20C2DA2E00C5B0D9 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82E920C2DA2D00C5B0D9 /* NSData+CommonCrypto.m */; };
+		5EBE83CF20C2DA2E00C5B0D9 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82EA20C2DA2D00C5B0D9 /* NSData+Base64.m */; };
+		5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82EE20C2DA2D00C5B0D9 /* XLKTool.m */; };
+		5EBE83D120C2DA2E00C5B0D9 /* LoginHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82EF20C2DA2D00C5B0D9 /* LoginHelper.m */; };
+		5EBE83D320C2DA2E00C5B0D9 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82F720C2DA2D00C5B0D9 /* Device.m */; };
+		5EBE83D520C2DA2E00C5B0D9 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82FA20C2DA2D00C5B0D9 /* UIColor+Hex.m */; };
+		5EBE83D620C2DA2E00C5B0D9 /* UIView+CustomVWithCorRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82FB20C2DA2D00C5B0D9 /* UIView+CustomVWithCorRadius.m */; };
+		5EBE83D720C2DA2E00C5B0D9 /* YQLRUManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE830220C2DA2D00C5B0D9 /* YQLRUManager.m */; };
+		5EBE83D820C2DA2E00C5B0D9 /* YQDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE830320C2DA2D00C5B0D9 /* YQDiskCache.m */; };
+		5EBE83D920C2DA2E00C5B0D9 /* YQMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE830420C2DA2D00C5B0D9 /* YQMemoryCache.m */; };
+		5EBE83DA20C2DA2E00C5B0D9 /* YQCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE830820C2DA2D00C5B0D9 /* YQCacheManager.m */; };
+		5EBE83DB20C2DA2E00C5B0D9 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE830A20C2DA2D00C5B0D9 /* HttpRequest.m */; };
+		5EBE83DC20C2DA2E00C5B0D9 /* YQNetworking+RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE830D20C2DA2D00C5B0D9 /* YQNetworking+RequestManager.m */; };
+		5EBE83DD20C2DA2E00C5B0D9 /* YQNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE830E20C2DA2D00C5B0D9 /* YQNetworking.m */; };
+		5EBE83E020C2DA2E00C5B0D9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE831B20C2DA2D00C5B0D9 /* BaseViewController.m */; };
+		5EBE83E120C2DA2E00C5B0D9 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE831D20C2DA2D00C5B0D9 /* BaseNavigationController.m */; };
+		5EBE83E220C2DA2E00C5B0D9 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE831F20C2DA2D00C5B0D9 /* BaseModel.m */; };
+		5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE832420C2DA2D00C5B0D9 /* USUser.m */; };
+		5EBE83E520C2DA2E00C5B0D9 /* BaseTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE832720C2DA2D00C5B0D9 /* BaseTabbarController.m */; };
+		5EBE843120C4CAE200C5B0D9 /* JJTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBE843020C4CAE200C5B0D9 /* JJTools.framework */; };
+		5ED8FD8520C4D6D800593643 /* USMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8420C4D6D800593643 /* USMainViewController.m */; };
+		5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8720C4D72C00593643 /* USFocusViewController.m */; };
+		5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */; };
+		5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8D20C4D75200593643 /* USMessageViewController.m */; };
+		5ED8FD9120C4D76400593643 /* USUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD9020C4D76400593643 /* USUserViewController.m */; };
+		5ED8FD9320C4D7DC00593643 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED8FD9220C4D7DC00593643 /* Login.storyboard */; };
+		5ED8FDA320C4E02900593643 /* USFocusListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FDA120C4E02900593643 /* USFocusListProcess.m */; };
+		A96E20673AE82EA9AD5B4443 /* libPods-UnlockSecret.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnlockSecret.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBE82AC20C2D73200C5B0D9 /* UnlockSecret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnlockSecret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBE82AF20C2D73200C5B0D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5EBE82B220C2D73200C5B0D9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5EBE82B320C2D73200C5B0D9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5EBE82B620C2D73200C5B0D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EBE82B820C2D73400C5B0D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EBE82BB20C2D73400C5B0D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +80,70 @@
 		5EBE82CF20C2D73400C5B0D9 /* UnlockSecretUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnlockSecretUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBE82D320C2D73400C5B0D9 /* UnlockSecretUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnlockSecretUITests.m; sourceTree = "<group>"; };
 		5EBE82D520C2D73400C5B0D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EBE82E320C2DA2D00C5B0D9 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		5EBE82E420C2DA2D00C5B0D9 /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
+		5EBE82E520C2DA2D00C5B0D9 /* NSString+CommonCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CommonCryptor.m"; sourceTree = "<group>"; };
+		5EBE82E620C2DA2D00C5B0D9 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		5EBE82E720C2DA2D00C5B0D9 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		5EBE82E820C2DA2D00C5B0D9 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		5EBE82E920C2DA2D00C5B0D9 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		5EBE82EA20C2DA2D00C5B0D9 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		5EBE82EB20C2DA2D00C5B0D9 /* NSString+CommonCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommonCryptor.h"; sourceTree = "<group>"; };
+		5EBE82EC20C2DA2D00C5B0D9 /* NSData+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption.h"; sourceTree = "<group>"; };
+		5EBE82EE20C2DA2D00C5B0D9 /* XLKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLKTool.m; sourceTree = "<group>"; };
+		5EBE82EF20C2DA2D00C5B0D9 /* LoginHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHelper.m; sourceTree = "<group>"; };
+		5EBE82F020C2DA2D00C5B0D9 /* XLKTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLKTool.h; sourceTree = "<group>"; };
+		5EBE82F120C2DA2D00C5B0D9 /* LoginHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHelper.h; sourceTree = "<group>"; };
+		5EBE82F620C2DA2D00C5B0D9 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		5EBE82F720C2DA2D00C5B0D9 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		5EBE82FA20C2DA2D00C5B0D9 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		5EBE82FB20C2DA2D00C5B0D9 /* UIView+CustomVWithCorRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CustomVWithCorRadius.m"; sourceTree = "<group>"; };
+		5EBE82FC20C2DA2D00C5B0D9 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		5EBE82FE20C2DA2D00C5B0D9 /* UIView+CustomVWithCorRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CustomVWithCorRadius.h"; sourceTree = "<group>"; };
+		5EBE830020C2DA2D00C5B0D9 /* YQNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNetworking.h; sourceTree = "<group>"; };
+		5EBE830220C2DA2D00C5B0D9 /* YQLRUManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLRUManager.m; sourceTree = "<group>"; };
+		5EBE830320C2DA2D00C5B0D9 /* YQDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQDiskCache.m; sourceTree = "<group>"; };
+		5EBE830420C2DA2D00C5B0D9 /* YQMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQMemoryCache.m; sourceTree = "<group>"; };
+		5EBE830520C2DA2D00C5B0D9 /* YQCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQCacheManager.h; sourceTree = "<group>"; };
+		5EBE830620C2DA2D00C5B0D9 /* YQDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQDiskCache.h; sourceTree = "<group>"; };
+		5EBE830720C2DA2D00C5B0D9 /* YQLRUManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLRUManager.h; sourceTree = "<group>"; };
+		5EBE830820C2DA2D00C5B0D9 /* YQCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQCacheManager.m; sourceTree = "<group>"; };
+		5EBE830920C2DA2D00C5B0D9 /* YQMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQMemoryCache.h; sourceTree = "<group>"; };
+		5EBE830A20C2DA2D00C5B0D9 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
+		5EBE830C20C2DA2D00C5B0D9 /* YQNetworking+RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YQNetworking+RequestManager.h"; sourceTree = "<group>"; };
+		5EBE830D20C2DA2D00C5B0D9 /* YQNetworking+RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YQNetworking+RequestManager.m"; sourceTree = "<group>"; };
+		5EBE830E20C2DA2D00C5B0D9 /* YQNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNetworking.m; sourceTree = "<group>"; };
+		5EBE830F20C2DA2D00C5B0D9 /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
+		5EBE831720C2DA2D00C5B0D9 /* USUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USUrl.h; sourceTree = "<group>"; };
+		5EBE831820C2DA2D00C5B0D9 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		5EBE831920C2DA2D00C5B0D9 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5EBE831B20C2DA2D00C5B0D9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		5EBE831C20C2DA2D00C5B0D9 /* BaseTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabbarController.h; sourceTree = "<group>"; };
+		5EBE831D20C2DA2D00C5B0D9 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		5EBE831F20C2DA2D00C5B0D9 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		5EBE832020C2DA2D00C5B0D9 /* USUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USUser.h; sourceTree = "<group>"; };
+		5EBE832120C2DA2D00C5B0D9 /* Serialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serialization.h; sourceTree = "<group>"; };
+		5EBE832420C2DA2D00C5B0D9 /* USUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USUser.m; sourceTree = "<group>"; };
+		5EBE832520C2DA2D00C5B0D9 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		5EBE832620C2DA2D00C5B0D9 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		5EBE832720C2DA2D00C5B0D9 /* BaseTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabbarController.m; sourceTree = "<group>"; };
+		5EBE832820C2DA2D00C5B0D9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		5EBE843020C4CAE200C5B0D9 /* JJTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JJTools.framework; sourceTree = "<group>"; };
+		5ED8FD8320C4D6D800593643 /* USMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainViewController.h; sourceTree = "<group>"; };
+		5ED8FD8420C4D6D800593643 /* USMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMainViewController.m; sourceTree = "<group>"; };
+		5ED8FD8620C4D72C00593643 /* USFocusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusViewController.h; sourceTree = "<group>"; };
+		5ED8FD8720C4D72C00593643 /* USFocusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusViewController.m; sourceTree = "<group>"; };
+		5ED8FD8920C4D73E00593643 /* USReleaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseViewController.h; sourceTree = "<group>"; };
+		5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseViewController.m; sourceTree = "<group>"; };
+		5ED8FD8C20C4D75200593643 /* USMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMessageViewController.h; sourceTree = "<group>"; };
+		5ED8FD8D20C4D75200593643 /* USMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMessageViewController.m; sourceTree = "<group>"; };
+		5ED8FD8F20C4D76400593643 /* USUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USUserViewController.h; sourceTree = "<group>"; };
+		5ED8FD9020C4D76400593643 /* USUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USUserViewController.m; sourceTree = "<group>"; };
+		5ED8FD9220C4D7DC00593643 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		5ED8FDA120C4E02900593643 /* USFocusListProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USFocusListProcess.m; sourceTree = "<group>"; };
+		5ED8FDA220C4E02900593643 /* USFocusListProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USFocusListProcess.h; sourceTree = "<group>"; };
+		6DC4DB13E3699003B19453A4 /* Pods-UnlockSecret.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnlockSecret.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnlockSecret/Pods-UnlockSecret.debug.xcconfig"; sourceTree = "<group>"; };
+		BF5BDF9D2F332A9863F808D2 /* Pods-UnlockSecret.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnlockSecret.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnlockSecret/Pods-UnlockSecret.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +151,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EBE843120C4CAE200C5B0D9 /* JJTools.framework in Frameworks */,
+				A96E20673AE82EA9AD5B4443 /* libPods-UnlockSecret.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +173,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20CDDC8266BFF8406F4B5700 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5EBE82A320C2D73200C5B0D9 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +188,8 @@
 				5EBE82C720C2D73400C5B0D9 /* UnlockSecretTests */,
 				5EBE82D220C2D73400C5B0D9 /* UnlockSecretUITests */,
 				5EBE82AD20C2D73200C5B0D9 /* Products */,
+				D7D7968A9D2B67D173B81579 /* Pods */,
+				20CDDC8266BFF8406F4B5700 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +206,12 @@
 		5EBE82AE20C2D73200C5B0D9 /* UnlockSecret */ = {
 			isa = PBXGroup;
 			children = (
-				5EBE82AF20C2D73200C5B0D9 /* AppDelegate.h */,
-				5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */,
-				5EBE82B220C2D73200C5B0D9 /* ViewController.h */,
-				5EBE82B320C2D73200C5B0D9 /* ViewController.m */,
-				5EBE82B520C2D73200C5B0D9 /* Main.storyboard */,
+				5EBE842F20C4CAE200C5B0D9 /* Framework */,
+				5EBE831A20C2DA2D00C5B0D9 /* Base */,
+				5EBE831020C2DA2D00C5B0D9 /* Helper */,
+				5EBE82E120C2DA2D00C5B0D9 /* Tool */,
+				5ED8FD7B20C4CFA800593643 /* Class */,
+				5ED8FDA420C4E43400593643 /* AppDelegate */,
 				5EBE82B820C2D73400C5B0D9 /* Assets.xcassets */,
 				5EBE82BA20C2D73400C5B0D9 /* LaunchScreen.storyboard */,
 				5EBE82BD20C2D73400C5B0D9 /* Info.plist */,
@@ -132,6 +238,282 @@
 			path = UnlockSecretUITests;
 			sourceTree = "<group>";
 		};
+		5EBE82E120C2DA2D00C5B0D9 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE82E220C2DA2D00C5B0D9 /* CommonCrypto */,
+				5EBE82F520C2DA2D00C5B0D9 /* Device */,
+				5EBE82F820C2DA2D00C5B0D9 /* ClassExtension */,
+				5EBE82FF20C2DA2D00C5B0D9 /* YQNetworking */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		5EBE82E220C2DA2D00C5B0D9 /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE82E620C2DA2D00C5B0D9 /* NSData+Base64.h */,
+				5EBE82EA20C2DA2D00C5B0D9 /* NSData+Base64.m */,
+				5EBE82E720C2DA2D00C5B0D9 /* NSData+CommonCrypto.h */,
+				5EBE82E920C2DA2D00C5B0D9 /* NSData+CommonCrypto.m */,
+				5EBE82EB20C2DA2D00C5B0D9 /* NSString+CommonCryptor.h */,
+				5EBE82E520C2DA2D00C5B0D9 /* NSString+CommonCryptor.m */,
+				5EBE82E820C2DA2D00C5B0D9 /* NSString+Base64.h */,
+				5EBE82E320C2DA2D00C5B0D9 /* NSString+Base64.m */,
+				5EBE82EC20C2DA2D00C5B0D9 /* NSData+Encryption.h */,
+				5EBE82E420C2DA2D00C5B0D9 /* NSData+Encryption.m */,
+			);
+			path = CommonCrypto;
+			sourceTree = "<group>";
+		};
+		5EBE82ED20C2DA2D00C5B0D9 /* ProcessData */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE82F020C2DA2D00C5B0D9 /* XLKTool.h */,
+				5EBE82EE20C2DA2D00C5B0D9 /* XLKTool.m */,
+				5EBE82F120C2DA2D00C5B0D9 /* LoginHelper.h */,
+				5EBE82EF20C2DA2D00C5B0D9 /* LoginHelper.m */,
+			);
+			path = ProcessData;
+			sourceTree = "<group>";
+		};
+		5EBE82F520C2DA2D00C5B0D9 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE82F620C2DA2D00C5B0D9 /* Device.h */,
+				5EBE82F720C2DA2D00C5B0D9 /* Device.m */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		5EBE82F820C2DA2D00C5B0D9 /* ClassExtension */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE82FC20C2DA2D00C5B0D9 /* UIColor+Hex.h */,
+				5EBE82FA20C2DA2D00C5B0D9 /* UIColor+Hex.m */,
+				5EBE82FE20C2DA2D00C5B0D9 /* UIView+CustomVWithCorRadius.h */,
+				5EBE82FB20C2DA2D00C5B0D9 /* UIView+CustomVWithCorRadius.m */,
+			);
+			path = ClassExtension;
+			sourceTree = "<group>";
+		};
+		5EBE82FF20C2DA2D00C5B0D9 /* YQNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE830020C2DA2D00C5B0D9 /* YQNetworking.h */,
+				5EBE830E20C2DA2D00C5B0D9 /* YQNetworking.m */,
+				5EBE830F20C2DA2D00C5B0D9 /* HttpRequest.h */,
+				5EBE830A20C2DA2D00C5B0D9 /* HttpRequest.m */,
+				5EBE830120C2DA2D00C5B0D9 /* Cache */,
+				5EBE830B20C2DA2D00C5B0D9 /* RequestManager */,
+			);
+			path = YQNetworking;
+			sourceTree = "<group>";
+		};
+		5EBE830120C2DA2D00C5B0D9 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE830520C2DA2D00C5B0D9 /* YQCacheManager.h */,
+				5EBE830820C2DA2D00C5B0D9 /* YQCacheManager.m */,
+				5EBE830620C2DA2D00C5B0D9 /* YQDiskCache.h */,
+				5EBE830320C2DA2D00C5B0D9 /* YQDiskCache.m */,
+				5EBE830720C2DA2D00C5B0D9 /* YQLRUManager.h */,
+				5EBE830220C2DA2D00C5B0D9 /* YQLRUManager.m */,
+				5EBE830920C2DA2D00C5B0D9 /* YQMemoryCache.h */,
+				5EBE830420C2DA2D00C5B0D9 /* YQMemoryCache.m */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		5EBE830B20C2DA2D00C5B0D9 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE830C20C2DA2D00C5B0D9 /* YQNetworking+RequestManager.h */,
+				5EBE830D20C2DA2D00C5B0D9 /* YQNetworking+RequestManager.m */,
+			);
+			path = RequestManager;
+			sourceTree = "<group>";
+		};
+		5EBE831020C2DA2D00C5B0D9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE831620C2DA2D00C5B0D9 /* Header */,
+				5EBE82ED20C2DA2D00C5B0D9 /* ProcessData */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		5EBE831620C2DA2D00C5B0D9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE831720C2DA2D00C5B0D9 /* USUrl.h */,
+				5EBE831820C2DA2D00C5B0D9 /* Configuration.h */,
+				5EBE831920C2DA2D00C5B0D9 /* PrefixHeader.pch */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		5EBE831A20C2DA2D00C5B0D9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE832820C2DA2D00C5B0D9 /* BaseViewController.h */,
+				5EBE831B20C2DA2D00C5B0D9 /* BaseViewController.m */,
+				5EBE831C20C2DA2D00C5B0D9 /* BaseTabbarController.h */,
+				5EBE832720C2DA2D00C5B0D9 /* BaseTabbarController.m */,
+				5EBE832620C2DA2D00C5B0D9 /* BaseNavigationController.h */,
+				5EBE831D20C2DA2D00C5B0D9 /* BaseNavigationController.m */,
+				5EBE831E20C2DA2D00C5B0D9 /* Model */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5EBE831E20C2DA2D00C5B0D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE832520C2DA2D00C5B0D9 /* BaseModel.h */,
+				5EBE831F20C2DA2D00C5B0D9 /* BaseModel.m */,
+				5EBE832020C2DA2D00C5B0D9 /* USUser.h */,
+				5EBE832420C2DA2D00C5B0D9 /* USUser.m */,
+				5EBE832120C2DA2D00C5B0D9 /* Serialization.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5EBE842F20C4CAE200C5B0D9 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE843020C4CAE200C5B0D9 /* JJTools.framework */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		5ED8FD7B20C4CFA800593643 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				5ED8FD8220C4D0C000593643 /* Chat */,
+				5ED8FD8120C4D0B500593643 /* Login */,
+				5ED8FD7C20C4D06700593643 /* Main */,
+				5ED8FD8020C4D0A700593643 /* Focus */,
+				5ED8FD7F20C4D09100593643 /* Release */,
+				5ED8FD7E20C4D07A00593643 /* Message */,
+				5ED8FD7D20C4D06E00593643 /* User */,
+				5EBE82B520C2D73200C5B0D9 /* Main.storyboard */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		5ED8FD7C20C4D06700593643 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5ED8FD9720C4DE4700593643 /* Network */,
+				5ED8FD9420C4DE2A00593643 /* Model */,
+				5ED8FD9520C4DE3900593643 /* View */,
+				5ED8FD9620C4DE3E00593643 /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5ED8FD7D20C4D06E00593643 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5ED8FD8F20C4D76400593643 /* USUserViewController.h */,
+				5ED8FD9020C4D76400593643 /* USUserViewController.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		5ED8FD7E20C4D07A00593643 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				5ED8FD8C20C4D75200593643 /* USMessageViewController.h */,
+				5ED8FD8D20C4D75200593643 /* USMessageViewController.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		5ED8FD7F20C4D09100593643 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				5ED8FD8920C4D73E00593643 /* USReleaseViewController.h */,
+				5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		5ED8FD8020C4D0A700593643 /* Focus */ = {
+			isa = PBXGroup;
+			children = (
+				5ED8FD8620C4D72C00593643 /* USFocusViewController.h */,
+				5ED8FD8720C4D72C00593643 /* USFocusViewController.m */,
+			);
+			path = Focus;
+			sourceTree = "<group>";
+		};
+		5ED8FD8120C4D0B500593643 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5ED8FD9220C4D7DC00593643 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5ED8FD8220C4D0C000593643 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		5ED8FD9420C4DE2A00593643 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5ED8FD9520C4DE3900593643 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5ED8FD9620C4DE3E00593643 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5ED8FD8320C4D6D800593643 /* USMainViewController.h */,
+				5ED8FD8420C4D6D800593643 /* USMainViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5ED8FD9720C4DE4700593643 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5ED8FDA220C4E02900593643 /* USFocusListProcess.h */,
+				5ED8FDA120C4E02900593643 /* USFocusListProcess.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5ED8FDA420C4E43400593643 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5EBE82AF20C2D73200C5B0D9 /* AppDelegate.h */,
+				5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D7D7968A9D2B67D173B81579 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DC4DB13E3699003B19453A4 /* Pods-UnlockSecret.debug.xcconfig */,
+				BF5BDF9D2F332A9863F808D2 /* Pods-UnlockSecret.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +521,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EBE82D820C2D73400C5B0D9 /* Build configuration list for PBXNativeTarget "UnlockSecret" */;
 			buildPhases = (
+				AB2D9913B4FF0B07AA900A95 /* [CP] Check Pods Manifest.lock */,
 				5EBE82A820C2D73200C5B0D9 /* Sources */,
 				5EBE82A920C2D73200C5B0D9 /* Frameworks */,
 				5EBE82AA20C2D73200C5B0D9 /* Resources */,
+				DADACD4A2F2E36F8435FC31C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,6 +619,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED8FD9320C4D7DC00593643 /* Login.storyboard in Resources */,
 				5EBE82BC20C2D73400C5B0D9 /* LaunchScreen.storyboard in Resources */,
 				5EBE82B920C2D73400C5B0D9 /* Assets.xcassets in Resources */,
 				5EBE82B720C2D73200C5B0D9 /* Main.storyboard in Resources */,
@@ -257,14 +642,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AB2D9913B4FF0B07AA900A95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnlockSecret-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DADACD4A2F2E36F8435FC31C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UnlockSecret/Pods-UnlockSecret-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnlockSecret/Pods-UnlockSecret-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5EBE82A820C2D73200C5B0D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EBE82B420C2D73200C5B0D9 /* ViewController.m in Sources */,
+				5EBE83E220C2DA2E00C5B0D9 /* BaseModel.m in Sources */,
+				5ED8FD8520C4D6D800593643 /* USMainViewController.m in Sources */,
+				5EBE83D620C2DA2E00C5B0D9 /* UIView+CustomVWithCorRadius.m in Sources */,
+				5EBE83DD20C2DA2E00C5B0D9 /* YQNetworking.m in Sources */,
+				5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */,
+				5EBE83D820C2DA2E00C5B0D9 /* YQDiskCache.m in Sources */,
+				5ED8FDA320C4E02900593643 /* USFocusListProcess.m in Sources */,
+				5EBE83DC20C2DA2E00C5B0D9 /* YQNetworking+RequestManager.m in Sources */,
+				5EBE83D720C2DA2E00C5B0D9 /* YQLRUManager.m in Sources */,
+				5EBE83E120C2DA2E00C5B0D9 /* BaseNavigationController.m in Sources */,
+				5ED8FD9120C4D76400593643 /* USUserViewController.m in Sources */,
+				5EBE83D920C2DA2E00C5B0D9 /* YQMemoryCache.m in Sources */,
+				5EBE83CB20C2DA2E00C5B0D9 /* NSString+Base64.m in Sources */,
+				5EBE83D120C2DA2E00C5B0D9 /* LoginHelper.m in Sources */,
+				5EBE83E020C2DA2E00C5B0D9 /* BaseViewController.m in Sources */,
+				5EBE83D320C2DA2E00C5B0D9 /* Device.m in Sources */,
+				5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */,
+				5EBE83CC20C2DA2E00C5B0D9 /* NSData+Encryption.m in Sources */,
+				5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */,
 				5EBE82BF20C2D73400C5B0D9 /* main.m in Sources */,
+				5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */,
+				5EBE83DB20C2DA2E00C5B0D9 /* HttpRequest.m in Sources */,
+				5EBE83E520C2DA2E00C5B0D9 /* BaseTabbarController.m in Sources */,
+				5EBE83CF20C2DA2E00C5B0D9 /* NSData+Base64.m in Sources */,
 				5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */,
+				5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */,
+				5EBE83D520C2DA2E00C5B0D9 /* UIColor+Hex.m in Sources */,
+				5EBE83DA20C2DA2E00C5B0D9 /* YQCacheManager.m in Sources */,
+				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,
+				5EBE83CE20C2DA2E00C5B0D9 /* NSData+CommonCrypto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,9 +884,34 @@
 		};
 		5EBE82D920C2D73400C5B0D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DC4DB13E3699003B19453A4 /* Pods-UnlockSecret.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UnlockSecret",
+					"$(PROJECT_DIR)/UnlockSecret/Framework",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/UnlockSecret/Helper/Header/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/CWLateralSlide\"",
+					"\"${PODS_ROOT}/Headers/Public/JMessage\"",
+					"\"${PODS_ROOT}/Headers/Public/JPush\"",
+					"\"${PODS_ROOT}/Headers/Public/JShare\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MOBFoundation\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_smssdk\"",
+					"$(PROJECT_DIR)/UnlockSecret/Framework",
+				);
 				INFOPLIST_FILE = UnlockSecret/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,14 +920,40 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xlk.UnlockSecret;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
 			};
 			name = Debug;
 		};
 		5EBE82DA20C2D73400C5B0D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF5BDF9D2F332A9863F808D2 /* Pods-UnlockSecret.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UnlockSecret",
+					"$(PROJECT_DIR)/UnlockSecret/Framework",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/UnlockSecret/Helper/Header/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/CWLateralSlide\"",
+					"\"${PODS_ROOT}/Headers/Public/JMessage\"",
+					"\"${PODS_ROOT}/Headers/Public/JPush\"",
+					"\"${PODS_ROOT}/Headers/Public/JShare\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MOBFoundation\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_smssdk\"",
+					"$(PROJECT_DIR)/UnlockSecret/Framework",
+				);
 				INFOPLIST_FILE = UnlockSecret/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -458,6 +962,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xlk.UnlockSecret;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
 			};
 			name = Release;
 		};

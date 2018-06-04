@@ -1,0 +1,6 @@
+framework module JJTools {
+  umbrella header "JJTools.h"
+
+  export *
+  module * { export * }
+}
