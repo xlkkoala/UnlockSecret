@@ -18,6 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="LdN-57-dij" kind="relationship" relationship="viewControllers" id="Tuu-hW-LMk"/>
@@ -31,11 +32,11 @@
             </objects>
             <point key="canvasLocation" x="-12820" y="1406"/>
         </scene>
-        <!--Item-->
+        <!--关注-->
         <scene sceneID="R08-00-ibs">
             <objects>
                 <navigationController id="FHf-rg-1VA" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Om9-Rp-5I2"/>
+                    <tabBarItem key="tabBarItem" title="关注" id="Om9-Rp-5I2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dh0-vs-r9v">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -65,11 +66,11 @@
             </objects>
             <point key="canvasLocation" x="-10239" y="420"/>
         </scene>
-        <!--Item-->
+        <!--首页-->
         <scene sceneID="WAz-xb-BSn">
             <objects>
                 <navigationController id="LdN-57-dij" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="aGA-Nm-NdH"/>
+                    <tabBarItem key="tabBarItem" title="首页" id="aGA-Nm-NdH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lhU-51-She">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -99,11 +100,13 @@
             </objects>
             <point key="canvasLocation" x="-10239" y="-629"/>
         </scene>
-        <!--Item-->
+        <!--Base Navigation Controller-->
         <scene sceneID="447-vz-FkK">
             <objects>
                 <navigationController id="QWc-XV-Eb8" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gGL-dB-NuF"/>
+                    <tabBarItem key="tabBarItem" title="" id="gGL-dB-NuF">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oIW-oJ-1Rd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -133,11 +136,11 @@
             </objects>
             <point key="canvasLocation" x="-10239" y="1406"/>
         </scene>
-        <!--Item-->
+        <!--消息-->
         <scene sceneID="hRj-sC-a8C">
             <objects>
                 <navigationController id="idF-hu-4Cy" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RLa-xm-D68"/>
+                    <tabBarItem key="tabBarItem" title="消息" id="RLa-xm-D68"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gJm-er-DAE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -167,11 +170,11 @@
             </objects>
             <point key="canvasLocation" x="-10239" y="2398"/>
         </scene>
-        <!--Item-->
+        <!--我的-->
         <scene sceneID="CRU-cj-yKQ">
             <objects>
                 <navigationController id="gUr-nb-GQv" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="s4r-dg-zRV"/>
+                    <tabBarItem key="tabBarItem" title="我的" id="s4r-dg-zRV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="foI-pV-M4n">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
