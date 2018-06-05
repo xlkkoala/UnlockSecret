@@ -7,8 +7,9 @@
 //
 
 #import "USFocusViewController.h"
+#import "USFocusTableViewCell.h"
 
-@interface USFocusViewController ()
+@interface USFocusViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -16,7 +17,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    USFocusTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USFocusTableViewCell" forIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 80;
 }
 
 - (void)didReceiveMemoryWarning {

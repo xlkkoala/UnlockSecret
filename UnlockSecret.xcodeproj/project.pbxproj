@@ -65,6 +65,7 @@
 		6C9AC1DD20C68D9400E8D621 /* RCProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1DC20C68D9300E8D621 /* RCProgressView.m */; };
 		6C9AC1E120C6944900E8D621 /* USMainLookingForDifferentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1E020C6944900E8D621 /* USMainLookingForDifferentVC.m */; };
 		6C9AC1E420C6945E00E8D621 /* USM_LookingForDifferentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9AC1E320C6945E00E8D621 /* USM_LookingForDifferentVC.xib */; };
+		6C9AC1EB20C6A8B000E8D621 /* USFocusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1EA20C6A8B000E8D621 /* USFocusTableViewCell.m */; };
 		A96E20673AE82EA9AD5B4443 /* libPods-UnlockSecret.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */; };
 /* End PBXBuildFile section */
 
@@ -196,6 +197,8 @@
 		6C9AC1DF20C6944900E8D621 /* USMainLookingForDifferentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainLookingForDifferentVC.h; sourceTree = "<group>"; };
 		6C9AC1E020C6944900E8D621 /* USMainLookingForDifferentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMainLookingForDifferentVC.m; sourceTree = "<group>"; };
 		6C9AC1E320C6945E00E8D621 /* USM_LookingForDifferentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = USM_LookingForDifferentVC.xib; sourceTree = "<group>"; };
+		6C9AC1E920C6A8B000E8D621 /* USFocusTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusTableViewCell.h; sourceTree = "<group>"; };
+		6C9AC1EA20C6A8B000E8D621 /* USFocusTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusTableViewCell.m; sourceTree = "<group>"; };
 		6DC4DB13E3699003B19453A4 /* Pods-UnlockSecret.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnlockSecret.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnlockSecret/Pods-UnlockSecret.debug.xcconfig"; sourceTree = "<group>"; };
 		BF5BDF9D2F332A9863F808D2 /* Pods-UnlockSecret.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnlockSecret.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnlockSecret/Pods-UnlockSecret.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +241,7 @@
 		5E9FCD0020C6223300780E1A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6C9AC1E820C6A88C00E8D621 /* Cells */,
 				5E9FCCEE20C61C4500780E1A /* USFocusNavigationController.h */,
 				5E9FCCEF20C61C4500780E1A /* USFocusNavigationController.m */,
 				5ED8FD8620C4D72C00593643 /* USFocusViewController.h */,
@@ -736,6 +740,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		6C9AC1E820C6A88C00E8D621 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6C9AC1E920C6A8B000E8D621 /* USFocusTableViewCell.h */,
+				6C9AC1EA20C6A8B000E8D621 /* USFocusTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D7D7968A9D2B67D173B81579 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -929,6 +942,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EBE83E220C2DA2E00C5B0D9 /* BaseModel.m in Sources */,
+				6C9AC1EB20C6A8B000E8D621 /* USFocusTableViewCell.m in Sources */,
 				6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */,
 				5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */,
 				5ED8FD8520C4D6D800593643 /* USMainViewController.m in Sources */,
