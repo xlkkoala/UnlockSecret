@@ -23,6 +23,7 @@ PODS:
   - JShare (1.5.0):
     - JCore (~> 1.1.7)
   - Masonry (1.1.0)
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.15.3)
   - mob_smssdk (3.1.0):
     - MOBFoundation
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - JPush (~> 3.0.9)
   - JShare (~> 1.5.0)
   - Masonry (~> 1.1.0)
+  - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.15.3)
   - mob_smssdk (~> 3.1.0)
   - ReactiveCocoa (~> 2.5)
@@ -61,6 +63,7 @@ SPEC REPOS:
     - JPush
     - JShare
     - Masonry
+    - MJExtension
     - MJRefresh
     - mob_smssdk
     - MOBFoundation
@@ -76,6 +79,7 @@ SPEC CHECKSUMS:
   JPush: 003d9eaef8ba2df76de32573d0c8aa62b92b3c82
   JShare: 8a13dc4d5ae987f69af1ea9876b94c3c9c40c6cd
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   mob_smssdk: 50a3c764232919f78578d911a60afc142ee7a405
   MOBFoundation: fcaed93566814b662dc51459e5712ae559a3ac9c
@@ -83,6 +87,6 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 89e919687adb68c9c9a07f9512dfe74095f99181
+PODFILE CHECKSUM: 0060476ae8e25fb07bd07590e59f43e4918d914c
 
 COCOAPODS: 1.5.0

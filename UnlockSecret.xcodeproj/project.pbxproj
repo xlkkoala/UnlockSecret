@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCE720C61A2700780E1A /* Focus.storyboard */; };
+		5E9FCCEA20C61A3300780E1A /* Release.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCE920C61A3300780E1A /* Release.storyboard */; };
+		5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCCEC20C61BEA00780E1A /* USMainNavigationController.m */; };
+		5E9FCCF020C61C4500780E1A /* USFocusNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCCEF20C61C4500780E1A /* USFocusNavigationController.m */; };
+		5E9FCCF320C61E8D00780E1A /* USReleaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCCF220C61E8D00780E1A /* USReleaseNavigationController.m */; };
+		5E9FCCF620C61EA900780E1A /* USMessageNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCCF520C61EA900780E1A /* USMessageNavigationController.m */; };
+		5E9FCCFA20C61EC000780E1A /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCF920C61EC000780E1A /* User.storyboard */; };
+		5E9FCCFD20C61ED800780E1A /* USUserNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCCFC20C61ED800780E1A /* USUserNavigationController.m */; };
+		5E9FCCFF20C61FCE00780E1A /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCFE20C61FCE00780E1A /* Message.storyboard */; };
 		5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */; };
 		5EBE82B720C2D73200C5B0D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE82B520C2D73200C5B0D9 /* Main.storyboard */; };
 		5EBE82B920C2D73400C5B0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE82B820C2D73400C5B0D9 /* Assets.xcassets */; };
@@ -66,6 +75,20 @@
 
 /* Begin PBXFileReference section */
 		4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnlockSecret.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E9FCCE720C61A2700780E1A /* Focus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Focus.storyboard; sourceTree = "<group>"; };
+		5E9FCCE920C61A3300780E1A /* Release.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Release.storyboard; sourceTree = "<group>"; };
+		5E9FCCEB20C61BEA00780E1A /* USMainNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainNavigationController.h; sourceTree = "<group>"; };
+		5E9FCCEC20C61BEA00780E1A /* USMainNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMainNavigationController.m; sourceTree = "<group>"; };
+		5E9FCCEE20C61C4500780E1A /* USFocusNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusNavigationController.h; sourceTree = "<group>"; };
+		5E9FCCEF20C61C4500780E1A /* USFocusNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusNavigationController.m; sourceTree = "<group>"; };
+		5E9FCCF120C61E8D00780E1A /* USReleaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseNavigationController.h; sourceTree = "<group>"; };
+		5E9FCCF220C61E8D00780E1A /* USReleaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseNavigationController.m; sourceTree = "<group>"; };
+		5E9FCCF420C61EA900780E1A /* USMessageNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMessageNavigationController.h; sourceTree = "<group>"; };
+		5E9FCCF520C61EA900780E1A /* USMessageNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMessageNavigationController.m; sourceTree = "<group>"; };
+		5E9FCCF920C61EC000780E1A /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		5E9FCCFB20C61ED800780E1A /* USUserNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USUserNavigationController.h; sourceTree = "<group>"; };
+		5E9FCCFC20C61ED800780E1A /* USUserNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USUserNavigationController.m; sourceTree = "<group>"; };
+		5E9FCCFE20C61FCE00780E1A /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		5EBE82AC20C2D73200C5B0D9 /* UnlockSecret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnlockSecret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBE82AF20C2D73200C5B0D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -179,6 +202,134 @@
 				4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E9FCD0020C6223300780E1A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E9FCCEE20C61C4500780E1A /* USFocusNavigationController.h */,
+				5E9FCCEF20C61C4500780E1A /* USFocusNavigationController.m */,
+				5ED8FD8620C4D72C00593643 /* USFocusViewController.h */,
+				5ED8FD8720C4D72C00593643 /* USFocusViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E9FCD0120C6224B00780E1A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5E9FCD0220C6225600780E1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E9FCD0320C6226200780E1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E9FCD0420C6227F00780E1A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E9FCCF120C61E8D00780E1A /* USReleaseNavigationController.h */,
+				5E9FCCF220C61E8D00780E1A /* USReleaseNavigationController.m */,
+				5ED8FD8920C4D73E00593643 /* USReleaseViewController.h */,
+				5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E9FCD0520C6229D00780E1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E9FCD0620C622A700780E1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E9FCD0720C622AC00780E1A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5E9FCD0820C622BF00780E1A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E9FCCF420C61EA900780E1A /* USMessageNavigationController.h */,
+				5E9FCCF520C61EA900780E1A /* USMessageNavigationController.m */,
+				5ED8FD8C20C4D75200593643 /* USMessageViewController.h */,
+				5ED8FD8D20C4D75200593643 /* USMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E9FCD0920C622D300780E1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E9FCD0A20C622DF00780E1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E9FCD0B20C622E400780E1A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5E9FCD0C20C622F100780E1A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E9FCCFB20C61ED800780E1A /* USUserNavigationController.h */,
+				5E9FCCFC20C61ED800780E1A /* USUserNavigationController.m */,
+				5ED8FD8F20C4D76400593643 /* USUserViewController.h */,
+				5ED8FD9020C4D76400593643 /* USUserViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E9FCD0D20C622FF00780E1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E9FCD0E20C6230500780E1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E9FCD0F20C6230B00780E1A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		5EBE82A320C2D73200C5B0D9 = {
@@ -397,7 +548,6 @@
 				5ED8FD7F20C4D09100593643 /* Release */,
 				5ED8FD7E20C4D07A00593643 /* Message */,
 				5ED8FD7D20C4D06E00593643 /* User */,
-				5EBE82B520C2D73200C5B0D9 /* Main.storyboard */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -409,6 +559,7 @@
 				5ED8FD9420C4DE2A00593643 /* Model */,
 				5ED8FD9520C4DE3900593643 /* View */,
 				5ED8FD9620C4DE3E00593643 /* Controller */,
+				5EBE82B520C2D73200C5B0D9 /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -416,8 +567,11 @@
 		5ED8FD7D20C4D06E00593643 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				5ED8FD8F20C4D76400593643 /* USUserViewController.h */,
-				5ED8FD9020C4D76400593643 /* USUserViewController.m */,
+				5E9FCD0F20C6230B00780E1A /* Network */,
+				5E9FCD0E20C6230500780E1A /* Model */,
+				5E9FCD0D20C622FF00780E1A /* View */,
+				5E9FCD0C20C622F100780E1A /* Controller */,
+				5E9FCCF920C61EC000780E1A /* User.storyboard */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -425,8 +579,11 @@
 		5ED8FD7E20C4D07A00593643 /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				5ED8FD8C20C4D75200593643 /* USMessageViewController.h */,
-				5ED8FD8D20C4D75200593643 /* USMessageViewController.m */,
+				5E9FCD0B20C622E400780E1A /* Network */,
+				5E9FCD0A20C622DF00780E1A /* Model */,
+				5E9FCD0920C622D300780E1A /* View */,
+				5E9FCD0820C622BF00780E1A /* Controller */,
+				5E9FCCFE20C61FCE00780E1A /* Message.storyboard */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -434,8 +591,11 @@
 		5ED8FD7F20C4D09100593643 /* Release */ = {
 			isa = PBXGroup;
 			children = (
-				5ED8FD8920C4D73E00593643 /* USReleaseViewController.h */,
-				5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */,
+				5E9FCD0720C622AC00780E1A /* Network */,
+				5E9FCD0620C622A700780E1A /* Model */,
+				5E9FCD0520C6229D00780E1A /* View */,
+				5E9FCD0420C6227F00780E1A /* Controller */,
+				5E9FCCE920C61A3300780E1A /* Release.storyboard */,
 			);
 			path = Release;
 			sourceTree = "<group>";
@@ -443,8 +603,11 @@
 		5ED8FD8020C4D0A700593643 /* Focus */ = {
 			isa = PBXGroup;
 			children = (
-				5ED8FD8620C4D72C00593643 /* USFocusViewController.h */,
-				5ED8FD8720C4D72C00593643 /* USFocusViewController.m */,
+				5E9FCD0120C6224B00780E1A /* Network */,
+				5E9FCD0220C6225600780E1A /* Model */,
+				5E9FCD0320C6226200780E1A /* View */,
+				5E9FCD0020C6223300780E1A /* Controller */,
+				5E9FCCE720C61A2700780E1A /* Focus.storyboard */,
 			);
 			path = Focus;
 			sourceTree = "<group>";
@@ -481,6 +644,8 @@
 		5ED8FD9620C4DE3E00593643 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5E9FCCEB20C61BEA00780E1A /* USMainNavigationController.h */,
+				5E9FCCEC20C61BEA00780E1A /* USMainNavigationController.m */,
 				5ED8FD8320C4D6D800593643 /* USMainViewController.h */,
 				5ED8FD8420C4D6D800593643 /* USMainViewController.m */,
 			);
@@ -620,8 +785,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ED8FD9320C4D7DC00593643 /* Login.storyboard in Resources */,
+				5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */,
 				5EBE82BC20C2D73400C5B0D9 /* LaunchScreen.storyboard in Resources */,
 				5EBE82B920C2D73400C5B0D9 /* Assets.xcassets in Resources */,
+				5E9FCCEA20C61A3300780E1A /* Release.storyboard in Resources */,
+				5E9FCCFA20C61EC000780E1A /* User.storyboard in Resources */,
+				5E9FCCFF20C61FCE00780E1A /* Message.storyboard in Resources */,
 				5EBE82B720C2D73200C5B0D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,6 +858,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EBE83E220C2DA2E00C5B0D9 /* BaseModel.m in Sources */,
+				5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */,
 				5ED8FD8520C4D6D800593643 /* USMainViewController.m in Sources */,
 				5EBE83D620C2DA2E00C5B0D9 /* UIView+CustomVWithCorRadius.m in Sources */,
 				5EBE83DD20C2DA2E00C5B0D9 /* YQNetworking.m in Sources */,
@@ -703,10 +873,14 @@
 				5EBE83CB20C2DA2E00C5B0D9 /* NSString+Base64.m in Sources */,
 				5EBE83D120C2DA2E00C5B0D9 /* LoginHelper.m in Sources */,
 				5EBE83E020C2DA2E00C5B0D9 /* BaseViewController.m in Sources */,
+				5E9FCCFD20C61ED800780E1A /* USUserNavigationController.m in Sources */,
 				5EBE83D320C2DA2E00C5B0D9 /* Device.m in Sources */,
+				5E9FCCF320C61E8D00780E1A /* USReleaseNavigationController.m in Sources */,
 				5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */,
 				5EBE83CC20C2DA2E00C5B0D9 /* NSData+Encryption.m in Sources */,
 				5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */,
+				5E9FCCF620C61EA900780E1A /* USMessageNavigationController.m in Sources */,
+				5E9FCCF020C61C4500780E1A /* USFocusNavigationController.m in Sources */,
 				5EBE82BF20C2D73400C5B0D9 /* main.m in Sources */,
 				5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */,
 				5EBE83DB20C2DA2E00C5B0D9 /* HttpRequest.m in Sources */,

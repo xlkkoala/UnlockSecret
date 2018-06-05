@@ -12,7 +12,7 @@
  /*
  // 字体颜色
  */
-#define NAV_COLOR [UIColor whiteColor]  //导航字体颜色
+#define NAV_COLOR [UIColor blackColor]  //导航字体颜色
 #define gray90 [UIColor colorWithHexString:@"e5e5e5"]   //分割线
 
  /*
@@ -42,6 +42,10 @@
  */
 
 #define MAIN_STORYBOARD [UIStoryboard storyboardWithName:@"Main" bundle:nil]
+#define FOCUS_STORYBOARD [UIStoryboard storyboardWithName:@"Focus" bundle:nil]
+#define RELEASE_STORYBOARD [UIStoryboard storyboardWithName:@"Release" bundle:nil]
+#define MESSAGE_STORYBOARD [UIStoryboard storyboardWithName:@"Message" bundle:nil]
+#define USER_STORYBOARD [UIStoryboard storyboardWithName:@"User" bundle:nil]
 #define LOGIN_STORYBOARD [UIStoryboard storyboardWithName:@"Login" bundle:nil]
 
  /*
