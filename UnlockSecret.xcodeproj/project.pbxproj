@@ -53,6 +53,18 @@
 		5ED8FD9120C4D76400593643 /* USUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD9020C4D76400593643 /* USUserViewController.m */; };
 		5ED8FD9320C4D7DC00593643 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED8FD9220C4D7DC00593643 /* Login.storyboard */; };
 		5ED8FDA320C4E02900593643 /* USFocusListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FDA120C4E02900593643 /* USFocusListProcess.m */; };
+		6C0BC35020C65F8A0068564C /* USMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BC34F20C65F8A0068564C /* USMainTableViewCell.m */; };
+		6C0BC35220C6651E0068564C /* focus_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C0BC35120C6651D0068564C /* focus_button@2x.png */; };
+		6C0BC35620C6749B0068564C /* origina_image_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C0BC35320C6749A0068564C /* origina_image_select@2x.png */; };
+		6C0BC35720C6749B0068564C /* original_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C0BC35420C6749A0068564C /* original_image@2x.png */; };
+		6C0BC35820C6749B0068564C /* origina_image_click@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C0BC35520C6749B0068564C /* origina_image_click@2x.png */; };
+		6C9AC1D220C68A9E00E8D621 /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */; };
+		6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D120C68A9E00E8D621 /* OBShapedButton.m */; };
+		6C9AC1D920C68AAA00E8D621 /* TransparentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D520C68AAA00E8D621 /* TransparentViewController.m */; };
+		6C9AC1DA20C68AAA00E8D621 /* UIViewController+PresentViewControllerOverCurrentContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D620C68AAA00E8D621 /* UIViewController+PresentViewControllerOverCurrentContext.m */; };
+		6C9AC1DD20C68D9400E8D621 /* RCProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1DC20C68D9300E8D621 /* RCProgressView.m */; };
+		6C9AC1E120C6944900E8D621 /* USMainLookingForDifferentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1E020C6944900E8D621 /* USMainLookingForDifferentVC.m */; };
+		6C9AC1E420C6945E00E8D621 /* USM_LookingForDifferentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9AC1E320C6945E00E8D621 /* USM_LookingForDifferentVC.xib */; };
 		A96E20673AE82EA9AD5B4443 /* libPods-UnlockSecret.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +177,25 @@
 		5ED8FD9220C4D7DC00593643 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5ED8FDA120C4E02900593643 /* USFocusListProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USFocusListProcess.m; sourceTree = "<group>"; };
 		5ED8FDA220C4E02900593643 /* USFocusListProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USFocusListProcess.h; sourceTree = "<group>"; };
+		6C0BC34E20C65F8A0068564C /* USMainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainTableViewCell.h; sourceTree = "<group>"; };
+		6C0BC34F20C65F8A0068564C /* USMainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMainTableViewCell.m; sourceTree = "<group>"; };
+		6C0BC35120C6651D0068564C /* focus_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus_button@2x.png"; sourceTree = "<group>"; };
+		6C0BC35320C6749A0068564C /* origina_image_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "origina_image_select@2x.png"; sourceTree = "<group>"; };
+		6C0BC35420C6749A0068564C /* original_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "original_image@2x.png"; sourceTree = "<group>"; };
+		6C0BC35520C6749B0068564C /* origina_image_click@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "origina_image_click@2x.png"; sourceTree = "<group>"; };
+		6C9AC1CE20C68A9E00E8D621 /* OBShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBShapedButton.h; sourceTree = "<group>"; };
+		6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPixel.m"; sourceTree = "<group>"; };
+		6C9AC1D020C68A9E00E8D621 /* UIImage+ColorAtPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorAtPixel.h"; sourceTree = "<group>"; };
+		6C9AC1D120C68A9E00E8D621 /* OBShapedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBShapedButton.m; sourceTree = "<group>"; };
+		6C9AC1D520C68AAA00E8D621 /* TransparentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentViewController.m; sourceTree = "<group>"; };
+		6C9AC1D620C68AAA00E8D621 /* UIViewController+PresentViewControllerOverCurrentContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PresentViewControllerOverCurrentContext.m"; sourceTree = "<group>"; };
+		6C9AC1D720C68AAA00E8D621 /* TransparentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentViewController.h; sourceTree = "<group>"; };
+		6C9AC1D820C68AAA00E8D621 /* UIViewController+PresentViewControllerOverCurrentContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PresentViewControllerOverCurrentContext.h"; sourceTree = "<group>"; };
+		6C9AC1DB20C68D9300E8D621 /* RCProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProgressView.h; sourceTree = "<group>"; };
+		6C9AC1DC20C68D9300E8D621 /* RCProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProgressView.m; sourceTree = "<group>"; };
+		6C9AC1DF20C6944900E8D621 /* USMainLookingForDifferentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainLookingForDifferentVC.h; sourceTree = "<group>"; };
+		6C9AC1E020C6944900E8D621 /* USMainLookingForDifferentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMainLookingForDifferentVC.m; sourceTree = "<group>"; };
+		6C9AC1E320C6945E00E8D621 /* USM_LookingForDifferentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = USM_LookingForDifferentVC.xib; sourceTree = "<group>"; };
 		6DC4DB13E3699003B19453A4 /* Pods-UnlockSecret.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnlockSecret.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnlockSecret/Pods-UnlockSecret.debug.xcconfig"; sourceTree = "<group>"; };
 		BF5BDF9D2F332A9863F808D2 /* Pods-UnlockSecret.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnlockSecret.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnlockSecret/Pods-UnlockSecret.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -541,7 +572,6 @@
 		5ED8FD7B20C4CFA800593643 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				5ED8FD8220C4D0C000593643 /* Chat */,
 				5ED8FD8120C4D0B500593643 /* Login */,
 				5ED8FD7C20C4D06700593643 /* Main */,
 				5ED8FD8020C4D0A700593643 /* Focus */,
@@ -556,8 +586,6 @@
 			isa = PBXGroup;
 			children = (
 				5ED8FD9720C4DE4700593643 /* Network */,
-				5ED8FD9420C4DE2A00593643 /* Model */,
-				5ED8FD9520C4DE3900593643 /* View */,
 				5ED8FD9620C4DE3E00593643 /* Controller */,
 				5EBE82B520C2D73200C5B0D9 /* Main.storyboard */,
 			);
@@ -620,34 +648,20 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		5ED8FD8220C4D0C000593643 /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		5ED8FD9420C4DE2A00593643 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5ED8FD9520C4DE3900593643 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		5ED8FD9620C4DE3E00593643 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6C9AC1CC20C68A9E00E8D621 /* Vendors */,
+				6C9AC1DE20C6941D00E8D621 /* Views */,
+				6C0BC34D20C65F680068564C /* Cells */,
 				5E9FCCEB20C61BEA00780E1A /* USMainNavigationController.h */,
 				5E9FCCEC20C61BEA00780E1A /* USMainNavigationController.m */,
 				5ED8FD8320C4D6D800593643 /* USMainViewController.h */,
 				5ED8FD8420C4D6D800593643 /* USMainViewController.m */,
+				6C0BC35520C6749B0068564C /* origina_image_click@2x.png */,
+				6C0BC35320C6749A0068564C /* origina_image_select@2x.png */,
+				6C0BC35420C6749A0068564C /* original_image@2x.png */,
+				6C0BC35120C6651D0068564C /* focus_button@2x.png */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -668,6 +682,58 @@
 				5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		6C0BC34D20C65F680068564C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6C0BC34E20C65F8A0068564C /* USMainTableViewCell.h */,
+				6C0BC34F20C65F8A0068564C /* USMainTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6C9AC1CC20C68A9E00E8D621 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				6C9AC1DB20C68D9300E8D621 /* RCProgressView.h */,
+				6C9AC1DC20C68D9300E8D621 /* RCProgressView.m */,
+				6C9AC1D420C68AAA00E8D621 /* ExtensionClass */,
+				6C9AC1CD20C68A9E00E8D621 /* OBShapedButton */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		6C9AC1CD20C68A9E00E8D621 /* OBShapedButton */ = {
+			isa = PBXGroup;
+			children = (
+				6C9AC1CE20C68A9E00E8D621 /* OBShapedButton.h */,
+				6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */,
+				6C9AC1D020C68A9E00E8D621 /* UIImage+ColorAtPixel.h */,
+				6C9AC1D120C68A9E00E8D621 /* OBShapedButton.m */,
+			);
+			path = OBShapedButton;
+			sourceTree = "<group>";
+		};
+		6C9AC1D420C68AAA00E8D621 /* ExtensionClass */ = {
+			isa = PBXGroup;
+			children = (
+				6C9AC1D720C68AAA00E8D621 /* TransparentViewController.h */,
+				6C9AC1D520C68AAA00E8D621 /* TransparentViewController.m */,
+				6C9AC1D820C68AAA00E8D621 /* UIViewController+PresentViewControllerOverCurrentContext.h */,
+				6C9AC1D620C68AAA00E8D621 /* UIViewController+PresentViewControllerOverCurrentContext.m */,
+			);
+			path = ExtensionClass;
+			sourceTree = "<group>";
+		};
+		6C9AC1DE20C6941D00E8D621 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6C9AC1DF20C6944900E8D621 /* USMainLookingForDifferentVC.h */,
+				6C9AC1E020C6944900E8D621 /* USMainLookingForDifferentVC.m */,
+				6C9AC1E320C6945E00E8D621 /* USM_LookingForDifferentVC.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D7D7968A9D2B67D173B81579 /* Pods */ = {
@@ -784,14 +850,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C9AC1E420C6945E00E8D621 /* USM_LookingForDifferentVC.xib in Resources */,
+				6C0BC35620C6749B0068564C /* origina_image_select@2x.png in Resources */,
 				5ED8FD9320C4D7DC00593643 /* Login.storyboard in Resources */,
 				5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */,
 				5EBE82BC20C2D73400C5B0D9 /* LaunchScreen.storyboard in Resources */,
+				6C0BC35720C6749B0068564C /* original_image@2x.png in Resources */,
 				5EBE82B920C2D73400C5B0D9 /* Assets.xcassets in Resources */,
+				6C0BC35220C6651E0068564C /* focus_button@2x.png in Resources */,
 				5E9FCCEA20C61A3300780E1A /* Release.storyboard in Resources */,
 				5E9FCCFA20C61EC000780E1A /* User.storyboard in Resources */,
 				5E9FCCFF20C61FCE00780E1A /* Message.storyboard in Resources */,
 				5EBE82B720C2D73200C5B0D9 /* Main.storyboard in Resources */,
+				6C0BC35820C6749B0068564C /* origina_image_click@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,14 +929,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EBE83E220C2DA2E00C5B0D9 /* BaseModel.m in Sources */,
+				6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */,
 				5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */,
 				5ED8FD8520C4D6D800593643 /* USMainViewController.m in Sources */,
 				5EBE83D620C2DA2E00C5B0D9 /* UIView+CustomVWithCorRadius.m in Sources */,
+				6C0BC35020C65F8A0068564C /* USMainTableViewCell.m in Sources */,
 				5EBE83DD20C2DA2E00C5B0D9 /* YQNetworking.m in Sources */,
 				5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */,
+				6C9AC1D220C68A9E00E8D621 /* UIImage+ColorAtPixel.m in Sources */,
 				5EBE83D820C2DA2E00C5B0D9 /* YQDiskCache.m in Sources */,
 				5ED8FDA320C4E02900593643 /* USFocusListProcess.m in Sources */,
 				5EBE83DC20C2DA2E00C5B0D9 /* YQNetworking+RequestManager.m in Sources */,
+				6C9AC1DD20C68D9400E8D621 /* RCProgressView.m in Sources */,
 				5EBE83D720C2DA2E00C5B0D9 /* YQLRUManager.m in Sources */,
 				5EBE83E120C2DA2E00C5B0D9 /* BaseNavigationController.m in Sources */,
 				5ED8FD9120C4D76400593643 /* USUserViewController.m in Sources */,
@@ -885,10 +960,13 @@
 				5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */,
 				5EBE83DB20C2DA2E00C5B0D9 /* HttpRequest.m in Sources */,
 				5EBE83E520C2DA2E00C5B0D9 /* BaseTabbarController.m in Sources */,
+				6C9AC1D920C68AAA00E8D621 /* TransparentViewController.m in Sources */,
 				5EBE83CF20C2DA2E00C5B0D9 /* NSData+Base64.m in Sources */,
+				6C9AC1DA20C68AAA00E8D621 /* UIViewController+PresentViewControllerOverCurrentContext.m in Sources */,
 				5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */,
 				5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */,
 				5EBE83D520C2DA2E00C5B0D9 /* UIColor+Hex.m in Sources */,
+				6C9AC1E120C6944900E8D621 /* USMainLookingForDifferentVC.m in Sources */,
 				5EBE83DA20C2DA2E00C5B0D9 /* YQCacheManager.m in Sources */,
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,
 				5EBE83CE20C2DA2E00C5B0D9 /* NSData+CommonCrypto.m in Sources */,
