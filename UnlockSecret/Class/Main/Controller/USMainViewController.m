@@ -20,13 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self getFocusData];
+    [self getFocusData];
 }
 
 //获取关注列表
 - (void)getFocusData{
     USFocusListProcess *process = [[USFocusListProcess alloc] init];
-    process.dictionary = [@{@"userId":@"1"} mutableCopy];
+    process.dictionary = [@{@"userId":@"0",@"pageNumber":@"0",@"pageSize":@"10"} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
     } errorBlock:^(NSError *error) {
