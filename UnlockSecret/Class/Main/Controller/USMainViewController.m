@@ -7,12 +7,14 @@
 //
 
 #import "USMainViewController.h"
-#import "USFocusListProcess.h"
+#import "USMainProcess.h"
 #import "USMainTableViewCell.h"
 #import "UIViewController+PresentViewControllerOverCurrentContext.h"
 #import "USMainLookingForDifferentVC.h"
 
 @interface USMainViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic, strong) NSArray *arrMainList;
 
 @end
 
@@ -20,14 +22,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getFocusData];
+    [self getMainListData];
 }
 
-//获取关注列表
-- (void)getFocusData{
-    USFocusListProcess *process = [[USFocusListProcess alloc] init];
+#pragma mark - 数据请求
+
+//获取首页列表
+- (void)getMainListData{
+    
+    __weak typeof(self) weakself = self;
+    
+    USMainProcess *process = [[USMainProcess alloc] init];
     process.dictionary = [@{@"userId":@"0",@"pageNumber":@"0",@"pageSize":@"10"} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
+        
+        weakself.arrMainList = [NSMutableArray arrayWithArray:response];
+        [weakself.tableView reloadData];
         
     } errorBlock:^(NSError *error) {
         
@@ -43,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 5;
+    return self.arrMainList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
