@@ -8,7 +8,11 @@
 
 #import "USMainViewController.h"
 #import "USFocusListProcess.h"
-@interface USMainViewController ()
+#import "USMainTableViewCell.h"
+#import "UIViewController+PresentViewControllerOverCurrentContext.h"
+#import "USMainLookingForDifferentVC.h"
+
+@interface USMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -28,6 +32,36 @@
     } errorBlock:^(NSError *error) {
         
     }];
+}
+
+#pragma mark - tableView
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    USMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USMainTableViewCell" forIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 250;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    USMainLookingForDifferentVC *differentVC = [[USMainLookingForDifferentVC alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    [[UIApplication sharedApplication].keyWindow addSubview:differentVC];
 }
 
 - (void)didReceiveMemoryWarning {

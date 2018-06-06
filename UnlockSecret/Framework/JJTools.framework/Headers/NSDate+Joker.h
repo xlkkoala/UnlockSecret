@@ -43,8 +43,8 @@
 /**
  *  dateString转换为NSDate类型
  *
- *  @param format     @param format 时间格式
- *  @param dateString @param dateString 时间字符串
+ *  @param format   时间格式
+ *  @param dateString  时间字符串
  *
  *  @return NSDate
  */

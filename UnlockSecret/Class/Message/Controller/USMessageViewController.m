@@ -7,8 +7,9 @@
 //
 
 #import "USMessageViewController.h"
+#import "USMessageTableViewCell.h"
 
-@interface USMessageViewController ()
+@interface USMessageViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -16,7 +17,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    USMessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USMessageTableViewCell" forIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 75;
 }
 
 - (void)didReceiveMemoryWarning {

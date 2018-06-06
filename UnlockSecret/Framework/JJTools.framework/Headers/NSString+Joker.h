@@ -138,7 +138,7 @@
  *
  *  @param value 字符串
  *
- *  @return @return YES/NO
+ *  @return YES/NO
  */
 + (BOOL) isValidZipcode:(NSString*)value;
 
