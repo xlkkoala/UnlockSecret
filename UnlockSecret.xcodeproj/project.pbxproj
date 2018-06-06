@@ -16,6 +16,10 @@
 		5E9FCCFA20C61EC000780E1A /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCF920C61EC000780E1A /* User.storyboard */; };
 		5E9FCCFD20C61ED800780E1A /* USUserNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCCFC20C61ED800780E1A /* USUserNavigationController.m */; };
 		5E9FCCFF20C61FCE00780E1A /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCFE20C61FCE00780E1A /* Message.storyboard */; };
+		5E9FCD1220C6887100780E1A /* USReleaseTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCD1120C6887100780E1A /* USReleaseTextCell.m */; };
+		5E9FCD1520C693B300780E1A /* USReleaseInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCD1420C693B300780E1A /* USReleaseInfoCell.m */; };
+		5E9FCD1820C695FC00780E1A /* USReleaseImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCD1720C695FC00780E1A /* USReleaseImageCell.m */; };
+		5E9FCD5920C78C5F00780E1A /* USLocalBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCD5820C78C5F00780E1A /* USLocalBrowseViewController.m */; };
 		5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */; };
 		5EBE82B720C2D73200C5B0D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE82B520C2D73200C5B0D9 /* Main.storyboard */; };
 		5EBE82B920C2D73400C5B0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE82B820C2D73400C5B0D9 /* Assets.xcassets */; };
@@ -89,6 +93,14 @@
 		5E9FCCFB20C61ED800780E1A /* USUserNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USUserNavigationController.h; sourceTree = "<group>"; };
 		5E9FCCFC20C61ED800780E1A /* USUserNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USUserNavigationController.m; sourceTree = "<group>"; };
 		5E9FCCFE20C61FCE00780E1A /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		5E9FCD1020C6887100780E1A /* USReleaseTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseTextCell.h; sourceTree = "<group>"; };
+		5E9FCD1120C6887100780E1A /* USReleaseTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseTextCell.m; sourceTree = "<group>"; };
+		5E9FCD1320C693B300780E1A /* USReleaseInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseInfoCell.h; sourceTree = "<group>"; };
+		5E9FCD1420C693B300780E1A /* USReleaseInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseInfoCell.m; sourceTree = "<group>"; };
+		5E9FCD1620C695FC00780E1A /* USReleaseImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseImageCell.h; sourceTree = "<group>"; };
+		5E9FCD1720C695FC00780E1A /* USReleaseImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseImageCell.m; sourceTree = "<group>"; };
+		5E9FCD5720C78C5F00780E1A /* USLocalBrowseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USLocalBrowseViewController.h; sourceTree = "<group>"; };
+		5E9FCD5820C78C5F00780E1A /* USLocalBrowseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USLocalBrowseViewController.m; sourceTree = "<group>"; };
 		5EBE82AC20C2D73200C5B0D9 /* UnlockSecret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnlockSecret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBE82AF20C2D73200C5B0D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -243,6 +255,8 @@
 				5E9FCCF220C61E8D00780E1A /* USReleaseNavigationController.m */,
 				5ED8FD8920C4D73E00593643 /* USReleaseViewController.h */,
 				5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */,
+				5E9FCD5720C78C5F00780E1A /* USLocalBrowseViewController.h */,
+				5E9FCD5820C78C5F00780E1A /* USLocalBrowseViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -250,6 +264,12 @@
 		5E9FCD0520C6229D00780E1A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5E9FCD1020C6887100780E1A /* USReleaseTextCell.h */,
+				5E9FCD1120C6887100780E1A /* USReleaseTextCell.m */,
+				5E9FCD1620C695FC00780E1A /* USReleaseImageCell.h */,
+				5E9FCD1720C695FC00780E1A /* USReleaseImageCell.m */,
+				5E9FCD1320C693B300780E1A /* USReleaseInfoCell.h */,
+				5E9FCD1420C693B300780E1A /* USReleaseInfoCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -861,12 +881,14 @@
 				5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */,
 				5ED8FD8520C4D6D800593643 /* USMainViewController.m in Sources */,
 				5EBE83D620C2DA2E00C5B0D9 /* UIView+CustomVWithCorRadius.m in Sources */,
+				5E9FCD1220C6887100780E1A /* USReleaseTextCell.m in Sources */,
 				5EBE83DD20C2DA2E00C5B0D9 /* YQNetworking.m in Sources */,
 				5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */,
 				5EBE83D820C2DA2E00C5B0D9 /* YQDiskCache.m in Sources */,
 				5ED8FDA320C4E02900593643 /* USFocusListProcess.m in Sources */,
 				5EBE83DC20C2DA2E00C5B0D9 /* YQNetworking+RequestManager.m in Sources */,
 				5EBE83D720C2DA2E00C5B0D9 /* YQLRUManager.m in Sources */,
+				5E9FCD1520C693B300780E1A /* USReleaseInfoCell.m in Sources */,
 				5EBE83E120C2DA2E00C5B0D9 /* BaseNavigationController.m in Sources */,
 				5ED8FD9120C4D76400593643 /* USUserViewController.m in Sources */,
 				5EBE83D920C2DA2E00C5B0D9 /* YQMemoryCache.m in Sources */,
@@ -883,9 +905,11 @@
 				5E9FCCF020C61C4500780E1A /* USFocusNavigationController.m in Sources */,
 				5EBE82BF20C2D73400C5B0D9 /* main.m in Sources */,
 				5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */,
+				5E9FCD5920C78C5F00780E1A /* USLocalBrowseViewController.m in Sources */,
 				5EBE83DB20C2DA2E00C5B0D9 /* HttpRequest.m in Sources */,
 				5EBE83E520C2DA2E00C5B0D9 /* BaseTabbarController.m in Sources */,
 				5EBE83CF20C2DA2E00C5B0D9 /* NSData+Base64.m in Sources */,
+				5E9FCD1820C695FC00780E1A /* USReleaseImageCell.m in Sources */,
 				5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */,
 				5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */,
 				5EBE83D520C2DA2E00C5B0D9 /* UIColor+Hex.m in Sources */,

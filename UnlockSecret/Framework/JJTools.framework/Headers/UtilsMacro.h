@@ -8,9 +8,9 @@
 
 #pragma mark - ===================获取设备大小=====================
 //获取屏幕宽度
-#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 //获取屏幕高度
-#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 
 #pragma mark - ===================系统版本========================
