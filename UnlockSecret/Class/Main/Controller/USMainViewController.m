@@ -11,6 +11,7 @@
 #import "USMainTableViewCell.h"
 #import "UIViewController+PresentViewControllerOverCurrentContext.h"
 #import "USMainLookingForDifferentVC.h"
+#import "USMainFocusProcess.h"
 
 @interface USMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -44,6 +45,21 @@
     }];
 }
 
+//关注 type   1 添加  2为取消关注
+- (void)requestFocusType:(NSString *)type{
+    
+    __weak typeof(self) weakself = self;
+    [SVProgressHUD showWithStatus:nil];
+    USMainProcess *process = [[USMainProcess alloc] init];
+    process.dictionary = [@{@"userId":USER_ID,@"type":type} mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        
+
+    } errorBlock:^(NSError *error) {
+        
+    }];
+}
+
 #pragma mark - tableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -59,6 +75,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     USMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USMainTableViewCell" forIndexPath:indexPath];
+    [cell showUSMainInfo:self.arrMainList[indexPath.row]];
+    
+    // 关注、取消关注
+    [cell.btnFocus handleControlEvent:UIControlEventTouchUpInside withBlock:^{
+       
+        [self requestFocusType:@"1"];
+        
+    }];
     
     return cell;
 }

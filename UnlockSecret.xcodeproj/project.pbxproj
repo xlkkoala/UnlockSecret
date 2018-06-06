@@ -54,11 +54,14 @@
 		5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8D20C4D75200593643 /* USMessageViewController.m */; };
 		5ED8FD9120C4D76400593643 /* USUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD9020C4D76400593643 /* USUserViewController.m */; };
 		5ED8FD9320C4D7DC00593643 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED8FD9220C4D7DC00593643 /* Login.storyboard */; };
-		5ED8FDA320C4E02900593643 /* USFocusListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FDA120C4E02900593643 /* USFocusListProcess.m */; };
 		6C0BC35220C6651E0068564C /* focus_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C0BC35120C6651D0068564C /* focus_button@2x.png */; };
 		6C0BC35620C6749B0068564C /* origina_image_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C0BC35320C6749A0068564C /* origina_image_select@2x.png */; };
 		6C0BC35720C6749B0068564C /* original_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C0BC35420C6749A0068564C /* original_image@2x.png */; };
 		6C0BC35820C6749B0068564C /* origina_image_click@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C0BC35520C6749B0068564C /* origina_image_click@2x.png */; };
+		6C2EDB9E20C7F8930091D26A /* USMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EDB9D20C7F8930091D26A /* USMainTableViewCell.m */; };
+		6C2EDBA320C7FD850091D26A /* USFocusListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EDBA120C7FD840091D26A /* USFocusListProcess.m */; };
+		6C2EDBA620C7FDDF0091D26A /* USMLookingForDifferentProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EDBA520C7FDDF0091D26A /* USMLookingForDifferentProcess.m */; };
+		6C2EDBA920C804E60091D26A /* USMainFocusProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EDBA820C804E60091D26A /* USMainFocusProcess.m */; };
 		6C9AC1D220C68A9E00E8D621 /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */; };
 		6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D120C68A9E00E8D621 /* OBShapedButton.m */; };
 		6C9AC1D920C68AAA00E8D621 /* TransparentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D520C68AAA00E8D621 /* TransparentViewController.m */; };
@@ -187,14 +190,18 @@
 		5ED8FD8F20C4D76400593643 /* USUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USUserViewController.h; sourceTree = "<group>"; };
 		5ED8FD9020C4D76400593643 /* USUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USUserViewController.m; sourceTree = "<group>"; };
 		5ED8FD9220C4D7DC00593643 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		5ED8FDA120C4E02900593643 /* USFocusListProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USFocusListProcess.m; sourceTree = "<group>"; };
-		5ED8FDA220C4E02900593643 /* USFocusListProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USFocusListProcess.h; sourceTree = "<group>"; };
-		6C0BC34E20C65F8A0068564C /* USMainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainTableViewCell.h; sourceTree = "<group>"; };
-		6C0BC34F20C65F8A0068564C /* USMainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMainTableViewCell.m; sourceTree = "<group>"; };
 		6C0BC35120C6651D0068564C /* focus_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus_button@2x.png"; sourceTree = "<group>"; };
 		6C0BC35320C6749A0068564C /* origina_image_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "origina_image_select@2x.png"; sourceTree = "<group>"; };
 		6C0BC35420C6749A0068564C /* original_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "original_image@2x.png"; sourceTree = "<group>"; };
 		6C0BC35520C6749B0068564C /* origina_image_click@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "origina_image_click@2x.png"; sourceTree = "<group>"; };
+		6C2EDB9C20C7F8930091D26A /* USMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USMainTableViewCell.h; sourceTree = "<group>"; };
+		6C2EDB9D20C7F8930091D26A /* USMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USMainTableViewCell.m; sourceTree = "<group>"; };
+		6C2EDBA120C7FD840091D26A /* USFocusListProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USFocusListProcess.m; sourceTree = "<group>"; };
+		6C2EDBA220C7FD840091D26A /* USFocusListProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USFocusListProcess.h; sourceTree = "<group>"; };
+		6C2EDBA420C7FDDF0091D26A /* USMLookingForDifferentProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMLookingForDifferentProcess.h; sourceTree = "<group>"; };
+		6C2EDBA520C7FDDF0091D26A /* USMLookingForDifferentProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMLookingForDifferentProcess.m; sourceTree = "<group>"; };
+		6C2EDBA720C804E60091D26A /* USMainFocusProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainFocusProcess.h; sourceTree = "<group>"; };
+		6C2EDBA820C804E60091D26A /* USMainFocusProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMainFocusProcess.m; sourceTree = "<group>"; };
 		6C9AC1CE20C68A9E00E8D621 /* OBShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBShapedButton.h; sourceTree = "<group>"; };
 		6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPixel.m"; sourceTree = "<group>"; };
 		6C9AC1D020C68A9E00E8D621 /* UIImage+ColorAtPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorAtPixel.h"; sourceTree = "<group>"; };
@@ -267,27 +274,6 @@
 				5ED8FD8720C4D72C00593643 /* USFocusViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		5E9FCD0120C6224B00780E1A /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		5E9FCD0220C6225600780E1A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5E9FCD0320C6226200780E1A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		5E9FCD0420C6227F00780E1A /* Controller */ = {
@@ -664,9 +650,7 @@
 		5ED8FD8020C4D0A700593643 /* Focus */ = {
 			isa = PBXGroup;
 			children = (
-				5E9FCD0120C6224B00780E1A /* Network */,
-				5E9FCD0220C6225600780E1A /* Model */,
-				5E9FCD0320C6226200780E1A /* View */,
+				6C2EDBA020C7FD700091D26A /* Network */,
 				5E9FCD0020C6223300780E1A /* Controller */,
 				5E9FCCE720C61A2700780E1A /* Focus.storyboard */,
 			);
@@ -704,8 +688,10 @@
 			children = (
 				6CD44C2320C7F4F900F05E20 /* USMainProcess.h */,
 				6CD44C2420C7F4F900F05E20 /* USMainProcess.m */,
-				5ED8FDA220C4E02900593643 /* USFocusListProcess.h */,
-				5ED8FDA120C4E02900593643 /* USFocusListProcess.m */,
+				6C2EDBA420C7FDDF0091D26A /* USMLookingForDifferentProcess.h */,
+				6C2EDBA520C7FDDF0091D26A /* USMLookingForDifferentProcess.m */,
+				6C2EDBA720C804E60091D26A /* USMainFocusProcess.h */,
+				6C2EDBA820C804E60091D26A /* USMainFocusProcess.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -722,10 +708,19 @@
 		6C0BC34D20C65F680068564C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				6C0BC34E20C65F8A0068564C /* USMainTableViewCell.h */,
-				6C0BC34F20C65F8A0068564C /* USMainTableViewCell.m */,
+				6C2EDB9C20C7F8930091D26A /* USMainTableViewCell.h */,
+				6C2EDB9D20C7F8930091D26A /* USMainTableViewCell.m */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		6C2EDBA020C7FD700091D26A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6C2EDBA220C7FD840091D26A /* USFocusListProcess.h */,
+				6C2EDBA120C7FD840091D26A /* USFocusListProcess.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		6C9AC1CC20C68A9E00E8D621 /* Vendors */ = {
@@ -991,17 +986,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EBE83E220C2DA2E00C5B0D9 /* BaseModel.m in Sources */,
+				6C2EDBA920C804E60091D26A /* USMainFocusProcess.m in Sources */,
 				6C9AC1EB20C6A8B000E8D621 /* USFocusTableViewCell.m in Sources */,
 				6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */,
 				5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */,
 				5EBE83D620C2DA2E00C5B0D9 /* UIView+CustomVWithCorRadius.m in Sources */,
 				5E9FCD1220C6887100780E1A /* USReleaseTextCell.m in Sources */,
 				5EBE83DD20C2DA2E00C5B0D9 /* YQNetworking.m in Sources */,
+				6C2EDB9E20C7F8930091D26A /* USMainTableViewCell.m in Sources */,
 				5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */,
 				6C9AC1D220C68A9E00E8D621 /* UIImage+ColorAtPixel.m in Sources */,
 				5EBE83D820C2DA2E00C5B0D9 /* YQDiskCache.m in Sources */,
 				6CD44C0B20C7871800F05E20 /* USMessageTableViewCell.m in Sources */,
-				5ED8FDA320C4E02900593643 /* USFocusListProcess.m in Sources */,
 				5EBE83DC20C2DA2E00C5B0D9 /* YQNetworking+RequestManager.m in Sources */,
 				6CD44C2220C7F42800F05E20 /* USMainViewController.m in Sources */,
 				6C9AC1DD20C68D9400E8D621 /* RCProgressView.m in Sources */,
@@ -1019,11 +1015,13 @@
 				5E9FCCF320C61E8D00780E1A /* USReleaseNavigationController.m in Sources */,
 				5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */,
 				5EBE83CC20C2DA2E00C5B0D9 /* NSData+Encryption.m in Sources */,
+				6C2EDBA620C7FDDF0091D26A /* USMLookingForDifferentProcess.m in Sources */,
 				5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */,
 				5E9FCCF620C61EA900780E1A /* USMessageNavigationController.m in Sources */,
 				5E9FCCF020C61C4500780E1A /* USFocusNavigationController.m in Sources */,
 				5EBE82BF20C2D73400C5B0D9 /* main.m in Sources */,
 				5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */,
+				6C2EDBA320C7FD850091D26A /* USFocusListProcess.m in Sources */,
 				5E9FCD5920C78C5F00780E1A /* USLocalBrowseViewController.m in Sources */,
 				5EBE83DB20C2DA2E00C5B0D9 /* HttpRequest.m in Sources */,
 				5EBE83E520C2DA2E00C5B0D9 /* BaseTabbarController.m in Sources */,

@@ -193,6 +193,15 @@
                                                 <constraint firstItem="t30-zV-VQU" firstAttribute="leading" secondItem="SEx-HZ-sis" secondAttribute="trailing" constant="10" id="vga-MM-htd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnCommentCount" destination="fz4-GA-UaD" id="zee-Ig-VpM"/>
+                                            <outlet property="btnFocus" destination="fFG-Wg-A4D" id="KiA-nw-6Bf"/>
+                                            <outlet property="btnPraiseCount" destination="bWU-pW-a1W" id="nwI-Zm-rIE"/>
+                                            <outlet property="imageViewHeader" destination="SEx-HZ-sis" id="RtC-4E-ybw"/>
+                                            <outlet property="imageViewSystem" destination="crI-ec-7Ap" id="DGK-kE-H3u"/>
+                                            <outlet property="lblContent" destination="ryM-5r-vnN" id="UsW-FR-7Bu"/>
+                                            <outlet property="lblOpenCount" destination="eNT-oe-6EW" id="Xuk-AG-xSf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

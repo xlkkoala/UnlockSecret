@@ -7,6 +7,7 @@
 //
 
 #import "USMainLookingForDifferentVC.h"
+#import "USMLookingForDifferentProcess.h"
 
 @implementation USMainLookingForDifferentVC
 
@@ -22,10 +23,28 @@
         self.progressView.progressBarColor = ColorFromRGB(46, 182, 24);
         self.progressView.progress = 0.8;
         
+        [self getLookingForDifferentData];
+        
     }
     
     return self;
 }
+
+//获取找不同图片
+- (void)getLookingForDifferentData{
+    
+    __weak typeof(self) weakself = self;
+    
+    USMLookingForDifferentProcess *process = [[USMLookingForDifferentProcess alloc] init];
+    process.dictionary = [@{@"userId":USER_ID} mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        
+        
+    } errorBlock:^(NSError *error) {
+        
+    }];
+}
+
 
 #pragma mark - 按钮事件
 

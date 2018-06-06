@@ -52,7 +52,8 @@
  // 用户ID
  */
 
-#define USER_ID         [NSString stringWithFormat:@"%@",[LoginHelper currentUser].userid]
+//#define USER_ID         [NSString stringWithFormat:@"%@",[LoginHelper currentUser].userid]
+#define USER_ID @"1"
 
 #define DEFUALT_HEADER_IMAGE [UIImage imageNamed:@"morentouxiang"]
 

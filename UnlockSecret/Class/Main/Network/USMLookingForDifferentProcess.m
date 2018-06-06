@@ -1,26 +1,24 @@
 //
-//  USMainProcess.m
+//  USMLookingForDifferentProcess.m
 //  UnlockSecret
 //
 //  Created by 程浪V587 on 2018/6/6.
 //  Copyright © 2018年 com.xlk. All rights reserved.
 //
 
-#import "USMainProcess.h"
-#import "USMainModel.h"
+#import "USMLookingForDifferentProcess.h"
 
-@implementation USMainProcess
-
+@implementation USMLookingForDifferentProcess
 - (void)getMessageHandleWithSuccessBlock:(success)success errorBlock:(error)failure{
-    [YQNetworking postWithUrl:HOST refreshRequest:NO cache:NO params:[self encrypt:[NSString jsonStringWithDictionary:self.dictionary] queryid:US_GET_SECRET] progressBlock:^(int64_t bytesRead, int64_t totalBytes) {
+    [YQNetworking postWithUrl:HOST refreshRequest:NO cache:NO params:[self encrypt:[NSString jsonStringWithDictionary:self.dictionary] queryid:@"119"] progressBlock:^(int64_t bytesRead, int64_t totalBytes) {
         
     } successBlock:^(id response) {
         //处理数据
         NSLog(@"%@",response);
         int code = [response[@"data"][@"code"] intValue];
         if (code == 200) {
-            NSMutableArray *dataArray = [NSMutableArray arrayWithArray:[USMainModel mj_objectArrayWithKeyValuesArray:response[@"data"][@"data"]]];
-            success(dataArray);
+//            NSMutableArray *dataArray = [NSMutableArray arrayWithArray:[USMainModel mj_objectArrayWithKeyValuesArray:response[@"data"][@"data"]]];
+//            success(dataArray);
             
         }else{
             [SVProgressHUD showErrorWithStatus:response[@"data"][@"msg"]];
@@ -29,6 +27,4 @@
         failure(error);
     }];
 }
-
-
 @end
