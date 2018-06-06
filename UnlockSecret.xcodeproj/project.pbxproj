@@ -68,9 +68,9 @@
 		6C9AC1EB20C6A8B000E8D621 /* USFocusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1EA20C6A8B000E8D621 /* USFocusTableViewCell.m */; };
 		6CD44C0B20C7871800F05E20 /* USMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD44C0A20C7871800F05E20 /* USMessageTableViewCell.m */; };
 		6CD44C0D20C78B0100F05E20 /* JJTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD44C0C20C78B0100F05E20 /* JJTools.framework */; };
-		6CD44C1C20C7F3A200F05E20 /* USMainProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD44C1B20C7F3A200F05E20 /* USMainProcess.m */; };
 		6CD44C2020C7F3D900F05E20 /* USMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD44C1F20C7F3D900F05E20 /* USMainModel.m */; };
 		6CD44C2220C7F42800F05E20 /* USMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD44C2120C7F42700F05E20 /* USMainViewController.m */; };
+		6CD44C2520C7F4F900F05E20 /* USMainProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD44C2420C7F4F900F05E20 /* USMainProcess.m */; };
 		A96E20673AE82EA9AD5B4443 /* libPods-UnlockSecret.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */; };
 /* End PBXBuildFile section */
 
@@ -213,11 +213,11 @@
 		6CD44C0920C7871800F05E20 /* USMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMessageTableViewCell.h; sourceTree = "<group>"; };
 		6CD44C0A20C7871800F05E20 /* USMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMessageTableViewCell.m; sourceTree = "<group>"; };
 		6CD44C0C20C78B0100F05E20 /* JJTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JJTools.framework; sourceTree = "<group>"; };
-		6CD44C1A20C7F3A100F05E20 /* USMainProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USMainProcess.h; path = "../../../../../../寻密 2/UnlockSecret/Class/Main/Network/USMainProcess.h"; sourceTree = "<group>"; };
-		6CD44C1B20C7F3A200F05E20 /* USMainProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USMainProcess.m; path = "../../../../../../寻密 2/UnlockSecret/Class/Main/Network/USMainProcess.m"; sourceTree = "<group>"; };
 		6CD44C1E20C7F3D900F05E20 /* USMainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USMainModel.h; sourceTree = "<group>"; };
 		6CD44C1F20C7F3D900F05E20 /* USMainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USMainModel.m; sourceTree = "<group>"; };
 		6CD44C2120C7F42700F05E20 /* USMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USMainViewController.m; sourceTree = "<group>"; };
+		6CD44C2320C7F4F900F05E20 /* USMainProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USMainProcess.h; sourceTree = "<group>"; };
+		6CD44C2420C7F4F900F05E20 /* USMainProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USMainProcess.m; sourceTree = "<group>"; };
 		6DC4DB13E3699003B19453A4 /* Pods-UnlockSecret.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnlockSecret.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnlockSecret/Pods-UnlockSecret.debug.xcconfig"; sourceTree = "<group>"; };
 		BF5BDF9D2F332A9863F808D2 /* Pods-UnlockSecret.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnlockSecret.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnlockSecret/Pods-UnlockSecret.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -702,8 +702,8 @@
 		5ED8FD9720C4DE4700593643 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				6CD44C1A20C7F3A100F05E20 /* USMainProcess.h */,
-				6CD44C1B20C7F3A200F05E20 /* USMainProcess.m */,
+				6CD44C2320C7F4F900F05E20 /* USMainProcess.h */,
+				6CD44C2420C7F4F900F05E20 /* USMainProcess.m */,
 				5ED8FDA220C4E02900593643 /* USFocusListProcess.h */,
 				5ED8FDA120C4E02900593643 /* USFocusListProcess.m */,
 			);
@@ -1028,6 +1028,7 @@
 				5EBE83DB20C2DA2E00C5B0D9 /* HttpRequest.m in Sources */,
 				5EBE83E520C2DA2E00C5B0D9 /* BaseTabbarController.m in Sources */,
 				6C9AC1D920C68AAA00E8D621 /* TransparentViewController.m in Sources */,
+				6CD44C2520C7F4F900F05E20 /* USMainProcess.m in Sources */,
 				5EBE83CF20C2DA2E00C5B0D9 /* NSData+Base64.m in Sources */,
 				5E9FCD1820C695FC00780E1A /* USReleaseImageCell.m in Sources */,
 				5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */,
@@ -1035,7 +1036,6 @@
 				5EBE83D520C2DA2E00C5B0D9 /* UIColor+Hex.m in Sources */,
 				6C9AC1E120C6944900E8D621 /* USMainLookingForDifferentVC.m in Sources */,
 				5EBE83DA20C2DA2E00C5B0D9 /* YQCacheManager.m in Sources */,
-				6CD44C1C20C7F3A200F05E20 /* USMainProcess.m in Sources */,
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,
 				5EBE83CE20C2DA2E00C5B0D9 /* NSData+CommonCrypto.m in Sources */,
 			);
