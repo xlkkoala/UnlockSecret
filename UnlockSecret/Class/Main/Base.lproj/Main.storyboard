@@ -37,7 +37,7 @@
             <objects>
                 <navigationController id="FHf-rg-1VA" customClass="USFocusNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="关注" id="Om9-Rp-5I2"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dh0-vs-r9v">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dh0-vs-r9v">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -236,7 +236,7 @@
                     <tabBarItem key="tabBarItem" title="" id="gGL-dB-NuF">
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oIW-oJ-1Rd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="oIW-oJ-1Rd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -250,7 +250,7 @@
             <objects>
                 <navigationController id="idF-hu-4Cy" customClass="USMessageNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="消息" id="RLa-xm-D68"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gJm-er-DAE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="gJm-er-DAE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -264,7 +264,7 @@
             <objects>
                 <navigationController id="gUr-nb-GQv" customClass="USUserNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" id="s4r-dg-zRV"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="foI-pV-M4n">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="foI-pV-M4n">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

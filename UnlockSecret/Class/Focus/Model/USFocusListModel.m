@@ -1,18 +1,17 @@
 //
-//  USMLookingDiffModel.m
+//  USFocusListModel.m
 //  UnlockSecret
 //
 //  Created by 程浪V587 on 2018/6/7.
 //  Copyright © 2018年 com.xlk. All rights reserved.
 //
 
-#import "USMLookingDiffModel.h"
+#import "USFocusListModel.h"
 
-@implementation USMLookingDiffModel
+@implementation USFocusListModel
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
     
-    return @{@"picId":@"id"};
+    return @{@"uid":@"id"};
 }
-
 @end

@@ -63,6 +63,8 @@
 		6C2EDBA620C7FDDF0091D26A /* USMLookingForDifferentProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EDBA520C7FDDF0091D26A /* USMLookingForDifferentProcess.m */; };
 		6C2EDBA920C804E60091D26A /* USMainFocusProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EDBA820C804E60091D26A /* USMainFocusProcess.m */; };
 		6C6DD34A20C9212700379490 /* USMLookingDiffModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DD34920C9212700379490 /* USMLookingDiffModel.m */; };
+		6C6DD35520C947ED00379490 /* USFocusListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DD35420C947ED00379490 /* USFocusListModel.m */; };
+		6C6DD35820C9529B00379490 /* USMSubmitDifferentProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DD35720C9529B00379490 /* USMSubmitDifferentProcess.m */; };
 		6C9AC1D220C68A9E00E8D621 /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */; };
 		6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D120C68A9E00E8D621 /* OBShapedButton.m */; };
 		6C9AC1D920C68AAA00E8D621 /* TransparentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D520C68AAA00E8D621 /* TransparentViewController.m */; };
@@ -205,6 +207,10 @@
 		6C2EDBA820C804E60091D26A /* USMainFocusProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMainFocusProcess.m; sourceTree = "<group>"; };
 		6C6DD34820C9212700379490 /* USMLookingDiffModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMLookingDiffModel.h; sourceTree = "<group>"; };
 		6C6DD34920C9212700379490 /* USMLookingDiffModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMLookingDiffModel.m; sourceTree = "<group>"; };
+		6C6DD35320C947ED00379490 /* USFocusListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusListModel.h; sourceTree = "<group>"; };
+		6C6DD35420C947ED00379490 /* USFocusListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusListModel.m; sourceTree = "<group>"; };
+		6C6DD35620C9529B00379490 /* USMSubmitDifferentProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMSubmitDifferentProcess.h; sourceTree = "<group>"; };
+		6C6DD35720C9529B00379490 /* USMSubmitDifferentProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMSubmitDifferentProcess.m; sourceTree = "<group>"; };
 		6C9AC1CE20C68A9E00E8D621 /* OBShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBShapedButton.h; sourceTree = "<group>"; };
 		6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPixel.m"; sourceTree = "<group>"; };
 		6C9AC1D020C68A9E00E8D621 /* UIImage+ColorAtPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorAtPixel.h"; sourceTree = "<group>"; };
@@ -303,20 +309,6 @@
 				5E9FCD1420C693B300780E1A /* USReleaseInfoCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		5E9FCD0620C622A700780E1A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5E9FCD0720C622AC00780E1A /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		5E9FCD0820C622BF00780E1A /* Controller */ = {
@@ -641,8 +633,7 @@
 		5ED8FD7F20C4D09100593643 /* Release */ = {
 			isa = PBXGroup;
 			children = (
-				5E9FCD0720C622AC00780E1A /* Network */,
-				5E9FCD0620C622A700780E1A /* Model */,
+				6C6DD35120C9451E00379490 /* Network */,
 				5E9FCD0520C6229D00780E1A /* View */,
 				5E9FCD0420C6227F00780E1A /* Controller */,
 				5E9FCCE920C61A3300780E1A /* Release.storyboard */,
@@ -653,6 +644,7 @@
 		5ED8FD8020C4D0A700593643 /* Focus */ = {
 			isa = PBXGroup;
 			children = (
+				6C6DD35220C947D500379490 /* Model */,
 				6C2EDBA020C7FD700091D26A /* Network */,
 				5E9FCD0020C6223300780E1A /* Controller */,
 				5E9FCCE720C61A2700780E1A /* Focus.storyboard */,
@@ -695,6 +687,8 @@
 				6C2EDBA520C7FDDF0091D26A /* USMLookingForDifferentProcess.m */,
 				6C2EDBA720C804E60091D26A /* USMainFocusProcess.h */,
 				6C2EDBA820C804E60091D26A /* USMainFocusProcess.m */,
+				6C6DD35620C9529B00379490 /* USMSubmitDifferentProcess.h */,
+				6C6DD35720C9529B00379490 /* USMSubmitDifferentProcess.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -724,6 +718,22 @@
 				6C2EDBA120C7FD840091D26A /* USFocusListProcess.m */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		6C6DD35120C9451E00379490 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6C6DD35220C947D500379490 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C6DD35320C947ED00379490 /* USFocusListModel.h */,
+				6C6DD35420C947ED00379490 /* USFocusListModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6C9AC1CC20C68A9E00E8D621 /* Vendors */ = {
@@ -1020,6 +1030,7 @@
 				5E9FCCF320C61E8D00780E1A /* USReleaseNavigationController.m in Sources */,
 				5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */,
 				5EBE83CC20C2DA2E00C5B0D9 /* NSData+Encryption.m in Sources */,
+				6C6DD35520C947ED00379490 /* USFocusListModel.m in Sources */,
 				6C6DD34A20C9212700379490 /* USMLookingDiffModel.m in Sources */,
 				6C2EDBA620C7FDDF0091D26A /* USMLookingForDifferentProcess.m in Sources */,
 				5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */,
@@ -1034,6 +1045,7 @@
 				6C9AC1D920C68AAA00E8D621 /* TransparentViewController.m in Sources */,
 				6CD44C2520C7F4F900F05E20 /* USMainProcess.m in Sources */,
 				5EBE83CF20C2DA2E00C5B0D9 /* NSData+Base64.m in Sources */,
+				6C6DD35820C9529B00379490 /* USMSubmitDifferentProcess.m in Sources */,
 				5E9FCD1820C695FC00780E1A /* USReleaseImageCell.m in Sources */,
 				5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */,
 				5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */,

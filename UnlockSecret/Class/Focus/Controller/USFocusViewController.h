@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface USFocusViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

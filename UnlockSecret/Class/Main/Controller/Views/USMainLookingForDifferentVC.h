@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "OBShapedButton.h"
 #import "RCProgressView.h"
+#import "USMainModel.h"
 
 @interface USMainLookingForDifferentVC : UIView
 
@@ -20,5 +21,7 @@
 @property (weak, nonatomic) IBOutlet OBShapedButton *buttonImageSelect;
 @property (weak, nonatomic) IBOutlet RCProgressView *progressView;
 @property (weak, nonatomic) IBOutlet UILabel *labelCountdown;
+
+@property (nonatomic, strong) USMainModel *mainModel;
 
 @end

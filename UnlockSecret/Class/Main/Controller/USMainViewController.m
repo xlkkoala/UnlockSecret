@@ -52,12 +52,15 @@
     
     __weak typeof(self) weakself = self;
     [SVProgressHUD showWithStatus:nil];
-    USMainProcess *process = [[USMainProcess alloc] init];
+    USMainFocusProcess *process = [[USMainFocusProcess alloc] init];
     process.dictionary = [@{@"userId":USER_ID,@"type":type,@"attentionId":attentionId} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
-
+        [SVProgressHUD dismiss];
+        
     } errorBlock:^(NSError *error) {
+        
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         
     }];
 }
@@ -98,6 +101,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     USMainLookingForDifferentVC *differentVC = [[USMainLookingForDifferentVC alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    differentVC.mainModel = self.arrMainList[indexPath.row];
     [[UIApplication sharedApplication].keyWindow addSubview:differentVC];
 }
 

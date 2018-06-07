@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "USFocusListModel.h"
 
 @interface USFocusTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewHeader;
+@property (weak, nonatomic) IBOutlet UILabel *lblName;
+@property (weak, nonatomic) IBOutlet UILabel *lblDetail;
 
+
+- (void)showFocusInfo:(USFocusListModel *)model;
 @end

@@ -124,7 +124,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dgO-ml-qhN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_defult_header" translatesAutoresizingMaskIntoConstraints="NO" id="dgO-ml-qhN">
                                                     <rect key="frame" x="15" y="17.5" width="40" height="40"/>
                                                     <color key="backgroundColor" red="0.99215686270000003" green="0.54117647059999996" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -210,4 +210,7 @@
             <point key="canvasLocation" x="-1095.2" y="57.121439280359823"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_defult_header" width="55" height="55"/>
+    </resources>
 </document>

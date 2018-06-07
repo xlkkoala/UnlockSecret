@@ -69,4 +69,9 @@
 
 #define isFirstOpen     [USER_DEFUALT objectForKey:@"isFirstOpen"]
 
+// -----默认图片
+// 头像默认图
+#define DEFAULT_IMAGE_HEADER ImageNamed(@"icon_defult_header")
+
+
 #endif /* Configuration_h */

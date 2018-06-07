@@ -10,6 +10,13 @@
 #import "USMLookingForDifferentProcess.h"
 #import "USMLookingDiffModel.h"
 #import <SDWebImageManager.h>
+#import "USMSubmitDifferentProcess.h"
+
+@interface USMainLookingForDifferentVC()
+
+@property (nonatomic, copy) NSString *picId;
+
+@end
 
 @implementation USMainLookingForDifferentVC
 
@@ -42,7 +49,7 @@
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
         USMLookingDiffModel *model = (USMLookingDiffModel *)response;
-        
+        weakself.picId = model.picId;
         // 显示原图
         NSString *strOldPicUrl = IMAGEURL(model.oldPic, 0, 0);
         UIImage *oldImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:strOldPicUrl];
@@ -90,6 +97,23 @@
     }];
 }
 
+// 找到不同 提交
+- (void)requestSubmitDifferent{
+    
+    USMSubmitDifferentProcess *process = [[USMSubmitDifferentProcess alloc] init];
+    process.dictionary = [@{@"userId":USER_ID,@"secretId":self.mainModel.secretId,@"picId":self.picId} mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        
+        [SVProgressHUD showSuccessWithStatus:@"解锁成功"];
+        [self removeFromSuperview];
+        
+    } errorBlock:^(NSError *error) {
+       
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        
+    }];
+}
+
 #pragma mark - 按钮事件
 // 开始
 - (IBAction)clickStart:(id)sender {
@@ -101,6 +125,7 @@
     
     self.buttonImageSelect.selected = YES;
     self.buttonImageSelect.userInteractionEnabled = NO;
+    [self requestSubmitDifferent];
     
 }
 // 不想解

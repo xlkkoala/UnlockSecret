@@ -7,6 +7,7 @@
 //
 
 #import "USFocusListProcess.h"
+#import "USFocusListModel.h"
 
 @implementation USFocusListProcess
 
@@ -16,14 +17,12 @@
     } successBlock:^(id response) {
         //处理数据
         NSLog(@"%@",response);
-        NSMutableArray *focusArray = [NSMutableArray array];
-        if ([response[@"data"][@"success"] isEqual:@1]) {
-            NSMutableArray *dataArray = response[@"data"][@"data"];
-            for (int i = 0; i < dataArray.count; i ++) {
-                USUser *user = [[USUser alloc] initWithDictionary:dataArray[i]];
-                [focusArray addObject:user];
-            }
-            success(focusArray);
+        NSInteger code = [response[@"data"][@"code"] integerValue];
+        
+        if ( code == 200 ) {
+            NSArray *arrtModel = [USFocusListModel mj_objectArrayWithKeyValuesArray:response[@"data"][@"data"]];
+            NSMutableArray *dataArray = [NSMutableArray arrayWithArray:arrtModel];
+            success(dataArray);
         }else{
             [SVProgressHUD showErrorWithStatus:response[@"data"][@"msg"]];
         }

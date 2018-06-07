@@ -11,7 +11,8 @@
 @interface USMainModel : NSObject
 
 @property (nonatomic, copy) NSString *comment_count;
-@property (nonatomic, copy) NSString *isAttention;
+// 0未关注 1已关注
+@property (nonatomic, assign) int isAttention;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSString *open_count;
 @property (nonatomic, copy) NSString *photo;

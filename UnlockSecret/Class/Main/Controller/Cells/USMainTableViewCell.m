@@ -19,6 +19,7 @@
     
     self.lblContent.text = model.title;
     self.lblOpenCount.text = StringFormat(@"%@人拆开",model.open_count);
+    self.btnFocus.hidden = model.isAttention;
     [self.btnPraiseCount setNormalTitle:StringFormat(@"%@",model.praise_count)];
     [self.btnCommentCount setNormalTitle:StringFormat(@"%@",model.comment_count)];
 }

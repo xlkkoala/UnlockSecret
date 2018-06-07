@@ -8,8 +8,11 @@
 
 #import "USFocusViewController.h"
 #import "USFocusTableViewCell.h"
+#import "USFocusListProcess.h"
 
 @interface USFocusViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic, strong) NSMutableArray *arrFcous;
 
 @end
 
@@ -18,6 +21,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self getFocusListData];
+}
+
+#pragma mark - 数据请求
+
+//获取关注列表
+- (void)getFocusListData{
+    
+    __weak typeof(self) weakself = self;
+    
+    USFocusListProcess *process = [[USFocusListProcess alloc] init];
+    process.dictionary = [@{@"userId":USER_ID} mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        
+        weakself.arrFcous = [NSMutableArray arrayWithArray:response];
+        [weakself.tableView reloadData];
+        
+    } errorBlock:^(NSError *error) {
+        
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+    }];
 }
 
 #pragma mark - UITableViewDataSource
@@ -29,12 +53,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 10;
+    return self.arrFcous.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     USFocusTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USFocusTableViewCell" forIndexPath:indexPath];
+    [cell showFocusInfo:self.arrFcous[indexPath.row]];
     
     return cell;
 }

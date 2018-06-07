@@ -15,6 +15,13 @@
     // Initialization code
 }
 
+- (void)showFocusInfo:(USFocusListModel *)model{
+    
+    [self.imageViewHeader sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(model.photo, 150, 150)] placeholderImage:DEFAULT_IMAGE_HEADER];
+    self.lblName.text = model.name;
+
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
