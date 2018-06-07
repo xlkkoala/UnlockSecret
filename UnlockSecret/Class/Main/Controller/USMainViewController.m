@@ -13,6 +13,7 @@
 #import "USMainLookingForDifferentVC.h"
 #import "USMainFocusProcess.h"
 
+
 @interface USMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *arrMainList;
@@ -24,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getMainListData];
+    
 }
 
 #pragma mark - 数据请求
@@ -46,12 +48,12 @@
 }
 
 //关注 type   1 添加  2为取消关注
-- (void)requestFocusType:(NSString *)type{
+- (void)requestFocusType:(NSString *)type attentionId:(NSString *)attentionId{
     
     __weak typeof(self) weakself = self;
     [SVProgressHUD showWithStatus:nil];
     USMainProcess *process = [[USMainProcess alloc] init];
-    process.dictionary = [@{@"userId":USER_ID,@"type":type} mutableCopy];
+    process.dictionary = [@{@"userId":USER_ID,@"type":type,@"attentionId":attentionId} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
 
@@ -80,7 +82,8 @@
     // 关注、取消关注
     [cell.btnFocus handleControlEvent:UIControlEventTouchUpInside withBlock:^{
        
-        [self requestFocusType:@"1"];
+        USMainModel *model = self.arrMainList[indexPath.row];
+        [self requestFocusType:@"1" attentionId:model.uid];
         
     }];
     

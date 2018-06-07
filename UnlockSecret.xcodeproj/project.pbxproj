@@ -62,6 +62,7 @@
 		6C2EDBA320C7FD850091D26A /* USFocusListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EDBA120C7FD840091D26A /* USFocusListProcess.m */; };
 		6C2EDBA620C7FDDF0091D26A /* USMLookingForDifferentProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EDBA520C7FDDF0091D26A /* USMLookingForDifferentProcess.m */; };
 		6C2EDBA920C804E60091D26A /* USMainFocusProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EDBA820C804E60091D26A /* USMainFocusProcess.m */; };
+		6C6DD34A20C9212700379490 /* USMLookingDiffModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DD34920C9212700379490 /* USMLookingDiffModel.m */; };
 		6C9AC1D220C68A9E00E8D621 /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */; };
 		6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D120C68A9E00E8D621 /* OBShapedButton.m */; };
 		6C9AC1D920C68AAA00E8D621 /* TransparentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D520C68AAA00E8D621 /* TransparentViewController.m */; };
@@ -202,6 +203,8 @@
 		6C2EDBA520C7FDDF0091D26A /* USMLookingForDifferentProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMLookingForDifferentProcess.m; sourceTree = "<group>"; };
 		6C2EDBA720C804E60091D26A /* USMainFocusProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainFocusProcess.h; sourceTree = "<group>"; };
 		6C2EDBA820C804E60091D26A /* USMainFocusProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMainFocusProcess.m; sourceTree = "<group>"; };
+		6C6DD34820C9212700379490 /* USMLookingDiffModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMLookingDiffModel.h; sourceTree = "<group>"; };
+		6C6DD34920C9212700379490 /* USMLookingDiffModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMLookingDiffModel.m; sourceTree = "<group>"; };
 		6C9AC1CE20C68A9E00E8D621 /* OBShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBShapedButton.h; sourceTree = "<group>"; };
 		6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPixel.m"; sourceTree = "<group>"; };
 		6C9AC1D020C68A9E00E8D621 /* UIImage+ColorAtPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorAtPixel.h"; sourceTree = "<group>"; };
@@ -789,6 +792,8 @@
 			children = (
 				6CD44C1E20C7F3D900F05E20 /* USMainModel.h */,
 				6CD44C1F20C7F3D900F05E20 /* USMainModel.m */,
+				6C6DD34820C9212700379490 /* USMLookingDiffModel.h */,
+				6C6DD34920C9212700379490 /* USMLookingDiffModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1015,6 +1020,7 @@
 				5E9FCCF320C61E8D00780E1A /* USReleaseNavigationController.m in Sources */,
 				5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */,
 				5EBE83CC20C2DA2E00C5B0D9 /* NSData+Encryption.m in Sources */,
+				6C6DD34A20C9212700379490 /* USMLookingDiffModel.m in Sources */,
 				6C2EDBA620C7FDDF0091D26A /* USMLookingForDifferentProcess.m in Sources */,
 				5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */,
 				5E9FCCF620C61EA900780E1A /* USMessageNavigationController.m in Sources */,
@@ -1206,7 +1212,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q833YLY234;
+				DEVELOPMENT_TEAM = 6CRKSDZ5EH;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UnlockSecret",
@@ -1232,6 +1239,7 @@
 					"$(PROJECT_DIR)/UnlockSecret/Framework",
 				);
 				INFOPLIST_FILE = UnlockSecret/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1249,7 +1257,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q833YLY234;
+				DEVELOPMENT_TEAM = 6CRKSDZ5EH;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UnlockSecret",
@@ -1275,6 +1284,7 @@
 					"$(PROJECT_DIR)/UnlockSecret/Framework",
 				);
 				INFOPLIST_FILE = UnlockSecret/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

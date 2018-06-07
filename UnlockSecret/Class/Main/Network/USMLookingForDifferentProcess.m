@@ -7,6 +7,7 @@
 //
 
 #import "USMLookingForDifferentProcess.h"
+#import "USMLookingDiffModel.h"
 
 @implementation USMLookingForDifferentProcess
 - (void)getMessageHandleWithSuccessBlock:(success)success errorBlock:(error)failure{
@@ -17,10 +18,12 @@
         NSLog(@"%@",response);
         int code = [response[@"data"][@"code"] intValue];
         if (code == 200) {
-//            NSMutableArray *dataArray = [NSMutableArray arrayWithArray:[USMainModel mj_objectArrayWithKeyValuesArray:response[@"data"][@"data"]]];
-//            success(dataArray);
+           
+             USMLookingDiffModel *model = [USMLookingDiffModel mj_objectWithKeyValues:response[@"data"][@"data"]];
+            success(model);
             
         }else{
+            
             [SVProgressHUD showErrorWithStatus:response[@"data"][@"msg"]];
         }
     } failBlock:^(NSError *error) {

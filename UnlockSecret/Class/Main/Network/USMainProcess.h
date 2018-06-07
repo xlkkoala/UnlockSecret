@@ -7,7 +7,6 @@
 //
 
 #import "HttpRequest.h"
-#import <MJExtension.h>
 
 @interface USMainProcess : HttpRequest
 

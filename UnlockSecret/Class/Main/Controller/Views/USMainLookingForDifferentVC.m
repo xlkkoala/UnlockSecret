@@ -8,6 +8,8 @@
 
 #import "USMainLookingForDifferentVC.h"
 #import "USMLookingForDifferentProcess.h"
+#import "USMLookingDiffModel.h"
+#import <SDWebImageManager.h>
 
 @implementation USMainLookingForDifferentVC
 
@@ -39,10 +41,56 @@
     process.dictionary = [@{@"userId":USER_ID} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
+        USMLookingDiffModel *model = (USMLookingDiffModel *)response;
+//        [weakself.imageViewOriginal sd_setImageWithURL: [NSURL URLWithString:IMAGEURL(model.oldPic, 0, 0)]];
+//        [weakself.imageViewSelect sd_setImageWithURL: [NSURL URLWithString:IMAGEURL(model.oldPic, 0, 0)]];
+        
+        NSString *strImageUrl = IMAGEURL(model.oldPic, 0, 0);
+        
+        [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:strImageUrl] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+            
+        } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+            
+            weakself.imageViewOriginal.image = image;
+            weakself.imageViewSelect.image = image;
+            
+        }];
+        
         
     } errorBlock:^(NSError *error) {
         
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        
     }];
+}
+
+- (void)downloadPhoto{
+    
+
+        // 下载头像
+        NSString *str = @"";
+        UIImage *image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:str];
+//    [SDWebImageManager sharedManager] loa];
+        if( image == nil ){
+            
+//            [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:str] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//
+//                CLLog(@"下载进度--------receivedSize %ld    receivedSize- %ld",receivedSize,expectedSize);
+//
+//            } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+//
+//                CLLog(@"缓存完成----------%ld   error:%@",cacheType,error.localizedDescription);
+//
+//            }];
+            
+            [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:str] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+                
+            } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+                
+            }];
+            
+        }
+    
 }
 
 
