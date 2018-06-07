@@ -42,20 +42,46 @@
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
         USMLookingDiffModel *model = (USMLookingDiffModel *)response;
-//        [weakself.imageViewOriginal sd_setImageWithURL: [NSURL URLWithString:IMAGEURL(model.oldPic, 0, 0)]];
-//        [weakself.imageViewSelect sd_setImageWithURL: [NSURL URLWithString:IMAGEURL(model.oldPic, 0, 0)]];
         
-        NSString *strImageUrl = IMAGEURL(model.oldPic, 0, 0);
+        // 显示原图
+        NSString *strOldPicUrl = IMAGEURL(model.oldPic, 0, 0);
+        UIImage *oldImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:strOldPicUrl];
+        if( oldImage == nil ){
         
-        [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:strImageUrl] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+            // 下载图片
+            [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:strOldPicUrl] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+                
+            } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+                
+                weakself.imageViewOriginal.image = image;
+                weakself.imageViewSelect.image = image;
+                
+            }];
             
-        } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+        }else{
             
-            weakself.imageViewOriginal.image = image;
-            weakself.imageViewSelect.image = image;
-            
-        }];
+            weakself.imageViewOriginal.image = oldImage;
+            weakself.imageViewSelect.image = oldImage;
+        }
         
+        // 显示点击图片
+        NSString *strPicUrl = IMAGEURL(model.pic, 0, 0);
+        UIImage *picImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:strPicUrl];
+        if( picImage == nil ){
+            
+            // 下载图片
+            [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:strPicUrl] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+                
+            } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+                
+                [weakself.buttonImageSelect setNormalImage:image];
+                
+            }];
+            
+        }else{
+            
+            [weakself.buttonImageSelect setNormalImage:picImage];
+        }
         
     } errorBlock:^(NSError *error) {
         
@@ -64,42 +90,17 @@
     }];
 }
 
-- (void)downloadPhoto{
-    
-
-        // 下载头像
-        NSString *str = @"";
-        UIImage *image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:str];
-//    [SDWebImageManager sharedManager] loa];
-        if( image == nil ){
-            
-//            [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:str] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-//
-//                CLLog(@"下载进度--------receivedSize %ld    receivedSize- %ld",receivedSize,expectedSize);
-//
-//            } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-//
-//                CLLog(@"缓存完成----------%ld   error:%@",cacheType,error.localizedDescription);
-//
-//            }];
-            
-            [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:str] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
-                
-            } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
-                
-            }];
-            
-        }
-    
-}
-
-
 #pragma mark - 按钮事件
-
+// 开始
+- (IBAction)clickStart:(id)sender {
+    
+    [self.viewPrompt removeFromSuperview];
+}
 // 点击不同
 - (IBAction)clickDifferent:(id)sender {
     
     self.buttonImageSelect.selected = YES;
+    self.buttonImageSelect.userInteractionEnabled = NO;
     
 }
 // 不想解

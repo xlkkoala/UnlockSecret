@@ -61,6 +61,44 @@
                                 <action selector="clickDifferent:" destination="iN0-l3-epB" eventType="touchUpInside" id="Th7-50-3Ly"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfI-ze-wzo">
+                            <rect key="frame" x="10" y="286" width="335" height="186"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxc-lt-BRL">
+                                    <rect key="frame" x="122.5" y="85" width="90" height="36"/>
+                                    <color key="backgroundColor" red="0.18039215689999999" green="0.71372549019999998" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="e5g-hV-dW1"/>
+                                        <constraint firstAttribute="width" constant="90" id="guo-iP-SiT"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="开 始">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="18"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="clickStart:" destination="iN0-l3-epB" eventType="touchUpInside" id="NZT-aY-tXy"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击此图，找出与上图不同之处" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xte-3L-AO3">
+                                    <rect key="frame" x="60.5" y="59" width="214.5" height="18"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="uxc-lt-BRL" firstAttribute="centerX" secondItem="rfI-ze-wzo" secondAttribute="centerX" id="MPf-qP-wkJ"/>
+                                <constraint firstItem="uxc-lt-BRL" firstAttribute="centerY" secondItem="rfI-ze-wzo" secondAttribute="centerY" constant="10" id="lSj-ha-2dd"/>
+                                <constraint firstItem="uxc-lt-BRL" firstAttribute="top" secondItem="xte-3L-AO3" secondAttribute="bottom" constant="8" id="njx-lq-wHa"/>
+                                <constraint firstItem="xte-3L-AO3" firstAttribute="centerX" secondItem="uxc-lt-BRL" secondAttribute="centerX" id="xVd-50-Bok"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fa-Cq-VYG" customClass="RCProgressView">
                             <rect key="frame" x="40" y="259" width="275" height="16"/>
                             <subviews>
@@ -88,16 +126,20 @@
                     <constraints>
                         <constraint firstItem="PmT-Q3-eq1" firstAttribute="leading" secondItem="75S-8R-Y6q" secondAttribute="leading" constant="10" id="7XV-Ko-GTl"/>
                         <constraint firstItem="PmT-Q3-eq1" firstAttribute="height" secondItem="QrK-Nf-w26" secondAttribute="height" id="8P1-6a-Nw4"/>
+                        <constraint firstItem="rfI-ze-wzo" firstAttribute="width" secondItem="PmT-Q3-eq1" secondAttribute="width" id="9fb-VJ-HRM"/>
                         <constraint firstItem="6Fa-Cq-VYG" firstAttribute="leading" secondItem="75S-8R-Y6q" secondAttribute="leading" constant="40" id="BfR-cl-rE4"/>
                         <constraint firstItem="QrK-Nf-w26" firstAttribute="top" secondItem="75S-8R-Y6q" secondAttribute="top" constant="65" id="EDf-eM-k8y"/>
                         <constraint firstItem="PmT-Q3-eq1" firstAttribute="top" secondItem="QrK-Nf-w26" secondAttribute="bottom" constant="35" id="Eov-fs-Suj"/>
                         <constraint firstItem="8ib-oR-cFA" firstAttribute="height" secondItem="PmT-Q3-eq1" secondAttribute="height" id="PKs-DF-Ody"/>
+                        <constraint firstItem="rfI-ze-wzo" firstAttribute="height" secondItem="PmT-Q3-eq1" secondAttribute="height" id="PoX-X6-gBY"/>
+                        <constraint firstItem="rfI-ze-wzo" firstAttribute="centerY" secondItem="PmT-Q3-eq1" secondAttribute="centerY" id="Qa1-xC-YwS"/>
                         <constraint firstItem="QrK-Nf-w26" firstAttribute="top" secondItem="bhV-nd-uGH" secondAttribute="bottom" constant="10" id="Vu8-M7-X8h"/>
                         <constraint firstItem="8ib-oR-cFA" firstAttribute="centerY" secondItem="PmT-Q3-eq1" secondAttribute="centerY" id="Zxt-Hx-DDV"/>
                         <constraint firstItem="8ib-oR-cFA" firstAttribute="centerX" secondItem="PmT-Q3-eq1" secondAttribute="centerX" id="chW-6Y-Zz9"/>
                         <constraint firstAttribute="trailing" secondItem="PmT-Q3-eq1" secondAttribute="trailing" constant="10" id="ebz-DU-vsA"/>
                         <constraint firstAttribute="trailing" secondItem="QrK-Nf-w26" secondAttribute="trailing" constant="10" id="g1p-ew-zGe"/>
                         <constraint firstItem="bhV-nd-uGH" firstAttribute="centerX" secondItem="75S-8R-Y6q" secondAttribute="centerX" id="hwR-Sy-TcY"/>
+                        <constraint firstItem="rfI-ze-wzo" firstAttribute="centerX" secondItem="PmT-Q3-eq1" secondAttribute="centerX" id="hy5-Ed-EiU"/>
                         <constraint firstItem="8ib-oR-cFA" firstAttribute="width" secondItem="PmT-Q3-eq1" secondAttribute="width" id="i3A-vC-JOi"/>
                         <constraint firstAttribute="bottom" secondItem="PmT-Q3-eq1" secondAttribute="bottom" constant="10" id="jWZ-yu-bhb"/>
                         <constraint firstAttribute="trailing" secondItem="6Fa-Cq-VYG" secondAttribute="trailing" constant="40" id="s6a-8G-dP6"/>
@@ -259,6 +301,7 @@
                 <outlet property="imageViewSelect" destination="PmT-Q3-eq1" id="fh9-nQ-js1"/>
                 <outlet property="labelCountdown" destination="rys-Fh-wVz" id="Ell-Pd-KkJ"/>
                 <outlet property="progressView" destination="6Fa-Cq-VYG" id="tLO-wF-43H"/>
+                <outlet property="viewPrompt" destination="rfI-ze-wzo" id="6RL-s0-ehC"/>
             </connections>
             <point key="canvasLocation" x="61" y="59"/>
         </view>
