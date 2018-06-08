@@ -270,8 +270,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="JFd-YQ-cSp">
-                                <rect key="frame" x="0.0" y="44" width="375" height="583"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3y-2T-dqz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOp-FQ-2iq">
+                                        <rect key="frame" x="20" y="34" width="30" height="30"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backClick:" destination="UzJ-yN-uXs" eventType="touchUpInside" id="Jv4-0f-ZON"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.74901960779999999" green="0.42745098040000001" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="SOp-FQ-2iq" firstAttribute="top" secondItem="j3y-2T-dqz" secondAttribute="top" constant="34" id="TP9-wU-y0y"/>
+                                    <constraint firstAttribute="height" constant="84" id="fNM-m2-b3w"/>
+                                    <constraint firstItem="SOp-FQ-2iq" firstAttribute="leading" secondItem="j3y-2T-dqz" secondAttribute="leading" constant="20" id="haM-81-VUb"/>
+                                </constraints>
+                            </view>
+                            <tableView contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="JFd-YQ-cSp">
+                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
                                 <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SECRET_CELL" rowHeight="171" id="dgJ-RU-jkk">
@@ -304,26 +324,6 @@
                                     <outlet property="delegate" destination="UzJ-yN-uXs" id="1UZ-qh-yjh"/>
                                 </connections>
                             </tableView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3y-2T-dqz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOp-FQ-2iq">
-                                        <rect key="frame" x="20" y="34" width="30" height="30"/>
-                                        <state key="normal" title="X">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backClick:" destination="UzJ-yN-uXs" eventType="touchUpInside" id="Jv4-0f-ZON"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.74901960779999999" green="0.42745098040000001" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="SOp-FQ-2iq" firstAttribute="top" secondItem="j3y-2T-dqz" secondAttribute="top" constant="34" id="TP9-wU-y0y"/>
-                                    <constraint firstAttribute="height" constant="84" id="fNM-m2-b3w"/>
-                                    <constraint firstItem="SOp-FQ-2iq" firstAttribute="leading" secondItem="j3y-2T-dqz" secondAttribute="leading" constant="20" id="haM-81-VUb"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -332,7 +332,7 @@
                             <constraint firstItem="j3y-2T-dqz" firstAttribute="leading" secondItem="n2z-c2-seP" secondAttribute="leading" id="3hO-yO-xoS"/>
                             <constraint firstItem="j3y-2T-dqz" firstAttribute="top" secondItem="vZt-6Y-cbs" secondAttribute="top" id="9TC-2z-eOA"/>
                             <constraint firstItem="JFd-YQ-cSp" firstAttribute="trailing" secondItem="n2z-c2-seP" secondAttribute="trailing" id="DBf-fP-svv"/>
-                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="top" secondItem="n2z-c2-seP" secondAttribute="top" constant="24" id="PSA-vh-M7V"/>
+                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="top" secondItem="n2z-c2-seP" secondAttribute="top" constant="44" id="PSA-vh-M7V"/>
                             <constraint firstItem="n2z-c2-seP" firstAttribute="trailing" secondItem="j3y-2T-dqz" secondAttribute="trailing" id="d4E-TB-4sP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n2z-c2-seP"/>

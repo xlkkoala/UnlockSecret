@@ -12,6 +12,8 @@
 #import "USReleaseInfoCell.h"
 #import "USLocalBrowseViewController.h"
 #import "USOpenSecretViewController.h"
+#import "USUploadImageProcess.h"
+
 static NSString *const Release_TextView_Cell     = @"Release_TextView_Cell";
 static NSString *const Release_Image_Cell        = @"Release_Image_Cell";
 static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
@@ -20,21 +22,27 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *imageDataArray;
-
+@property (nonatomic, strong) NSMutableArray *imageUrlArray;
 @end
 
 @implementation USReleaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (NSMutableArray *)imageDataArray{
+- (NSMutableArray *)imageDataArray {
     if (!_imageDataArray) {
         _imageDataArray = [NSMutableArray array];
     }
     return _imageDataArray;
+}
+
+- (NSMutableArray *)imageUrlArray {
+    if (!_imageUrlArray) {
+        _imageUrlArray = [NSMutableArray array];
+    }
+    return _imageUrlArray;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -141,6 +149,8 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
     [self.view endEditing:YES];
 }
 
+#pragma mark - 选择或者查看照片
+
 - (void)selectOrDeleteImage:(UIButton *)button {
     if ((button.tag == self.imageDataArray.count && self.imageDataArray.count != 9)) {
         UIImagePickerController *imageController = [[UIImagePickerController alloc] init];
@@ -169,8 +179,7 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
         [self presentViewController:actionCtrl animated:YES completion:nil];
         return;
     }else{
-        NSLog(@"delete image");
-        
+        NSLog(@"查看图片");
         [self performSegueWithIdentifier:@"LocalBrowseSegue" sender:button];
     }
 }
@@ -187,23 +196,51 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)releaseClick:(UIBarButtonItem *)sender {
+//    USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    // 如果有选择图片，首先上传图片
+    if (self.imageDataArray.count > 0) {
+        dispatch_queue_t queue = dispatch_queue_create(nil, DISPATCH_QUEUE_SERIAL);
+        dispatch_group_t group = dispatch_group_create();
+        for (int i = 0; i < self.imageDataArray.count; i ++) {
+            dispatch_group_async(group, queue, ^{
+                [self uploadImage:self.imageDataArray[i]];
+            });
+        }
+        dispatch_group_notify(group, queue, ^{
+            NSLog(@"over");
+        });
+    }else {
+        [self releaseSecret];
+    }
 }
 
-- (IBAction)releaseClick:(UIBarButtonItem *)sender {
-    NSLog(@"123");
-    USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
-    [self.navigationController pushViewController:vc animated:YES];
+#pragma mark - 发布秘密
+
+- (void)releaseSecret {
+    
+}
+
+#pragma mark - 上传图片
+
+- (void)uploadImage:(UIImage *)image {
+    USUploadImageProcess *uploadProcess = [[USUploadImageProcess alloc] init];
+    [uploadProcess uploadImageBySource:image withProcess:^(int64_t byteRead, int64_t totalBytes) {
+        
+    } wtihSuccess:^(id response) {
+        NSString *url = response;
+        [self.imageUrlArray addObject:url];
+    } withError:^(NSError *error) {
+        
+    }];
 }
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller
     UIButton *button = (UIButton *)sender;
     USLocalBrowseViewController *vc = segue.destinationViewController;
     vc.dataArray = self.imageDataArray;

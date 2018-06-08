@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E6CEE8020CA6A5A009725E9 /* USUploadImageProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */; };
 		5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCE720C61A2700780E1A /* Focus.storyboard */; };
 		5E9FCCEA20C61A3300780E1A /* Release.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCE920C61A3300780E1A /* Release.storyboard */; };
 		5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCCEC20C61BEA00780E1A /* USMainNavigationController.m */; };
@@ -107,6 +108,8 @@
 
 /* Begin PBXFileReference section */
 		4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnlockSecret.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E6CEE7E20CA6A5A009725E9 /* USUploadImageProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USUploadImageProcess.h; sourceTree = "<group>"; };
+		5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USUploadImageProcess.m; sourceTree = "<group>"; };
 		5E9FCCE720C61A2700780E1A /* Focus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Focus.storyboard; sourceTree = "<group>"; };
 		5E9FCCE920C61A3300780E1A /* Release.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Release.storyboard; sourceTree = "<group>"; };
 		5E9FCCEB20C61BEA00780E1A /* USMainNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainNavigationController.h; sourceTree = "<group>"; };
@@ -759,6 +762,8 @@
 			children = (
 				6C6DD35920C9579A00379490 /* USReleaseProcess.h */,
 				6C6DD35A20C9579A00379490 /* USReleaseProcess.m */,
+				5E6CEE7E20CA6A5A009725E9 /* USUploadImageProcess.h */,
+				5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1083,6 +1088,7 @@
 				5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */,
 				6C2EDBA320C7FD850091D26A /* USFocusListProcess.m in Sources */,
 				5E9FCD5920C78C5F00780E1A /* USLocalBrowseViewController.m in Sources */,
+				5E6CEE8020CA6A5A009725E9 /* USUploadImageProcess.m in Sources */,
 				5EBE83DB20C2DA2E00C5B0D9 /* HttpRequest.m in Sources */,
 				5EBE83E520C2DA2E00C5B0D9 /* BaseTabbarController.m in Sources */,
 				6C9AC1D920C68AAA00E8D621 /* TransparentViewController.m in Sources */,
