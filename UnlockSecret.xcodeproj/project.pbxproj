@@ -26,6 +26,7 @@
 		5EBCCC4020CA0DA6009FB2A4 /* USSessionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3A20CA0DA5009FB2A4 /* USSessionFooterView.m */; };
 		5EBCCC4120CA0DA6009FB2A4 /* USSessionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3C20CA0DA6009FB2A4 /* USSessionFooterView.xib */; };
 		5EBCCC4420CA0DFE009FB2A4 /* USOpenSecretViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCCC4320CA0DFE009FB2A4 /* USOpenSecretViewController.m */; };
+		5EBCCC4720CA1708009FB2A4 /* USInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCCC4520CA1707009FB2A4 /* USInputView.m */; };
 		5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */; };
 		5EBE82B720C2D73200C5B0D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE82B520C2D73200C5B0D9 /* Main.storyboard */; };
 		5EBE82B920C2D73400C5B0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE82B820C2D73400C5B0D9 /* Assets.xcassets */; };
@@ -137,6 +138,8 @@
 		5EBCCC3C20CA0DA6009FB2A4 /* USSessionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USSessionFooterView.xib; sourceTree = "<group>"; };
 		5EBCCC4220CA0DFD009FB2A4 /* USOpenSecretViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USOpenSecretViewController.h; sourceTree = "<group>"; };
 		5EBCCC4320CA0DFE009FB2A4 /* USOpenSecretViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USOpenSecretViewController.m; sourceTree = "<group>"; };
+		5EBCCC4520CA1707009FB2A4 /* USInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USInputView.m; sourceTree = "<group>"; };
+		5EBCCC4620CA1707009FB2A4 /* USInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USInputView.h; sourceTree = "<group>"; };
 		5EBE82AC20C2D73200C5B0D9 /* UnlockSecret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnlockSecret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBE82AF20C2D73200C5B0D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -319,6 +322,8 @@
 		5E9FCD0520C6229D00780E1A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5EBCCC4620CA1707009FB2A4 /* USInputView.h */,
+				5EBCCC4520CA1707009FB2A4 /* USInputView.m */,
 				5EBCCC3620CA0DA5009FB2A4 /* USSecretHeaderView.h */,
 				5EBCCC3720CA0DA5009FB2A4 /* USSecretHeaderView.m */,
 				5EBCCC3920CA0DA5009FB2A4 /* USSessionHeaderView.h */,
@@ -1057,6 +1062,7 @@
 				5EBE83E020C2DA2E00C5B0D9 /* BaseViewController.m in Sources */,
 				5E9FCCFD20C61ED800780E1A /* USUserNavigationController.m in Sources */,
 				5EBE83D320C2DA2E00C5B0D9 /* Device.m in Sources */,
+				5EBCCC4720CA1708009FB2A4 /* USInputView.m in Sources */,
 				5E9FCCF320C61E8D00780E1A /* USReleaseNavigationController.m in Sources */,
 				5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */,
 				5EBE83CC20C2DA2E00C5B0D9 /* NSData+Encryption.m in Sources */,

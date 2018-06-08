@@ -10,11 +10,12 @@
 #import "USSecretHeaderView.h"
 #import "USSessionHeaderView.h"
 #import "USSessionFooterView.h"
+#import "USInputView.h"
 
-@interface USOpenSecretViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface USOpenSecretViewController ()<UITableViewDelegate,UITableViewDataSource,USInputViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *navigationView;
-
+@property (nonatomic, strong) USInputView *inputView;
 @end
 
 @implementation USOpenSecretViewController
@@ -27,6 +28,9 @@
     self.tableView.tableHeaderView = view;
     self.tableView.estimatedSectionHeaderHeight  = 1000;
     self.tableView.estimatedRowHeight = 1000;
+    
+    self.inputView = [[USInputView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - (_IPHONE_X?64:40), SCREEN_WIDTH, (_IPHONE_X?64:40))];
+    [self.view addSubview:self.inputView];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -74,8 +78,24 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return UITableViewAutomaticDimension;
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.view endEditing:YES];
+}
+
+// 返回
 - (IBAction)backClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+// 评论
+- (void)textFieldShouldReturnInputView:(UITextField *)textField {
+    
+}
+
+// 点赞
+- (void)likeCurrentSecretClick:(BOOL)isLike {
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -271,7 +271,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JFd-YQ-cSp">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="583"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SECRET_CELL" rowHeight="171" id="dgJ-RU-jkk">
@@ -327,13 +327,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="leading" secondItem="n2z-c2-seP" secondAttribute="leading" id="11s-UF-fDw"/>
+                            <constraint firstItem="n2z-c2-seP" firstAttribute="bottom" secondItem="JFd-YQ-cSp" secondAttribute="bottom" constant="40" id="1Xe-GC-bKg"/>
                             <constraint firstItem="j3y-2T-dqz" firstAttribute="leading" secondItem="n2z-c2-seP" secondAttribute="leading" id="3hO-yO-xoS"/>
-                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="top" secondItem="n2z-c2-seP" secondAttribute="top" constant="24" id="4Cv-Ze-DAy"/>
                             <constraint firstItem="j3y-2T-dqz" firstAttribute="top" secondItem="vZt-6Y-cbs" secondAttribute="top" id="9TC-2z-eOA"/>
-                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="trailing" secondItem="n2z-c2-seP" secondAttribute="trailing" id="cK9-KW-pPF"/>
+                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="trailing" secondItem="n2z-c2-seP" secondAttribute="trailing" id="DBf-fP-svv"/>
+                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="top" secondItem="n2z-c2-seP" secondAttribute="top" constant="24" id="PSA-vh-M7V"/>
                             <constraint firstItem="n2z-c2-seP" firstAttribute="trailing" secondItem="j3y-2T-dqz" secondAttribute="trailing" id="d4E-TB-4sP"/>
-                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="bottom" secondItem="n2z-c2-seP" secondAttribute="bottom" id="sM4-GN-fO2"/>
-                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="leading" secondItem="n2z-c2-seP" secondAttribute="leading" id="vRH-xv-BnR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n2z-c2-seP"/>
                     </view>
@@ -345,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ky9-Mq-9qu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="849"/>
+            <point key="canvasLocation" x="108" y="848.72563718140941"/>
         </scene>
     </scenes>
     <resources>
