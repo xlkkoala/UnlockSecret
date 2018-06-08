@@ -33,6 +33,13 @@
         self.progressView.progress = 0.8;
         
         [self getLookingForDifferentData];
+    
+        //如果已经点击
+       NSInteger isFrist = [[USER_DEFUALT objectForKey:@"isFristDifferent"] integerValue];
+        if( isFrist == 1 ){
+            
+            [self.viewPrompt removeFromSuperview];
+        }
         
     }
     
@@ -118,6 +125,8 @@
 // 开始
 - (IBAction)clickStart:(id)sender {
     
+    [USER_DEFUALT setObject:@"1" forKey:@"isFristDifferent"];
+    [USER_DEFUALT synchronize];
     [self.viewPrompt removeFromSuperview];
 }
 // 点击不同

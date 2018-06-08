@@ -57,6 +57,11 @@
                             <rect key="frame" x="10" y="286" width="335" height="186"/>
                             <state key="normal" image="origina_image_click.png"/>
                             <state key="selected" image="origina_image_select.png"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="clickDifferent:" destination="iN0-l3-epB" eventType="touchUpInside" id="Th7-50-3Ly"/>
                             </connections>
@@ -98,6 +103,11 @@
                                 <constraint firstItem="uxc-lt-BRL" firstAttribute="top" secondItem="xte-3L-AO3" secondAttribute="bottom" constant="8" id="njx-lq-wHa"/>
                                 <constraint firstItem="xte-3L-AO3" firstAttribute="centerX" secondItem="uxc-lt-BRL" secondAttribute="centerX" id="xVd-50-Bok"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fa-Cq-VYG" customClass="RCProgressView">
                             <rect key="frame" x="40" y="259" width="275" height="16"/>

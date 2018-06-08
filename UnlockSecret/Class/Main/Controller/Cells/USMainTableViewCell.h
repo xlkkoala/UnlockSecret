@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblOpenCount;
 @property (weak, nonatomic) IBOutlet UIButton *btnPraiseCount;
 @property (weak, nonatomic) IBOutlet UIButton *btnCommentCount;
+@property (weak, nonatomic) IBOutlet UIButton *btnSecret;
 
 - (void)showUSMainInfo:(USMainModel *)model;
 
