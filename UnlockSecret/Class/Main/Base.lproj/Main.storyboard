@@ -36,7 +36,7 @@
         <scene sceneID="R08-00-ibs">
             <objects>
                 <navigationController id="FHf-rg-1VA" customClass="USFocusNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="关注" id="Om9-Rp-5I2"/>
+                    <tabBarItem key="tabBarItem" title="关注" image="t_focus" selectedImage="t_focus_select" id="Om9-Rp-5I2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dh0-vs-r9v">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -50,7 +50,7 @@
         <scene sceneID="WAz-xb-BSn">
             <objects>
                 <navigationController id="LdN-57-dij" customClass="USMainNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="aGA-Nm-NdH"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="t_home" selectedImage="t_home_select" id="aGA-Nm-NdH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="lhU-51-She">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -244,7 +244,7 @@
         <scene sceneID="447-vz-FkK">
             <objects>
                 <navigationController id="QWc-XV-Eb8" customClass="USReleaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="gGL-dB-NuF">
+                    <tabBarItem key="tabBarItem" title="" image="t_release" selectedImage="t_release" id="gGL-dB-NuF">
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="oIW-oJ-1Rd">
@@ -260,7 +260,7 @@
         <scene sceneID="hRj-sC-a8C">
             <objects>
                 <navigationController id="idF-hu-4Cy" customClass="USMessageNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="消息" id="RLa-xm-D68"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="t_message" selectedImage="t_message_select" id="RLa-xm-D68"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="gJm-er-DAE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -274,7 +274,7 @@
         <scene sceneID="CRU-cj-yKQ">
             <objects>
                 <navigationController id="gUr-nb-GQv" customClass="USUserNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="s4r-dg-zRV"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="t_my" selectedImage="t_my_select" id="s4r-dg-zRV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="foI-pV-M4n">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -287,5 +287,14 @@
     </scenes>
     <resources>
         <image name="focus_button.png" width="19" height="19"/>
+        <image name="t_focus" width="20" height="20"/>
+        <image name="t_focus_select" width="20" height="20"/>
+        <image name="t_home" width="20" height="20"/>
+        <image name="t_home_select" width="20" height="20"/>
+        <image name="t_message" width="20" height="20"/>
+        <image name="t_message_select" width="20" height="20"/>
+        <image name="t_my" width="20" height="20"/>
+        <image name="t_my_select" width="20" height="20"/>
+        <image name="t_release" width="43" height="43"/>
     </resources>
 </document>
