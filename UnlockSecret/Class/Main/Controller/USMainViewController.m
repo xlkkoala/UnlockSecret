@@ -36,7 +36,7 @@
     __weak typeof(self) weakself = self;
     
     USMainProcess *process = [[USMainProcess alloc] init];
-    process.dictionary = [@{@"userId":@"0",@"pageNumber":@"0",@"pageSize":@"10"} mutableCopy];
+    process.dictionary = [@{@"userId":USER_ID,@"pageNumber":@"0",@"pageSize":@"10"} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
         weakself.arrMainList = [NSMutableArray arrayWithArray:response];
@@ -50,7 +50,6 @@
 //关注 type   1 添加  2为取消关注
 - (void)requestFocusType:(NSString *)type attentionId:(NSString *)attentionId{
     
-    __weak typeof(self) weakself = self;
     [SVProgressHUD showWithStatus:nil];
     USMainFocusProcess *process = [[USMainFocusProcess alloc] init];
     process.dictionary = [@{@"userId":USER_ID,@"type":type,@"attentionId":attentionId} mutableCopy];
@@ -82,6 +81,14 @@
     USMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USMainTableViewCell" forIndexPath:indexPath];
     [cell showUSMainInfo:self.arrMainList[indexPath.row]];
     
+    // 解密页面
+    [cell.btnSecret handleControlEvent:UIControlEventTouchUpInside withBlock:^{
+        
+        USMainLookingForDifferentVC *differentVC = [[USMainLookingForDifferentVC alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        differentVC.mainModel = self.arrMainList[indexPath.row];
+        [[UIApplication sharedApplication].keyWindow addSubview:differentVC];
+    }];
+    
     // 关注、取消关注
     [cell.btnFocus handleControlEvent:UIControlEventTouchUpInside withBlock:^{
        
@@ -100,9 +107,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    USMainLookingForDifferentVC *differentVC = [[USMainLookingForDifferentVC alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    differentVC.mainModel = self.arrMainList[indexPath.row];
-    [[UIApplication sharedApplication].keyWindow addSubview:differentVC];
+   
 }
 
 - (void)didReceiveMemoryWarning {

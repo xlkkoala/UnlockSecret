@@ -72,6 +72,7 @@
 		6C6DD34A20C9212700379490 /* USMLookingDiffModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DD34920C9212700379490 /* USMLookingDiffModel.m */; };
 		6C6DD35520C947ED00379490 /* USFocusListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DD35420C947ED00379490 /* USFocusListModel.m */; };
 		6C6DD35820C9529B00379490 /* USMSubmitDifferentProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DD35720C9529B00379490 /* USMSubmitDifferentProcess.m */; };
+		6C6DD35B20C9579A00379490 /* USReleaseProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DD35A20C9579A00379490 /* USReleaseProcess.m */; };
 		6C9AC1D220C68A9E00E8D621 /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */; };
 		6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D120C68A9E00E8D621 /* OBShapedButton.m */; };
 		6C9AC1D920C68AAA00E8D621 /* TransparentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D520C68AAA00E8D621 /* TransparentViewController.m */; };
@@ -230,6 +231,8 @@
 		6C6DD35420C947ED00379490 /* USFocusListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusListModel.m; sourceTree = "<group>"; };
 		6C6DD35620C9529B00379490 /* USMSubmitDifferentProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMSubmitDifferentProcess.h; sourceTree = "<group>"; };
 		6C6DD35720C9529B00379490 /* USMSubmitDifferentProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMSubmitDifferentProcess.m; sourceTree = "<group>"; };
+		6C6DD35920C9579A00379490 /* USReleaseProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseProcess.h; sourceTree = "<group>"; };
+		6C6DD35A20C9579A00379490 /* USReleaseProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseProcess.m; sourceTree = "<group>"; };
 		6C9AC1CE20C68A9E00E8D621 /* OBShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBShapedButton.h; sourceTree = "<group>"; };
 		6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPixel.m"; sourceTree = "<group>"; };
 		6C9AC1D020C68A9E00E8D621 /* UIImage+ColorAtPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorAtPixel.h"; sourceTree = "<group>"; };
@@ -754,6 +757,8 @@
 		6C6DD35120C9451E00379490 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				6C6DD35920C9579A00379490 /* USReleaseProcess.h */,
+				6C6DD35A20C9579A00379490 /* USReleaseProcess.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1037,6 +1042,7 @@
 				6C2EDBA920C804E60091D26A /* USMainFocusProcess.m in Sources */,
 				6C9AC1EB20C6A8B000E8D621 /* USFocusTableViewCell.m in Sources */,
 				6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */,
+				6C6DD35B20C9579A00379490 /* USReleaseProcess.m in Sources */,
 				5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */,
 				5EBE83D620C2DA2E00C5B0D9 /* UIView+CustomVWithCorRadius.m in Sources */,
 				5E9FCD1220C6887100780E1A /* USReleaseTextCell.m in Sources */,
