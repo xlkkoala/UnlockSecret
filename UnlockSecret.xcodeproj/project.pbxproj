@@ -20,6 +20,12 @@
 		5E9FCD1520C693B300780E1A /* USReleaseInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCD1420C693B300780E1A /* USReleaseInfoCell.m */; };
 		5E9FCD1820C695FC00780E1A /* USReleaseImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCD1720C695FC00780E1A /* USReleaseImageCell.m */; };
 		5E9FCD5920C78C5F00780E1A /* USLocalBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCD5820C78C5F00780E1A /* USLocalBrowseViewController.m */; };
+		5EBCCC3D20CA0DA6009FB2A4 /* USSessionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3520CA0DA5009FB2A4 /* USSessionHeaderView.xib */; };
+		5EBCCC3E20CA0DA6009FB2A4 /* USSecretHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3720CA0DA5009FB2A4 /* USSecretHeaderView.m */; };
+		5EBCCC3F20CA0DA6009FB2A4 /* USSessionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3820CA0DA5009FB2A4 /* USSessionHeaderView.m */; };
+		5EBCCC4020CA0DA6009FB2A4 /* USSessionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3A20CA0DA5009FB2A4 /* USSessionFooterView.m */; };
+		5EBCCC4120CA0DA6009FB2A4 /* USSessionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3C20CA0DA6009FB2A4 /* USSessionFooterView.xib */; };
+		5EBCCC4420CA0DFE009FB2A4 /* USOpenSecretViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCCC4320CA0DFE009FB2A4 /* USOpenSecretViewController.m */; };
 		5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */; };
 		5EBE82B720C2D73200C5B0D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE82B520C2D73200C5B0D9 /* Main.storyboard */; };
 		5EBE82B920C2D73400C5B0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EBE82B820C2D73400C5B0D9 /* Assets.xcassets */; };
@@ -121,6 +127,16 @@
 		5E9FCD1720C695FC00780E1A /* USReleaseImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseImageCell.m; sourceTree = "<group>"; };
 		5E9FCD5720C78C5F00780E1A /* USLocalBrowseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USLocalBrowseViewController.h; sourceTree = "<group>"; };
 		5E9FCD5820C78C5F00780E1A /* USLocalBrowseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USLocalBrowseViewController.m; sourceTree = "<group>"; };
+		5EBCCC3520CA0DA5009FB2A4 /* USSessionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USSessionHeaderView.xib; sourceTree = "<group>"; };
+		5EBCCC3620CA0DA5009FB2A4 /* USSecretHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USSecretHeaderView.h; sourceTree = "<group>"; };
+		5EBCCC3720CA0DA5009FB2A4 /* USSecretHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USSecretHeaderView.m; sourceTree = "<group>"; };
+		5EBCCC3820CA0DA5009FB2A4 /* USSessionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USSessionHeaderView.m; sourceTree = "<group>"; };
+		5EBCCC3920CA0DA5009FB2A4 /* USSessionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USSessionHeaderView.h; sourceTree = "<group>"; };
+		5EBCCC3A20CA0DA5009FB2A4 /* USSessionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USSessionFooterView.m; sourceTree = "<group>"; };
+		5EBCCC3B20CA0DA6009FB2A4 /* USSessionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USSessionFooterView.h; sourceTree = "<group>"; };
+		5EBCCC3C20CA0DA6009FB2A4 /* USSessionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USSessionFooterView.xib; sourceTree = "<group>"; };
+		5EBCCC4220CA0DFD009FB2A4 /* USOpenSecretViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USOpenSecretViewController.h; sourceTree = "<group>"; };
+		5EBCCC4320CA0DFE009FB2A4 /* USOpenSecretViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USOpenSecretViewController.m; sourceTree = "<group>"; };
 		5EBE82AC20C2D73200C5B0D9 /* UnlockSecret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnlockSecret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBE82AF20C2D73200C5B0D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5EBE82B020C2D73200C5B0D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -294,6 +310,8 @@
 				5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */,
 				5E9FCD5720C78C5F00780E1A /* USLocalBrowseViewController.h */,
 				5E9FCD5820C78C5F00780E1A /* USLocalBrowseViewController.m */,
+				5EBCCC4220CA0DFD009FB2A4 /* USOpenSecretViewController.h */,
+				5EBCCC4320CA0DFE009FB2A4 /* USOpenSecretViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -301,6 +319,14 @@
 		5E9FCD0520C6229D00780E1A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5EBCCC3620CA0DA5009FB2A4 /* USSecretHeaderView.h */,
+				5EBCCC3720CA0DA5009FB2A4 /* USSecretHeaderView.m */,
+				5EBCCC3920CA0DA5009FB2A4 /* USSessionHeaderView.h */,
+				5EBCCC3820CA0DA5009FB2A4 /* USSessionHeaderView.m */,
+				5EBCCC3520CA0DA5009FB2A4 /* USSessionHeaderView.xib */,
+				5EBCCC3B20CA0DA6009FB2A4 /* USSessionFooterView.h */,
+				5EBCCC3A20CA0DA5009FB2A4 /* USSessionFooterView.m */,
+				5EBCCC3C20CA0DA6009FB2A4 /* USSessionFooterView.xib */,
 				5E9FCD1020C6887100780E1A /* USReleaseTextCell.h */,
 				5E9FCD1120C6887100780E1A /* USReleaseTextCell.m */,
 				5E9FCD1620C695FC00780E1A /* USReleaseImageCell.h */,
@@ -922,9 +948,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EBCCC3D20CA0DA6009FB2A4 /* USSessionHeaderView.xib in Resources */,
 				6C9AC1E420C6945E00E8D621 /* USM_LookingForDifferentVC.xib in Resources */,
 				6C0BC35620C6749B0068564C /* origina_image_select@2x.png in Resources */,
 				5ED8FD9320C4D7DC00593643 /* Login.storyboard in Resources */,
+				5EBCCC4120CA0DA6009FB2A4 /* USSessionFooterView.xib in Resources */,
 				5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */,
 				5EBE82BC20C2D73400C5B0D9 /* LaunchScreen.storyboard in Resources */,
 				6C0BC35720C6749B0068564C /* original_image@2x.png in Resources */,
@@ -1014,6 +1042,7 @@
 				5EBE83D820C2DA2E00C5B0D9 /* YQDiskCache.m in Sources */,
 				6CD44C0B20C7871800F05E20 /* USMessageTableViewCell.m in Sources */,
 				5EBE83DC20C2DA2E00C5B0D9 /* YQNetworking+RequestManager.m in Sources */,
+				5EBCCC4420CA0DFE009FB2A4 /* USOpenSecretViewController.m in Sources */,
 				6CD44C2220C7F42800F05E20 /* USMainViewController.m in Sources */,
 				6C9AC1DD20C68D9400E8D621 /* RCProgressView.m in Sources */,
 				5EBE83D720C2DA2E00C5B0D9 /* YQLRUManager.m in Sources */,
@@ -1024,6 +1053,7 @@
 				5EBE83CB20C2DA2E00C5B0D9 /* NSString+Base64.m in Sources */,
 				5EBE83D120C2DA2E00C5B0D9 /* LoginHelper.m in Sources */,
 				6CD44C2020C7F3D900F05E20 /* USMainModel.m in Sources */,
+				5EBCCC3E20CA0DA6009FB2A4 /* USSecretHeaderView.m in Sources */,
 				5EBE83E020C2DA2E00C5B0D9 /* BaseViewController.m in Sources */,
 				5E9FCCFD20C61ED800780E1A /* USUserNavigationController.m in Sources */,
 				5EBE83D320C2DA2E00C5B0D9 /* Device.m in Sources */,
@@ -1031,6 +1061,7 @@
 				5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */,
 				5EBE83CC20C2DA2E00C5B0D9 /* NSData+Encryption.m in Sources */,
 				6C6DD35520C947ED00379490 /* USFocusListModel.m in Sources */,
+				5EBCCC3F20CA0DA6009FB2A4 /* USSessionHeaderView.m in Sources */,
 				6C6DD34A20C9212700379490 /* USMLookingDiffModel.m in Sources */,
 				6C2EDBA620C7FDDF0091D26A /* USMLookingForDifferentProcess.m in Sources */,
 				5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */,
@@ -1047,6 +1078,7 @@
 				5EBE83CF20C2DA2E00C5B0D9 /* NSData+Base64.m in Sources */,
 				6C6DD35820C9529B00379490 /* USMSubmitDifferentProcess.m in Sources */,
 				5E9FCD1820C695FC00780E1A /* USReleaseImageCell.m in Sources */,
+				5EBCCC4020CA0DA6009FB2A4 /* USSessionFooterView.m in Sources */,
 				5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */,
 				5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */,
 				5EBE83D520C2DA2E00C5B0D9 /* UIColor+Hex.m in Sources */,
