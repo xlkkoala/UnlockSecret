@@ -11,6 +11,7 @@
 #import "USReleaseImageCell.h"
 #import "USReleaseInfoCell.h"
 #import "USLocalBrowseViewController.h"
+#import "USOpenSecretViewController.h"
 static NSString *const Release_TextView_Cell     = @"Release_TextView_Cell";
 static NSString *const Release_Image_Cell        = @"Release_Image_Cell";
 static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
@@ -191,6 +192,11 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)releaseClick:(UIBarButtonItem *)sender {
+    NSLog(@"123");
+    USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - Navigation
 

@@ -207,6 +207,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="发布" id="ulK-yh-GVp">
                             <color key="tintColor" red="0.74901960779999999" green="0.42745098040000001" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="releaseClick:" destination="aJq-eG-rWX" id="9xN-IT-6KE"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -258,6 +261,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkC-0t-8lf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="927" y="126"/>
+        </scene>
+        <!--Open Secret View Controller-->
+        <scene sceneID="Jg2-lI-Z7n">
+            <objects>
+                <viewController storyboardIdentifier="OPEN_SECRET_ID" hidesBottomBarWhenPushed="YES" id="UzJ-yN-uXs" customClass="USOpenSecretViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vZt-6Y-cbs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JFd-YQ-cSp">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SECRET_CELL" rowHeight="171" id="dgJ-RU-jkk">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="171"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dgJ-RU-jkk" id="aff-rJ-1FZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="170.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奥斯特洛夫斯基: 生活赋予我们一种巨大的和无限高贵的礼品，这就是青春：充满着力量，充满着期待志愿，充满着求知和斗争的志向，充满着希望信心和青春。 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ora-km-jvP">
+                                                    <rect key="frame" x="60" y="0.0" width="295" height="170.5"/>
+                                                    <color key="backgroundColor" red="0.8862745098" green="0.89019607840000003" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ora-km-jvP" secondAttribute="trailing" constant="20" id="IGr-og-B8k"/>
+                                                <constraint firstAttribute="bottom" secondItem="ora-km-jvP" secondAttribute="bottom" id="LBP-T2-iyZ"/>
+                                                <constraint firstItem="ora-km-jvP" firstAttribute="top" secondItem="aff-rJ-1FZ" secondAttribute="top" id="jtH-C1-V7y"/>
+                                                <constraint firstItem="ora-km-jvP" firstAttribute="leading" secondItem="aff-rJ-1FZ" secondAttribute="leading" constant="60" id="ucf-vM-5BG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UzJ-yN-uXs" id="wcq-J3-cd9"/>
+                                    <outlet property="delegate" destination="UzJ-yN-uXs" id="1UZ-qh-yjh"/>
+                                </connections>
+                            </tableView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3y-2T-dqz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOp-FQ-2iq">
+                                        <rect key="frame" x="20" y="34" width="30" height="30"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backClick:" destination="UzJ-yN-uXs" eventType="touchUpInside" id="Jv4-0f-ZON"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.74901960779999999" green="0.42745098040000001" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="SOp-FQ-2iq" firstAttribute="top" secondItem="j3y-2T-dqz" secondAttribute="top" constant="34" id="TP9-wU-y0y"/>
+                                    <constraint firstAttribute="height" constant="84" id="fNM-m2-b3w"/>
+                                    <constraint firstItem="SOp-FQ-2iq" firstAttribute="leading" secondItem="j3y-2T-dqz" secondAttribute="leading" constant="20" id="haM-81-VUb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="j3y-2T-dqz" firstAttribute="leading" secondItem="n2z-c2-seP" secondAttribute="leading" id="3hO-yO-xoS"/>
+                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="top" secondItem="n2z-c2-seP" secondAttribute="top" constant="24" id="4Cv-Ze-DAy"/>
+                            <constraint firstItem="j3y-2T-dqz" firstAttribute="top" secondItem="vZt-6Y-cbs" secondAttribute="top" id="9TC-2z-eOA"/>
+                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="trailing" secondItem="n2z-c2-seP" secondAttribute="trailing" id="cK9-KW-pPF"/>
+                            <constraint firstItem="n2z-c2-seP" firstAttribute="trailing" secondItem="j3y-2T-dqz" secondAttribute="trailing" id="d4E-TB-4sP"/>
+                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="bottom" secondItem="n2z-c2-seP" secondAttribute="bottom" id="sM4-GN-fO2"/>
+                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="leading" secondItem="n2z-c2-seP" secondAttribute="leading" id="vRH-xv-BnR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n2z-c2-seP"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="navigationView" destination="j3y-2T-dqz" id="DjG-eL-mDg"/>
+                        <outlet property="tableView" destination="JFd-YQ-cSp" id="OQZ-1y-9G8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ky9-Mq-9qu" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="849"/>
         </scene>
     </scenes>
     <resources>
