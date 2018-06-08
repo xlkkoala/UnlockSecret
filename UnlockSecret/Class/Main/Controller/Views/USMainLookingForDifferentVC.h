@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewSelect;
 @property (weak, nonatomic) IBOutlet UIView *viewPrompt;
 @property (weak, nonatomic) IBOutlet OBShapedButton *buttonImageSelect;
+@property (weak, nonatomic) IBOutlet UIButton *buttonError;
 @property (weak, nonatomic) IBOutlet RCProgressView *progressView;
 @property (weak, nonatomic) IBOutlet UILabel *labelCountdown;
 

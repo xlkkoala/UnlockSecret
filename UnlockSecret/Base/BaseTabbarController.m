@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[UITabBar appearance] setBarTintColor:ColorFromRGB(57, 66, 111)];
+    [UITabBar appearance].translucent = NO;
 }
 
 - (void)didReceiveMemoryWarning {

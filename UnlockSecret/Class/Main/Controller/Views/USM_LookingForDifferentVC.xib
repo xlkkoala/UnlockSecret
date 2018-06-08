@@ -53,6 +53,17 @@
                             <color key="textColor" red="0.63137254899999995" green="0.63137254899999995" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFa-QX-KA3">
+                            <rect key="frame" x="10" y="286" width="335" height="186"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickError:" destination="iN0-l3-epB" eventType="touchUpInside" id="C9r-3z-tr9"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ib-oR-cFA" customClass="OBShapedButton">
                             <rect key="frame" x="10" y="286" width="335" height="186"/>
                             <state key="normal" image="origina_image_click.png"/>
@@ -134,6 +145,7 @@
                     </subviews>
                     <color key="backgroundColor" red="0.91372549020000005" green="0.90980392160000001" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="8ib-oR-cFA" firstAttribute="width" secondItem="GFa-QX-KA3" secondAttribute="width" id="0zB-uK-gSk"/>
                         <constraint firstItem="PmT-Q3-eq1" firstAttribute="leading" secondItem="75S-8R-Y6q" secondAttribute="leading" constant="10" id="7XV-Ko-GTl"/>
                         <constraint firstItem="PmT-Q3-eq1" firstAttribute="height" secondItem="QrK-Nf-w26" secondAttribute="height" id="8P1-6a-Nw4"/>
                         <constraint firstItem="rfI-ze-wzo" firstAttribute="width" secondItem="PmT-Q3-eq1" secondAttribute="width" id="9fb-VJ-HRM"/>
@@ -146,11 +158,14 @@
                         <constraint firstItem="QrK-Nf-w26" firstAttribute="top" secondItem="bhV-nd-uGH" secondAttribute="bottom" constant="10" id="Vu8-M7-X8h"/>
                         <constraint firstItem="8ib-oR-cFA" firstAttribute="centerY" secondItem="PmT-Q3-eq1" secondAttribute="centerY" id="Zxt-Hx-DDV"/>
                         <constraint firstItem="8ib-oR-cFA" firstAttribute="centerX" secondItem="PmT-Q3-eq1" secondAttribute="centerX" id="chW-6Y-Zz9"/>
+                        <constraint firstItem="8ib-oR-cFA" firstAttribute="height" secondItem="GFa-QX-KA3" secondAttribute="height" id="eSw-n7-QJf"/>
                         <constraint firstAttribute="trailing" secondItem="PmT-Q3-eq1" secondAttribute="trailing" constant="10" id="ebz-DU-vsA"/>
+                        <constraint firstItem="GFa-QX-KA3" firstAttribute="centerY" secondItem="8ib-oR-cFA" secondAttribute="centerY" id="fgo-Cs-stk"/>
                         <constraint firstAttribute="trailing" secondItem="QrK-Nf-w26" secondAttribute="trailing" constant="10" id="g1p-ew-zGe"/>
                         <constraint firstItem="bhV-nd-uGH" firstAttribute="centerX" secondItem="75S-8R-Y6q" secondAttribute="centerX" id="hwR-Sy-TcY"/>
                         <constraint firstItem="rfI-ze-wzo" firstAttribute="centerX" secondItem="PmT-Q3-eq1" secondAttribute="centerX" id="hy5-Ed-EiU"/>
                         <constraint firstItem="8ib-oR-cFA" firstAttribute="width" secondItem="PmT-Q3-eq1" secondAttribute="width" id="i3A-vC-JOi"/>
+                        <constraint firstItem="GFa-QX-KA3" firstAttribute="centerX" secondItem="8ib-oR-cFA" secondAttribute="centerX" id="iOL-OQ-4wp"/>
                         <constraint firstAttribute="bottom" secondItem="PmT-Q3-eq1" secondAttribute="bottom" constant="10" id="jWZ-yu-bhb"/>
                         <constraint firstAttribute="trailing" secondItem="6Fa-Cq-VYG" secondAttribute="trailing" constant="40" id="s6a-8G-dP6"/>
                         <constraint firstItem="QrK-Nf-w26" firstAttribute="leading" secondItem="75S-8R-Y6q" secondAttribute="leading" constant="10" id="wW2-Y3-p4Z"/>
@@ -304,6 +319,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="buttonError" destination="GFa-QX-KA3" id="vL5-Qi-imP"/>
                 <outlet property="buttonFocus" destination="IXj-C2-oMG" id="870-pv-K0Z"/>
                 <outlet property="buttonImageSelect" destination="8ib-oR-cFA" id="Gab-S8-RUC"/>
                 <outlet property="imageViewHeader" destination="Lor-gy-ea1" id="M62-fW-tHY"/>

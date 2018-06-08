@@ -12,9 +12,14 @@
 #import <SDWebImageManager.h>
 #import "USMSubmitDifferentProcess.h"
 
+#define isFristDifferent @"isFristDifferent"
+
 @interface USMainLookingForDifferentVC()
 
 @property (nonatomic, copy) NSString *picId;
+@property (nonatomic, strong) USMLookingDiffModel *modelDiff;
+@property (nonatomic, assign) long countdown;
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -35,7 +40,7 @@
         [self getLookingForDifferentData];
     
         //如果已经点击
-       NSInteger isFrist = [[USER_DEFUALT objectForKey:@"isFristDifferent"] integerValue];
+       NSInteger isFrist = [[USER_DEFUALT objectForKey:isFristDifferent] integerValue];
         if( isFrist == 1 ){
             
             [self.viewPrompt removeFromSuperview];
@@ -46,6 +51,18 @@
     return self;
 }
 
+- (void)setMainModel:(USMainModel *)mainModel{
+    
+    _mainModel = mainModel;
+    [self.imageViewHeader sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(mainModel.photo, 150, 150)] placeholderImage:DEFAULT_IMAGE_HEADER];
+    self.buttonFocus.hidden = mainModel.isAttention;
+    if( [StringValue(USER_ID) isEqualToString:StringValue(mainModel.uid)] ){
+        
+        self.buttonFocus.hidden = YES;
+    }
+}
+
+#pragma mark - 数据请求
 //获取找不同图片
 - (void)getLookingForDifferentData{
     
@@ -55,10 +72,10 @@
     process.dictionary = [@{@"userId":USER_ID} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
-        USMLookingDiffModel *model = (USMLookingDiffModel *)response;
-        weakself.picId = model.picId;
+        weakself.modelDiff = (USMLookingDiffModel *)response;
+        weakself.picId = weakself.modelDiff.picId;
         // 显示原图
-        NSString *strOldPicUrl = IMAGEURL(model.oldPic, 0, 0);
+        NSString *strOldPicUrl = IMAGEURL(weakself.modelDiff.oldPic, 0, 0);
         UIImage *oldImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:strOldPicUrl];
         if( oldImage == nil ){
         
@@ -79,7 +96,7 @@
         }
         
         // 显示点击图片
-        NSString *strPicUrl = IMAGEURL(model.pic, 0, 0);
+        NSString *strPicUrl = IMAGEURL(weakself.modelDiff.pic, 0, 0);
         UIImage *picImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:strPicUrl];
         if( picImage == nil ){
             
@@ -97,6 +114,15 @@
             [weakself.buttonImageSelect setNormalImage:picImage];
         }
         
+        weakself.countdown = weakself.modelDiff.sumTime;
+        [weakself showSecond];
+        //如果已经点击
+        NSInteger isFrist = [[USER_DEFUALT objectForKey:isFristDifferent] integerValue];
+        if( isFrist == 1 ){
+            
+            [weakself secondBtnAction];
+        }
+        
     } errorBlock:^(NSError *error) {
         
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
@@ -107,34 +133,44 @@
 // 找到不同 提交
 - (void)requestSubmitDifferent{
     
-    USMSubmitDifferentProcess *process = [[USMSubmitDifferentProcess alloc] init];
-    process.dictionary = [@{@"userId":USER_ID,@"secretId":self.mainModel.secretId,@"picId":self.picId} mutableCopy];
-    [process getMessageHandleWithSuccessBlock:^(id response) {
+    if( !([StringValue(self.picId) isEqualToString:@"<null>"]  || [NSString isNull:self.picId])){
         
-        [SVProgressHUD showSuccessWithStatus:@"解锁成功"];
-        [self removeFromSuperview];
-        
-    } errorBlock:^(NSError *error) {
-       
-        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-        
-    }];
+        USMSubmitDifferentProcess *process = [[USMSubmitDifferentProcess alloc] init];
+        process.dictionary = [@{@"userId":USER_ID,@"secretId":self.mainModel.secretId,@"picId":self.picId} mutableCopy];
+        [process getMessageHandleWithSuccessBlock:^(id response) {
+            
+            [SVProgressHUD showSuccessWithStatus:@"解锁成功"];
+            [self removeFromSuperview];
+            
+        } errorBlock:^(NSError *error) {
+            
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+            
+        }];
+    }
+    
 }
 
 #pragma mark - 按钮事件
 // 开始
 - (IBAction)clickStart:(id)sender {
     
-    [USER_DEFUALT setObject:@"1" forKey:@"isFristDifferent"];
+    [USER_DEFUALT setObject:@"1" forKey:isFristDifferent];
     [USER_DEFUALT synchronize];
     [self.viewPrompt removeFromSuperview];
+    [self secondBtnAction];
 }
 // 点击不同
 - (IBAction)clickDifferent:(id)sender {
     
-    self.buttonImageSelect.selected = YES;
+//    self.buttonImageSelect.selected = YES;
     self.buttonImageSelect.userInteractionEnabled = NO;
+    self.buttonError.userInteractionEnabled = NO;
     [self requestSubmitDifferent];
+}
+- (IBAction)clickError:(id)sender {
+    
+    self.countdown -= self.modelDiff.cutTime;
     
 }
 // 不想解
@@ -148,6 +184,46 @@
 // 微信好友求助
 - (IBAction)clickWeChat:(id)sender {
 }
+
+#pragma mark - 定时器
+
+- (void)secondBtnAction{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(handleTimer) userInfo:nil repeats:YES];
+}
+//定时操作
+- (void)handleTimer {
+    
+    if (self.countdown <= 0) {
+       
+        self.countdown = 0;
+        [self.timer invalidate];
+        
+    } else {
+    
+    }
+    [self showSecond];
+    self.countdown--;
+}
+
+- (void)showSecond{
+    
+    NSString *str_hour = [NSString stringWithFormat:@"%02ld",self.countdown/3600];
+    //format of minute
+    NSString *str_minute = [NSString stringWithFormat:@"%02ld",(self.countdown%3600)/60];
+    //format of second
+    NSString *str_second = [NSString stringWithFormat:@"%02ld",self.countdown%60];
+    
+    self.labelCountdown.text = StringFormat(@"%@:%@:%@",str_hour,str_minute,str_second);
+    self.progressView.progress = self.countdown*1.0/self.modelDiff.sumTime*1.0;
+    if( self.progressView.progress > 0.2  && self.progressView.progress < 0.5 ){
+        
+        self.progressView.progressBarColor = [UIColor orangeColor];
+    }else if( self.progressView.progress <= 0.2  ){
+        
+        self.progressView.progressBarColor = [UIColor redColor];
+    }
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

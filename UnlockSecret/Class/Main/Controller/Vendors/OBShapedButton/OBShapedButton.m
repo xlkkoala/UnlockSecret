@@ -187,8 +187,43 @@
         }
     }
     
+    if( response ){
+        [self layerAddbezier:point];
+    }
+    
     self.previousTouchHitTestResponse = response;
     return response;
+}
+/*
+ * add grachics
+ */
+
+- (void)layerAddbezier:(CGPoint)point {
+    CAShapeLayer *layer = [CAShapeLayer new];
+    layer.lineWidth = 1.f;
+    //圆环的颜色
+    layer.strokeColor = [UIColor redColor].CGColor;
+    //背景填充色
+    layer.fillColor = [UIColor clearColor].CGColor;
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    //1.圆
+    path = [UIBezierPath bezierPathWithArcCenter:point radius:30 startAngle:(0*M_PI) endAngle:2.f*M_PI clockwise:true];
+    layer.path = [path CGPath];
+    [self.layer addSublayer:layer];
+    [self addBasicAnimationByLayer:layer];
+//    [self.pointArray addObject:NSStringFromCGPoint(point)];
+}
+
+/*
+ * add BasicAnimation
+ */
+
+- (void)addBasicAnimationByLayer:(CAShapeLayer *)layer {
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    animation.fromValue = @0.f;
+    animation.toValue = @1.f;
+    animation.duration = .5f;
+    [layer addAnimation:animation forKey:@""];
 }
 
 

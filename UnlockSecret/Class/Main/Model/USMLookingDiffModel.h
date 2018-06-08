@@ -14,5 +14,8 @@
 @property (nonatomic, strong) NSString *pic;
 @property (nonatomic, strong) NSString *picId;
 @property (nonatomic, strong) NSString *createTime;
+// 点错减少时间
+@property (nonatomic, assign) long cutTime;
+@property (nonatomic, assign) long sumTime;
 
 @end

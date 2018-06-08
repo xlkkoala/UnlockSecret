@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getMainListData];
-    
+
 }
 
 #pragma mark - 数据请求
