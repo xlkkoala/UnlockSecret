@@ -36,7 +36,7 @@
     __weak typeof(self) weakself = self;
     
     USMainProcess *process = [[USMainProcess alloc] init];
-    process.dictionary = [@{@"userId":@"0",@"pageNumber":@"0",@"pageSize":@"10"} mutableCopy];
+    process.dictionary = [@{@"userId":USER_ID,@"pageNumber":@"0",@"pageSize":@"10"} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
         weakself.arrMainList = [NSMutableArray arrayWithArray:response];
