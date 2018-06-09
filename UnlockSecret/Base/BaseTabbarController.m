@@ -8,7 +8,7 @@
 
 #import "BaseTabbarController.h"
 
-@interface BaseTabbarController ()
+@interface BaseTabbarController ()<UITabBarDelegate>
 
 @end
 
@@ -19,6 +19,13 @@
     
     [[UITabBar appearance] setBarTintColor:ColorFromRGB(57, 66, 111)];
     [UITabBar appearance].translucent = NO;
+    self.selectedIndex = 0;
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    if (self.selectedIndex != 3) {
+        [USAppData instance].currentItenIndex = self.selectedIndex;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

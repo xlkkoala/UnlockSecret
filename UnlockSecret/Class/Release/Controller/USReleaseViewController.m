@@ -197,8 +197,8 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
 }
 
 - (IBAction)releaseClick:(UIBarButtonItem *)sender {
-//    USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
-//    [self.navigationController pushViewController:vc animated:YES];
+    USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+    [self.navigationController pushViewController:vc animated:YES];
     
     // 如果有选择图片，首先上传图片
     if (self.imageDataArray.count > 0) {
@@ -221,6 +221,11 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
 
 - (void)releaseSecret {
     
+}
+
+- (IBAction)cancleClick:(id)sender {
+    UITabBarController *tabbar = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    tabbar.selectedIndex = [USAppData instance].currentItenIndex?[USAppData instance].currentItenIndex:0;
 }
 
 #pragma mark - 上传图片

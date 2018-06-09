@@ -13,7 +13,7 @@
         <!--给我的秘密上个锁-->
         <scene sceneID="hdq-Dx-dTH">
             <objects>
-                <viewController storyboardIdentifier="RELEASE_ID" id="aJq-eG-rWX" customClass="USReleaseViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RELEASE_ID" hidesBottomBarWhenPushed="YES" id="aJq-eG-rWX" customClass="USReleaseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tdJ-09-YgP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -203,7 +203,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="给我的秘密上个锁" id="VSo-a7-DsF">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="ojH-ZO-C3x">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="0.74901960779999999" green="0.42745098040000001" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancleClick:" destination="aJq-eG-rWX" id="GN2-dF-uAn"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="发布" id="ulK-yh-GVp">
                             <color key="tintColor" red="0.74901960779999999" green="0.42745098040000001" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

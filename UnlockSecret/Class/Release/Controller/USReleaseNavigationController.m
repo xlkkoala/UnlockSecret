@@ -18,6 +18,9 @@ static NSString *const RELEASE_ID = @"RELEASE_ID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationBar setTitleTextAttributes:@{NSFontAttributeName:NAV_FONT,NSForegroundColorAttributeName:NAV_COLOR}];
+    
+    [self.navigationBar setBarTintColor:NAV_BACKGROUNDCOLOR];
     UIViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:RELEASE_ID];
     self.viewControllers = @[vc];
 }

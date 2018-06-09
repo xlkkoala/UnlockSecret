@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E6CEE8020CA6A5A009725E9 /* USUploadImageProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */; };
+		5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEE8220CBD7A9009725E9 /* USAppData.m */; };
 		5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCE720C61A2700780E1A /* Focus.storyboard */; };
 		5E9FCCEA20C61A3300780E1A /* Release.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCE920C61A3300780E1A /* Release.storyboard */; };
 		5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCCEC20C61BEA00780E1A /* USMainNavigationController.m */; };
@@ -110,6 +111,8 @@
 		4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnlockSecret.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6CEE7E20CA6A5A009725E9 /* USUploadImageProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USUploadImageProcess.h; sourceTree = "<group>"; };
 		5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USUploadImageProcess.m; sourceTree = "<group>"; };
+		5E6CEE8120CBD7A9009725E9 /* USAppData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USAppData.h; sourceTree = "<group>"; };
+		5E6CEE8220CBD7A9009725E9 /* USAppData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USAppData.m; sourceTree = "<group>"; };
 		5E9FCCE720C61A2700780E1A /* Focus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Focus.storyboard; sourceTree = "<group>"; };
 		5E9FCCE920C61A3300780E1A /* Release.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Release.storyboard; sourceTree = "<group>"; };
 		5E9FCCEB20C61BEA00780E1A /* USMainNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainNavigationController.h; sourceTree = "<group>"; };
@@ -505,6 +508,8 @@
 				5EBE82EE20C2DA2D00C5B0D9 /* XLKTool.m */,
 				5EBE82F120C2DA2D00C5B0D9 /* LoginHelper.h */,
 				5EBE82EF20C2DA2D00C5B0D9 /* LoginHelper.m */,
+				5E6CEE8120CBD7A9009725E9 /* USAppData.h */,
+				5E6CEE8220CBD7A9009725E9 /* USAppData.m */,
 			);
 			path = ProcessData;
 			sourceTree = "<group>";
@@ -1102,6 +1107,7 @@
 				5EBE83D520C2DA2E00C5B0D9 /* UIColor+Hex.m in Sources */,
 				6C9AC1E120C6944900E8D621 /* USMainLookingForDifferentVC.m in Sources */,
 				5EBE83DA20C2DA2E00C5B0D9 /* YQCacheManager.m in Sources */,
+				5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */,
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,
 				5EBE83CE20C2DA2E00C5B0D9 /* NSData+CommonCrypto.m in Sources */,
 			);
