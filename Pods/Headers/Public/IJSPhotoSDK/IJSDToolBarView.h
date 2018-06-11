@@ -1,0 +1,1 @@
+../../../IJSPhotoSDK/SDK/IJSUIBase/IJSVideoDrawTool/IJSDToolBarView.h

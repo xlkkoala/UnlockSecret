@@ -1,0 +1,1 @@
+../../../IJSPhotoSDK/SDK/IJSPhotoSDK/Controller/IJS3DTouchController.h

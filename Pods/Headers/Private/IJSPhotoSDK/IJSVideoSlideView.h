@@ -1,0 +1,1 @@
+../../../IJSPhotoSDK/SDK/IJSEditSDK/View/IJSVideoSlideView.h

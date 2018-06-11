@@ -1,0 +1,1 @@
+../../../IJSPhotoSDK/SDK/IJSUIBase/TOCropViewController/TOCropViewControllerTransitioning.h

@@ -1,0 +1,1 @@
+../../../IJSPhotoSDK/SDK/IJSUIBase/IJSMapView/IJSMapViewThumbCell.h

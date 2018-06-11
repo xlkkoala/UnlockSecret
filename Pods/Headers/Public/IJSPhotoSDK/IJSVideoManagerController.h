@@ -1,0 +1,1 @@
+../../../IJSPhotoSDK/SDK/IJSEditSDK/Controller/IJSVideoManagerController.h

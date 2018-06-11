@@ -1,0 +1,1 @@
+../../../IJSPhotoSDK/SDK/IJSPhotoSDK/View/IJSSelectedCell.h
