@@ -363,27 +363,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		5E9FCD0920C622D300780E1A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		5E9FCD0A20C622DF00780E1A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5E9FCD0B20C622E400780E1A /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		5E9FCD0C20C622F100780E1A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,27 +372,6 @@
 				5ED8FD9020C4D76400593643 /* USUserViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		5E9FCD0D20C622FF00780E1A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		5E9FCD0E20C6230500780E1A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5E9FCD0F20C6230B00780E1A /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		5EBE82A320C2D73200C5B0D9 = {
@@ -651,9 +609,6 @@
 		5ED8FD7D20C4D06E00593643 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				5E9FCD0F20C6230B00780E1A /* Network */,
-				5E9FCD0E20C6230500780E1A /* Model */,
-				5E9FCD0D20C622FF00780E1A /* View */,
 				5E9FCD0C20C622F100780E1A /* Controller */,
 				5E9FCCF920C61EC000780E1A /* User.storyboard */,
 			);
@@ -663,9 +618,6 @@
 		5ED8FD7E20C4D07A00593643 /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				5E9FCD0B20C622E400780E1A /* Network */,
-				5E9FCD0A20C622DF00780E1A /* Model */,
-				5E9FCD0920C622D300780E1A /* View */,
 				5E9FCD0820C622BF00780E1A /* Controller */,
 				5E9FCCFE20C61FCE00780E1A /* Message.storyboard */,
 			);
