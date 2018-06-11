@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UMS-s6-YMC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UMS-s6-YMC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -111,12 +111,14 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="m_xunmi_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="keM-Up-29l">
+                                                    <rect key="frame" x="61" y="28" width="9" height="13"/>
+                                                </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t30-zV-VQU">
                                                     <rect key="frame" x="70" y="10" width="290" height="230"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="crI-ec-7Ap">
                                                             <rect key="frame" x="10" y="10" width="270" height="165"/>
-                                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="165" id="e3b-A3-XPW"/>
                                                             </constraints>
@@ -138,25 +140,26 @@
                                                             <color key="textColor" red="0.67843137249999996" green="0.66274509800000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fz4-GA-UaD">
-                                                            <rect key="frame" x="244" y="200" width="36" height="24"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fz4-GA-UaD">
+                                                            <rect key="frame" x="252" y="206" width="28" height="12"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                            <state key="normal" title="评论 22">
+                                                            <state key="normal" title=" 22" image="m_comments">
                                                                 <color key="titleColor" red="0.67843137254901964" green="0.66274509803921566" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWU-pW-a1W">
-                                                            <rect key="frame" x="209" y="200" width="30" height="24"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWU-pW-a1W">
+                                                            <rect key="frame" x="220" y="206" width="27" height="12"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                            <state key="normal" title="赞 10">
+                                                            <state key="normal" title=" 10" image="m_praise">
                                                                 <color key="titleColor" red="0.67843137249999996" green="0.66274509800000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRD-c1-clM">
-                                                            <rect key="frame" x="10" y="9.5" width="270" height="165"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRD-c1-clM">
+                                                            <rect key="frame" x="10.5" y="10" width="270" height="165"/>
+                                                            <state key="normal" image="m_envelope"/>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.33725490196078434" green="0.34901960784313724" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.37900081276893616" green="0.40475499629974365" blue="0.5540282130241394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eNT-oe-6EW" secondAttribute="trailing" constant="20" symbolic="YES" id="2CF-ga-guB"/>
                                                         <constraint firstAttribute="trailing" secondItem="crI-ec-7Ap" secondAttribute="trailing" constant="10" id="4EG-aE-g2g"/>
@@ -184,19 +187,21 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFG-Wg-A4D">
-                                                    <rect key="frame" x="25.5" y="47" width="19" height="22"/>
-                                                    <state key="normal" image="focus_button.png"/>
+                                                    <rect key="frame" x="24.5" y="47" width="21" height="22"/>
+                                                    <state key="normal" image="p_focus"/>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.16862745100000001" green="0.18823529410000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="SEx-HZ-sis" firstAttribute="leading" secondItem="Nq5-3H-P9h" secondAttribute="leading" constant="10" id="CJp-6I-Vq1"/>
                                                 <constraint firstItem="yfQ-2A-hFb" firstAttribute="top" secondItem="SEx-HZ-sis" secondAttribute="bottom" id="Cah-Vj-ThP"/>
+                                                <constraint firstItem="keM-Up-29l" firstAttribute="centerY" secondItem="SEx-HZ-sis" secondAttribute="centerY" id="DAg-yg-HRa"/>
                                                 <constraint firstAttribute="bottom" secondItem="t30-zV-VQU" secondAttribute="bottom" constant="10" id="QO9-1q-J46"/>
                                                 <constraint firstItem="SEx-HZ-sis" firstAttribute="top" secondItem="Nq5-3H-P9h" secondAttribute="top" constant="10" id="Udw-of-PpE"/>
                                                 <constraint firstItem="fFG-Wg-A4D" firstAttribute="centerX" secondItem="SEx-HZ-sis" secondAttribute="centerX" id="Wu3-mZ-9jW"/>
                                                 <constraint firstAttribute="bottom" secondItem="yfQ-2A-hFb" secondAttribute="bottom" id="aP4-by-VJa"/>
                                                 <constraint firstItem="fFG-Wg-A4D" firstAttribute="bottom" secondItem="SEx-HZ-sis" secondAttribute="bottom" constant="9" id="cQn-yW-WgL"/>
+                                                <constraint firstItem="t30-zV-VQU" firstAttribute="leading" secondItem="keM-Up-29l" secondAttribute="trailing" id="dIj-Tg-aNl"/>
                                                 <constraint firstItem="t30-zV-VQU" firstAttribute="top" secondItem="Nq5-3H-P9h" secondAttribute="top" constant="10" id="oLm-YB-lh3"/>
                                                 <constraint firstAttribute="trailing" secondItem="t30-zV-VQU" secondAttribute="trailing" constant="15" id="ulo-pG-vdB"/>
                                                 <constraint firstItem="t30-zV-VQU" firstAttribute="leading" secondItem="SEx-HZ-sis" secondAttribute="trailing" constant="10" id="vga-MM-htd"/>
@@ -286,7 +291,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="focus_button.png" width="19" height="19"/>
+        <image name="m_comments" width="12" height="12"/>
+        <image name="m_envelope" width="307" height="188"/>
+        <image name="m_praise" width="12" height="12"/>
+        <image name="m_xunmi_arrow" width="9" height="13"/>
+        <image name="p_focus" width="21" height="21"/>
         <image name="t_focus" width="20" height="20"/>
         <image name="t_focus_select" width="20" height="20"/>
         <image name="t_home" width="20" height="20"/>
