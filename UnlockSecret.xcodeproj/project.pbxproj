@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E643FB520CE53F80059C4BE /* UIView+FrameTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FB420CE53F80059C4BE /* UIView+FrameTool.m */; };
 		5E6CEE8020CA6A5A009725E9 /* USUploadImageProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */; };
 		5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEE8220CBD7A9009725E9 /* USAppData.m */; };
 		5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCE720C61A2700780E1A /* Focus.storyboard */; };
@@ -109,6 +110,8 @@
 
 /* Begin PBXFileReference section */
 		4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnlockSecret.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E643FB320CE53F70059C4BE /* UIView+FrameTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameTool.h"; sourceTree = "<group>"; };
+		5E643FB420CE53F80059C4BE /* UIView+FrameTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameTool.m"; sourceTree = "<group>"; };
 		5E6CEE7E20CA6A5A009725E9 /* USUploadImageProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USUploadImageProcess.h; sourceTree = "<group>"; };
 		5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USUploadImageProcess.m; sourceTree = "<group>"; };
 		5E6CEE8120CBD7A9009725E9 /* USAppData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USAppData.h; sourceTree = "<group>"; };
@@ -486,6 +489,8 @@
 			children = (
 				5EBE82FC20C2DA2D00C5B0D9 /* UIColor+Hex.h */,
 				5EBE82FA20C2DA2D00C5B0D9 /* UIColor+Hex.m */,
+				5E643FB320CE53F70059C4BE /* UIView+FrameTool.h */,
+				5E643FB420CE53F80059C4BE /* UIView+FrameTool.m */,
 				5EBE82FE20C2DA2D00C5B0D9 /* UIView+CustomVWithCorRadius.h */,
 				5EBE82FB20C2DA2D00C5B0D9 /* UIView+CustomVWithCorRadius.m */,
 			);
@@ -1018,6 +1023,7 @@
 				6CD44C0B20C7871800F05E20 /* USMessageTableViewCell.m in Sources */,
 				5EBE83DC20C2DA2E00C5B0D9 /* YQNetworking+RequestManager.m in Sources */,
 				5EBCCC4420CA0DFE009FB2A4 /* USOpenSecretViewController.m in Sources */,
+				5E643FB520CE53F80059C4BE /* UIView+FrameTool.m in Sources */,
 				6CD44C2220C7F42800F05E20 /* USMainViewController.m in Sources */,
 				6C9AC1DD20C68D9400E8D621 /* RCProgressView.m in Sources */,
 				5EBE83D720C2DA2E00C5B0D9 /* YQLRUManager.m in Sources */,
