@@ -48,4 +48,8 @@ typedef void (^DisMissBlock)(BOOL seccess);
 + (NSMutableArray *)setBubbleSortBySourcesArray:(NSMutableArray *)sourcesArray;
 
 + (NSString *)changeToCurrentTimeByStamp:(NSNumber *)stamp;
+
++(NSString*)getCurrentTimes;
+
++(NSString *)getNowTimeTimestamp;
 @end

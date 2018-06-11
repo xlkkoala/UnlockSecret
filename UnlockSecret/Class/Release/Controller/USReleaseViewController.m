@@ -155,7 +155,7 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
     if ((button.tag == self.imageDataArray.count && self.imageDataArray.count != 9)) {
         UIImagePickerController *imageController = [[UIImagePickerController alloc] init];
         imageController.delegate = self;
-        imageController.allowsEditing = YES;
+        imageController.allowsEditing = NO;
         UIAlertController *actionCtrl = [UIAlertController alertControllerWithTitle:@"选择照片"
                                                                             message:nil
                                                                      preferredStyle:UIAlertControllerStyleActionSheet];

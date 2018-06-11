@@ -20,6 +20,7 @@
 @property (nonatomic, strong) USMLookingDiffModel *modelDiff;
 @property (nonatomic, assign) long countdown;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSString *currentTime;
 
 @end
 
@@ -45,7 +46,9 @@
             
             [self.viewPrompt removeFromSuperview];
         }
-        
+        self.currentTime = [XLKTool getNowTimeTimestamp];
+        [USAppData instance].backGroundTime = [XLKTool getNowTimeTimestamp];
+        [[USAppData instance] addObserver:self forKeyPath:@"backGroundTime" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     }
     
     return self;
@@ -159,7 +162,30 @@
     [USER_DEFUALT synchronize];
     [self.viewPrompt removeFromSuperview];
     [self secondBtnAction];
+    
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    long long newTime = [[change objectForKey:@"new"] longLongValue];
+    long long oldTime = [self.currentTime longLongValue];
+    
+    long long time = newTime - oldTime;
+    NSLog(@"background time ---- %lld-%lld=%lld",newTime,oldTime,time);
+    NSLog(@"remaining  time ---- %d - %lld = %lld",300,time,300 -  time);
+    if (300 -  time > 0) {
+        [self.timer invalidate];
+        self.timer = nil;
+        self.countdown = 300 -  time;
+        [self secondBtnAction];
+    }else{
+        self.countdown = 0;
+        [self secondBtnAction];
+        NSLog(@"over");
+    }
+    
+    
+}
+
 // 点击不同
 - (IBAction)clickDifferent:(id)sender {
     
@@ -175,7 +201,7 @@
 }
 // 不想解
 - (IBAction)clickClose:(id)sender {
-    
+    [[USAppData instance] removeObserver:self forKeyPath:@"backGroundTime"];
     [self removeFromSuperview];
 }
 // 微信朋友圈求助

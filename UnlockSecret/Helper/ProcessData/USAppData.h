@@ -11,7 +11,7 @@
 @interface USAppData : NSObject
 
 @property (nonatomic, assign) NSInteger currentItenIndex;
-
+@property (nonatomic, strong) NSString *backGroundTime;
 
 + (instancetype)instance;
 
