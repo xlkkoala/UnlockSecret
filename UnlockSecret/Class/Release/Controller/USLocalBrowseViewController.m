@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self creatScrollView];
+//    [self.navigationController.navigationBar setHidden:YES];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -31,7 +32,7 @@
 - (void)creatScrollView {
     self.scrollView.contentSize = CGSizeMake(self.dataArray.count*SCREEN_WIDTH, 0);
     for (int i = 0; i < self.dataArray.count; i ++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT - (_IPHONE_X?84:64))];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.image = self.dataArray[i];
         [self.scrollView addSubview:imageView];

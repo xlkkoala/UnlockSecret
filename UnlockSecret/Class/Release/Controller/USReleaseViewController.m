@@ -13,6 +13,10 @@
 #import "USLocalBrowseViewController.h"
 #import "USOpenSecretViewController.h"
 #import "USUploadImageProcess.h"
+#import <IJSImagePickerController.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <AVFoundation/AVCaptureDevice.h>
+#import <AVFoundation/AVMediaFormat.h>
 
 static NSString *const Release_TextView_Cell     = @"Release_TextView_Cell";
 static NSString *const Release_Image_Cell        = @"Release_Image_Cell";
@@ -163,14 +167,29 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
         UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         }];
         UIAlertAction *camera = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            if ([self isCanUseCamera] == NO) {
+                [SVProgressHUD showInfoWithStatus:@"请在iPhone的""设置-隐私-相机""选项中允许寻秘访问你的相机"];
+                return;
+            }
             if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
                 imageController.sourceType = UIImagePickerControllerSourceTypeCamera;
             }
             [self presentViewController:imageController animated:YES completion:nil];
         }];
         UIAlertAction *photoLibaray = [UIAlertAction actionWithTitle:@"我的相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            imageController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            [self presentViewController:imageController animated:YES completion:nil];
+            
+            if ([self isCanUsePhotos] == NO) {
+                [SVProgressHUD showInfoWithStatus:@"请在iPhone的""设置-隐私-照片""选项中允许寻秘访问你的手机相册"];
+                return;
+            }
+            
+            IJSImagePickerController *vc = [[IJSImagePickerController alloc] initWithMaxImagesCount:9 - self.imageDataArray.count columnNumber:4 pushPhotoPickerVc:YES];
+            [self presentViewController:vc animated:YES completion:nil];
+            
+            [vc loadTheSelectedData:^(NSArray<UIImage *> *photos, NSArray<NSURL *> *avPlayers, NSArray<PHAsset *> *assets, NSArray<NSDictionary *> *infos, IJSPExportSourceType sourceType, NSError *error) {
+                [self.imageDataArray addObjectsFromArray:photos];
+                [self.collectionView reloadData];
+            }];
         }];
         
         [actionCtrl addAction:cancle];
@@ -182,6 +201,23 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
         NSLog(@"查看图片");
         [self performSegueWithIdentifier:@"LocalBrowseSegue" sender:button];
     }
+}
+
+- (BOOL)isCanUsePhotos {
+    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+    if (status == PHAuthorizationStatusRestricted ||
+        status == PHAuthorizationStatusDenied) {
+        return NO;
+    }
+    return YES;
+}
+
+- (BOOL)isCanUseCamera {
+    AVAuthorizationStatus authStatus =  [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied) {
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark - 照片的代理
