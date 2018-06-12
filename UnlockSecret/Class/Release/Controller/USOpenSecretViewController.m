@@ -40,12 +40,13 @@
      */
     USSessionHeaderView *view = [[[NSBundle mainBundle] loadNibNamed:@"USSessionHeaderView" owner:nil options:nil] firstObject];
     if (section == 0) {
+        view.commentHeight.constant = 20;
         view.commentLabel.hidden = NO;
     }else{
         view.commentHeight.constant = 0;
-        [view layoutIfNeeded];
         view.commentLabel.hidden = YES;
     }
+    [view layoutIfNeeded];
     view.frame = CGRectMake(0, 0, SCREEN_WIDTH, 180);
     return view;
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5E643FB520CE53F80059C4BE /* UIView+FrameTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FB420CE53F80059C4BE /* UIView+FrameTool.m */; };
+		5E643FB920CE9EC20059C4BE /* USUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FB820CE9EC20059C4BE /* USUserInfoCell.m */; };
+		5E643FBC20CFAEA50059C4BE /* USUserSecretCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FBB20CFAEA50059C4BE /* USUserSecretCell.m */; };
 		5E6CEE8020CA6A5A009725E9 /* USUploadImageProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */; };
 		5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEE8220CBD7A9009725E9 /* USAppData.m */; };
 		5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCE720C61A2700780E1A /* Focus.storyboard */; };
@@ -112,6 +114,10 @@
 		4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnlockSecret.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E643FB320CE53F70059C4BE /* UIView+FrameTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameTool.h"; sourceTree = "<group>"; };
 		5E643FB420CE53F80059C4BE /* UIView+FrameTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameTool.m"; sourceTree = "<group>"; };
+		5E643FB720CE9EC20059C4BE /* USUserInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USUserInfoCell.h; sourceTree = "<group>"; };
+		5E643FB820CE9EC20059C4BE /* USUserInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USUserInfoCell.m; sourceTree = "<group>"; };
+		5E643FBA20CFAEA50059C4BE /* USUserSecretCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USUserSecretCell.h; sourceTree = "<group>"; };
+		5E643FBB20CFAEA50059C4BE /* USUserSecretCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USUserSecretCell.m; sourceTree = "<group>"; };
 		5E6CEE7E20CA6A5A009725E9 /* USUploadImageProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USUploadImageProcess.h; sourceTree = "<group>"; };
 		5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USUploadImageProcess.m; sourceTree = "<group>"; };
 		5E6CEE8120CBD7A9009725E9 /* USAppData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USAppData.h; sourceTree = "<group>"; };
@@ -302,6 +308,17 @@
 				4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E643FB620CE9E930059C4BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E643FB720CE9EC20059C4BE /* USUserInfoCell.h */,
+				5E643FB820CE9EC20059C4BE /* USUserInfoCell.m */,
+				5E643FBA20CFAEA50059C4BE /* USUserSecretCell.h */,
+				5E643FBB20CFAEA50059C4BE /* USUserSecretCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5E9FCD0020C6223300780E1A /* Controller */ = {
@@ -614,6 +631,7 @@
 		5ED8FD7D20C4D06E00593643 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				5E643FB620CE9E930059C4BE /* View */,
 				5E9FCD0C20C622F100780E1A /* Controller */,
 				5E9FCCF920C61EC000780E1A /* User.storyboard */,
 			);
@@ -1051,6 +1069,7 @@
 				5E9FCCF020C61C4500780E1A /* USFocusNavigationController.m in Sources */,
 				5EBE82BF20C2D73400C5B0D9 /* main.m in Sources */,
 				5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */,
+				5E643FBC20CFAEA50059C4BE /* USUserSecretCell.m in Sources */,
 				6C2EDBA320C7FD850091D26A /* USFocusListProcess.m in Sources */,
 				5E9FCD5920C78C5F00780E1A /* USLocalBrowseViewController.m in Sources */,
 				5E6CEE8020CA6A5A009725E9 /* USUploadImageProcess.m in Sources */,
@@ -1069,6 +1088,7 @@
 				5EBE83DA20C2DA2E00C5B0D9 /* YQCacheManager.m in Sources */,
 				5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */,
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,
+				5E643FB920CE9EC20059C4BE /* USUserInfoCell.m in Sources */,
 				5EBE83CE20C2DA2E00C5B0D9 /* NSData+CommonCrypto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
