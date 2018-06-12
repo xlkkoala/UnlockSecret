@@ -25,6 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getMainListData];
+    
+    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
+    imageview.image = ImageNamed(@"m_xunmi");
+    self.navigationItem.titleView = imageview;
 
 }
 
@@ -55,7 +59,7 @@
     process.dictionary = [@{@"userId":USER_ID,@"type":type,@"attentionId":attentionId} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
-        [SVProgressHUD dismiss];
+        [SVProgressHUD showSuccessWithStatus:@"已关注ß"];
         
     } errorBlock:^(NSError *error) {
         

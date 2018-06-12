@@ -25,8 +25,8 @@
         
         self.btnFocus.hidden = YES;
     }
-    [self.btnPraiseCount setNormalTitle:StringFormat(@"%@",model.praise_count)];
-    [self.btnCommentCount setNormalTitle:StringFormat(@"%@",model.comment_count)];
+    [self.btnPraiseCount setNormalTitle:StringFormat(@" %@",model.praise_count)];
+    [self.btnCommentCount setNormalTitle:StringFormat(@" %@",model.comment_count)];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
