@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3J6-Uv-cGt">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.16862745100000001" green="0.18823529410000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.16862745098039217" green="0.19607843137254902" blue="0.36078431372549019" alpha="0.90465448943661975" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="USFocusTableViewCell" rowHeight="80" id="xtc-Dy-gV8" customClass="USFocusTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
@@ -29,7 +29,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_defult_header" translatesAutoresizingMaskIntoConstraints="NO" id="cnY-DU-X7e">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_defult_header" translatesAutoresizingMaskIntoConstraints="NO" id="cnY-DU-X7e">
                                                     <rect key="frame" x="15" y="10" width="60" height="60"/>
                                                     <color key="backgroundColor" red="0.99215686270000003" green="0.54117647059999996" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -79,7 +79,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="tKk-yG-kOI" secondAttribute="trailing" constant="10" id="yu8-Yb-dBw"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.16862745100000001" green="0.18823529410000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="imageViewHeader" destination="cnY-DU-X7e" id="kSI-j4-aPz"/>
                                             <outlet property="lblDetail" destination="GPy-MB-aXq" id="CCZ-NC-e52"/>

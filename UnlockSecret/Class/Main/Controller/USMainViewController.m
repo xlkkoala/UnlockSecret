@@ -12,6 +12,7 @@
 #import "UIViewController+PresentViewControllerOverCurrentContext.h"
 #import "USMainLookingForDifferentVC.h"
 #import "USMainFocusProcess.h"
+#import "UIImage+ColorAtPixel.h"
 
 
 @interface USMainViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -29,7 +30,13 @@
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
     imageview.image = ImageNamed(@"m_xunmi");
     self.navigationItem.titleView = imageview;
-
+    
+    // 渐变色
+    UIColor *topleftColor = ColorFromRGB(43, 50, 92);
+    UIColor *bottomrightColor = ColorFromRGB(62, 37, 99);
+    UIImage *bgImg = [UIImage gradientColorImageFromColors:@[topleftColor, bottomrightColor] gradientType:GradientTypeTopToBottom imgSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT)];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImg];
+    self.tableView.backgroundColor = UIColor.clearColor;
 }
 
 #pragma mark - 数据请求
@@ -59,7 +66,7 @@
     process.dictionary = [@{@"userId":USER_ID,@"type":type,@"attentionId":attentionId} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
-        [SVProgressHUD showSuccessWithStatus:@"已关注ß"];
+        [SVProgressHUD showSuccessWithStatus:@"已关注"];
         
     } errorBlock:^(NSError *error) {
         
@@ -84,7 +91,7 @@
     
     USMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USMainTableViewCell" forIndexPath:indexPath];
     [cell showUSMainInfo:self.arrMainList[indexPath.row]];
-    
+    cell.backgroundColor = UIColor.clearColor;
     // 解密页面
     [cell.btnSecret handleControlEvent:UIControlEventTouchUpInside withBlock:^{
         

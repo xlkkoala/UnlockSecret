@@ -13,7 +13,8 @@
  // 字体颜色
  */
 #define NAV_COLOR [UIColor whiteColor]  //导航字体颜色
-#define NAV_BACKGROUNDCOLOR ColorFromRGB(57, 66, 111)// 导航栏背景颜色
+#define NAV_BACKGROUNDCOLOR ColorFromRGB(43, 50, 92)// 导航栏背景颜色
+#define TABBAR_BACKGROUNDCOLOR ColorFromRGB(62, 37, 99)// tabbar背景颜色
 #define gray90 [UIColor colorWithHexString:@"e5e5e5"]   //分割线
 
  /*

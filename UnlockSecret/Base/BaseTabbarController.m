@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[UITabBar appearance] setBarTintColor:ColorFromRGB(57, 66, 111)];
+    [[UITabBar appearance] setBarTintColor:TABBAR_BACKGROUNDCOLOR];
     [UITabBar appearance].translucent = NO;
     self.selectedIndex = 0;
 }
