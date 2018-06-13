@@ -23,8 +23,18 @@
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    if (self.selectedIndex != 3) {
-        [USAppData instance].currentItenIndex = self.selectedIndex;
+    if (![item isEqual:[tabBar.items objectAtIndex:2]]) {
+        NSInteger currentIndex;
+        if ([item.title isEqualToString:@"首页"]) {
+            currentIndex = 0;
+        }else if ([item.title isEqualToString:@"关注"]) {
+            currentIndex = 1;
+        }else if ([item.title isEqualToString:@"消息"]) {
+            currentIndex = 3;
+        }else {
+            currentIndex = 4;
+        }
+        [USAppData instance].currentItenIndex = currentIndex;
     }
 }
 

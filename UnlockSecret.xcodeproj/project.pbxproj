@@ -10,6 +10,19 @@
 		5E643FB520CE53F80059C4BE /* UIView+FrameTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FB420CE53F80059C4BE /* UIView+FrameTool.m */; };
 		5E643FB920CE9EC20059C4BE /* USUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FB820CE9EC20059C4BE /* USUserInfoCell.m */; };
 		5E643FBC20CFAEA50059C4BE /* USUserSecretCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FBB20CFAEA50059C4BE /* USUserSecretCell.m */; };
+		5E643FCF20D0B2460059C4BE /* USRegisterProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FBF20D0B2460059C4BE /* USRegisterProcess.m */; };
+		5E643FD020D0B2460059C4BE /* USLoginProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FC020D0B2460059C4BE /* USLoginProcess.m */; };
+		5E643FD120D0B2460059C4BE /* USCheckCodeProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FC220D0B2460059C4BE /* USCheckCodeProcess.m */; };
+		5E643FD220D0B2460059C4BE /* USForgetPswProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FC620D0B2460059C4BE /* USForgetPswProcess.m */; };
+		5E643FD320D0B2460059C4BE /* USForgetPswViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FCA20D0B2460059C4BE /* USForgetPswViewController.m */; };
+		5E643FD420D0B2460059C4BE /* USLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FCB20D0B2460059C4BE /* USLoginViewController.m */; };
+		5E643FD520D0B2460059C4BE /* USRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FCC20D0B2460059C4BE /* USRegisterViewController.m */; };
+		5E643FD620D0B2460059C4BE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E643FCE20D0B2460059C4BE /* Login.storyboard */; };
+		5E643FE620D0B6950059C4BE /* USChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FDB20D0B6950059C4BE /* USChatListViewController.m */; };
+		5E643FE720D0B6950059C4BE /* USChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FDC20D0B6950059C4BE /* USChatViewController.m */; };
+		5E643FE820D0B6950059C4BE /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FDE20D0B6950059C4BE /* MessageModel.m */; };
+		5E643FE920D0B6950059C4BE /* USChatListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FE320D0B6950059C4BE /* USChatListCell.m */; };
+		5E643FEA20D0B6950059C4BE /* WeChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FE420D0B6950059C4BE /* WeChatCell.m */; };
 		5E6CEE8020CA6A5A009725E9 /* USUploadImageProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */; };
 		5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEE8220CBD7A9009725E9 /* USAppData.m */; };
 		5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCE720C61A2700780E1A /* Focus.storyboard */; };
@@ -65,7 +78,6 @@
 		5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */; };
 		5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8D20C4D75200593643 /* USMessageViewController.m */; };
 		5ED8FD9120C4D76400593643 /* USUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD9020C4D76400593643 /* USUserViewController.m */; };
-		5ED8FD9320C4D7DC00593643 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED8FD9220C4D7DC00593643 /* Login.storyboard */; };
 		6C0BC35220C6651E0068564C /* focus_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C0BC35120C6651D0068564C /* focus_button@2x.png */; };
 		6C0BC35620C6749B0068564C /* origina_image_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C0BC35320C6749A0068564C /* origina_image_select@2x.png */; };
 		6C0BC35720C6749B0068564C /* original_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C0BC35420C6749A0068564C /* original_image@2x.png */; };
@@ -118,6 +130,32 @@
 		5E643FB820CE9EC20059C4BE /* USUserInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USUserInfoCell.m; sourceTree = "<group>"; };
 		5E643FBA20CFAEA50059C4BE /* USUserSecretCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USUserSecretCell.h; sourceTree = "<group>"; };
 		5E643FBB20CFAEA50059C4BE /* USUserSecretCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USUserSecretCell.m; sourceTree = "<group>"; };
+		5E643FBF20D0B2460059C4BE /* USRegisterProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USRegisterProcess.m; sourceTree = "<group>"; };
+		5E643FC020D0B2460059C4BE /* USLoginProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USLoginProcess.m; sourceTree = "<group>"; };
+		5E643FC120D0B2460059C4BE /* USForgetPswProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USForgetPswProcess.h; sourceTree = "<group>"; };
+		5E643FC220D0B2460059C4BE /* USCheckCodeProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCheckCodeProcess.m; sourceTree = "<group>"; };
+		5E643FC320D0B2460059C4BE /* USRegisterProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USRegisterProcess.h; sourceTree = "<group>"; };
+		5E643FC420D0B2460059C4BE /* USLoginProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USLoginProcess.h; sourceTree = "<group>"; };
+		5E643FC520D0B2460059C4BE /* USCheckCodeProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCheckCodeProcess.h; sourceTree = "<group>"; };
+		5E643FC620D0B2460059C4BE /* USForgetPswProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USForgetPswProcess.m; sourceTree = "<group>"; };
+		5E643FC820D0B2460059C4BE /* USLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USLoginViewController.h; sourceTree = "<group>"; };
+		5E643FC920D0B2460059C4BE /* USRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USRegisterViewController.h; sourceTree = "<group>"; };
+		5E643FCA20D0B2460059C4BE /* USForgetPswViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USForgetPswViewController.m; sourceTree = "<group>"; };
+		5E643FCB20D0B2460059C4BE /* USLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USLoginViewController.m; sourceTree = "<group>"; };
+		5E643FCC20D0B2460059C4BE /* USRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USRegisterViewController.m; sourceTree = "<group>"; };
+		5E643FCD20D0B2460059C4BE /* USForgetPswViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USForgetPswViewController.h; sourceTree = "<group>"; };
+		5E643FCE20D0B2460059C4BE /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		5E643FD920D0B6950059C4BE /* USChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USChatViewController.h; sourceTree = "<group>"; };
+		5E643FDA20D0B6950059C4BE /* USChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USChatListViewController.h; sourceTree = "<group>"; };
+		5E643FDB20D0B6950059C4BE /* USChatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USChatListViewController.m; sourceTree = "<group>"; };
+		5E643FDC20D0B6950059C4BE /* USChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USChatViewController.m; sourceTree = "<group>"; };
+		5E643FDE20D0B6950059C4BE /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		5E643FDF20D0B6950059C4BE /* ConstantPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantPart.h; sourceTree = "<group>"; };
+		5E643FE020D0B6950059C4BE /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		5E643FE220D0B6950059C4BE /* WeChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatCell.h; sourceTree = "<group>"; };
+		5E643FE320D0B6950059C4BE /* USChatListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USChatListCell.m; sourceTree = "<group>"; };
+		5E643FE420D0B6950059C4BE /* WeChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeChatCell.m; sourceTree = "<group>"; };
+		5E643FE520D0B6950059C4BE /* USChatListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USChatListCell.h; sourceTree = "<group>"; };
 		5E6CEE7E20CA6A5A009725E9 /* USUploadImageProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USUploadImageProcess.h; sourceTree = "<group>"; };
 		5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USUploadImageProcess.m; sourceTree = "<group>"; };
 		5E6CEE8120CBD7A9009725E9 /* USAppData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USAppData.h; sourceTree = "<group>"; };
@@ -227,7 +265,6 @@
 		5ED8FD8D20C4D75200593643 /* USMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMessageViewController.m; sourceTree = "<group>"; };
 		5ED8FD8F20C4D76400593643 /* USUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USUserViewController.h; sourceTree = "<group>"; };
 		5ED8FD9020C4D76400593643 /* USUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USUserViewController.m; sourceTree = "<group>"; };
-		5ED8FD9220C4D7DC00593643 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		6C0BC35120C6651D0068564C /* focus_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus_button@2x.png"; sourceTree = "<group>"; };
 		6C0BC35320C6749A0068564C /* origina_image_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "origina_image_select@2x.png"; sourceTree = "<group>"; };
 		6C0BC35420C6749A0068564C /* original_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "original_image@2x.png"; sourceTree = "<group>"; };
@@ -317,6 +354,86 @@
 				5E643FB820CE9EC20059C4BE /* USUserInfoCell.m */,
 				5E643FBA20CFAEA50059C4BE /* USUserSecretCell.h */,
 				5E643FBB20CFAEA50059C4BE /* USUserSecretCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5E643FBD20D0B2460059C4BE /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				5E643FBE20D0B2460059C4BE /* NetWork */,
+				5E643FC720D0B2460059C4BE /* Controller */,
+				5E643FCE20D0B2460059C4BE /* Login.storyboard */,
+			);
+			path = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		5E643FBE20D0B2460059C4BE /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				5E643FC420D0B2460059C4BE /* USLoginProcess.h */,
+				5E643FC020D0B2460059C4BE /* USLoginProcess.m */,
+				5E643FC520D0B2460059C4BE /* USCheckCodeProcess.h */,
+				5E643FC220D0B2460059C4BE /* USCheckCodeProcess.m */,
+				5E643FC320D0B2460059C4BE /* USRegisterProcess.h */,
+				5E643FBF20D0B2460059C4BE /* USRegisterProcess.m */,
+				5E643FC120D0B2460059C4BE /* USForgetPswProcess.h */,
+				5E643FC620D0B2460059C4BE /* USForgetPswProcess.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		5E643FC720D0B2460059C4BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E643FC820D0B2460059C4BE /* USLoginViewController.h */,
+				5E643FCB20D0B2460059C4BE /* USLoginViewController.m */,
+				5E643FC920D0B2460059C4BE /* USRegisterViewController.h */,
+				5E643FCC20D0B2460059C4BE /* USRegisterViewController.m */,
+				5E643FCD20D0B2460059C4BE /* USForgetPswViewController.h */,
+				5E643FCA20D0B2460059C4BE /* USForgetPswViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E643FD720D0B6950059C4BE /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				5E643FD820D0B6950059C4BE /* Controller */,
+				5E643FDD20D0B6950059C4BE /* Model */,
+				5E643FE120D0B6950059C4BE /* View */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		5E643FD820D0B6950059C4BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E643FD920D0B6950059C4BE /* USChatViewController.h */,
+				5E643FDA20D0B6950059C4BE /* USChatListViewController.h */,
+				5E643FDB20D0B6950059C4BE /* USChatListViewController.m */,
+				5E643FDC20D0B6950059C4BE /* USChatViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E643FDD20D0B6950059C4BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E643FDE20D0B6950059C4BE /* MessageModel.m */,
+				5E643FDF20D0B6950059C4BE /* ConstantPart.h */,
+				5E643FE020D0B6950059C4BE /* MessageModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E643FE120D0B6950059C4BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E643FE220D0B6950059C4BE /* WeChatCell.h */,
+				5E643FE320D0B6950059C4BE /* USChatListCell.m */,
+				5E643FE420D0B6950059C4BE /* WeChatCell.m */,
+				5E643FE520D0B6950059C4BE /* USChatListCell.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -607,7 +724,8 @@
 		5ED8FD7B20C4CFA800593643 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				5ED8FD8120C4D0B500593643 /* Login */,
+				5E643FBD20D0B2460059C4BE /* LoginAndRegister */,
+				5E643FD720D0B6950059C4BE /* Chat */,
 				5ED8FD7C20C4D06700593643 /* Main */,
 				5ED8FD8020C4D0A700593643 /* Focus */,
 				5ED8FD7F20C4D09100593643 /* Release */,
@@ -667,14 +785,6 @@
 				5E9FCCE720C61A2700780E1A /* Focus.storyboard */,
 			);
 			path = Focus;
-			sourceTree = "<group>";
-		};
-		5ED8FD8120C4D0B500593643 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				5ED8FD9220C4D7DC00593643 /* Login.storyboard */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		5ED8FD9620C4DE3E00593643 /* Controller */ = {
@@ -943,10 +1053,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E643FD620D0B2460059C4BE /* Login.storyboard in Resources */,
 				5EBCCC3D20CA0DA6009FB2A4 /* USSessionHeaderView.xib in Resources */,
 				6C9AC1E420C6945E00E8D621 /* USM_LookingForDifferentVC.xib in Resources */,
 				6C0BC35620C6749B0068564C /* origina_image_select@2x.png in Resources */,
-				5ED8FD9320C4D7DC00593643 /* Login.storyboard in Resources */,
 				5EBCCC4120CA0DA6009FB2A4 /* USSessionFooterView.xib in Resources */,
 				5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */,
 				5EBE82BC20C2D73400C5B0D9 /* LaunchScreen.storyboard in Resources */,
@@ -1034,8 +1144,10 @@
 				5EBE83D620C2DA2E00C5B0D9 /* UIView+CustomVWithCorRadius.m in Sources */,
 				5E9FCD1220C6887100780E1A /* USReleaseTextCell.m in Sources */,
 				5EBE83DD20C2DA2E00C5B0D9 /* YQNetworking.m in Sources */,
+				5E643FEA20D0B6950059C4BE /* WeChatCell.m in Sources */,
 				6C2EDB9E20C7F8930091D26A /* USMainTableViewCell.m in Sources */,
 				5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */,
+				5E643FD120D0B2460059C4BE /* USCheckCodeProcess.m in Sources */,
 				6C9AC1D220C68A9E00E8D621 /* UIImage+ColorAtPixel.m in Sources */,
 				5EBE83D820C2DA2E00C5B0D9 /* YQDiskCache.m in Sources */,
 				6CD44C0B20C7871800F05E20 /* USMessageTableViewCell.m in Sources */,
@@ -1063,11 +1175,15 @@
 				6C6DD35520C947ED00379490 /* USFocusListModel.m in Sources */,
 				5EBCCC3F20CA0DA6009FB2A4 /* USSessionHeaderView.m in Sources */,
 				6C6DD34A20C9212700379490 /* USMLookingDiffModel.m in Sources */,
+				5E643FD220D0B2460059C4BE /* USForgetPswProcess.m in Sources */,
 				6C2EDBA620C7FDDF0091D26A /* USMLookingForDifferentProcess.m in Sources */,
 				5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */,
+				5E643FE720D0B6950059C4BE /* USChatViewController.m in Sources */,
+				5E643FCF20D0B2460059C4BE /* USRegisterProcess.m in Sources */,
 				5E9FCCF620C61EA900780E1A /* USMessageNavigationController.m in Sources */,
 				5E9FCCF020C61C4500780E1A /* USFocusNavigationController.m in Sources */,
 				5EBE82BF20C2D73400C5B0D9 /* main.m in Sources */,
+				5E643FE820D0B6950059C4BE /* MessageModel.m in Sources */,
 				5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */,
 				5E643FBC20CFAEA50059C4BE /* USUserSecretCell.m in Sources */,
 				6C2EDBA320C7FD850091D26A /* USFocusListProcess.m in Sources */,
@@ -1079,14 +1195,20 @@
 				6CD44C2520C7F4F900F05E20 /* USMainProcess.m in Sources */,
 				5EBE83CF20C2DA2E00C5B0D9 /* NSData+Base64.m in Sources */,
 				6C6DD35820C9529B00379490 /* USMSubmitDifferentProcess.m in Sources */,
+				5E643FE920D0B6950059C4BE /* USChatListCell.m in Sources */,
 				5E9FCD1820C695FC00780E1A /* USReleaseImageCell.m in Sources */,
+				5E643FD020D0B2460059C4BE /* USLoginProcess.m in Sources */,
+				5E643FD420D0B2460059C4BE /* USLoginViewController.m in Sources */,
 				5EBCCC4020CA0DA6009FB2A4 /* USSessionFooterView.m in Sources */,
 				5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */,
 				5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */,
 				5EBE83D520C2DA2E00C5B0D9 /* UIColor+Hex.m in Sources */,
 				6C9AC1E120C6944900E8D621 /* USMainLookingForDifferentVC.m in Sources */,
+				5E643FD520D0B2460059C4BE /* USRegisterViewController.m in Sources */,
+				5E643FD320D0B2460059C4BE /* USForgetPswViewController.m in Sources */,
 				5EBE83DA20C2DA2E00C5B0D9 /* YQCacheManager.m in Sources */,
 				5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */,
+				5E643FE620D0B6950059C4BE /* USChatListViewController.m in Sources */,
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,
 				5E643FB920CE9EC20059C4BE /* USUserInfoCell.m in Sources */,
 				5EBE83CE20C2DA2E00C5B0D9 /* NSData+CommonCrypto.m in Sources */,
