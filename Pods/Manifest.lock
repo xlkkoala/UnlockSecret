@@ -14,6 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AMapFoundation (1.4.3)
+  - AMapLocation (2.6.0):
+    - AMapFoundation (~> 1.4)
+  - AMapSearch (6.1.0):
+    - AMapFoundation (~> 1.4)
   - CWLateralSlide (1.5.9)
   - IJSFoundation (0.0.4)
   - IJSPhotoSDK (1.0.1):
@@ -74,6 +79,8 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - AMapLocation
+  - AMapSearch
   - CWLateralSlide (~> 1.5.8)
   - IJSPhotoSDK
   - JMessage (~> 3.5.1)
@@ -90,6 +97,9 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - AMapFoundation
+    - AMapLocation
+    - AMapSearch
     - CWLateralSlide
     - IJSFoundation
     - IJSPhotoSDK
@@ -109,6 +119,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AMapFoundation: 973682cfe60b92efd73a8ef8f1144fa0fa8e1296
+  AMapLocation: 55116a2c8956eab7550cbb56e989aa5cdcc424e3
+  AMapSearch: e3f96bd0681abe70abba303709a1a05625a8f76c
   CWLateralSlide: f91ec07f1b8f0d22ebcb661c879b7f91a3e7481d
   IJSFoundation: 0ea83ad8c9279e63141ae7ff9d096004949dc66f
   IJSPhotoSDK: 379134abbfe9bd3446ed137eed9df9d3045fd75e
@@ -126,6 +139,6 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: b769658942aa99d5aecac2b125935c50f9c4b8ff
+PODFILE CHECKSUM: dd54ead25edf1017c106cf0b2f47cf92532716da
 
 COCOAPODS: 1.5.0

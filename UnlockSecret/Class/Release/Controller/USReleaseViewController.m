@@ -17,6 +17,8 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <AVFoundation/AVCaptureDevice.h>
 #import <AVFoundation/AVMediaFormat.h>
+#import "USNearAddressViewController.h"
+#import <AMapSearchKit/AMapSearchKit.h>
 
 static NSString *const Release_TextView_Cell     = @"Release_TextView_Cell";
 static NSString *const Release_Image_Cell        = @"Release_Image_Cell";
@@ -27,6 +29,7 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *imageDataArray;
 @property (nonatomic, strong) NSMutableArray *imageUrlArray;
+@property (nonatomic, strong) AMapPOI  *poi;
 @end
 
 @implementation USReleaseViewController
@@ -103,7 +106,32 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%ld---%ld",(long)indexPath.section,indexPath.row);
+    if (indexPath.section == 2 && indexPath.row == 1) {
+        // 选择地址
+        USNearAddressViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectLocaitonVC"];
+        vc.hidesBottomBarWhenPushed = YES;
+
+        if (self.poi) {
+            vc.oldPoi = self.poi;
+        }
+        __weak __typeof(self) weakSelf = self;
+        [vc setSuccessBlock:^(AMapPOI *obj){
+            __strong __typeof(weakSelf) strongSelf = weakSelf;
+            strongSelf.poi = obj;
+            USReleaseInfoCell *cell = (USReleaseInfoCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]];
+            if (obj) {
+                if (obj.name.length > 0) {
+                    cell.detailLabel.text = [NSString stringWithFormat:@"%@·%@\n%@",self.poi.city,self.poi.name,self.poi.address];
+                }else{
+                    cell.detailLabel.text = [NSString stringWithFormat:@"%@",self.poi.city];
+                }
+            }else{
+                cell.detailLabel.text = @"";
+            }
+        }];
+
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
