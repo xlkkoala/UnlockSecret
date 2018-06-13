@@ -23,6 +23,8 @@
 		5E643FE820D0B6950059C4BE /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FDE20D0B6950059C4BE /* MessageModel.m */; };
 		5E643FE920D0B6950059C4BE /* USChatListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FE320D0B6950059C4BE /* USChatListCell.m */; };
 		5E643FEA20D0B6950059C4BE /* WeChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FE420D0B6950059C4BE /* WeChatCell.m */; };
+		5E64403020D0FD8B0059C4BE /* USNearAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E64402E20D0FD8A0059C4BE /* USNearAddressViewController.m */; };
+		5E64403320D101A60059C4BE /* SelectLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E64403220D101A60059C4BE /* SelectLocationCell.m */; };
 		5E6CEE8020CA6A5A009725E9 /* USUploadImageProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */; };
 		5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEE8220CBD7A9009725E9 /* USAppData.m */; };
 		5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FCCE720C61A2700780E1A /* Focus.storyboard */; };
@@ -156,6 +158,10 @@
 		5E643FE320D0B6950059C4BE /* USChatListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USChatListCell.m; sourceTree = "<group>"; };
 		5E643FE420D0B6950059C4BE /* WeChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeChatCell.m; sourceTree = "<group>"; };
 		5E643FE520D0B6950059C4BE /* USChatListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USChatListCell.h; sourceTree = "<group>"; };
+		5E64402E20D0FD8A0059C4BE /* USNearAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USNearAddressViewController.m; sourceTree = "<group>"; };
+		5E64402F20D0FD8B0059C4BE /* USNearAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USNearAddressViewController.h; sourceTree = "<group>"; };
+		5E64403120D1019B0059C4BE /* SelectLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationCell.h; sourceTree = "<group>"; };
+		5E64403220D101A60059C4BE /* SelectLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationCell.m; sourceTree = "<group>"; };
 		5E6CEE7E20CA6A5A009725E9 /* USUploadImageProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USUploadImageProcess.h; sourceTree = "<group>"; };
 		5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USUploadImageProcess.m; sourceTree = "<group>"; };
 		5E6CEE8120CBD7A9009725E9 /* USAppData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USAppData.h; sourceTree = "<group>"; };
@@ -461,6 +467,8 @@
 				5E9FCD5820C78C5F00780E1A /* USLocalBrowseViewController.m */,
 				5EBCCC4220CA0DFD009FB2A4 /* USOpenSecretViewController.h */,
 				5EBCCC4320CA0DFE009FB2A4 /* USOpenSecretViewController.m */,
+				5E64402F20D0FD8B0059C4BE /* USNearAddressViewController.h */,
+				5E64402E20D0FD8A0059C4BE /* USNearAddressViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -468,6 +476,8 @@
 		5E9FCD0520C6229D00780E1A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5E64403120D1019B0059C4BE /* SelectLocationCell.h */,
+				5E64403220D101A60059C4BE /* SelectLocationCell.m */,
 				5EBCCC4620CA1707009FB2A4 /* USInputView.h */,
 				5EBCCC4520CA1707009FB2A4 /* USInputView.m */,
 				5EBCCC3620CA0DA5009FB2A4 /* USSecretHeaderView.h */,
@@ -1141,6 +1151,7 @@
 				6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */,
 				6C6DD35B20C9579A00379490 /* USReleaseProcess.m in Sources */,
 				5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */,
+				5E64403020D0FD8B0059C4BE /* USNearAddressViewController.m in Sources */,
 				5EBE83D620C2DA2E00C5B0D9 /* UIView+CustomVWithCorRadius.m in Sources */,
 				5E9FCD1220C6887100780E1A /* USReleaseTextCell.m in Sources */,
 				5EBE83DD20C2DA2E00C5B0D9 /* YQNetworking.m in Sources */,
@@ -1203,6 +1214,7 @@
 				5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */,
 				5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */,
 				5EBE83D520C2DA2E00C5B0D9 /* UIColor+Hex.m in Sources */,
+				5E64403320D101A60059C4BE /* SelectLocationCell.m in Sources */,
 				6C9AC1E120C6944900E8D621 /* USMainLookingForDifferentVC.m in Sources */,
 				5E643FD520D0B2460059C4BE /* USRegisterViewController.m in Sources */,
 				5E643FD320D0B2460059C4BE /* USForgetPswViewController.m in Sources */,
