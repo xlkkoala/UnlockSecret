@@ -159,7 +159,7 @@
                                                             <state key="normal" image="m_envelope"/>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.37900081276893616" green="0.40475499629974365" blue="0.5540282130241394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.36078431372549019" green="0.3411764705882353" blue="0.49411764705882355" alpha="0.90465448943661975" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eNT-oe-6EW" secondAttribute="trailing" constant="20" symbolic="YES" id="2CF-ga-guB"/>
                                                         <constraint firstAttribute="trailing" secondItem="crI-ec-7Ap" secondAttribute="trailing" constant="10" id="4EG-aE-g2g"/>
@@ -191,7 +191,7 @@
                                                     <state key="normal" image="p_focus"/>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.16862745100000001" green="0.18823529410000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="SEx-HZ-sis" firstAttribute="leading" secondItem="Nq5-3H-P9h" secondAttribute="leading" constant="10" id="CJp-6I-Vq1"/>
                                                 <constraint firstItem="yfQ-2A-hFb" firstAttribute="top" secondItem="SEx-HZ-sis" secondAttribute="bottom" id="Cah-Vj-ThP"/>

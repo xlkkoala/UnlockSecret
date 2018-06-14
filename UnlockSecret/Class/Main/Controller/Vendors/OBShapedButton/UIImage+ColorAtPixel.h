@@ -29,6 +29,12 @@
  
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, GradientType) {
+    GradientTypeTopToBottom = 0,//从上到小
+    GradientTypeLeftToRight = 1,//从左到右
+    GradientTypeUpleftToLowright = 2,//左上到右下
+    GradientTypeUprightToLowleft = 3,//右上到左下
+};
 /*
  A category on UIImage that enables you to query the color value of arbitrary 
  pixels of the image.
@@ -36,5 +42,6 @@
 @interface UIImage (ColorAtPixel)
 
 - (UIColor *)colorAtPixel:(CGPoint)point;
++ (UIImage *)gradientColorImageFromColors:(NSArray*)colors gradientType:(GradientType)gradientType imgSize:(CGSize)imgSize;
 
 @end

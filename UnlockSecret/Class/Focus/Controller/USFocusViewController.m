@@ -9,6 +9,7 @@
 #import "USFocusViewController.h"
 #import "USFocusTableViewCell.h"
 #import "USFocusListProcess.h"
+#import "UIImage+ColorAtPixel.h"
 
 @interface USFocusViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -20,6 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 渐变色
+    UIColor *topleftColor = ColorFromRGB(43, 50, 92);
+    UIColor *bottomrightColor = ColorFromRGB(62, 37, 99);
+    UIImage *bgImg = [UIImage gradientColorImageFromColors:@[topleftColor, bottomrightColor] gradientType:GradientTypeTopToBottom imgSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT)];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImg];
+    self.tableView.backgroundColor = UIColor.clearColor;
     
     [self getFocusListData];
 }

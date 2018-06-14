@@ -892,9 +892,9 @@
 			isa = PBXGroup;
 			children = (
 				6C9AC1CE20C68A9E00E8D621 /* OBShapedButton.h */,
+				6C9AC1D120C68A9E00E8D621 /* OBShapedButton.m */,
 				6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */,
 				6C9AC1D020C68A9E00E8D621 /* UIImage+ColorAtPixel.h */,
-				6C9AC1D120C68A9E00E8D621 /* OBShapedButton.m */,
 			);
 			path = OBShapedButton;
 			sourceTree = "<group>";

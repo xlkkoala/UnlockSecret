@@ -8,6 +8,7 @@
 
 #import "USMessageViewController.h"
 #import "USMessageTableViewCell.h"
+#import "UIImage+ColorAtPixel.h"
 
 @interface USMessageViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -17,7 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // 渐变色
+    UIColor *topleftColor = ColorFromRGB(43, 50, 92);
+    UIColor *bottomrightColor = ColorFromRGB(62, 37, 99);
+    UIImage *bgImg = [UIImage gradientColorImageFromColors:@[topleftColor, bottomrightColor] gradientType:GradientTypeTopToBottom imgSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT)];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImg];
+    self.tableView.backgroundColor = UIColor.clearColor;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
