@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E3E217E20D23C0D00146CEB /* USReleaseLabelProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E217D20D23C0D00146CEB /* USReleaseLabelProcess.m */; };
 		5E643FB520CE53F80059C4BE /* UIView+FrameTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FB420CE53F80059C4BE /* UIView+FrameTool.m */; };
 		5E643FB920CE9EC20059C4BE /* USUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FB820CE9EC20059C4BE /* USUserInfoCell.m */; };
 		5E643FBC20CFAEA50059C4BE /* USUserSecretCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E643FBB20CFAEA50059C4BE /* USUserSecretCell.m */; };
@@ -126,6 +127,8 @@
 
 /* Begin PBXFileReference section */
 		4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnlockSecret.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E3E217C20D23C0D00146CEB /* USReleaseLabelProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseLabelProcess.h; sourceTree = "<group>"; };
+		5E3E217D20D23C0D00146CEB /* USReleaseLabelProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseLabelProcess.m; sourceTree = "<group>"; };
 		5E643FB320CE53F70059C4BE /* UIView+FrameTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameTool.h"; sourceTree = "<group>"; };
 		5E643FB420CE53F80059C4BE /* UIView+FrameTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameTool.m"; sourceTree = "<group>"; };
 		5E643FB720CE9EC20059C4BE /* USUserInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USUserInfoCell.h; sourceTree = "<group>"; };
@@ -864,6 +867,8 @@
 				6C6DD35A20C9579A00379490 /* USReleaseProcess.m */,
 				5E6CEE7E20CA6A5A009725E9 /* USUploadImageProcess.h */,
 				5E6CEE7F20CA6A5A009725E9 /* USUploadImageProcess.m */,
+				5E3E217C20D23C0D00146CEB /* USReleaseLabelProcess.h */,
+				5E3E217D20D23C0D00146CEB /* USReleaseLabelProcess.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1219,6 +1224,7 @@
 				5E643FD520D0B2460059C4BE /* USRegisterViewController.m in Sources */,
 				5E643FD320D0B2460059C4BE /* USForgetPswViewController.m in Sources */,
 				5EBE83DA20C2DA2E00C5B0D9 /* YQCacheManager.m in Sources */,
+				5E3E217E20D23C0D00146CEB /* USReleaseLabelProcess.m in Sources */,
 				5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */,
 				5E643FE620D0B6950059C4BE /* USChatListViewController.m in Sources */,
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,

@@ -37,6 +37,7 @@
 #define US_QUERY_SECRET @"116"
 #define US_DELETE_SECRET @"117"
 #define US_FOCUS_DETAIL @"118"
+#define US_RELEASE_LABEL @"130"
 #define US_UPLOAD_PICTURE @"4023"
 
 #endif /* USUrl_h */
