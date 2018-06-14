@@ -19,6 +19,7 @@
 #import <AVFoundation/AVMediaFormat.h>
 #import "USNearAddressViewController.h"
 #import <AMapSearchKit/AMapSearchKit.h>
+#import "USReleaseProcess.h"
 
 static NSString *const Release_TextView_Cell     = @"Release_TextView_Cell";
 static NSString *const Release_Image_Cell        = @"Release_Image_Cell";
@@ -261,8 +262,33 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
 }
 
 - (IBAction)releaseClick:(UIBarButtonItem *)sender {
-    USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
-    [self.navigationController pushViewController:vc animated:YES];
+//    USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    USReleaseTextCell *cell = (USReleaseTextCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    USReleaseInfoCell *infocell = (USReleaseInfoCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+    NSString *pic = @"";
+    for (int i = 0; i < self.imageUrlArray.count; i ++) {
+        if (i == self.imageUrlArray.count) {
+            pic = [pic stringByAppendingString:self.imageUrlArray[i]];
+        }else{
+            pic = [pic stringByAppendingString:[NSString stringWithFormat:@"%@,",self.imageUrlArray[i]]];
+        }
+    }
+    NSString *position = @"";
+    NSString *address = @"";
+    if (self.poi) {
+        position = [NSString stringWithFormat:@"%f,%f",self.poi.location.latitude,self.poi.location.longitude];
+        address = [NSString stringWithFormat:@"%@·%@\n%@",self.poi.city,self.poi.name,self.poi.address];
+    }
+    
+    if ([cell.secretTextView.text isEqualToString:@""] || cell.secretTextView.text.length == 0) {
+        [SVProgressHUD showInfoWithStatus:@"请输入内容"];
+        return;
+    }else if ([cell.titleTF.text isEqualToString:@""] || cell.titleTF.text.length == 0) {
+        [SVProgressHUD showInfoWithStatus:@"请输入标题"];
+        return;
+    }
     
     // 如果有选择图片，首先上传图片
     if (self.imageDataArray.count > 0) {
@@ -277,15 +303,40 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
             NSLog(@"over");
         });
     }else {
-        [self releaseSecret];
+        [self releaseSecretByContent:cell.secretTextView.text title:cell.titleTF.text label:infocell.detailLabel.text pic:pic positon:position address:address];
     }
 }
 
 #pragma mark - 发布秘密
 
-- (void)releaseSecret {
+- (void)releaseSecretByContent:(NSString *)content title:(NSString *)title label:(NSString *)label pic:(NSString *)pic positon:(NSString *)position address:(NSString *)address{
     
+    USReleaseProcess *process = [[USReleaseProcess alloc] init];
+    process.dictionary =[@{@"content":content,@"title":title,@"label":label,@"pic":pic,@"userId":USER_ID,@"position":position,@"address":address}mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        [self methodsInMainQueue:^{
+            [SVProgressHUD showSuccessWithStatus:@"发布成功"];
+            [self initAllUI];
+        }]; 
+    } errorBlock:^(NSError *error) {
+        
+    }];
 }
+
+#pragma mark - 重新初始化页面
+
+- (void)initAllUI {
+    USReleaseTextCell *cell = (USReleaseTextCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    cell.secretTextView.text = @"";
+    cell.titleTF.text = @"";
+    USReleaseInfoCell *infocell = (USReleaseInfoCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+    infocell.detailLabel.text = @"";
+    [self.imageDataArray removeAllObjects];
+    [self.imageUrlArray removeAllObjects];
+    [self.collectionView reloadData];
+}
+
+#pragma mark - 取消按钮
 
 - (IBAction)cancleClick:(id)sender {
     UITabBarController *tabbar = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
@@ -301,6 +352,25 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
     } wtihSuccess:^(id response) {
         NSString *url = response;
         [self.imageUrlArray addObject:url];
+        if (self.imageUrlArray.count == self.imageDataArray.count) {
+            USReleaseTextCell *cell = (USReleaseTextCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            USReleaseInfoCell *infocell = (USReleaseInfoCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+            NSString *pic = @"";
+            for (int i = 0; i < self.imageUrlArray.count; i ++) {
+                if (i == self.imageUrlArray.count) {
+                    pic = [pic stringByAppendingString:self.imageUrlArray[i]];
+                }else{
+                    pic = [pic stringByAppendingString:[NSString stringWithFormat:@"%@,",self.imageUrlArray[i]]];
+                }
+            }
+            NSString *position = @"";
+            NSString *address = @"";
+            if (self.poi) {
+                position = [NSString stringWithFormat:@"%f,%f",self.poi.location.latitude,self.poi.location.longitude];
+                address = [NSString stringWithFormat:@"%@·%@\n%@",self.poi.city,self.poi.name,self.poi.address];
+            }
+            [self releaseSecretByContent:cell.secretTextView.text title:cell.titleTF.text label:infocell.detailLabel.text pic:pic positon:position address:address];
+        }
     } withError:^(NSError *error) {
         
     }];

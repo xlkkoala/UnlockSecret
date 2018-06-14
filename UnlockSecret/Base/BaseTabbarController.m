@@ -7,8 +7,8 @@
 //
 
 #import "BaseTabbarController.h"
-
-@interface BaseTabbarController ()<UITabBarDelegate>
+#import "USLoginViewController.h"
+@interface BaseTabbarController ()<UITabBarDelegate,UITabBarControllerDelegate>
 
 @end
 
@@ -16,13 +16,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.delegate = self;
     [[UITabBar appearance] setBarTintColor:ColorFromRGB(57, 66, 111)];
-    [UITabBar appearance].translucent = NO;
+    [UITabBar appearance].translucent = YES;
     self.selectedIndex = 0;
 }
 
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if (viewController != self.viewControllers[0] ) {
+        if (![LoginHelper isUserLogin]) {
+            //登录
+            USLoginViewController *vc = [LOGIN_STORYBOARD instantiateViewControllerWithIdentifier:@"LOGIN_ID"];
+            [self presentViewController:vc animated:YES completion:^{
+                
+            }];
+        }
+        return NO;
+    }
+    return YES;
+}
+
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    
     if (![item isEqual:[tabBar.items objectAtIndex:2]]) {
         NSInteger currentIndex;
         if ([item.title isEqualToString:@"首页"]) {

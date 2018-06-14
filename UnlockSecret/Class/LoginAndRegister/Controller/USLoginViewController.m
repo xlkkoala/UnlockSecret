@@ -163,6 +163,13 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
+- (IBAction)backClick:(id)sender {
+    UITabBarController *tabbar =  (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    tabbar.selectedIndex = 0;
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

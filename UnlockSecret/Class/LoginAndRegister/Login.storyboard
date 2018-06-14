@@ -27,7 +27,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wM7-id-TJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258" y="235"/>
+            <point key="canvasLocation" x="-617" y="229"/>
         </scene>
         <!--登录-->
         <scene sceneID="qwe-bQ-Ip2">
@@ -223,7 +223,13 @@
                             <constraint firstItem="mEV-FN-gKd" firstAttribute="centerY" secondItem="4N4-Ax-s6P" secondAttribute="centerY" id="Ncl-Ns-wP4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="登录" id="C6T-yv-YeU"/>
+                    <navigationItem key="navigationItem" title="登录" id="C6T-yv-YeU">
+                        <barButtonItem key="leftBarButtonItem" title=" X" id="O8e-f7-Ogj">
+                            <connections>
+                                <action selector="backClick:" destination="xYV-E1-WWX" id="jQn-AQ-d9h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="passwordTF" destination="IOg-st-Leu" id="Ffx-NA-FFY"/>
                         <outlet property="userNameTF" destination="s3c-XY-f84" id="0qL-Et-n08"/>

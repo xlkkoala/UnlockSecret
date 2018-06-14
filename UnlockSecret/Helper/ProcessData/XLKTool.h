@@ -36,11 +36,6 @@ typedef void (^DisMissBlock)(BOOL seccess);
 //匹配手机号
 + (BOOL)checkTelNumber:(NSString *) telNumber;
 
-#pragma mark - LoadingView
-+ (void)startLoadingWithView:(UIView *)view;
-
-+ (void)endLoadingWithView:(UIView *)view;
-
 #pragma mark -返回拼音首字母
 + (NSString *)firstCharactor:(NSString *)aString;
 

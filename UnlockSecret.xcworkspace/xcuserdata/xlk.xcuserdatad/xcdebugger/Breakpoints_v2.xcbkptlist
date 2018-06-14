@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UnlockSecret/Class/Release/Network/USUploadImageProcess.m"
-            timestampString = "550389401.883131"
+            filePath = "UnlockSecret/Class/Release/Controller/USReleaseViewController.m"
+            timestampString = "550636435.34887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-uploadImageBySource:withProcess:wtihSuccess:withError:"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
