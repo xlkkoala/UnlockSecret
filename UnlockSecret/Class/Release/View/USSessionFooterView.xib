@@ -33,6 +33,9 @@
                 <constraint firstItem="pdx-dy-b5I" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="yo0-aQ-GfU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="queryReplyDetailBtn" destination="pdx-dy-b5I" id="1TB-Ci-SeQ"/>
+            </connections>
         </view>
     </objects>
 </document>

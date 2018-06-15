@@ -132,6 +132,9 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
         }];
 
         [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section == 2 && indexPath.row == 2) {
+        USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -207,10 +210,10 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
         }];
         UIAlertAction *photoLibaray = [UIAlertAction actionWithTitle:@"我的相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-            if ([self isCanUsePhotos] == NO) {
-                [SVProgressHUD showInfoWithStatus:@"请在iPhone的""设置-隐私-照片""选项中允许寻秘访问你的手机相册"];
-                return;
-            }
+//            if ([self isCanUsePhotos] == NO) {
+//                [SVProgressHUD showInfoWithStatus:@"请在iPhone的""设置-隐私-照片""选项中允许寻秘访问你的手机相册"];
+//                return;
+//            }
             
             IJSImagePickerController *vc = [[IJSImagePickerController alloc] initWithMaxImagesCount:9 - self.imageDataArray.count columnNumber:4 pushPhotoPickerVc:YES];
             [self presentViewController:vc animated:YES completion:nil];
@@ -262,8 +265,6 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
 }
 
 - (IBAction)releaseClick:(UIBarButtonItem *)sender {
-//    USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
-//    [self.navigationController pushViewController:vc animated:YES];
     
     USReleaseTextCell *cell = (USReleaseTextCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     USReleaseInfoCell *infocell = (USReleaseInfoCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];

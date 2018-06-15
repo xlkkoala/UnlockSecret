@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "USSecretDetailModel.h"
 
 @interface USSecretHeaderView : UIView
 
+@property (nonatomic, strong) USSecretDetailModel *model;
+
 - (instancetype)init;
+
+- (void)creatMessage:(USSecretDetailModel *)model;
 
 @end

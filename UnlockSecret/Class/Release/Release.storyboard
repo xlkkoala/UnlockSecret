@@ -312,7 +312,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="563"/>
                                 <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SECRET_CELL" rowHeight="171" id="dgJ-RU-jkk">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SECRET_CELL" rowHeight="171" id="dgJ-RU-jkk" customClass="USReplyCell">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dgJ-RU-jkk" id="aff-rJ-1FZ">
@@ -328,13 +328,16 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ora-km-jvP" secondAttribute="trailing" constant="20" id="IGr-og-B8k"/>
+                                                <constraint firstAttribute="trailing" secondItem="ora-km-jvP" secondAttribute="trailing" constant="20" id="IGr-og-B8k"/>
                                                 <constraint firstAttribute="bottom" secondItem="ora-km-jvP" secondAttribute="bottom" id="LBP-T2-iyZ"/>
                                                 <constraint firstItem="ora-km-jvP" firstAttribute="top" secondItem="aff-rJ-1FZ" secondAttribute="top" id="jtH-C1-V7y"/>
                                                 <constraint firstItem="ora-km-jvP" firstAttribute="leading" secondItem="aff-rJ-1FZ" secondAttribute="leading" constant="60" id="ucf-vM-5BG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="replyLabel" destination="ora-km-jvP" id="sdC-g8-IoY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

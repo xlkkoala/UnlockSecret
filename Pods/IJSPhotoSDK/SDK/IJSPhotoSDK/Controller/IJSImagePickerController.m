@@ -26,8 +26,8 @@
 }
 /* 默认的列数 */
 @property (nonatomic, assign) NSInteger columnNumber;
-@property(nonatomic,weak) IJSAlbumPickerController *albumVc;  // 相册控制器
-@property(nonatomic,weak) IJSPhotoPickerController *photoVc;  // 相册预览界面
+@property(nonatomic,strong) IJSAlbumPickerController *albumVc;  // 相册控制器
+@property(nonatomic,strong) IJSPhotoPickerController *photoVc;  // 相册预览界面
 @end
 
 @implementation IJSImagePickerController
@@ -58,6 +58,13 @@
 {
     self.albumVc.selectedHandler = selectedHandler;
     self.photoVc.selectedHandler = selectedHandler;
+}
+
+- (IJSPhotoPickerController *)photoVc{
+    if (!_photoVc) {
+        _photoVc = [[IJSPhotoPickerController alloc] init];
+    }
+    return _photoVc;
 }
 
 -(void)cancelSelectedData:(void(^)(void))cancelHandler
@@ -97,7 +104,7 @@
         if (![[IJSImageManager shareManager] authorizationStatusAuthorized]) // 没有授权,自定义的界面
         {
             _tipLabel = [[UILabel alloc] init];
-            _tipLabel.backgroundColor = [UIColor redColor];
+//            _tipLabel.backgroundColor = [UIColor redColor];
             _tipLabel.frame = CGRectMake(8, 200, self.view.js_width - 16, 60);
             _tipLabel.textAlignment = NSTextAlignmentCenter;
             _tipLabel.layer.cornerRadius = 5;
@@ -121,7 +128,7 @@
             _settingBtn.frame = CGRectMake(JSScreenWidth / 2 - 50, 280, 100, 44);
             _settingBtn.titleLabel.font = [UIFont systemFontOfSize:20];
             _settingBtn.tintColor =[UIColor blueColor];
-            _settingBtn.backgroundColor =[UIColor greenColor];
+//            _settingBtn.backgroundColor =[UIColor greenColor];
             _settingBtn.layer.borderWidth =1;
             _settingBtn.layer.cornerRadius = 5;
             _settingBtn.layer.masksToBounds = YES;
@@ -171,14 +178,14 @@
     _didPushPhotoPickerVc = NO;
     if (!_didPushPhotoPickerVc && _pushPhotoPickerVc) // 直接push
     {
-        IJSPhotoPickerController *vc = [[IJSPhotoPickerController alloc] init];
-        self.photoVc = vc;
-        vc.columnNumber = self.columnNumber; //列数
+//        IJSPhotoPickerController *vc = [[IJSPhotoPickerController alloc] init];
+//        self.photoVc = vc;
+        self.photoVc.columnNumber = self.columnNumber; //列数
         __weak typeof(self) weakSelf = self;
-        __weak typeof(vc) weakVc = vc;
+        __weak typeof(self.photoVc) weakVc = self.photoVc;
         [[IJSImageManager shareManager] getCameraRollAlbumContentImage:_allowPickingImage contentVideo:_allowPickingVideo completion:^(IJSAlbumModel *model) {
             weakVc.albumModel = model;
-            [weakSelf pushViewController:vc animated:YES];
+            [weakSelf pushViewController:self.photoVc animated:YES];
             _didPushPhotoPickerVc = YES;
         }];
     }

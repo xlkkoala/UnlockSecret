@@ -13,7 +13,7 @@
 - (void)uploadImageBySource:(UIImage *)image withProcess:(progress)process wtihSuccess:(success)success withError:(error)error{
     
     NSData *data = UIImageJPEGRepresentation(image, 0.8);
-    NSDictionary *paramter = [self encrypt:[NSString jsonStringWithDictionary:@{@"crpno":@"xunmi",@"userId":@"1"}] queryid:US_UPLOAD_PICTURE];
+    NSDictionary *paramter = [self encrypt:[NSString jsonStringWithDictionary:@{@"crpno":@"xunmi",@"userId":USER_ID}] queryid:US_UPLOAD_PICTURE];
     NSURLSessionConfiguration *sessionConfiguration;
     sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     //设置请求headers

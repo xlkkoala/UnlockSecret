@@ -26,28 +26,33 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self creatMessage];
     }
     return self;
 }
 
-- (void)creatMessage {
+- (void)creatMessage:(USSecretDetailModel *)model {
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 15;
     self.clipsToBounds = NO;
     self.backgroundColor = [UIColor colorWithRed:233/256.f green:234/256.f blue:236/256.f alpha:1];
-    NSString *name = @"至尊宝～";
-    NSString *time = @"05/20";
-    NSString *title = @"大话西游";
-    NSString *str = @"曾经有份真挚的爱情摆在我的面前，我没有珍惜，等到失去的时候才后悔莫急，人世间最痛苦的事莫过余此，如果上天在给我一次机会，我会对那个女孩说我爱你，如果要在这份爱上加个期限，我希望是一万年。";
+    NSString *name = model.name;
+    NSString *time = model.createTime;
+    NSString *title = model.title;
+    NSString *str = model.content;
+    NSString *imageUrl = IMAGEURL(model.photo, 60, 60);
     NSMutableArray *imageArray = [@[]mutableCopy];
+    if (![model.pic isEqualToString:@""]) {
+        imageArray = (NSMutableArray *)[model.pic componentsSeparatedByString:@","];
+    }
     
     //头像
     NSInteger USER_BTN_HEIGHT = 60;
     UIImageView *headImgae = [[UIImageView alloc] init];
     [headImgae setBackgroundColor:[UIColor cyanColor]];
+    [headImgae sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:DEFAULT_IMAGE_HEADER];
     headImgae.center = CGPointMake(SCREEN_WIDTH/2, 0);
     headImgae.bounds = CGRectMake(0, 0, USER_BTN_HEIGHT, USER_BTN_HEIGHT);
+    headImgae.layer.masksToBounds = YES;
     headImgae.layer.cornerRadius = USER_BTN_HEIGHT/2;
     [self addSubview:headImgae];
     

@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface USSessionHeaderView : UIView
-@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;//全部评论
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentHeight;
+@property (weak, nonatomic) IBOutlet UILabel *addressAndTimeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *replayBtn;
+@property (weak, nonatomic) IBOutlet UIButton *likeBtn;
 
 @end

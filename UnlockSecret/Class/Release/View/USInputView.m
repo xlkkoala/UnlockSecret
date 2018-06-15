@@ -9,16 +9,20 @@
 #import "USInputView.h"
 
 @implementation USInputView
-
+{
+    USSecretDetailModel *_secretModel;
+}
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        [self creatUI];
+        
     }
     return self;
 }
 
-- (void)creatUI{
+- (void)creatUIByModel:(USSecretDetailModel *)model {
+    
+    _secretModel = model;
     _textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
     _textField.leftView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 6, 12)];
     ((UIImageView *)_textField.leftView).image = [UIImage imageNamed:@"youjiantou"];
@@ -38,7 +42,7 @@
     [self addSubview:likeView];
 
     _likeNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 60, 40)];
-    _likeNumberLabel.text = @"1024";
+    _likeNumberLabel.text = model.praise_count;
     _likeNumberLabel.font = [UIFont systemFontOfSize:12];
     _likeNumberLabel.textAlignment = NSTextAlignmentLeft;
     [likeView addSubview:_likeNumberLabel];
@@ -51,6 +55,25 @@
     _likeBtn = [[UIButton alloc] initWithFrame:likeView.bounds];
     [_likeBtn addTarget:self action:@selector(likeClick) forControlEvents:UIControlEventTouchUpInside];
     [likeView addSubview:_likeBtn];
+    
+    UIView *commentView = [[UIView alloc] init];
+    commentView.frame = CGRectMake(self.bounds.size.width - 140, 0, 70, self.bounds.size.height);
+    [self addSubview:commentView];
+    
+    _commentNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 60, 40)];
+    _commentNumberLabel.text = model.commentCount;
+    _commentNumberLabel.font = [UIFont systemFontOfSize:12];
+    _commentNumberLabel.textAlignment = NSTextAlignmentLeft;
+    [commentView addSubview:_commentNumberLabel];
+    
+    _commentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height/2-6, 6, 12)];
+    _commentImageView.image = [UIImage imageNamed:@"youjiantou"];
+    [commentView addSubview:_commentImageView];
+    
+    
+    _commentBtn = [[UIButton alloc] initWithFrame:commentView.bounds];
+    [_commentBtn addTarget:self action:@selector(commentClick) forControlEvents:UIControlEventTouchUpInside];
+    [commentView addSubview:_commentBtn];
     
 }
 
@@ -110,8 +133,28 @@
 
 - (void)likeClick {
     //判断当前的是点赞还是取消
-    if (self.delegate && [self.delegate respondsToSelector:@selector(likeCurrentSecretClick:)]) {
-        [self.delegate likeCurrentSecretClick:YES];
+    if ([_secretModel.praise isEqualToString:@"0"]) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(likeCurrentSecretClick:)]) {
+            [self.delegate likeCurrentSecretClick:YES];
+        }
+    }else {
+        NSLog(@"已经喜欢该秘密");
+    }
+}
+
+- (void)commentClick {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(commentBtnClick)]) {
+        [self.delegate commentBtnClick];
+    }
+}
+
+- (void)changeLikeBtn:(BOOL)isLike {
+    if (isLike == YES) {
+        _secretModel.praise = @"1";
+//        _likeImageView.image = [UIImage imageNamed:@""];
+    }else{
+        _secretModel.praise = @"0";
+//        _likeImageView.image = [UIImage imageNamed:@""];
     }
 }
 

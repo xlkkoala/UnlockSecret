@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface USSessionFooterView : UIView
+@property (weak, nonatomic) IBOutlet UIButton *queryReplyDetailBtn;
 
 @end
