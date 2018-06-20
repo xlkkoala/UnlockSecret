@@ -10,4 +10,6 @@
 
 @interface USOpenSecretViewController : BaseViewController
 
+@property (nonatomic, strong) NSString *secretId;
+
 @end

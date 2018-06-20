@@ -62,7 +62,7 @@
 #pragma mark - 获取秘密详情
 - (void)getSecretDetail {
     USOpenSecretDetailProcess *process = [[USOpenSecretDetailProcess alloc] init];
-    process.dictionary = [@{@"secretId":@"22",@"userId":USER_ID} mutableCopy];
+    process.dictionary = [@{@"secretId":self.secretId,@"userId":USER_ID} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         self.secretModel = response;
         //创建header
