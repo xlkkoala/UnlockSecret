@@ -117,7 +117,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t30-zV-VQU">
                                                     <rect key="frame" x="70" y="10" width="290" height="230"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="crI-ec-7Ap">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="m_envelope" translatesAutoresizingMaskIntoConstraints="NO" id="crI-ec-7Ap">
                                                             <rect key="frame" x="10" y="10" width="270" height="165"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="165" id="e3b-A3-XPW"/>
@@ -156,7 +156,6 @@
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRD-c1-clM">
                                                             <rect key="frame" x="10.5" y="10" width="270" height="165"/>
-                                                            <state key="normal" image="m_envelope"/>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.36078431372549019" green="0.3411764705882353" blue="0.49411764705882355" alpha="0.90465448943661975" colorSpace="custom" customColorSpace="sRGB"/>

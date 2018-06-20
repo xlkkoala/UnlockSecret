@@ -18,6 +18,15 @@
 - (void)showUSMainInfo:(USMainModel *)model{
     
     [self.imageViewHeader sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(model.photo, 150, 150)] placeholderImage:DEFAULT_IMAGE_HEADER];
+    
+    if( model.isOpen ){
+        
+        [self.imageViewSystem sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(model.open_pic, 150, 150)] placeholderImage:ImageNamed(@"m_envelope")];
+    }else{
+        
+        [self.imageViewSystem sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(model.no_pic, 150, 150)] placeholderImage:ImageNamed(@"m_envelope")];
+    }
+    
     self.lblContent.text = model.title;
     self.lblOpenCount.text = StringFormat(@"%@人拆开",model.open_count);
     self.btnFocus.hidden = model.isAttention;

@@ -21,5 +21,10 @@
 @property (nonatomic, copy) NSString *system_pic;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *uid;
+// 是否打开过 0未打开 1打开
+@property (nonatomic, assign) int isOpen;
+@property (nonatomic, copy) NSString *no_pic;
+@property (nonatomic, copy) NSString *open_pic;
+
 
 @end
