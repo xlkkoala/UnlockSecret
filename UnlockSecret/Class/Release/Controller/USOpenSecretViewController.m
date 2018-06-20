@@ -19,6 +19,8 @@
 #import "USReplyCell.h"
 #import "USLikeCommentProcess.h"
 #import "USLikeSecretProcess.h"
+#import "USSaveCommentSecretProcess.h"
+#import "USUserReplyCommentProcess.h"
 
 @interface USOpenSecretViewController ()<UITableViewDelegate,UITableViewDataSource,USInputViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -27,6 +29,7 @@
 @property (nonatomic, strong) NSMutableDictionary *discussDictionary; //    评论下对应的讨论
 @property (nonatomic, strong) USInputView *inputView;
 @property (nonatomic, strong) USSecretDetailModel *secretModel; // 秘密
+@property (nonatomic, strong) NSIndexPath *replyIndex; //点击回复按钮记录
 @end
 
 @implementation USOpenSecretViewController
@@ -51,10 +54,12 @@
     [self.view sendSubviewToBack:self.navigationView];
     self.tableView.estimatedSectionHeaderHeight  = 1000;
     self.tableView.estimatedRowHeight = 1000;
+    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
     [self getSecretDetail];
     [self getCommentList];
 }
 
+#pragma mark - 获取秘密详情
 - (void)getSecretDetail {
     USOpenSecretDetailProcess *process = [[USOpenSecretDetailProcess alloc] init];
     process.dictionary = [@{@"secretId":@"22",@"userId":USER_ID} mutableCopy];
@@ -74,10 +79,13 @@
     }];
 }
 
+#pragma mark - 获取评论列表
 - (void)getCommentList {
+    [SVProgressHUD show];
     USCommentListProcess *process = [[USCommentListProcess alloc] init];
     process.dictionary = [@{@"secretId":@"22",@"userId":USER_ID} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
+        [SVProgressHUD dismiss];
         self.commentListArray = response;
         [self.tableView reloadData];
     } errorBlock:^(NSError *error) {
@@ -85,30 +93,38 @@
     }];
 }
 
+#pragma mark - 获取评论回复详情
 - (void)getReplyDetail:(NSInteger)section {
+    [SVProgressHUD show];
     USReplyDetailProcess *process = [[USReplyDetailProcess alloc] init];
     USCommentListModel *model = self.commentListArray[section];
     process.dictionary = [@{@"commentId":model.comment_id}mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
-        [self.discussDictionary setObject:response forKey:[NSString stringWithFormat:@"%ld",(long)section]];
+        [SVProgressHUD dismiss];
+        // 用秘密的 id 作为 key 值 （确保唯一性）
+        [self.discussDictionary setObject:response forKey:[NSString stringWithFormat:@"%@",model.comment_id]];
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];
     } errorBlock:^(NSError *error) {
         
     }];
 }
 
+#pragma mark - 点赞评论
 - (void)userLikeCommentBySection:(NSInteger)section {
     USLikeCommentProcess *process = [[USLikeCommentProcess alloc] init];
     USCommentListModel *model = self.commentListArray[section];
     process.dictionary = [@{@"commentId":model.comment_id,@"userId":USER_ID}mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
+        // 同时改变本地的是否点赞和点赞数量
         model.isPraise = @"1";
+        model.praise = [NSString stringWithFormat:@"%ld",[model.praise integerValue] + 1];
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];
     } errorBlock:^(NSError *error) {
         
     }];
 }
 
+#pragma mark - 点赞秘密
 - (void)userLikeSecret {
     USLikeSecretProcess *process = [[USLikeSecretProcess alloc] init];
     process.dictionary = [@{@"secretId":self.secretModel.secretId,@"userId":USER_ID}mutableCopy];
@@ -117,9 +133,38 @@
     } errorBlock:^(NSError *error) {
         
     }];
-    
 }
 
+#pragma mark - 用户评论用户
+- (void)userReplyUser:(NSString *)content {
+    USUserReplyCommentProcess *process = [[USUserReplyCommentProcess alloc] init];
+    USCommentListModel *model = self.commentListArray[self.replyIndex.section];
+    process.dictionary = [@{@"content":content,@"userId":USER_ID,@"commentId":model.comment_id,@"secretId":self.secretModel.secretId,@"userToUser":model.uid}mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        model.commentCount = [NSString stringWithFormat:@"%ld",[model.commentCount integerValue] + 1];
+        [self getReplyDetail:self.replyIndex.section];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:self.replyIndex.section] withRowAnimation:UITableViewRowAnimationNone];
+        [self.inputView.textField resignFirstResponder];
+        self.replyIndex = nil;
+    } errorBlock:^(NSError *error) {
+        [self.inputView.textField resignFirstResponder];
+        self.replyIndex = nil;
+    }];
+}
+
+#pragma mark - 用户评论秘密
+- (void)userCommentSecret:(NSString *)content {
+    USSaveCommentSecretProcess *process = [[USSaveCommentSecretProcess alloc] init];
+    process.dictionary = [@{@"content":content,@"userId":USER_ID,@"secretId":self.secretModel.secretId,@"address":@""}mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        [self getCommentList];
+        [self.inputView.textField resignFirstResponder];
+    } errorBlock:^(NSError *error) {
+        [self.inputView.textField resignFirstResponder];
+    }];
+}
+
+#pragma mark - tableView  Delegate And Datasource
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     /*
      //如果热门存在 第一个显示热门评论（数量）  热门数量+1 显示全部评论（数量）
@@ -138,21 +183,25 @@
     view.contentLabel.text = model.content;
     view.addressAndTimeLabel.text = [NSString stringWithFormat:@"%@ %@",model.address,model.createTime];
     [view.headerImage sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(model.photo, 40, 40)] placeholderImage:DEFAULT_IMAGE_HEADER];
-    [view.replayBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
-        //replay
-    }];
+    
     [view.likeBtn setTitle:model.praise forState:UIControlStateNormal];
     //根据ispraise 判断点赞状态
     if ([model.isPraise integerValue] == 0) {
         [view.likeBtn setBackgroundColor:[UIColor grayColor]];
-        view.userInteractionEnabled = YES;
+        view.likeBtn.userInteractionEnabled = YES;
     }else{
         [view.likeBtn setBackgroundColor:[UIColor redColor]];
-        view.userInteractionEnabled = NO;
+        view.likeBtn.userInteractionEnabled = NO;
     }
     [view.likeBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
         //点赞或者取消点赞
+        NSLog(@"like");
         [self userLikeCommentBySection:section];
+    }];
+    [view.replayBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
+        NSLog(@"reply");
+        self.replyIndex = [NSIndexPath indexPathForRow:0 inSection:section];
+        [self.inputView.textField becomeFirstResponder];
     }];
     [view layoutIfNeeded];
     return view;
@@ -165,7 +214,7 @@
     if (count == 0) {
         return nil;
     }else{
-         NSMutableArray *discussArray = [self.discussDictionary objectForKey:[NSString stringWithFormat:@"%ld",(long)section]];
+         NSMutableArray *discussArray = [self.discussDictionary objectForKey:[NSString stringWithFormat:@"%@",((USCommentListModel *)self.commentListArray[section]).comment_id]];
         if (discussArray) {
             return nil;
         }else{
@@ -189,9 +238,8 @@
     USCommentListModel *model = self.commentListArray[section];
     NSInteger count = [model.commentCount integerValue];
     if (count > 0) {
-        NSMutableArray *discussArray = [self.discussDictionary objectForKey:[NSString stringWithFormat:@"%ld",(long)section]];
-        if (discussArray) {
-            return discussArray.count;
+        if ([self.discussDictionary.allKeys containsObject:model.comment_id]) {
+            return ((NSMutableArray *)[self.discussDictionary objectForKey:model.comment_id]).count;
         }else{
             return 0;
         }
@@ -202,7 +250,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     USReplyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SECRET_CELL" forIndexPath:indexPath];
-    NSMutableArray *array = [self.discussDictionary objectForKey:[NSString stringWithFormat:@"%ld",indexPath.section]];
+    NSMutableArray *array = [self.discussDictionary objectForKey:[NSString stringWithFormat:@"%@",((USCommentListModel *)self.commentListArray[indexPath.section]).comment_id]];
     USReplyModel *model = array[indexPath.row];
     cell.replyLabel.text = [NSString stringWithFormat:@"%@:%@",model.name,model.content];
     return cell;
@@ -216,28 +264,44 @@
     return UITableViewAutomaticDimension;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 30;
+}
+
+#pragma mark - scrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    self.replyIndex = nil;
     [self.view endEditing:YES];
 }
 
-// 返回
+#pragma mark - back
 - (IBAction)backClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-// 评论
+#pragma mark - 发送评论
 - (void)textFieldShouldReturnInputView:(UITextField *)textField {
-    NSLog(@"comment");
+    if ([textField.text isEqualToString:@""]) {
+        self.replyIndex = nil;
+        return;
+    }
+    if (self.replyIndex) {
+        // 用户回复用户
+        [self userReplyUser:textField.text];
+    }else{
+        // 用户回复秘密
+        [self userCommentSecret:textField.text];
+    }
 }
 
-// 点赞
+#pragma mark - 点赞秘密按钮click
 - (void)likeCurrentSecretClick:(BOOL)isLike {
-    NSLog(@"like");
     [self userLikeSecret];
 }
 
-// move
+#pragma mark - move
 - (void)commentBtnClick {
+    [self.tableView setContentOffset:CGPointMake(0,0) animated:NO];
     NSLog(@"move");
 }
 

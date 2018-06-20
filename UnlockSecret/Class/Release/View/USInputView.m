@@ -121,12 +121,12 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     if (textField.text.length > 0) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(textFieldShouldReturnInputView:)]) {
-            [self.delegate textFieldShouldReturnInputView:textField];
-        }
         textField.text = @"";
     }else{
         [self.textField resignFirstResponder];
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(textFieldShouldReturnInputView:)]) {
+        [self.delegate textFieldShouldReturnInputView:textField];
     }
     return YES;
 }

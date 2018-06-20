@@ -145,7 +145,13 @@
         IMGAE_SPACING = topSpacing * 4;
     }
     
+    // 阴影view
     
+    UIView *lineview = [[UILabel alloc] init];
+    lineview.frame = CGRectMake(0, ADD_BTN_HEIGHT + USER_BTN_HEIGHT/2  + TITLE_HEIGHT + NAME_HEIGHT  + CONTENT_HEIGHT +
+                             IMGAE_SPACING + IMAGE_HEIGHT + 10, SCREEN_WIDTH, 25);
+    lineview.backgroundColor = [UIColor colorWithRed:233/256.f green:234/256.f blue:236/256.f alpha:1];
+    [self addSubview:lineview];
     
     // 评论
     

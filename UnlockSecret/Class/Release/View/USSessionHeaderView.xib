@@ -31,6 +31,17 @@
                         <constraint firstAttribute="height" constant="30" id="4pE-wR-0bv"/>
                         <constraint firstAttribute="width" constant="30" id="BCT-bt-4at"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borederColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKz-XS-jjX">
                     <rect key="frame" x="60" y="50" width="200" height="30"/>
@@ -101,7 +112,7 @@
                 <outlet property="headerImage" destination="Ppo-hx-WBd" id="bKD-Kl-fOg"/>
                 <outlet property="likeBtn" destination="8zh-hd-oYJ" id="ekO-Aj-lMB"/>
                 <outlet property="nameLabel" destination="hKz-XS-jjX" id="9es-EG-4af"/>
-                <outlet property="replayBtn" destination="8Wg-jL-zG0" id="ckh-kP-vHo"/>
+                <outlet property="replayBtn" destination="8Wg-jL-zG0" id="CLo-YS-CPI"/>
             </connections>
             <point key="canvasLocation" x="348" y="9"/>
         </view>

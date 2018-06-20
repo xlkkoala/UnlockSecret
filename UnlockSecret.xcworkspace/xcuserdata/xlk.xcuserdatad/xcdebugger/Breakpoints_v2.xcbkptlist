@@ -137,54 +137,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UnlockSecret/Class/Release/Controller/USOpenSecretViewController.m"
-            timestampString = "550743878.994121"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "-likeCurrentSecretClick:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UnlockSecret/Class/Release/Controller/USOpenSecretViewController.m"
-            timestampString = "550743878.9945689"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
-            landmarkName = "-commentBtnClick"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UnlockSecret/Class/Release/Controller/USOpenSecretViewController.m"
-            timestampString = "550743878.994893"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-userLikeSecret"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "UnlockSecret/Class/Release/Network/USLikeSecretProcess.m"
             timestampString = "550743878.995237"
             startingColumnNumber = "9223372036854775807"
@@ -201,13 +153,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UnlockSecret/Class/Release/Controller/USOpenSecretViewController.m"
-            timestampString = "550743878.9953001"
+            filePath = "UnlockSecret/Class/Release/Network/USSaveCommentSecretProcess.m"
+            timestampString = "551177166.2387559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "-tableView:viewForHeaderInSection:"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "-getMessageHandleWithSuccessBlock:errorBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

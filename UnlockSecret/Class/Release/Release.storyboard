@@ -308,7 +308,7 @@
                                     <constraint firstItem="SOp-FQ-2iq" firstAttribute="leading" secondItem="j3y-2T-dqz" secondAttribute="leading" constant="20" id="haM-81-VUb"/>
                                 </constraints>
                             </view>
-                            <tableView contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="JFd-YQ-cSp">
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="JFd-YQ-cSp">
                                 <rect key="frame" x="0.0" y="64" width="375" height="563"/>
                                 <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
