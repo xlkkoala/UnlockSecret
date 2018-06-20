@@ -11,6 +11,7 @@
 #import "RCProgressView.h"
 #import "USMainModel.h"
 
+typedef void(^UnlockedSuccessBlock)(NSInteger index);
 @interface USMainLookingForDifferentVC : UIView
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewHeader;
@@ -24,5 +25,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelCountdown;
 
 @property (nonatomic, strong) USMainModel *mainModel;
+@property (nonatomic, assign) NSInteger selectIndex;
+// 解锁成功回调
+@property (nonatomic, copy) UnlockedSuccessBlock unlockedSuccessBlock;
+
 
 @end

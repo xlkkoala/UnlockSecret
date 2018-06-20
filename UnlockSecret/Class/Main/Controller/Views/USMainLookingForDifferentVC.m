@@ -11,6 +11,7 @@
 #import "USMLookingDiffModel.h"
 #import <SDWebImageManager.h>
 #import "USMSubmitDifferentProcess.h"
+#import "USMainFocusProcess.h"
 
 #define isFristDifferent @"isFristDifferent"
 
@@ -138,12 +139,14 @@
     
     if( !([StringValue(self.picId) isEqualToString:@"<null>"]  || [NSString isNull:self.picId])){
         
+        __weak typeof(self) weakself = self;
         USMSubmitDifferentProcess *process = [[USMSubmitDifferentProcess alloc] init];
         process.dictionary = [@{@"userId":USER_ID,@"secretId":self.mainModel.secretId,@"picId":self.picId} mutableCopy];
         [process getMessageHandleWithSuccessBlock:^(id response) {
             
             [SVProgressHUD showSuccessWithStatus:@"解锁成功"];
-            [self removeFromSuperview];
+            [weakself removeFromSuperview];
+            weakself.unlockedSuccessBlock(weakself.selectIndex);
             
         } errorBlock:^(NSError *error) {
             
@@ -153,8 +156,31 @@
     }
     
 }
+//关注 type   1 添加  2为取消关注
+- (void)requestFocusType:(NSString *)type attentionId:(NSString *)attentionId{
+    
+    [SVProgressHUD showWithStatus:nil];
+    USMainFocusProcess *process = [[USMainFocusProcess alloc] init];
+    process.dictionary = [@{@"userId":USER_ID,@"type":type,@"attentionId":attentionId} mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        
+        self.buttonFocus.hidden = YES;
+        [SVProgressHUD showSuccessWithStatus:@"已关注"];
+        // 通知首页刷新列表
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIFICATIONFOCUSREFRESH" object:attentionId];
+        
+    } errorBlock:^(NSError *error) {
+        
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        
+    }];
+}
 
 #pragma mark - 按钮事件
+- (IBAction)clickFocus:(id)sender {
+    
+    [self requestFocusType:@"1" attentionId:self.mainModel.uid];
+}
 // 开始
 - (IBAction)clickStart:(id)sender {
     

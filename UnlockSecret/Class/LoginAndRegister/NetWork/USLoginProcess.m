@@ -16,12 +16,12 @@
     } successBlock:^(id response) {
         //处理数据
         NSLog(@"%@",response);
-        if ([response[@"data"][@"success"] isEqual:@1]) {
-            USUser *user = [[USUser alloc] initWithDictionary:response[@"data"][@"user"]];
+        if ([response[@"data"][@"code"] isEqual:@200]) {
+            USUser *user = [[USUser alloc] initWithDictionary:response[@"data"][@"data"]];
             [XLKTool saveDataByPath:user path:nil];
             success(user);
         }else{
-            [SVProgressHUD showErrorWithStatus:response[@"msg"]];
+            [SVProgressHUD showErrorWithStatus:response[@"data"][@"msg"]];
         }
     } failBlock:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"登陆失败"];
