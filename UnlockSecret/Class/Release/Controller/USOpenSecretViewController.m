@@ -54,7 +54,8 @@
     [self.view sendSubviewToBack:self.navigationView];
     self.tableView.estimatedSectionHeaderHeight  = 1000;
     self.tableView.estimatedRowHeight = 1000;
-    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
+    self.tableView.estimatedSectionFooterHeight = 1000;
+    self.tableView.contentInset = UIEdgeInsetsMake(_IPHONE_X?24:44, 0, 0, 0);
     [self getSecretDetail];
     [self getCommentList];
 }
@@ -273,7 +274,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 30;
+    return UITableViewAutomaticDimension;
 }
 
 #pragma mark - scrollViewDelegate

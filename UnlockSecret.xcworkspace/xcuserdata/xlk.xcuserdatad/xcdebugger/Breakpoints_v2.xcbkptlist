@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UnlockSecret/Class/Release/Controller/USOpenSecretViewController.m"
-            timestampString = "551263785.223789"
+            timestampString = "551267492.240079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "-textFieldShouldReturnInputView:"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UnlockSecret/Class/Release/Controller/USOpenSecretViewController.m"
-            timestampString = "551263785.2238851"
+            timestampString = "551267492.240189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "-textFieldShouldReturnInputView:"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,12 +186,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UnlockSecret/Class/Release/Controller/USCommentsDetailViewController.m"
-            timestampString = "551263785.223959"
+            timestampString = "551267492.240335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "-touchesBegan:withEvent:"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "-tableView:viewForHeaderInSection:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
