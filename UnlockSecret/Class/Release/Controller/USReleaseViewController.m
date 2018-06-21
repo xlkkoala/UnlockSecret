@@ -133,8 +133,8 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
 
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 2 && indexPath.row == 2) {
-//        USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
-//        [self.navigationController pushViewController:vc animated:YES];
+        USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

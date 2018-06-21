@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "USReplyModel.h"
+#import "USCommentListModel.h"
 @interface USReplyCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *replyLabel;
+
+- (void)showReplayByModel:(USReplyModel *)model andSecretComments:(USCommentListModel *)comments;
 
 @end

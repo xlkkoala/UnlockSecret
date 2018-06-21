@@ -362,11 +362,108 @@
                     <connections>
                         <outlet property="navigationView" destination="j3y-2T-dqz" id="DjG-eL-mDg"/>
                         <outlet property="tableView" destination="JFd-YQ-cSp" id="OQZ-1y-9G8"/>
+                        <segue destination="CXZ-Gx-S3f" kind="show" identifier="COMMENTS_DETAIL" id="npl-YX-wGM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ky9-Mq-9qu" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-626" y="1088"/>
+        </scene>
+        <!--评论详情-->
+        <scene sceneID="0HD-cx-bLy">
+            <objects>
+                <viewController title="评论详情" id="CXZ-Gx-S3f" customClass="USCommentsDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1X0-Z4-Yi9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hJB-47-jdT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SECRET_CELL" rowHeight="218" id="TN7-1K-9fj" customClass="USReplyCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="218"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TN7-1K-9fj" id="vGl-eH-qHL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奥斯特洛夫斯基: 生活赋予我们一种巨大的和无限高贵的礼品，这就是青春：充满着力量，充满着期待志愿，充满着求知和斗争的志向，充满着希望信心和青春。 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sST-4P-5UP">
+                                                    <rect key="frame" x="60" y="0.0" width="295" height="217.5"/>
+                                                    <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.23137254900000001" green="0.23921568630000001" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sST-4P-5UP" firstAttribute="leading" secondItem="vGl-eH-qHL" secondAttribute="leading" constant="60" id="2Rc-H0-QB6"/>
+                                                <constraint firstItem="sST-4P-5UP" firstAttribute="top" secondItem="vGl-eH-qHL" secondAttribute="top" id="GeM-er-6eC"/>
+                                                <constraint firstAttribute="trailing" secondItem="sST-4P-5UP" secondAttribute="trailing" constant="20" id="YkA-L4-h2B"/>
+                                                <constraint firstAttribute="bottom" secondItem="sST-4P-5UP" secondAttribute="bottom" id="h1S-CY-rss"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="replyLabel" destination="sST-4P-5UP" id="b3W-HS-TYu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="CXZ-Gx-S3f" id="y8T-db-m0e"/>
+                                    <outlet property="delegate" destination="CXZ-Gx-S3f" id="rH2-t8-IhL"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvl-9v-8JW">
+                                <rect key="frame" x="0.0" y="623" width="375" height="84"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ygU-C5-oL6">
+                                        <rect key="frame" x="10" y="5" width="355" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="iui-CQ-lLn"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="CXZ-Gx-S3f" id="AzA-8e-73c"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ygU-C5-oL6" secondAttribute="trailing" constant="10" id="1dh-UT-1O5"/>
+                                    <constraint firstItem="ygU-C5-oL6" firstAttribute="top" secondItem="tvl-9v-8JW" secondAttribute="top" constant="5" id="75x-2A-10O"/>
+                                    <constraint firstItem="ygU-C5-oL6" firstAttribute="leading" secondItem="tvl-9v-8JW" secondAttribute="leading" constant="10" id="lqc-vx-WMz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hJB-47-jdT" firstAttribute="leading" secondItem="VLU-0X-Gbd" secondAttribute="leading" id="AFB-de-lZQ"/>
+                            <constraint firstItem="tvl-9v-8JW" firstAttribute="top" secondItem="hJB-47-jdT" secondAttribute="bottom" id="Ec5-uJ-fOh"/>
+                            <constraint firstItem="hJB-47-jdT" firstAttribute="top" secondItem="VLU-0X-Gbd" secondAttribute="top" id="Eyq-VS-RDx"/>
+                            <constraint firstItem="VLU-0X-Gbd" firstAttribute="trailing" secondItem="tvl-9v-8JW" secondAttribute="trailing" id="UPc-Xk-fZz"/>
+                            <constraint firstItem="VLU-0X-Gbd" firstAttribute="trailing" secondItem="hJB-47-jdT" secondAttribute="trailing" id="VsF-4C-MRP"/>
+                            <constraint firstItem="tvl-9v-8JW" firstAttribute="bottom" secondItem="VLU-0X-Gbd" secondAttribute="bottom" constant="40" id="dAa-EW-Wln"/>
+                            <constraint firstItem="tvl-9v-8JW" firstAttribute="leading" secondItem="VLU-0X-Gbd" secondAttribute="leading" id="qFX-tJ-JmW"/>
+                            <constraint firstItem="VLU-0X-Gbd" firstAttribute="bottom" secondItem="hJB-47-jdT" secondAttribute="bottom" constant="44" id="ryl-S2-O4f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VLU-0X-Gbd"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="hJB-47-jdT" id="qzt-Wd-Lcl"/>
+                        <outlet property="textField" destination="ygU-C5-oL6" id="s2Y-tH-EpP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ben-z2-MQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.80000000000001" y="1086.2068965517242"/>
         </scene>
     </scenes>
     <resources>

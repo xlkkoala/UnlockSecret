@@ -88,6 +88,7 @@
 		5EBE83E220C2DA2E00C5B0D9 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE831F20C2DA2D00C5B0D9 /* BaseModel.m */; };
 		5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE832420C2DA2D00C5B0D9 /* USUser.m */; };
 		5EBE83E520C2DA2E00C5B0D9 /* BaseTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE832720C2DA2D00C5B0D9 /* BaseTabbarController.m */; };
+		5ED5BA2B20DB346B00A774DA /* USCommentsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA2A20DB346B00A774DA /* USCommentsDetailViewController.m */; };
 		5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8720C4D72C00593643 /* USFocusViewController.m */; };
 		5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */; };
 		5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8D20C4D75200593643 /* USMessageViewController.m */; };
@@ -298,6 +299,8 @@
 		5EBE832620C2DA2D00C5B0D9 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		5EBE832720C2DA2D00C5B0D9 /* BaseTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabbarController.m; sourceTree = "<group>"; };
 		5EBE832820C2DA2D00C5B0D9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		5ED5BA2920DB346B00A774DA /* USCommentsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USCommentsDetailViewController.h; sourceTree = "<group>"; };
+		5ED5BA2A20DB346B00A774DA /* USCommentsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USCommentsDetailViewController.m; sourceTree = "<group>"; };
 		5ED8FD8320C4D6D800593643 /* USMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainViewController.h; sourceTree = "<group>"; };
 		5ED8FD8620C4D72C00593643 /* USFocusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusViewController.h; sourceTree = "<group>"; };
 		5ED8FD8720C4D72C00593643 /* USFocusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusViewController.m; sourceTree = "<group>"; };
@@ -518,6 +521,8 @@
 				5E64402E20D0FD8A0059C4BE /* USNearAddressViewController.m */,
 				5EBCCC4220CA0DFD009FB2A4 /* USOpenSecretViewController.h */,
 				5EBCCC4320CA0DFE009FB2A4 /* USOpenSecretViewController.m */,
+				5ED5BA2920DB346B00A774DA /* USCommentsDetailViewController.h */,
+				5ED5BA2A20DB346B00A774DA /* USCommentsDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1303,6 +1308,7 @@
 				5E643FE620D0B6950059C4BE /* USChatListViewController.m in Sources */,
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,
 				5E643FB920CE9EC20059C4BE /* USUserInfoCell.m in Sources */,
+				5ED5BA2B20DB346B00A774DA /* USCommentsDetailViewController.m in Sources */,
 				5EBE83CE20C2DA2E00C5B0D9 /* NSData+CommonCrypto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

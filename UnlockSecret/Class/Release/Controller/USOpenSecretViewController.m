@@ -21,6 +21,7 @@
 #import "USLikeSecretProcess.h"
 #import "USSaveCommentSecretProcess.h"
 #import "USUserReplyCommentProcess.h"
+#import "USCommentsDetailViewController.h"
 
 @interface USOpenSecretViewController ()<UITableViewDelegate,UITableViewDataSource,USInputViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -50,7 +51,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setHidden:YES];
     [self.view sendSubviewToBack:self.navigationView];
     self.tableView.estimatedSectionHeaderHeight  = 1000;
     self.tableView.estimatedRowHeight = 1000;
@@ -59,10 +59,15 @@
     [self getCommentList];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setHidden:YES];
+}
+
 #pragma mark - 获取秘密详情
 - (void)getSecretDetail {
     USOpenSecretDetailProcess *process = [[USOpenSecretDetailProcess alloc] init];
-    process.dictionary = [@{@"secretId":self.secretId,@"userId":USER_ID} mutableCopy];
+    process.dictionary = [@{@"secretId":self.secretId?self.secretId:@"22",@"userId":USER_ID} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         self.secretModel = response;
         //创建header
@@ -83,7 +88,7 @@
 - (void)getCommentList {
     [SVProgressHUD show];
     USCommentListProcess *process = [[USCommentListProcess alloc] init];
-    process.dictionary = [@{@"secretId":@"22",@"userId":USER_ID} mutableCopy];
+    process.dictionary = [@{@"secretId":self.secretId?self.secretId:@"22",@"userId":USER_ID} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         [SVProgressHUD dismiss];
         self.commentListArray = response;
@@ -200,8 +205,9 @@
     }];
     [view.replayBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
         NSLog(@"reply");
-        self.replyIndex = [NSIndexPath indexPathForRow:0 inSection:section];
-        [self.inputView.textField becomeFirstResponder];
+        [self performSegueWithIdentifier:@"COMMENTS_DETAIL" sender:model];
+//        self.replyIndex = [NSIndexPath indexPathForRow:0 inSection:section];
+//        [self.inputView.textField becomeFirstResponder];
     }];
     [view layoutIfNeeded];
     return view;
@@ -219,9 +225,11 @@
             return nil;
         }else{
             USSessionFooterView *view = [[[NSBundle mainBundle] loadNibNamed:@"USSessionFooterView" owner:nil options:nil] firstObject];
+            [view.queryReplyDetailBtn setTitle:[NSString stringWithFormat:@"查看全部%ld条回复 >",(long)count] forState:UIControlStateNormal];
             [view.queryReplyDetailBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
                 //查看回复详情
-                [self getReplyDetail:section];
+//                [self getReplyDetail:section];
+                [self performSegueWithIdentifier:@"COMMENTS_DETAIL" sender:model];
             }];
             return view;
         }
@@ -305,19 +313,14 @@
     NSLog(@"move");
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    USCommentsDetailViewController *vc = segue.destinationViewController;
+    vc.comments = sender;
+    vc.secretId = self.secretModel.secretId;
 }
-*/
+
 
 @end
