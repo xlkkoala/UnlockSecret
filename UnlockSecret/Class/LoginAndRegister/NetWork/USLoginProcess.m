@@ -24,7 +24,7 @@
             [SVProgressHUD showErrorWithStatus:response[@"data"][@"msg"]];
         }
     } failBlock:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"登陆失败"];
+        [SVProgressHUD showErrorWithStatus:@"登录失败"];
         failure(error);
     }];
 }

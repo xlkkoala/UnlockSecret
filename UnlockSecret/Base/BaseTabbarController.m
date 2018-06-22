@@ -22,19 +22,19 @@
     self.selectedIndex = 0;
 }
 
-//- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-//    if (viewController != self.viewControllers[0] ) {
-//        if (![LoginHelper isUserLogin]) {
-//            //登录
-//            USLoginViewController *vc = [LOGIN_STORYBOARD instantiateViewControllerWithIdentifier:@"LOGIN_ID"];
-//            [self presentViewController:vc animated:YES completion:^{
-//                
-//            }];
-//        }
-//        return NO;
-//    }
-//    return YES;
-//}
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if (viewController != self.viewControllers[0] ) {
+        if (![LoginHelper isUserLogin]) {
+            //登录
+            USLoginViewController *vc = [LOGIN_STORYBOARD instantiateViewControllerWithIdentifier:@"LOGIN_ID"];
+            [self presentViewController:vc animated:YES completion:^{
+                
+            }];
+            return NO;
+        }
+    }
+    return YES;
+}
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     
