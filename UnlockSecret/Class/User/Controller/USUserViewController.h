@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface USUserViewController : BaseViewController
-
+@property (nonatomic, strong) USUser *user;
 @end

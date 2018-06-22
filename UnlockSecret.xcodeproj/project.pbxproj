@@ -89,6 +89,10 @@
 		5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE832420C2DA2D00C5B0D9 /* USUser.m */; };
 		5EBE83E520C2DA2E00C5B0D9 /* BaseTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBE832720C2DA2D00C5B0D9 /* BaseTabbarController.m */; };
 		5ED5BA2B20DB346B00A774DA /* USCommentsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA2A20DB346B00A774DA /* USCommentsDetailViewController.m */; };
+		5ED5BA2F20DCE58D00A774DA /* USBrowseSecretProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA2E20DCE58D00A774DA /* USBrowseSecretProcess.m */; };
+		5ED5BA3220DCE9D600A774DA /* USReleaseListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA3120DCE9D600A774DA /* USReleaseListProcess.m */; };
+		5ED5BA3520DCEC0400A774DA /* USOpenSecretListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA3420DCEC0400A774DA /* USOpenSecretListProcess.m */; };
+		5ED5BA3920DCF62300A774DA /* USSecretListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA3820DCF62300A774DA /* USSecretListModel.m */; };
 		5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8720C4D72C00593643 /* USFocusViewController.m */; };
 		5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */; };
 		5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8D20C4D75200593643 /* USMessageViewController.m */; };
@@ -301,6 +305,14 @@
 		5EBE832820C2DA2D00C5B0D9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		5ED5BA2920DB346B00A774DA /* USCommentsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USCommentsDetailViewController.h; sourceTree = "<group>"; };
 		5ED5BA2A20DB346B00A774DA /* USCommentsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USCommentsDetailViewController.m; sourceTree = "<group>"; };
+		5ED5BA2D20DCE58D00A774DA /* USBrowseSecretProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USBrowseSecretProcess.h; sourceTree = "<group>"; };
+		5ED5BA2E20DCE58D00A774DA /* USBrowseSecretProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USBrowseSecretProcess.m; sourceTree = "<group>"; };
+		5ED5BA3020DCE9D600A774DA /* USReleaseListProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseListProcess.h; sourceTree = "<group>"; };
+		5ED5BA3120DCE9D600A774DA /* USReleaseListProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseListProcess.m; sourceTree = "<group>"; };
+		5ED5BA3320DCEC0400A774DA /* USOpenSecretListProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USOpenSecretListProcess.h; sourceTree = "<group>"; };
+		5ED5BA3420DCEC0400A774DA /* USOpenSecretListProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USOpenSecretListProcess.m; sourceTree = "<group>"; };
+		5ED5BA3720DCF62300A774DA /* USSecretListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USSecretListModel.h; sourceTree = "<group>"; };
+		5ED5BA3820DCF62300A774DA /* USSecretListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USSecretListModel.m; sourceTree = "<group>"; };
 		5ED8FD8320C4D6D800593643 /* USMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainViewController.h; sourceTree = "<group>"; };
 		5ED8FD8620C4D72C00593643 /* USFocusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusViewController.h; sourceTree = "<group>"; };
 		5ED8FD8720C4D72C00593643 /* USFocusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusViewController.m; sourceTree = "<group>"; };
@@ -467,9 +479,9 @@
 		5E643FD820D0B6950059C4BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5E643FD920D0B6950059C4BE /* USChatViewController.h */,
 				5E643FDA20D0B6950059C4BE /* USChatListViewController.h */,
 				5E643FDB20D0B6950059C4BE /* USChatListViewController.m */,
+				5E643FD920D0B6950059C4BE /* USChatViewController.h */,
 				5E643FDC20D0B6950059C4BE /* USChatViewController.m */,
 			);
 			path = Controller;
@@ -478,9 +490,9 @@
 		5E643FDD20D0B6950059C4BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5E643FE020D0B6950059C4BE /* MessageModel.h */,
 				5E643FDE20D0B6950059C4BE /* MessageModel.m */,
 				5E643FDF20D0B6950059C4BE /* ConstantPart.h */,
-				5E643FE020D0B6950059C4BE /* MessageModel.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -489,9 +501,9 @@
 			isa = PBXGroup;
 			children = (
 				5E643FE220D0B6950059C4BE /* WeChatCell.h */,
-				5E643FE320D0B6950059C4BE /* USChatListCell.m */,
 				5E643FE420D0B6950059C4BE /* WeChatCell.m */,
 				5E643FE520D0B6950059C4BE /* USChatListCell.h */,
+				5E643FE320D0B6950059C4BE /* USChatListCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -787,6 +799,28 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
+		5ED5BA2C20DCE56000A774DA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5ED5BA3020DCE9D600A774DA /* USReleaseListProcess.h */,
+				5ED5BA3120DCE9D600A774DA /* USReleaseListProcess.m */,
+				5ED5BA3320DCEC0400A774DA /* USOpenSecretListProcess.h */,
+				5ED5BA3420DCEC0400A774DA /* USOpenSecretListProcess.m */,
+				5ED5BA2D20DCE58D00A774DA /* USBrowseSecretProcess.h */,
+				5ED5BA2E20DCE58D00A774DA /* USBrowseSecretProcess.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5ED5BA3620DCF60500A774DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5ED5BA3720DCF62300A774DA /* USSecretListModel.h */,
+				5ED5BA3820DCF62300A774DA /* USSecretListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5ED8FD7B20C4CFA800593643 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -815,6 +849,8 @@
 		5ED8FD7D20C4D06E00593643 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				5ED5BA3620DCF60500A774DA /* Model */,
+				5ED5BA2C20DCE56000A774DA /* Network */,
 				5E643FB620CE9E930059C4BE /* View */,
 				5E9FCD0C20C622F100780E1A /* Controller */,
 				5E9FCCF920C61EC000780E1A /* User.storyboard */,
@@ -1239,6 +1275,7 @@
 				6CD44C0B20C7871800F05E20 /* USMessageTableViewCell.m in Sources */,
 				5EBE83DC20C2DA2E00C5B0D9 /* YQNetworking+RequestManager.m in Sources */,
 				5EBCCC4420CA0DFE009FB2A4 /* USOpenSecretViewController.m in Sources */,
+				5ED5BA3220DCE9D600A774DA /* USReleaseListProcess.m in Sources */,
 				5E643FB520CE53F80059C4BE /* UIView+FrameTool.m in Sources */,
 				6CD44C2220C7F42800F05E20 /* USMainViewController.m in Sources */,
 				6C9AC1DD20C68D9400E8D621 /* RCProgressView.m in Sources */,
@@ -1258,6 +1295,7 @@
 				5EBE83D320C2DA2E00C5B0D9 /* Device.m in Sources */,
 				5EBCCC4720CA1708009FB2A4 /* USInputView.m in Sources */,
 				5E9FCCF320C61E8D00780E1A /* USReleaseNavigationController.m in Sources */,
+				5ED5BA3920DCF62300A774DA /* USSecretListModel.m in Sources */,
 				5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */,
 				5EBE83CC20C2DA2E00C5B0D9 /* NSData+Encryption.m in Sources */,
 				6C6DD35520C947ED00379490 /* USFocusListModel.m in Sources */,
@@ -1278,6 +1316,7 @@
 				5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */,
 				5E643FBC20CFAEA50059C4BE /* USUserSecretCell.m in Sources */,
 				6C2EDBA320C7FD850091D26A /* USFocusListProcess.m in Sources */,
+				5ED5BA2F20DCE58D00A774DA /* USBrowseSecretProcess.m in Sources */,
 				5E9FCD5920C78C5F00780E1A /* USLocalBrowseViewController.m in Sources */,
 				5E6CEE8020CA6A5A009725E9 /* USUploadImageProcess.m in Sources */,
 				5EBE83DB20C2DA2E00C5B0D9 /* HttpRequest.m in Sources */,
@@ -1309,6 +1348,7 @@
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,
 				5E643FB920CE9EC20059C4BE /* USUserInfoCell.m in Sources */,
 				5ED5BA2B20DB346B00A774DA /* USCommentsDetailViewController.m in Sources */,
+				5ED5BA3520DCEC0400A774DA /* USOpenSecretListProcess.m in Sources */,
 				5EBE83CE20C2DA2E00C5B0D9 /* NSData+CommonCrypto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -41,6 +41,7 @@
 #define US_LIKE_SECRET @"122"
 #define US_LIKE_COMMENT @"123"
 #define US_DISCUSS_DETAIL @"126"
+#define US_BROWSE_SECRET @"129" // 点赞过的秘密
 #define US_RELEASE_LABEL @"130"
 #define US_UPLOAD_PICTURE @"4023"
 

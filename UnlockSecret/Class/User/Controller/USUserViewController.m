@@ -10,6 +10,10 @@
 #import "UIView+FrameTool.h"
 #import "USUserInfoCell.h"
 #import "USUserSecretCell.h"
+#import "USBrowseSecretProcess.h"
+#import "USReleaseListProcess.h"
+#import "USOpenSecretListProcess.h"
+#import "USSecretListModel.h"
 
 #define HEADER_HEIGHT SCREEN_HEIGHT/2
 
@@ -22,9 +26,41 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *aboutSecretBtnArray;//session button （发布，浏览，取消）
 @property (nonatomic, assign) NSInteger currentSelect;// 当前选择（发布/浏览/取消）
 
+@property (nonatomic, strong) NSMutableArray *releaseArray;
+@property (nonatomic, strong) NSMutableArray *openArray;
+@property (nonatomic, strong) NSMutableArray *likeArray;
+
 @end
 
 @implementation USUserViewController
+
+- (USUser *)user {
+    if (!_user) {
+        _user = [LoginHelper currentUser];
+    }
+    return _user;
+}
+
+- (NSMutableArray *)releaseArray {
+    if (!_releaseArray) {
+        _releaseArray = [NSMutableArray array];
+    }
+    return _releaseArray;
+}
+
+- (NSMutableArray *)openArray {
+    if (!_openArray) {
+        _openArray = [NSMutableArray array];
+    }
+    return _openArray;
+}
+
+- (NSMutableArray *)likeArray {
+    if (!_likeArray) {
+        _likeArray = [NSMutableArray array];
+    }
+    return _likeArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +68,39 @@
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, _IPHONE_X?SCREEN_HEIGHT-83:SCREEN_HEIGHT-49);
     self.tableView.contentInset = UIEdgeInsetsMake(HEADER_HEIGHT-60, 0, 0, 0);
     self.tableView.estimatedRowHeight = 300;
+}
+
+- (void)releaseSecretList {
+    USReleaseListProcess *process = [[USReleaseListProcess alloc] init];
+    process.dictionary = [@{@"userId":[self.user.userid stringValue]}mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        self.releaseArray = response;
+        [self.tableView reloadData];
+    } errorBlock:^(NSError *error) {
+        
+    }];
+}
+
+- (void)openSecretList {
+    USOpenSecretListProcess *process = [[USOpenSecretListProcess alloc] init];
+    process.dictionary = [@{@"userId":[self.user.userid stringValue]}mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        self.openArray = response;
+        [self.tableView reloadData];
+    } errorBlock:^(NSError *error) {
+        
+    }];
+}
+
+- (void)browseSecret {
+    USBrowseSecretProcess *process = [[USBrowseSecretProcess alloc] init];
+    process.dictionary = [@{@"userId":[self.user.userid stringValue]}mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        self.likeArray = response;
+        [self.tableView reloadData];
+    } errorBlock:^(NSError *error) {
+        
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -47,7 +116,7 @@
     self.headerImageView.contentMode = UIViewContentModeScaleToFill;
     self.headerImageView.clipsToBounds = YES;
     [_headerView addSubview:_headerImageView];
-    self.headerImageView.image = [UIImage imageNamed:@"m_xunmi"];
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",self.user.backgroundPic]] placeholderImage:[UIImage imageNamed:@"m_xunmi"]];
     [self.view sendSubviewToBack:self.headerView];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -58,17 +127,43 @@
     if (section == 0) {
         return 1;
     }
-    return 10;
+    if (self.currentSelect == 0) {
+        return self.releaseArray.count;
+    }else if (self.currentSelect == 1) {
+        return self.openArray.count;
+    }else {
+        return self.likeArray.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0 && indexPath.row == 0) {
         USUserInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USER_MESSAGE_CELL" forIndexPath:indexPath];
-        cell.likeNumber.text = @"1314";
-        [cell changeUIByUser:OWN];
+        USER_TYPE type;
+        if ([[self.user.userid stringValue] isEqualToString:USER_ID]) {
+            type = OWN;
+        }else{
+            type = OTHER;
+        }
+        [cell changeUIByUser:type user:self.user];
         return cell;
     }
     USUserSecretCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USER_SECRET_CELL" forIndexPath:indexPath];
+    USSecretListModel *model;
+    switch (self.currentSelect) {
+        case 0:
+            model = self.releaseArray[indexPath.row];
+            break;
+        case 1:
+            model = self.openArray[indexPath.row];
+            break;
+        case 2:
+            model = self.likeArray[indexPath.row];
+            break;
+        default:
+            break;
+    }
+    [cell changeUIByModel:model];
     return cell;
 }
 
@@ -76,6 +171,9 @@
     if (section == 1) {
         if (self.currentSelect == 0) {
             ((UIButton *)self.aboutSecretBtnArray[0]).selected = YES;
+            if (self.releaseArray.count == 0) {
+                [self releaseSecretList];
+            }
         }
         return self.secretView;
     }
@@ -135,6 +233,19 @@
         }else{
             btn.selected = NO;
         }
+    }
+    switch (sender.tag) {
+        case 0:
+            [self releaseSecretList];
+            break;
+        case 1:
+            [self openSecretList];
+            break;
+        case 2:
+            [self browseSecret];
+            break;
+        default:
+            break;
     }
 }
 

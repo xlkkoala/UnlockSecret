@@ -54,8 +54,8 @@
  // 用户ID
  */
 
-//#define USER_ID         [NSString stringWithFormat:@"%@",[LoginHelper currentUser].userid]
-#define USER_ID @"2"
+#define USER_ID         [NSString stringWithFormat:@"%@",[LoginHelper currentUser].userid]
+//#define USER_ID @"2"
 
 #define DEFUALT_HEADER_IMAGE [UIImage imageNamed:@"morentouxiang"]
 
@@ -63,7 +63,7 @@
  //  UserDefaults
  */
 
-#define USER_DEFUALT    [NSUserDefaults standardUserDefaults]
+#define USER_DEFAULT    [NSUserDefaults standardUserDefaults]
 
  /*
  // 是否第一次打开app

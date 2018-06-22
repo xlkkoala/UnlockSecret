@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "USSecretListModel.h"
 @interface USUserSecretCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+- (void)changeUIByModel:(USSecretListModel *)model;
 
 @end

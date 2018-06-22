@@ -25,6 +25,6 @@ typedef NS_ENUM(NSInteger, USER_TYPE){
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *foucusBtnHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBtnHeight;
 
-- (void)changeUIByUser:(USER_TYPE)type;
+- (void)changeUIByUser:(USER_TYPE)type user:(USUser *)user;
 
 @end
