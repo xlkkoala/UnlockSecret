@@ -27,6 +27,7 @@
 @property (nonatomic, strong) NSNumber *sex;
 @property (nonatomic, strong) NSString *source;
 @property (nonatomic, strong) NSString *photo;
+@property (nonatomic, strong) NSNumber *attention;
 
 
 @end

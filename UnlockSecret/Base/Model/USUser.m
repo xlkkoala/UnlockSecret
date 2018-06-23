@@ -31,6 +31,7 @@
 //        self.photo = [NSString stringWithFormat:@"%@%@&w=0&h=0",PICTUREHOST,self.photo];
         self.userid = [self valueForKey:@"id" type:[NSNumber class]];
         self.sex = [self valueForKey:@"sex" type:[NSNumber class]];
+        self.attention = [self valueForKey:@"attention" type:[NSNumber class]];
     }
     return self;
 }

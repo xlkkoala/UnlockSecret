@@ -93,6 +93,8 @@
 		5ED5BA3220DCE9D600A774DA /* USReleaseListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA3120DCE9D600A774DA /* USReleaseListProcess.m */; };
 		5ED5BA3520DCEC0400A774DA /* USOpenSecretListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA3420DCEC0400A774DA /* USOpenSecretListProcess.m */; };
 		5ED5BA3920DCF62300A774DA /* USSecretListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA3820DCF62300A774DA /* USSecretListModel.m */; };
+		5ED5BA3C20DDFB0800A774DA /* USGetUserMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA3B20DDFB0800A774DA /* USGetUserMessage.m */; };
+		5ED5BA3F20DE1FED00A774DA /* USFocusDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA3E20DE1FED00A774DA /* USFocusDetailViewController.m */; };
 		5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8720C4D72C00593643 /* USFocusViewController.m */; };
 		5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */; };
 		5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8D20C4D75200593643 /* USMessageViewController.m */; };
@@ -313,6 +315,10 @@
 		5ED5BA3420DCEC0400A774DA /* USOpenSecretListProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USOpenSecretListProcess.m; sourceTree = "<group>"; };
 		5ED5BA3720DCF62300A774DA /* USSecretListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USSecretListModel.h; sourceTree = "<group>"; };
 		5ED5BA3820DCF62300A774DA /* USSecretListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USSecretListModel.m; sourceTree = "<group>"; };
+		5ED5BA3A20DDFB0800A774DA /* USGetUserMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USGetUserMessage.h; sourceTree = "<group>"; };
+		5ED5BA3B20DDFB0800A774DA /* USGetUserMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USGetUserMessage.m; sourceTree = "<group>"; };
+		5ED5BA3D20DE1FED00A774DA /* USFocusDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusDetailViewController.h; sourceTree = "<group>"; };
+		5ED5BA3E20DE1FED00A774DA /* USFocusDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusDetailViewController.m; sourceTree = "<group>"; };
 		5ED8FD8320C4D6D800593643 /* USMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainViewController.h; sourceTree = "<group>"; };
 		5ED8FD8620C4D72C00593643 /* USFocusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusViewController.h; sourceTree = "<group>"; };
 		5ED8FD8720C4D72C00593643 /* USFocusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusViewController.m; sourceTree = "<group>"; };
@@ -516,6 +522,8 @@
 				5E9FCCEF20C61C4500780E1A /* USFocusNavigationController.m */,
 				5ED8FD8620C4D72C00593643 /* USFocusViewController.h */,
 				5ED8FD8720C4D72C00593643 /* USFocusViewController.m */,
+				5ED5BA3D20DE1FED00A774DA /* USFocusDetailViewController.h */,
+				5ED5BA3E20DE1FED00A774DA /* USFocusDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -808,6 +816,8 @@
 				5ED5BA3420DCEC0400A774DA /* USOpenSecretListProcess.m */,
 				5ED5BA2D20DCE58D00A774DA /* USBrowseSecretProcess.h */,
 				5ED5BA2E20DCE58D00A774DA /* USBrowseSecretProcess.m */,
+				5ED5BA3A20DDFB0800A774DA /* USGetUserMessage.h */,
+				5ED5BA3B20DDFB0800A774DA /* USGetUserMessage.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1281,6 +1291,7 @@
 				6C9AC1DD20C68D9400E8D621 /* RCProgressView.m in Sources */,
 				5EBE83D720C2DA2E00C5B0D9 /* YQLRUManager.m in Sources */,
 				5E3E219A20D3935200146CEB /* USSaveCommentSecretProcess.m in Sources */,
+				5ED5BA3C20DDFB0800A774DA /* USGetUserMessage.m in Sources */,
 				5E9FCD1520C693B300780E1A /* USReleaseInfoCell.m in Sources */,
 				5EBE83E120C2DA2E00C5B0D9 /* BaseNavigationController.m in Sources */,
 				5ED8FD9120C4D76400593643 /* USUserViewController.m in Sources */,
@@ -1313,6 +1324,7 @@
 				5EBE82BF20C2D73400C5B0D9 /* main.m in Sources */,
 				5E643FE820D0B6950059C4BE /* MessageModel.m in Sources */,
 				5E3E219D20D393A200146CEB /* USLikeSecretProcess.m in Sources */,
+				5ED5BA3F20DE1FED00A774DA /* USFocusDetailViewController.m in Sources */,
 				5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */,
 				5E643FBC20CFAEA50059C4BE /* USUserSecretCell.m in Sources */,
 				6C2EDBA320C7FD850091D26A /* USFocusListProcess.m in Sources */,

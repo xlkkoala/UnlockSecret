@@ -10,6 +10,8 @@
 #import "USFocusTableViewCell.h"
 #import "USFocusListProcess.h"
 #import "UIImage+ColorAtPixel.h"
+#import "USUserViewController.h"
+#import "USFocusDetailViewController.h"
 
 @interface USFocusViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -29,6 +31,10 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:bgImg];
     self.tableView.backgroundColor = UIColor.clearColor;
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self getFocusListData];
 }
 
@@ -77,19 +83,26 @@
     return 80;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"FOCUS_DETAIL_SEGUE" sender:indexPath];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSIndexPath *index = sender;
+    USFocusDetailViewController *vc = segue.destinationViewController;
+    vc.userId = ((USFocusListModel *)self.arrFcous[index.row]).uid;
 }
-*/
+
 
 @end

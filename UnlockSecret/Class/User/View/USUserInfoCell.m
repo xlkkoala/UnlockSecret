@@ -26,6 +26,11 @@
         self.messageBtn.hidden = NO;
         self.foucusBtnHeight.constant = 20;
         self.messageBtnHeight.constant = 20;
+        if ([user.attention isEqual: @0]) {
+            [self.focusBtn setTitle:@"关注" forState:UIControlStateNormal];
+        }else{
+            [self.focusBtn setTitle:@"取消关注" forState:UIControlStateNormal];
+        }
     }
     self.likeNumber.text = [user.praiseCount stringValue];
     self.fansNumber.text = [user.fans stringValue];

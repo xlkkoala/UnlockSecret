@@ -10,7 +10,7 @@
 #define USUrl_h
 
 #define HOST @"http://lovexunmi.com:8080/xunmi/interface"
-#define PICTUREHOST @"http://123.56.19.208:8082/xunmi"
+#define PICTUREHOST @"http://lovexunmi.com:8080/xunmi"
 
 // 拼接图片地址 url 图片绝对路径 w、h图片的宽、高
 #define IMAGEURL(url,w,h) [NSString stringWithFormat:@"%@/%@&w=%d&h=%d",PICTUREHOST,url,w,h]

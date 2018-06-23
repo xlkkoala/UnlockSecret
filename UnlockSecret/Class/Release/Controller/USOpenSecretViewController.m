@@ -198,12 +198,8 @@
             self.headerview.addBtn.titleLabel.text = @"+";
             [SVProgressHUD showSuccessWithStatus:@"已取消"];
         }
-        
- 
     } errorBlock:^(NSError *error) {
-        
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-        
     }];
 }
 
