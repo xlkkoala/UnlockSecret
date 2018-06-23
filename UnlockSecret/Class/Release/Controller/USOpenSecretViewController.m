@@ -22,10 +22,13 @@
 #import "USSaveCommentSecretProcess.h"
 #import "USUserReplyCommentProcess.h"
 #import "USCommentsDetailViewController.h"
+#import "USMainFocusProcess.h"
+#import "USMainModel.h"
 
 @interface USOpenSecretViewController ()<UITableViewDelegate,UITableViewDataSource,USInputViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *navigationView;
+@property (nonatomic, strong) USSecretHeaderView *headerview;
 @property (nonatomic, strong) NSMutableArray *commentListArray; // 评论数组
 @property (nonatomic, strong) NSMutableDictionary *discussDictionary; //    评论下对应的讨论
 @property (nonatomic, strong) USInputView *inputView;
@@ -55,7 +58,7 @@
     self.tableView.estimatedSectionHeaderHeight  = 1000;
     self.tableView.estimatedRowHeight = 1000;
     self.tableView.estimatedSectionFooterHeight = 1000;
-    self.tableView.contentInset = UIEdgeInsetsMake(_IPHONE_X?24:44, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(_IPHONE_X?0:-5, 0, 0, 0);
     [self getSecretDetail];
     [self getCommentList];
 }
@@ -72,9 +75,18 @@
     [process getMessageHandleWithSuccessBlock:^(id response) {
         self.secretModel = response;
         //创建header
-        USSecretHeaderView *view = [[USSecretHeaderView alloc] init];
-        [view creatMessage:response];
-        self.tableView.tableHeaderView = view;
+        self.headerview = [[USSecretHeaderView alloc] init];
+        [self.headerview creatMessage:response];
+        [self.headerview.addBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
+            NSString *type;
+            if ([self.secretModel.attention isEqualToString:@"0"]) {
+                type = @"1";
+            }else {
+                type = @"2";
+            }
+            [self requestFocusType:type attentionId:self.secretModel.uid];
+        }];
+        self.tableView.tableHeaderView = self.headerview;
         //创建inputview
         self.inputView = [[USInputView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - (_IPHONE_X?64:40), SCREEN_WIDTH, (_IPHONE_X?64:40))];
         self.inputView.delegate = self;
@@ -167,6 +179,31 @@
         [self.inputView.textField resignFirstResponder];
     } errorBlock:^(NSError *error) {
         [self.inputView.textField resignFirstResponder];
+    }];
+}
+
+//关注 type   1 添加  2为取消关注
+- (void)requestFocusType:(NSString *)type attentionId:(NSString *)attentionId{
+    
+    [SVProgressHUD showWithStatus:nil];
+    USMainFocusProcess *process = [[USMainFocusProcess alloc] init];
+    process.dictionary = [@{@"userId":USER_ID,@"type":type,@"attentionId":attentionId} mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        if ([type isEqualToString:@"1"]) {
+            self.secretModel.attention = @"1";
+            self.headerview.addBtn.titleLabel.text = @"-";
+            [SVProgressHUD showSuccessWithStatus:@"已关注"];
+        }else {
+            self.secretModel.attention = @"0";
+            self.headerview.addBtn.titleLabel.text = @"+";
+            [SVProgressHUD showSuccessWithStatus:@"已取消"];
+        }
+        
+ 
+    } errorBlock:^(NSError *error) {
+        
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        
     }];
 }
 
@@ -322,6 +359,5 @@
     vc.comments = sender;
     vc.secretId = self.secretModel.secretId;
 }
-
 
 @end

@@ -309,7 +309,7 @@
                                 </constraints>
                             </view>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="JFd-YQ-cSp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SECRET_CELL" rowHeight="171" id="dgJ-RU-jkk" customClass="USReplyCell">
@@ -348,13 +348,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="leading" secondItem="PMC-gP-N39" secondAttribute="leading" id="11s-UF-fDw"/>
-                            <constraint firstItem="PMC-gP-N39" firstAttribute="bottom" secondItem="JFd-YQ-cSp" secondAttribute="bottom" constant="40" id="1Xe-GC-bKg"/>
                             <constraint firstItem="j3y-2T-dqz" firstAttribute="leading" secondItem="PMC-gP-N39" secondAttribute="leading" id="3hO-yO-xoS"/>
                             <constraint firstItem="j3y-2T-dqz" firstAttribute="top" secondItem="vZt-6Y-cbs" secondAttribute="top" id="9TC-2z-eOA"/>
-                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="trailing" secondItem="PMC-gP-N39" secondAttribute="trailing" id="DBf-fP-svv"/>
-                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="top" secondItem="PMC-gP-N39" secondAttribute="top" constant="-20" id="PSA-vh-M7V"/>
+                            <constraint firstItem="PMC-gP-N39" firstAttribute="bottom" secondItem="JFd-YQ-cSp" secondAttribute="bottom" constant="40" id="N1P-sU-ZVZ"/>
+                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="trailing" secondItem="PMC-gP-N39" secondAttribute="trailing" id="ceA-xE-n02"/>
                             <constraint firstItem="PMC-gP-N39" firstAttribute="trailing" secondItem="j3y-2T-dqz" secondAttribute="trailing" id="d4E-TB-4sP"/>
+                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="leading" secondItem="PMC-gP-N39" secondAttribute="leading" id="htZ-XG-QV9"/>
+                            <constraint firstItem="JFd-YQ-cSp" firstAttribute="top" secondItem="j3y-2T-dqz" secondAttribute="bottom" constant="-20" id="m3b-Fx-A9I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PMC-gP-N39"/>
                     </view>
@@ -367,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ky9-Mq-9qu" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-626" y="1088"/>
+            <point key="canvasLocation" x="-626.39999999999998" y="1087.1064467766118"/>
         </scene>
         <!--评论详情-->
         <scene sceneID="0HD-cx-bLy">

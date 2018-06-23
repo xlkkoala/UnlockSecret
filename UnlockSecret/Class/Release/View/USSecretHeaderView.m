@@ -58,15 +58,14 @@
     
     // +
     NSInteger ADD_BTN_HEIGHT = 15;
-    UIButton *addBtn = [[UIButton alloc] init];
-    addBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [addBtn setBackgroundColor:[UIColor redColor]];
-    [addBtn setTitle:@"+" forState:UIControlStateNormal];
-    addBtn.center = CGPointMake(SCREEN_WIDTH/2, USER_BTN_HEIGHT/2);
-    addBtn.bounds = CGRectMake(0, 0, ADD_BTN_HEIGHT, ADD_BTN_HEIGHT);
-    addBtn.layer.cornerRadius = ADD_BTN_HEIGHT/2;
-    [addBtn addTarget:self action:@selector(addUser) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:addBtn];
+    _addBtn = [[UIButton alloc] init];
+    _addBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [_addBtn setBackgroundColor:[UIColor redColor]];
+    [_addBtn setTitle:[model.attention isEqualToString:@"0"]?@"+":@"-" forState:UIControlStateNormal];
+    _addBtn.center = CGPointMake(SCREEN_WIDTH/2, USER_BTN_HEIGHT/2);
+    _addBtn.bounds = CGRectMake(0, 0, ADD_BTN_HEIGHT, ADD_BTN_HEIGHT);
+    _addBtn.layer.cornerRadius = ADD_BTN_HEIGHT/2;
+    [self addSubview:_addBtn];
 
     
     //标题
@@ -167,10 +166,6 @@
                             USER_BTN_HEIGHT/2  + TITLE_HEIGHT + NAME_HEIGHT  + CONTENT_HEIGHT +
                             IMGAE_SPACING + IMAGE_HEIGHT + 20+30);
     
-}
-
-- (void)addUser {
-    NSLog(@"add user");
 }
 
 

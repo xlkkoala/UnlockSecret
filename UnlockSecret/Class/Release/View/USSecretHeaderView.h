@@ -12,7 +12,7 @@
 @interface USSecretHeaderView : UIView
 
 @property (nonatomic, strong) USSecretDetailModel *model;
-
+@property (nonatomic, strong) UIButton *addBtn;
 - (instancetype)init;
 
 - (void)creatMessage:(USSecretDetailModel *)model;

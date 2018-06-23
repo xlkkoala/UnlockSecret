@@ -14,6 +14,7 @@
 #import "USReleaseListProcess.h"
 #import "USOpenSecretListProcess.h"
 #import "USSecretListModel.h"
+#import "USOpenSecretViewController.h"
 
 #define HEADER_HEIGHT SCREEN_HEIGHT/2
 
@@ -149,21 +150,7 @@
         return cell;
     }
     USUserSecretCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USER_SECRET_CELL" forIndexPath:indexPath];
-    USSecretListModel *model;
-    switch (self.currentSelect) {
-        case 0:
-            model = self.releaseArray[indexPath.row];
-            break;
-        case 1:
-            model = self.openArray[indexPath.row];
-            break;
-        case 2:
-            model = self.likeArray[indexPath.row];
-            break;
-        default:
-            break;
-    }
-    [cell changeUIByModel:model];
+    [cell changeUIByModel:[self selectCurrentModelByRow:indexPath.row]];
     return cell;
 }
 
@@ -203,6 +190,14 @@
     return 60;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+        vc.secretId = [self selectCurrentModelByRow:indexPath.row].uid;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offset = scrollView.contentOffset.y + scrollView.contentInset.top;
     NSLog(@"%f",offset);
@@ -223,6 +218,24 @@
         
     }
     self.headerImageView.height = self.headerView.height;
+}
+
+- (USSecretListModel *)selectCurrentModelByRow:(NSInteger)row {
+    USSecretListModel *model;
+    switch (self.currentSelect) {
+        case 0:
+            model = self.releaseArray[row];
+            break;
+        case 1:
+            model = self.openArray[row];
+            break;
+        case 2:
+            model = self.likeArray[row];
+            break;
+        default:
+            break;
+    }
+    return model;
 }
 
 - (IBAction)aboutSecretBtnClick:(UIButton *)sender {
