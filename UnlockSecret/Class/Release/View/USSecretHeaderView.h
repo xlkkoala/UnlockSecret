@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "USSecretDetailModel.h"
-
+typedef void (^ClickHeaderBack)(void);
 @interface USSecretHeaderView : UIView
 
 @property (nonatomic, strong) USSecretDetailModel *model;
 @property (nonatomic, strong) UIButton *addBtn;
+@property (nonatomic, strong) UIButton *headImgae;
 - (instancetype)init;
 
 - (void)creatMessage:(USSecretDetailModel *)model;

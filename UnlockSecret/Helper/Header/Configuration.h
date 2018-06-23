@@ -43,6 +43,7 @@
 #define MESSAGE_STORYBOARD [UIStoryboard storyboardWithName:@"Message" bundle:nil]
 #define USER_STORYBOARD [UIStoryboard storyboardWithName:@"User" bundle:nil]
 #define LOGIN_STORYBOARD [UIStoryboard storyboardWithName:@"Login" bundle:nil]
+#define CHAT_STORYBOARD [UIStoryboard storyboardWithName:@"Chat" bundle:nil]
 
  /*
  // 是否为iphone x

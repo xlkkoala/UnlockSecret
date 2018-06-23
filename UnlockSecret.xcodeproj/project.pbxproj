@@ -95,6 +95,8 @@
 		5ED5BA3920DCF62300A774DA /* USSecretListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA3820DCF62300A774DA /* USSecretListModel.m */; };
 		5ED5BA3C20DDFB0800A774DA /* USGetUserMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA3B20DDFB0800A774DA /* USGetUserMessage.m */; };
 		5ED5BA3F20DE1FED00A774DA /* USFocusDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA3E20DE1FED00A774DA /* USFocusDetailViewController.m */; };
+		5ED5BA4420DE4D5C00A774DA /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED5BA4320DE4D5C00A774DA /* Chat.storyboard */; };
+		5ED5BA4720DE500500A774DA /* USChatInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED5BA4520DE500500A774DA /* USChatInputView.m */; };
 		5ED8FD8820C4D72C00593643 /* USFocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8720C4D72C00593643 /* USFocusViewController.m */; };
 		5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8A20C4D73E00593643 /* USReleaseViewController.m */; };
 		5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FD8D20C4D75200593643 /* USMessageViewController.m */; };
@@ -319,6 +321,9 @@
 		5ED5BA3B20DDFB0800A774DA /* USGetUserMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USGetUserMessage.m; sourceTree = "<group>"; };
 		5ED5BA3D20DE1FED00A774DA /* USFocusDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusDetailViewController.h; sourceTree = "<group>"; };
 		5ED5BA3E20DE1FED00A774DA /* USFocusDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusDetailViewController.m; sourceTree = "<group>"; };
+		5ED5BA4320DE4D5C00A774DA /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		5ED5BA4520DE500500A774DA /* USChatInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USChatInputView.m; sourceTree = "<group>"; };
+		5ED5BA4620DE500500A774DA /* USChatInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USChatInputView.h; sourceTree = "<group>"; };
 		5ED8FD8320C4D6D800593643 /* USMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMainViewController.h; sourceTree = "<group>"; };
 		5ED8FD8620C4D72C00593643 /* USFocusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusViewController.h; sourceTree = "<group>"; };
 		5ED8FD8720C4D72C00593643 /* USFocusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusViewController.m; sourceTree = "<group>"; };
@@ -478,6 +483,7 @@
 				5E643FD820D0B6950059C4BE /* Controller */,
 				5E643FDD20D0B6950059C4BE /* Model */,
 				5E643FE120D0B6950059C4BE /* View */,
+				5ED5BA4320DE4D5C00A774DA /* Chat.storyboard */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -506,6 +512,8 @@
 		5E643FE120D0B6950059C4BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5ED5BA4620DE500500A774DA /* USChatInputView.h */,
+				5ED5BA4520DE500500A774DA /* USChatInputView.m */,
 				5E643FE220D0B6950059C4BE /* WeChatCell.h */,
 				5E643FE420D0B6950059C4BE /* WeChatCell.m */,
 				5E643FE520D0B6950059C4BE /* USChatListCell.h */,
@@ -1188,6 +1196,7 @@
 				6C0BC35620C6749B0068564C /* origina_image_select@2x.png in Resources */,
 				5EBCCC4120CA0DA6009FB2A4 /* USSessionFooterView.xib in Resources */,
 				5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */,
+				5ED5BA4420DE4D5C00A774DA /* Chat.storyboard in Resources */,
 				5EBE82BC20C2D73400C5B0D9 /* LaunchScreen.storyboard in Resources */,
 				6C0BC35720C6749B0068564C /* original_image@2x.png in Resources */,
 				5EBE82B920C2D73400C5B0D9 /* Assets.xcassets in Resources */,
@@ -1357,6 +1366,7 @@
 				5E3E217E20D23C0D00146CEB /* USReleaseLabelProcess.m in Sources */,
 				5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */,
 				5E643FE620D0B6950059C4BE /* USChatListViewController.m in Sources */,
+				5ED5BA4720DE500500A774DA /* USChatInputView.m in Sources */,
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,
 				5E643FB920CE9EC20059C4BE /* USUserInfoCell.m in Sources */,
 				5ED5BA2B20DB346B00A774DA /* USCommentsDetailViewController.m in Sources */,

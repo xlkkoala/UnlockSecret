@@ -19,6 +19,7 @@
     if (self.navigationController.viewControllers.count > 1) {
         [self setLeftBackBtn];
     }
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 #pragma mark   设置导航左侧按钮

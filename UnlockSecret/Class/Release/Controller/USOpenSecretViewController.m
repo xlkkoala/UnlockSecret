@@ -24,6 +24,7 @@
 #import "USCommentsDetailViewController.h"
 #import "USMainFocusProcess.h"
 #import "USMainModel.h"
+#import "USFocusDetailViewController.h"
 
 @interface USOpenSecretViewController ()<UITableViewDelegate,UITableViewDataSource,USInputViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -57,15 +58,16 @@
     [self.view sendSubviewToBack:self.navigationView];
     self.tableView.estimatedSectionHeaderHeight  = 1000;
     self.tableView.estimatedRowHeight = 1000;
-    self.tableView.estimatedSectionFooterHeight = 1000;
+    self.tableView.estimatedSectionFooterHeight = 40;
     self.tableView.contentInset = UIEdgeInsetsMake(_IPHONE_X?0:-5, 0, 0, 0);
-    [self getSecretDetail];
-    [self getCommentList];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self getSecretDetail];
+    [self getCommentList];
 }
 
 #pragma mark - 获取秘密详情
@@ -85,6 +87,11 @@
                 type = @"2";
             }
             [self requestFocusType:type attentionId:self.secretModel.uid];
+        }];
+        [self.headerview.headImgae handleControlEvent:UIControlEventTouchUpInside withBlock:^{
+            USFocusDetailViewController *vc = [FOCUS_STORYBOARD instantiateViewControllerWithIdentifier:@"FOCUS_DETAIL_ID"];
+            vc.userId = self.secretModel.uid;
+            [self.navigationController pushViewController:vc animated:YES];
         }];
         self.tableView.tableHeaderView = self.headerview;
         //创建inputview
@@ -199,6 +206,7 @@
             [SVProgressHUD showSuccessWithStatus:@"已取消"];
         }
     } errorBlock:^(NSError *error) {
+
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
 }
@@ -354,6 +362,17 @@
     USCommentsDetailViewController *vc = segue.destinationViewController;
     vc.comments = sender;
     vc.secretId = self.secretModel.secretId;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    CGPoint point = [[touches anyObject] locationInView:self.view]; //get touched layer
+    [self.headerview hitTest:point withEvent:event];
+    
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    NSLog(@"111");
+    return nil;
 }
 
 @end

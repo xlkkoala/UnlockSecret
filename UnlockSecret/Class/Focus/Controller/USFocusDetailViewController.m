@@ -17,7 +17,11 @@
 #import "USOpenSecretViewController.h"
 #import "USGetUserMessage.h"
 #import "USMainFocusProcess.h"
+#import <JMessage/JMessage.h>
+#import "USChatViewController.h"
+
 #define HEADER_HEIGHT SCREEN_HEIGHT/2
+#define  CHATVC_ID  @"CHAT_ID"
 
 @interface USFocusDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -67,6 +71,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self getUserMessage];
 }
 
@@ -185,7 +190,19 @@
             [self requestFocusType:type attentionId:self.userId];
         }];
         [cell.messageBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
-            
+            [JMSGConversation createSingleConversationWithUsername:[NSString stringWithFormat:@"xunmi%@",self.userId] completionHandler:^(id resultObject, NSError *error) {
+                [self methodsInMainQueue:^{
+                    if (!error) {
+                        //创建单聊会话成功， resultObject为创建的会话
+                        USChatViewController *vc = [CHAT_STORYBOARD instantiateViewControllerWithIdentifier:CHATVC_ID];
+                        vc.conversation = resultObject;
+                        [self.navigationController pushViewController:vc animated:YES];
+                    } else {
+                        //创建单聊会话失败
+                        [SVProgressHUD showErrorWithStatus:error.description];
+                    }
+                }];
+            }];
         }];
         return cell;
     }
@@ -229,9 +246,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
-        vc.secretId = [self selectCurrentModelByRow:indexPath.row].uid;
-        [self.navigationController pushViewController:vc animated:YES];
+//        USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+//        vc.secretId = [self selectCurrentModelByRow:indexPath.row].uid;
+//        [self.navigationController pushViewController:vc animated:YES];
+        NSLog(@"需要解密");
     }
 }
 

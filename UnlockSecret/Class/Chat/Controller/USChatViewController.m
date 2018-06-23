@@ -7,7 +7,7 @@
 //
 
 #import "USChatViewController.h"
-#import "USInputView.h"
+#import "USChatInputView.h"
 #import "MessageModel.h"
 #import "WeChatCell.h"
 #import <JMessage/JMessage.h>
@@ -110,7 +110,7 @@ static NSInteger const messagefristPageNumber = 20;
         WeChatCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         NSLog(@"%f",cell.frame.size.height);
     }
-    USInputView *inputView = [[USInputView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-40, SCREEN_WIDTH, 40)];
+    USChatInputView *inputView = [[USChatInputView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-120, SCREEN_WIDTH, 40)];
     inputView.backgroundColor = [UIColor redColor];
     inputView.tableView = self.tableView;
     inputView.placeHolder = @"";
