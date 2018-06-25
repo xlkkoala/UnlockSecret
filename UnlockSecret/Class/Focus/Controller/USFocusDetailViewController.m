@@ -6,7 +6,7 @@
 //  Copyright © 2018年 com.xlk. All rights reserved.
 //
 
-#import "USUserViewController.h"
+#import "USFocusDetailViewController.h"
 #import "UIView+FrameTool.h"
 #import "USUserInfoCell.h"
 #import "USUserSecretCell.h"
@@ -16,9 +16,14 @@
 #import "USSecretListModel.h"
 #import "USOpenSecretViewController.h"
 #import "USGetUserMessage.h"
-#define HEADER_HEIGHT SCREEN_HEIGHT/2
+#import "USMainFocusProcess.h"
+#import <JMessage/JMessage.h>
+#import "USChatViewController.h"
 
-@interface USUserViewController ()<UITableViewDelegate,UITableViewDataSource>
+#define HEADER_HEIGHT SCREEN_HEIGHT/2
+#define  CHATVC_ID  @"CHAT_ID"
+
+@interface USFocusDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIView *headerView;
@@ -33,7 +38,7 @@
 
 @end
 
-@implementation USUserViewController
+@implementation USFocusDetailViewController
 
 - (NSMutableArray *)releaseArray {
     if (!_releaseArray) {
@@ -66,11 +71,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self getUserMessage];
 }
 
@@ -79,6 +80,7 @@
     process.dictionary = [@{@"userId":self.userId?self.userId:USER_ID,@"nowId":USER_ID} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         self.user = response;
+        self.title = self.user.name;
         [self releaseSecretList];
     } errorBlock:^(NSError *error) {
         
@@ -115,6 +117,28 @@
         [self.tableView reloadData];
     } errorBlock:^(NSError *error) {
         
+    }];
+}
+
+//关注 type   1 添加  2为取消关注
+- (void)requestFocusType:(NSString *)type attentionId:(NSString *)attentionId{
+    
+    [SVProgressHUD showWithStatus:nil];
+    USMainFocusProcess *process = [[USMainFocusProcess alloc] init];
+    process.dictionary = [@{@"userId":USER_ID,@"type":type,@"attentionId":attentionId} mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        USUserInfoCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        if ([type isEqualToString:@"1"]) {
+            self.user.attention = @1;
+            [cell.focusBtn setTitle:@"取消关注" forState:UIControlStateNormal];
+            [SVProgressHUD showSuccessWithStatus:@"已关注"];
+        }else {
+            self.user.attention = @0;
+            [cell.focusBtn setTitle:@"关注" forState:UIControlStateNormal];
+            [SVProgressHUD showSuccessWithStatus:@"已取消"];
+        }
+    } errorBlock:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
 }
 
@@ -156,6 +180,30 @@
             type = OTHER;
         }
         [cell changeUIByUser:type user:self.user];
+        [cell.focusBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
+            NSString *type;
+            if ([self.user.attention isEqual:@0]) {
+                type = @"1";
+            }else{
+                type = @"2";
+            }
+            [self requestFocusType:type attentionId:self.userId];
+        }];
+        [cell.messageBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
+            [JMSGConversation createSingleConversationWithUsername:[NSString stringWithFormat:@"xunmi%@",self.userId] completionHandler:^(id resultObject, NSError *error) {
+                [self methodsInMainQueue:^{
+                    if (!error) {
+                        //创建单聊会话成功， resultObject为创建的会话
+                        USChatViewController *vc = [CHAT_STORYBOARD instantiateViewControllerWithIdentifier:CHATVC_ID];
+                        vc.conversation = resultObject;
+                        [self.navigationController pushViewController:vc animated:YES];
+                    } else {
+                        //创建单聊会话失败
+                        [SVProgressHUD showErrorWithStatus:error.description];
+                    }
+                }];
+            }];
+        }];
         return cell;
     }
     USUserSecretCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USER_SECRET_CELL" forIndexPath:indexPath];
@@ -198,9 +246,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
-        vc.secretId = [self selectCurrentModelByRow:indexPath.row].uid;
-        [self.navigationController pushViewController:vc animated:YES];
+//        USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+//        vc.secretId = [self selectCurrentModelByRow:indexPath.row].uid;
+//        [self.navigationController pushViewController:vc animated:YES];
+        NSLog(@"需要解密");
     }
 }
 
@@ -213,14 +262,14 @@
         self.headerView.width = SCREEN_WIDTH - offset;
         self.headerImageView.alpha = 1;
     }else {
-//        self.headerView.height = HEADER_HEIGHT - offset;
-//
-//        CGFloat min = HEADER_HEIGHT - 64;
-//        CGFloat progress = 1 - (offset/min);
-//        self.headerImageView.alpha = progress;
-//
-//        self.statusBarStyle = (progress < 0.5) ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent;
-//        [self.navigationController setNeedsStatusBarAppearanceUpdate];
+        //        self.headerView.height = HEADER_HEIGHT - offset;
+        //
+        //        CGFloat min = HEADER_HEIGHT - 64;
+        //        CGFloat progress = 1 - (offset/min);
+        //        self.headerImageView.alpha = progress;
+        //
+        //        self.statusBarStyle = (progress < 0.5) ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent;
+        //        [self.navigationController setNeedsStatusBarAppearanceUpdate];
         
     }
     self.headerImageView.height = self.headerView.height;
@@ -274,13 +323,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

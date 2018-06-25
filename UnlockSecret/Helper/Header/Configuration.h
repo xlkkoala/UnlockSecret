@@ -43,6 +43,7 @@
 #define MESSAGE_STORYBOARD [UIStoryboard storyboardWithName:@"Message" bundle:nil]
 #define USER_STORYBOARD [UIStoryboard storyboardWithName:@"User" bundle:nil]
 #define LOGIN_STORYBOARD [UIStoryboard storyboardWithName:@"Login" bundle:nil]
+#define CHAT_STORYBOARD [UIStoryboard storyboardWithName:@"Chat" bundle:nil]
 
  /*
  // 是否为iphone x
@@ -54,8 +55,8 @@
  // 用户ID
  */
 
-//#define USER_ID         [NSString stringWithFormat:@"%@",[LoginHelper currentUser].userid]
-#define USER_ID @"2"
+#define USER_ID         [NSString stringWithFormat:@"%@",[LoginHelper currentUser].userid]
+//#define USER_ID @"2"
 
 #define DEFUALT_HEADER_IMAGE [UIImage imageNamed:@"morentouxiang"]
 
@@ -63,7 +64,7 @@
  //  UserDefaults
  */
 
-#define USER_DEFUALT    [NSUserDefaults standardUserDefaults]
+#define USER_DEFAULT    [NSUserDefaults standardUserDefaults]
 
  /*
  // 是否第一次打开app

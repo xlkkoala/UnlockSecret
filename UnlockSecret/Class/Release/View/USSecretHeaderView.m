@@ -47,26 +47,29 @@
     
     //头像
     NSInteger USER_BTN_HEIGHT = 60;
-    UIImageView *headImgae = [[UIImageView alloc] init];
-    [headImgae setBackgroundColor:[UIColor cyanColor]];
-    [headImgae sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:DEFAULT_IMAGE_HEADER];
-    headImgae.center = CGPointMake(SCREEN_WIDTH/2, 0);
-    headImgae.bounds = CGRectMake(0, 0, USER_BTN_HEIGHT, USER_BTN_HEIGHT);
-    headImgae.layer.masksToBounds = YES;
-    headImgae.layer.cornerRadius = USER_BTN_HEIGHT/2;
-    [self addSubview:headImgae];
+    _headImgae = [[UIButton alloc] init];
+    [_headImgae setBackgroundColor:[UIColor cyanColor]];
+    _headImgae.imageView.contentMode = UIViewContentModeScaleToFill;
+//    [headImgae sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:DEFAULT_IMAGE_HEADER];
+//    [_headImgae sd_setImageWithURL:[NSURL URLWithString:imageUrl] forState:UIControlStateNormal placeholderImage:DEFAULT_IMAGE_HEADER];
+    [_headImgae sd_setBackgroundImageWithURL:[NSURL URLWithString:imageUrl] forState:UIControlStateNormal placeholderImage:DEFAULT_IMAGE_HEADER];
+    _headImgae.center = CGPointMake(SCREEN_WIDTH/2, 0);
+    _headImgae.bounds = CGRectMake(0, 0, USER_BTN_HEIGHT, USER_BTN_HEIGHT);
+    _headImgae.layer.masksToBounds = YES;
+    _headImgae.layer.cornerRadius = USER_BTN_HEIGHT/2;
+    [self addSubview:_headImgae];
     
     // +
     NSInteger ADD_BTN_HEIGHT = 15;
-    UIButton *addBtn = [[UIButton alloc] init];
-    addBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [addBtn setBackgroundColor:[UIColor redColor]];
-    [addBtn setTitle:@"+" forState:UIControlStateNormal];
-    addBtn.center = CGPointMake(SCREEN_WIDTH/2, USER_BTN_HEIGHT/2);
-    addBtn.bounds = CGRectMake(0, 0, ADD_BTN_HEIGHT, ADD_BTN_HEIGHT);
-    addBtn.layer.cornerRadius = ADD_BTN_HEIGHT/2;
-    [addBtn addTarget:self action:@selector(addUser) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:addBtn];
+    _addBtn = [[UIButton alloc] init];
+    _addBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [_addBtn setBackgroundColor:[UIColor redColor]];
+    [_addBtn setTitle:[model.attention isEqualToString:@"0"]?@"+":@"-" forState:UIControlStateNormal];
+    _addBtn.center = CGPointMake(SCREEN_WIDTH/2, USER_BTN_HEIGHT/2);
+    _addBtn.bounds = CGRectMake(0, 0, ADD_BTN_HEIGHT, ADD_BTN_HEIGHT);
+    _addBtn.layer.cornerRadius = ADD_BTN_HEIGHT/2;
+
+    [self addSubview:_addBtn];
 
     
     //标题
@@ -168,10 +171,5 @@
                             IMGAE_SPACING + IMAGE_HEIGHT + 20+30);
     
 }
-
-- (void)addUser {
-    NSLog(@"add user");
-}
-
 
 @end

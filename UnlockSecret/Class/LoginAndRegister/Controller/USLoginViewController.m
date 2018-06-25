@@ -93,22 +93,21 @@
     process.dictionary = [@{@"phone":self.userNameTF.text,@"password":self.passwordTF.text} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         USUser *user = (USUser *)response;
-//        [JMSGUser loginWithUsername:[NSString stringWithFormat:@"xunmi%@",user.userid] password:@"xunmi123456" handler:^(NSArray<__kindof JMSGDeviceInfo *> * _Nonnull devices, NSError * _Nonnull error) {
-//            if (!error) {
-//                [SVProgressHUD dismiss];
-//                BaseTabbarController *tabbarController = [MAIN_STORYBOARD instantiateViewControllerWithIdentifier:@"BaseTabbarID"];
-//                [UIApplication sharedApplication].keyWindow.rootViewController = tabbarController;
-//            }else{
-//                [XLKTool saveDataByPath:nil path:nil];
-//                [SVProgressHUD showErrorWithStatus:@"登陆失败"];
-//            }
-//        }];
+        [JMSGUser loginWithUsername:[NSString stringWithFormat:@"xunmi%@",user.userid] password:@"xunmi123456" handler:^(NSArray<__kindof JMSGDeviceInfo *> * _Nonnull devices, NSError * _Nonnull error) {
+            if (!error) {
+                [SVProgressHUD dismiss];
+                UITabBarController *tabbar = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+                tabbar.selectedIndex = [USAppData instance].currentItenIndex?[USAppData instance].currentItenIndex:0;
+            }else{
+                [XLKTool saveDataByPath:nil path:nil];
+                [SVProgressHUD showErrorWithStatus:@"登录失败"];
+            }
+        }];
         [SVProgressHUD dismiss];
         [self dismissViewControllerAnimated:YES completion:nil];
 
     } errorBlock:^(NSError *error) {
-    
-        [SVProgressHUD showErrorWithStatus:@"登陆失败"];
+        [SVProgressHUD showErrorWithStatus:@"登录失败"];
     }];
 
     

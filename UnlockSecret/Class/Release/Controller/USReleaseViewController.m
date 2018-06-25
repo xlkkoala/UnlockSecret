@@ -79,12 +79,15 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
         return cell;
     }else if (indexPath.section == 1) {
         USReleaseImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Release_Image_Cell forIndexPath:indexPath];
+        cell.addImageBtn.imageView.contentMode = UIViewContentModeScaleToFill;
         cell.addImageBtn.tag = indexPath.row;
         [cell.addImageBtn addTarget:self action:@selector(selectOrDeleteImage:) forControlEvents:UIControlEventTouchUpInside];
         if (indexPath.row < self.imageDataArray.count) {
             [cell.addImageBtn setBackgroundImage:self.imageDataArray[indexPath.row] forState:UIControlStateNormal];
+            [cell.addImageBtn setTitle:@"" forState:UIControlStateNormal];
         }else{
             [cell.addImageBtn setBackgroundImage:nil forState:UIControlStateNormal];
+            [cell.addImageBtn setTitle:@"+" forState:UIControlStateNormal];
         }
         return cell;
     }else {

@@ -19,16 +19,16 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
 @property (weak, nonatomic) IBOutlet UITextField *codeTF;
 @property (nonatomic, strong) NSString *msg_id;
+@property (nonatomic, assign) NSInteger timeCount;
 @end
 
 @implementation USRegisterViewController
 {
     NSTimer *timer;
-    NSInteger timeCount;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    timeCount = 60;
+    self.timeCount = 60;
     [self initTextField];
 }
 
@@ -115,16 +115,16 @@
 
 - (void)updateTime{
     [self methodsInMainQueue:^{
-        if (timeCount == 0) {
-            timeCount = 60;
+        if (self.timeCount == 0) {
+            self.timeCount = 60;
             self.sendCodeBtn.enabled = YES;
             [self.sendCodeBtn setTitle:@"重新发送" forState:UIControlStateNormal];
-            [timer invalidate];
-            timer = nil;
+            [self->timer invalidate];
+            self->timer = nil;
         }else{
-            timeCount --;
+            self.timeCount --;
             self.sendCodeBtn.enabled = NO;
-            [self.sendCodeBtn setTitle:[NSString stringWithFormat:@"%ld",(long)timeCount] forState:UIControlStateNormal];
+            [self.sendCodeBtn setTitle:[NSString stringWithFormat:@"%ld",(long)self.timeCount] forState:UIControlStateNormal];
         }
     }];
 }
@@ -158,11 +158,11 @@
     [JMSGUser registerWithUsername:[NSString stringWithFormat:@"xunmi%@",user.userid] password:@"xunmi123456" userInfo:info completionHandler:^(id resultObject, NSError *error) {
         if (!error) {
             //注册成功
-            [SVProgressHUD showSuccessWithStatus:@"注册成功"];
+            [SVProgressHUD showSuccessWithStatus:@"注册成功，正在登录～"];
             [JMSGUser loginWithUsername:[NSString stringWithFormat:@"xunmi%@",user.userid] password:@"xunmi123456" handler:^(NSArray<__kindof JMSGDeviceInfo *> * _Nonnull devices, NSError * _Nonnull error) {
                 if (!error) {
-                    BaseTabbarController *tabbarController = [MAIN_STORYBOARD instantiateViewControllerWithIdentifier:@"BaseTabbarID"];
-                    [UIApplication sharedApplication].keyWindow.rootViewController = tabbarController;
+                    UITabBarController *tabbar = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+                    tabbar.selectedIndex = [USAppData instance].currentItenIndex?[USAppData instance].currentItenIndex:0;
                 }else{
                     [XLKTool saveDataByPath:nil path:nil];
                     [SVProgressHUD showErrorWithStatus:@"注册失败"];

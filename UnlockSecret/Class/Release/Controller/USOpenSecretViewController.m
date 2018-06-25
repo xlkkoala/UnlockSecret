@@ -21,10 +21,15 @@
 #import "USLikeSecretProcess.h"
 #import "USSaveCommentSecretProcess.h"
 #import "USUserReplyCommentProcess.h"
+#import "USCommentsDetailViewController.h"
+#import "USMainFocusProcess.h"
+#import "USMainModel.h"
+#import "USFocusDetailViewController.h"
 
 @interface USOpenSecretViewController ()<UITableViewDelegate,UITableViewDataSource,USInputViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *navigationView;
+@property (nonatomic, strong) USSecretHeaderView *headerview;
 @property (nonatomic, strong) NSMutableArray *commentListArray; // 评论数组
 @property (nonatomic, strong) NSMutableDictionary *discussDictionary; //    评论下对应的讨论
 @property (nonatomic, strong) USInputView *inputView;
@@ -50,11 +55,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setHidden:YES];
     [self.view sendSubviewToBack:self.navigationView];
     self.tableView.estimatedSectionHeaderHeight  = 1000;
     self.tableView.estimatedRowHeight = 1000;
-    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
+    self.tableView.estimatedSectionFooterHeight = 40;
+    self.tableView.contentInset = UIEdgeInsetsMake(_IPHONE_X?0:-5, 0, 0, 0);
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self getSecretDetail];
     [self getCommentList];
 }
@@ -62,13 +73,27 @@
 #pragma mark - 获取秘密详情
 - (void)getSecretDetail {
     USOpenSecretDetailProcess *process = [[USOpenSecretDetailProcess alloc] init];
-    process.dictionary = [@{@"secretId":self.secretId,@"userId":USER_ID} mutableCopy];
+    process.dictionary = [@{@"secretId":self.secretId?self.secretId:@"22",@"userId":USER_ID} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         self.secretModel = response;
         //创建header
-        USSecretHeaderView *view = [[USSecretHeaderView alloc] init];
-        [view creatMessage:response];
-        self.tableView.tableHeaderView = view;
+        self.headerview = [[USSecretHeaderView alloc] init];
+        [self.headerview creatMessage:response];
+        [self.headerview.addBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
+            NSString *type;
+            if ([self.secretModel.attention isEqualToString:@"0"]) {
+                type = @"1";
+            }else {
+                type = @"2";
+            }
+            [self requestFocusType:type attentionId:self.secretModel.uid];
+        }];
+        [self.headerview.headImgae handleControlEvent:UIControlEventTouchUpInside withBlock:^{
+            USFocusDetailViewController *vc = [FOCUS_STORYBOARD instantiateViewControllerWithIdentifier:@"FOCUS_DETAIL_ID"];
+            vc.userId = self.secretModel.uid;
+            [self.navigationController pushViewController:vc animated:YES];
+        }];
+        self.tableView.tableHeaderView = self.headerview;
         //创建inputview
         self.inputView = [[USInputView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - (_IPHONE_X?64:40), SCREEN_WIDTH, (_IPHONE_X?64:40))];
         self.inputView.delegate = self;
@@ -83,7 +108,7 @@
 - (void)getCommentList {
     [SVProgressHUD show];
     USCommentListProcess *process = [[USCommentListProcess alloc] init];
-    process.dictionary = [@{@"secretId":@"22",@"userId":USER_ID} mutableCopy];
+    process.dictionary = [@{@"secretId":self.secretId?self.secretId:@"22",@"userId":USER_ID} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         [SVProgressHUD dismiss];
         self.commentListArray = response;
@@ -164,6 +189,28 @@
     }];
 }
 
+//关注 type   1 添加  2为取消关注
+- (void)requestFocusType:(NSString *)type attentionId:(NSString *)attentionId{
+    
+    [SVProgressHUD showWithStatus:nil];
+    USMainFocusProcess *process = [[USMainFocusProcess alloc] init];
+    process.dictionary = [@{@"userId":USER_ID,@"type":type,@"attentionId":attentionId} mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+        if ([type isEqualToString:@"1"]) {
+            self.secretModel.attention = @"1";
+            self.headerview.addBtn.titleLabel.text = @"-";
+            [SVProgressHUD showSuccessWithStatus:@"已关注"];
+        }else {
+            self.secretModel.attention = @"0";
+            self.headerview.addBtn.titleLabel.text = @"+";
+            [SVProgressHUD showSuccessWithStatus:@"已取消"];
+        }
+    } errorBlock:^(NSError *error) {
+
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+    }];
+}
+
 #pragma mark - tableView  Delegate And Datasource
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     /*
@@ -200,8 +247,9 @@
     }];
     [view.replayBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
         NSLog(@"reply");
-        self.replyIndex = [NSIndexPath indexPathForRow:0 inSection:section];
-        [self.inputView.textField becomeFirstResponder];
+        [self performSegueWithIdentifier:@"COMMENTS_DETAIL" sender:model];
+//        self.replyIndex = [NSIndexPath indexPathForRow:0 inSection:section];
+//        [self.inputView.textField becomeFirstResponder];
     }];
     [view layoutIfNeeded];
     return view;
@@ -219,9 +267,11 @@
             return nil;
         }else{
             USSessionFooterView *view = [[[NSBundle mainBundle] loadNibNamed:@"USSessionFooterView" owner:nil options:nil] firstObject];
+            [view.queryReplyDetailBtn setTitle:[NSString stringWithFormat:@"查看全部%ld条回复 >",(long)count] forState:UIControlStateNormal];
             [view.queryReplyDetailBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{
                 //查看回复详情
-                [self getReplyDetail:section];
+//                [self getReplyDetail:section];
+                [self performSegueWithIdentifier:@"COMMENTS_DETAIL" sender:model];
             }];
             return view;
         }
@@ -265,7 +315,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 30;
+    return UITableViewAutomaticDimension;
 }
 
 #pragma mark - scrollViewDelegate
@@ -305,19 +355,24 @@
     NSLog(@"move");
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    USCommentsDetailViewController *vc = segue.destinationViewController;
+    vc.comments = sender;
+    vc.secretId = self.secretModel.secretId;
 }
-*/
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    CGPoint point = [[touches anyObject] locationInView:self.view]; //get touched layer
+    [self.headerview hitTest:point withEvent:event];
+    
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    NSLog(@"111");
+    return nil;
+}
 
 @end

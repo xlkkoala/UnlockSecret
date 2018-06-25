@@ -15,6 +15,35 @@
     // Initialization code
 }
 
+- (void)showReplayByModel:(USReplyModel *)model andSecretComments:(USCommentListModel *)comments{
+    NSString *str = @"";
+    NSMutableAttributedString *AttributedStr;
+    if ([model.name isEqualToString:model.toName] || [comments.name isEqualToString:model.toName] || !model.toName) {
+        str = [NSString stringWithFormat:@"%@:%@",model.name,model.content];
+        AttributedStr = [[NSMutableAttributedString alloc]initWithString:str];
+        [AttributedStr addAttribute:NSForegroundColorAttributeName
+         
+                              value: [UIColor blueColor]
+         
+                              range:NSMakeRange(0, model.name.length)];
+    }else {
+        str = [NSString stringWithFormat:@"%@回复%@:%@",model.name,model.toName,model.content];
+        AttributedStr = [[NSMutableAttributedString alloc]initWithString:str];
+        [AttributedStr addAttribute:NSForegroundColorAttributeName
+         
+                              value: [UIColor blueColor]
+         
+                              range:NSMakeRange(0, model.name.length)];
+        [AttributedStr addAttribute:NSForegroundColorAttributeName
+         
+                              value: [UIColor blueColor]
+         
+                              range:NSMakeRange(model.name.length+2,model.toName.length)];
+    }
+    self.replyLabel.attributedText = AttributedStr;
+
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

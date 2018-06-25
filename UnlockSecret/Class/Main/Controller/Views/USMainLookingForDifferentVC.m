@@ -42,7 +42,7 @@
         [self getLookingForDifferentData];
     
         //如果已经点击
-       NSInteger isFrist = [[USER_DEFUALT objectForKey:isFristDifferent] integerValue];
+       NSInteger isFrist = [[USER_DEFAULT objectForKey:isFristDifferent] integerValue];
         if( isFrist == 1 ){
             
             [self.viewPrompt removeFromSuperview];
@@ -121,7 +121,7 @@
         weakself.countdown = weakself.modelDiff.sumTime;
         [weakself showSecond];
         //如果已经点击
-        NSInteger isFrist = [[USER_DEFUALT objectForKey:isFristDifferent] integerValue];
+        NSInteger isFrist = [[USER_DEFAULT objectForKey:isFristDifferent] integerValue];
         if( isFrist == 1 ){
             
             [weakself secondBtnAction];
@@ -184,8 +184,8 @@
 // 开始
 - (IBAction)clickStart:(id)sender {
     
-    [USER_DEFUALT setObject:@"1" forKey:isFristDifferent];
-    [USER_DEFUALT synchronize];
+    [USER_DEFAULT setObject:@"1" forKey:isFristDifferent];
+    [USER_DEFAULT synchronize];
     [self.viewPrompt removeFromSuperview];
     [self secondBtnAction];
     
