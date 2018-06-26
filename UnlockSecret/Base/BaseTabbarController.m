@@ -28,7 +28,7 @@
     if (viewController != self.viewControllers[0] ) {
         if (![LoginHelper isUserLogin]) {
             //登录
-//            USLoginViewController *vc = [LOGIN_STORYBOARD instantiateViewControllerWithIdentifier:@"LOGIN_ID"];
+//            USNewLoginViewController *vc = [LOGIN_STORYBOARD instantiateViewControllerWithIdentifier:@"USNewLoginViewController"];
 //            [self presentViewController:vc animated:YES completion:^{
 //
 //            }];

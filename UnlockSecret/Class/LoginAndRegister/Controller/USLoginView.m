@@ -283,7 +283,7 @@
             
             [self.textFieldCode1 becomeFirstResponder];
             self.textFieldCode1.layer.borderColor = colorLine.CGColor;
-            [SVProgressHUD showErrorWithStatus:error.description];
+            [SVProgressHUD showErrorWithStatus:@"验证码错误"];
         }
     }];
 }
@@ -300,7 +300,7 @@
         [self registerJMessage:(USUser *)response];
         
     } errorBlock:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"注册失败"];
+        [SVProgressHUD showErrorWithStatus:@"登录失败"];
     }];
 }
 
@@ -310,21 +310,22 @@
     [JMSGUser registerWithUsername:[NSString stringWithFormat:@"xunmi%@",user.userid] password:@"xunmi123456" userInfo:info completionHandler:^(id resultObject, NSError *error) {
         if (!error) {
             //注册成功
-            [SVProgressHUD showSuccessWithStatus:@"注册成功，正在登录～"];
+//            [SVProgressHUD showSuccessWithStatus:@"注册成功，正在登录～"];
             [JMSGUser loginWithUsername:[NSString stringWithFormat:@"xunmi%@",user.userid] password:@"xunmi123456" handler:^(NSArray<__kindof JMSGDeviceInfo *> * _Nonnull devices, NSError * _Nonnull error) {
                 if (!error) {
                     UITabBarController *tabbar = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
                     tabbar.selectedIndex = [USAppData instance].currentItenIndex?[USAppData instance].currentItenIndex:0;
+                    [SVProgressHUD showSuccessWithStatus:@"登录成功"];
                     [self removeFromSuperview];
                     
                 }else{
                     [XLKTool saveDataByPath:nil path:nil];
-                    [SVProgressHUD showErrorWithStatus:@"注册失败"];
+                    [SVProgressHUD showErrorWithStatus:@"登录失败"];
                 }
             }];
         } else {
             //注册失败
-            [SVProgressHUD showSuccessWithStatus:@"注册失败"];
+            [SVProgressHUD showSuccessWithStatus:@"登录失败"];
         }
     }];
 }
@@ -341,7 +342,10 @@
         
         [JMSGUser loginWithUsername:[NSString stringWithFormat:@"xunmi%@",user.userid] password:@"xunmi123456" handler:^(NSArray<__kindof JMSGDeviceInfo *> * _Nonnull devices, NSError * _Nonnull error) {
             if (!error) {
-                [SVProgressHUD dismiss];
+                
+                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+                [self removeFromSuperview];
+                
                 UITabBarController *tabbar = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
                 tabbar.selectedIndex = [USAppData instance].currentItenIndex?[USAppData instance].currentItenIndex:0;
             }else{
@@ -349,8 +353,7 @@
                 [SVProgressHUD showErrorWithStatus:@"登录失败"];
             }
         }];
-        [SVProgressHUD dismiss];
-        [self removeFromSuperview];
+        
         
     } errorBlock:^(NSError *error) {
         
@@ -361,7 +364,7 @@
 #pragma mark - 倒计时
 - (void)setUpTimer{
     timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] run];
+//    [[NSRunLoop currentRunLoop] run];
 }
 
 - (void)updateTime{
