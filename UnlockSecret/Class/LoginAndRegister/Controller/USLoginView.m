@@ -34,6 +34,7 @@
     self = [super initWithFrame:frame];
     if( self ){
         
+        [SVProgressHUD setMinimumDismissTimeInterval:1];
         self = [[[NSBundle mainBundle] loadNibNamed:@"USLoginView" owner:nil options:nil] firstObject];
         self.frame = frame;
         

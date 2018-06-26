@@ -120,6 +120,8 @@
 		6C9AC1E120C6944900E8D621 /* USMainLookingForDifferentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1E020C6944900E8D621 /* USMainLookingForDifferentVC.m */; };
 		6C9AC1E420C6945E00E8D621 /* USM_LookingForDifferentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9AC1E320C6945E00E8D621 /* USM_LookingForDifferentVC.xib */; };
 		6C9AC1EB20C6A8B000E8D621 /* USFocusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1EA20C6A8B000E8D621 /* USFocusTableViewCell.m */; };
+		6CAB09D420E2400E00A05383 /* USUserEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAB09D220E2400D00A05383 /* USUserEditTableViewController.m */; };
+		6CAB09D720E2466C00A05383 /* USSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAB09D620E2466C00A05383 /* USSetTableViewController.m */; };
 		6CCB7D8C20E09A0A00E3966B /* USLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB7D8B20E09A0A00E3966B /* USLoginView.m */; };
 		6CCB7D8E20E09A1700E3966B /* USLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCB7D8D20E09A1700E3966B /* USLoginView.xib */; };
 		6CCB7D9420E0ECFB00E3966B /* YNTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB7D9320E0ECFB00E3966B /* YNTextField.m */; };
@@ -371,6 +373,10 @@
 		6C9AC1E320C6945E00E8D621 /* USM_LookingForDifferentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = USM_LookingForDifferentVC.xib; sourceTree = "<group>"; };
 		6C9AC1E920C6A8B000E8D621 /* USFocusTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusTableViewCell.h; sourceTree = "<group>"; };
 		6C9AC1EA20C6A8B000E8D621 /* USFocusTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusTableViewCell.m; sourceTree = "<group>"; };
+		6CAB09D220E2400D00A05383 /* USUserEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USUserEditTableViewController.m; sourceTree = "<group>"; };
+		6CAB09D320E2400E00A05383 /* USUserEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USUserEditTableViewController.h; sourceTree = "<group>"; };
+		6CAB09D520E2466C00A05383 /* USSetTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USSetTableViewController.h; sourceTree = "<group>"; };
+		6CAB09D620E2466C00A05383 /* USSetTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USSetTableViewController.m; sourceTree = "<group>"; };
 		6CCB7D8A20E09A0A00E3966B /* USLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USLoginView.h; sourceTree = "<group>"; };
 		6CCB7D8B20E09A0A00E3966B /* USLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USLoginView.m; sourceTree = "<group>"; };
 		6CCB7D8D20E09A1700E3966B /* USLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = USLoginView.xib; sourceTree = "<group>"; };
@@ -614,6 +620,10 @@
 				5E9FCCFC20C61ED800780E1A /* USUserNavigationController.m */,
 				5ED8FD8F20C4D76400593643 /* USUserViewController.h */,
 				5ED8FD9020C4D76400593643 /* USUserViewController.m */,
+				6CAB09D320E2400E00A05383 /* USUserEditTableViewController.h */,
+				6CAB09D220E2400D00A05383 /* USUserEditTableViewController.m */,
+				6CAB09D520E2466C00A05383 /* USSetTableViewController.h */,
+				6CAB09D620E2466C00A05383 /* USSetTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1323,6 +1333,7 @@
 				5E3E218520D253F900146CEB /* USSecretDetailModel.m in Sources */,
 				5EBE83D920C2DA2E00C5B0D9 /* YQMemoryCache.m in Sources */,
 				5EBE83CB20C2DA2E00C5B0D9 /* NSString+Base64.m in Sources */,
+				6CAB09D420E2400E00A05383 /* USUserEditTableViewController.m in Sources */,
 				5EBE83D120C2DA2E00C5B0D9 /* LoginHelper.m in Sources */,
 				6CD44C2020C7F3D900F05E20 /* USMainModel.m in Sources */,
 				5EBCCC3E20CA0DA6009FB2A4 /* USSecretHeaderView.m in Sources */,
@@ -1382,6 +1393,7 @@
 				5E3E217E20D23C0D00146CEB /* USReleaseLabelProcess.m in Sources */,
 				5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */,
 				5E643FE620D0B6950059C4BE /* USChatListViewController.m in Sources */,
+				6CAB09D720E2466C00A05383 /* USSetTableViewController.m in Sources */,
 				5ED5BA4720DE500500A774DA /* USChatInputView.m in Sources */,
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,
 				5E643FB920CE9EC20059C4BE /* USUserInfoCell.m in Sources */,

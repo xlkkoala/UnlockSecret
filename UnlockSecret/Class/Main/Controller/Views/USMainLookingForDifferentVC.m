@@ -12,6 +12,7 @@
 #import <SDWebImageManager.h>
 #import "USMSubmitDifferentProcess.h"
 #import "USMainFocusProcess.h"
+#import "USOpenSecretViewController.h"
 
 #define isFristDifferent @"isFristDifferent"
 
@@ -38,7 +39,7 @@
         self.progressView.progressBgColor = ColorFromRGB(217, 217, 217);
         self.progressView.progressBarColor = ColorFromRGB(46, 182, 24);
         self.progressView.progress = 0.8;
-        
+       
         [self getLookingForDifferentData];
     
         //如果已经点击
@@ -147,6 +148,12 @@
             [SVProgressHUD showSuccessWithStatus:@"解锁成功"];
             [weakself removeFromSuperview];
             weakself.unlockedSuccessBlock(weakself.selectIndex);
+            USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+            vc.secretId = self.mainModel.uid;
+            
+            UITabBarController *tabbarController = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+            UINavigationController *nav = tabbarController.selectedViewController;
+            [nav pushViewController:vc animated:YES];
             
         } errorBlock:^(NSError *error) {
             
@@ -222,8 +229,19 @@
 }
 - (IBAction)clickError:(id)sender {
     
-    self.countdown -= self.modelDiff.cutTime;
+    if( self.countdown <= 0 ){
+        
+        return;
+    }
     
+    self.countdown -= self.modelDiff.cutTime;
+    self.imageViewSelect.layer.borderColor = UIColor.redColor.CGColor;
+    
+    [self performSelector:@selector(setImageViewBorderColor) withObject:nil afterDelay:0.7];
+}
+- (void)setImageViewBorderColor{
+    
+    self.imageViewSelect.layer.borderColor = UIColor.whiteColor.CGColor;
 }
 // 不想解
 - (IBAction)clickClose:(id)sender {

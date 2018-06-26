@@ -27,6 +27,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *aboutSecretBtnArray;//session button （发布，浏览，取消）
 @property (nonatomic, assign) NSInteger currentSelect;// 当前选择（发布/浏览/取消）
 
+@property (nonatomic, assign) BOOL isTabbar;
 @property (nonatomic, strong) NSMutableArray *releaseArray;
 @property (nonatomic, strong) NSMutableArray *openArray;
 @property (nonatomic, strong) NSMutableArray *likeArray;
@@ -58,6 +59,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.isTabbar = YES;
+    
     [self prepareHeaderView];
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, _IPHONE_X?SCREEN_HEIGHT-83:SCREEN_HEIGHT-49);
     self.tableView.contentInset = UIEdgeInsetsMake(HEADER_HEIGHT-60, 0, 0, 0);
@@ -66,7 +70,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:!self.isTabbar];
+    self.isTabbar = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -74,6 +80,11 @@
     [self getUserMessage];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 - (void)getUserMessage {
     USGetUserMessage *process = [[USGetUserMessage alloc] init];
     process.dictionary = [@{@"userId":self.userId?self.userId:USER_ID,@"nowId":USER_ID} mutableCopy];
@@ -197,6 +208,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.isTabbar = NO;
     if (indexPath.section == 1) {
         USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
         vc.secretId = [self selectCurrentModelByRow:indexPath.row].uid;
@@ -273,14 +286,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    self.isTabbar = NO;
 }
-*/
+
 
 @end

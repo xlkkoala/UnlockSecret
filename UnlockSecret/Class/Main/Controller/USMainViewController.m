@@ -49,6 +49,15 @@
     [self.tableView.mj_header beginRefreshing];
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadMoreData方法）
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(dropTopRefresh)];
+    
+    // 解决ios11以上的列表出现从下往上移动的问题
+    if (@available(iOS 11.0, *)) {
+        
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.tableView.estimatedRowHeight = 250;
+        self.tableView.estimatedSectionHeaderHeight = 0;
+        self.tableView.estimatedSectionFooterHeight = 0;
+    }
 }
 
 - (void)focusRefresh:(NSNotification *)notification{
