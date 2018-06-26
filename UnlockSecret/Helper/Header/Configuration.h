@@ -58,7 +58,7 @@
 #define USER_ID         [NSString stringWithFormat:@"%@",[LoginHelper currentUser].userid]
 //#define USER_ID @"2"
 
-#define DEFUALT_HEADER_IMAGE [UIImage imageNamed:@"morentouxiang"]
+#define DEFUALT_HEADER_IMAGE [UIImage imageNamed:@"icon_defult_header"]
 
  /*
  //  UserDefaults

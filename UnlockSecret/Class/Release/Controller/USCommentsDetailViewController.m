@@ -57,7 +57,7 @@
     // 定义好动作
     void (^animation)(void) = ^void(void) {
         self.textField.transform = CGAffineTransformMakeTranslation(0, - keyBoardHeight);
-        if (SCREEN_HEIGHT - self.tableView.contentSize.height < keyBoardHeight + 150) {
+        if (SCREEN_HEIGHT - self.tableView.contentSize.height < 251 + (_IPHONE_X?120:64)) {
             self.tableView.transform = CGAffineTransformMakeTranslation(0, - keyBoardHeight);
         }
     };

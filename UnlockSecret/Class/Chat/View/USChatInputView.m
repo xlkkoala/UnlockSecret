@@ -19,9 +19,7 @@
 }
 
 - (void)creatUI{
-    
 
-    
     _textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
     _textField.borderStyle = UITextBorderStyleRoundedRect;
     _textField.returnKeyType = UIReturnKeySend;
@@ -45,7 +43,10 @@
     // 定义好动作
     void (^animation)(void) = ^void(void) {
         self.transform = CGAffineTransformMakeTranslation(0, - keyBoardHeight);
-        self.tableView.transform = CGAffineTransformMakeTranslation(0, - keyBoardHeight);
+        if (SCREEN_HEIGHT - self.tableView.contentSize.height < 251 + (_IPHONE_X?120:64)) {
+            self.tableView.transform = CGAffineTransformMakeTranslation(0, - keyBoardHeight);
+        }
+        
     };
     
     if (animationTime > 0) {

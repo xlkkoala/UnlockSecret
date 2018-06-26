@@ -33,7 +33,7 @@ static NSInteger const messagefristPageNumber = 20;
         if (!error) {
             self.headerImage = [UIImage imageWithData:data];
         }else{
-            self.headerImage = DEFUALT_HEADER_IMAGE;
+            self.headerImage = DEFAULT_IMAGE_HEADER;
         }
         [self getHistoryMessage];
     }];
@@ -110,7 +110,7 @@ static NSInteger const messagefristPageNumber = 20;
         WeChatCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         NSLog(@"%f",cell.frame.size.height);
     }
-    USChatInputView *inputView = [[USChatInputView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-120, SCREEN_WIDTH, 40)];
+    USChatInputView *inputView = [[USChatInputView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-(_IPHONE_X?(88+34+40):(64+40)), SCREEN_WIDTH, 40)];
     inputView.backgroundColor = [UIColor redColor];
     inputView.tableView = self.tableView;
     inputView.placeHolder = @"";
@@ -167,6 +167,7 @@ static NSInteger const messagefristPageNumber = 20;
     model.messageSentStatus=MessageSentStatusSended;
     model.messageSenderType=MessageSenderTypeUser;
     model.messageType=MessageTypeText;
+    model.headerimage = DEFAULT_IMAGE_HEADER;
     [self.dataArray addObject:model];
     [self.tableView reloadData];
 }
