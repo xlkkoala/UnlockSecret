@@ -121,10 +121,11 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKz-GY-BP4">
                                         <rect key="frame" x="20" y="255" width="260" height="40"/>
+                                        <color key="backgroundColor" red="0.63137254899999995" green="0.63137254899999995" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="acg-Fx-9id"/>
                                         </constraints>
-                                        <state key="normal" image="dl_button"/>
+                                        <state key="normal" title="登录"/>
                                         <connections>
                                             <action selector="loginBtnClick:" destination="xYV-E1-WWX" eventType="touchUpInside" id="SXK-md-bfO"/>
                                         </connections>
@@ -575,7 +576,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dl_button" width="230" height="38"/>
         <image name="dl_icon_qq" width="44" height="44"/>
         <image name="dl_icon_wx" width="44" height="44"/>
         <image name="zc_button" width="230" height="38"/>

@@ -120,6 +120,9 @@
 		6C9AC1E120C6944900E8D621 /* USMainLookingForDifferentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1E020C6944900E8D621 /* USMainLookingForDifferentVC.m */; };
 		6C9AC1E420C6945E00E8D621 /* USM_LookingForDifferentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C9AC1E320C6945E00E8D621 /* USM_LookingForDifferentVC.xib */; };
 		6C9AC1EB20C6A8B000E8D621 /* USFocusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1EA20C6A8B000E8D621 /* USFocusTableViewCell.m */; };
+		6CCB7D8C20E09A0A00E3966B /* USLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB7D8B20E09A0A00E3966B /* USLoginView.m */; };
+		6CCB7D8E20E09A1700E3966B /* USLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCB7D8D20E09A1700E3966B /* USLoginView.xib */; };
+		6CCB7D9420E0ECFB00E3966B /* YNTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB7D9320E0ECFB00E3966B /* YNTextField.m */; };
 		6CD44C0B20C7871800F05E20 /* USMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD44C0A20C7871800F05E20 /* USMessageTableViewCell.m */; };
 		6CD44C0D20C78B0100F05E20 /* JJTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD44C0C20C78B0100F05E20 /* JJTools.framework */; };
 		6CD44C2020C7F3D900F05E20 /* USMainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD44C1F20C7F3D900F05E20 /* USMainModel.m */; };
@@ -368,6 +371,11 @@
 		6C9AC1E320C6945E00E8D621 /* USM_LookingForDifferentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = USM_LookingForDifferentVC.xib; sourceTree = "<group>"; };
 		6C9AC1E920C6A8B000E8D621 /* USFocusTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFocusTableViewCell.h; sourceTree = "<group>"; };
 		6C9AC1EA20C6A8B000E8D621 /* USFocusTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFocusTableViewCell.m; sourceTree = "<group>"; };
+		6CCB7D8A20E09A0A00E3966B /* USLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USLoginView.h; sourceTree = "<group>"; };
+		6CCB7D8B20E09A0A00E3966B /* USLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USLoginView.m; sourceTree = "<group>"; };
+		6CCB7D8D20E09A1700E3966B /* USLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = USLoginView.xib; sourceTree = "<group>"; };
+		6CCB7D9220E0ECFB00E3966B /* YNTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNTextField.h; sourceTree = "<group>"; };
+		6CCB7D9320E0ECFB00E3966B /* YNTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNTextField.m; sourceTree = "<group>"; };
 		6CD44C0920C7871800F05E20 /* USMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMessageTableViewCell.h; sourceTree = "<group>"; };
 		6CD44C0A20C7871800F05E20 /* USMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMessageTableViewCell.m; sourceTree = "<group>"; };
 		6CD44C0C20C78B0100F05E20 /* JJTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JJTools.framework; sourceTree = "<group>"; };
@@ -473,6 +481,11 @@
 				5E643FCC20D0B2460059C4BE /* USRegisterViewController.m */,
 				5E643FCD20D0B2460059C4BE /* USForgetPswViewController.h */,
 				5E643FCA20D0B2460059C4BE /* USForgetPswViewController.m */,
+				6CCB7D9220E0ECFB00E3966B /* YNTextField.h */,
+				6CCB7D9320E0ECFB00E3966B /* YNTextField.m */,
+				6CCB7D8A20E09A0A00E3966B /* USLoginView.h */,
+				6CCB7D8B20E09A0A00E3966B /* USLoginView.m */,
+				6CCB7D8D20E09A1700E3966B /* USLoginView.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1190,6 +1203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CCB7D8E20E09A1700E3966B /* USLoginView.xib in Resources */,
 				5E643FD620D0B2460059C4BE /* Login.storyboard in Resources */,
 				5EBCCC3D20CA0DA6009FB2A4 /* USSessionHeaderView.xib in Resources */,
 				6C9AC1E420C6945E00E8D621 /* USM_LookingForDifferentVC.xib in Resources */,
@@ -1284,6 +1298,7 @@
 				5E3E218B20D2609700146CEB /* USCommentListModel.m in Sources */,
 				5EBE83D620C2DA2E00C5B0D9 /* UIView+CustomVWithCorRadius.m in Sources */,
 				5E9FCD1220C6887100780E1A /* USReleaseTextCell.m in Sources */,
+				6CCB7D9420E0ECFB00E3966B /* YNTextField.m in Sources */,
 				5EBE83DD20C2DA2E00C5B0D9 /* YQNetworking.m in Sources */,
 				5E643FEA20D0B6950059C4BE /* WeChatCell.m in Sources */,
 				6C2EDB9E20C7F8930091D26A /* USMainTableViewCell.m in Sources */,
@@ -1297,6 +1312,7 @@
 				5ED5BA3220DCE9D600A774DA /* USReleaseListProcess.m in Sources */,
 				5E643FB520CE53F80059C4BE /* UIView+FrameTool.m in Sources */,
 				6CD44C2220C7F42800F05E20 /* USMainViewController.m in Sources */,
+				6CCB7D8C20E09A0A00E3966B /* USLoginView.m in Sources */,
 				6C9AC1DD20C68D9400E8D621 /* RCProgressView.m in Sources */,
 				5EBE83D720C2DA2E00C5B0D9 /* YQLRUManager.m in Sources */,
 				5E3E219A20D3935200146CEB /* USSaveCommentSecretProcess.m in Sources */,
@@ -1576,7 +1592,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xlk.UnlockSecret;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
 			};
 			name = Debug;
@@ -1621,7 +1637,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xlk.UnlockSecret;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
 			};
 			name = Release;

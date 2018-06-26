@@ -8,6 +8,8 @@
 
 #import "BaseTabbarController.h"
 #import "USLoginViewController.h"
+#import "USLoginView.h"
+
 @interface BaseTabbarController ()<UITabBarDelegate,UITabBarControllerDelegate>
 
 @end
@@ -26,10 +28,14 @@
     if (viewController != self.viewControllers[0] ) {
         if (![LoginHelper isUserLogin]) {
             //登录
-            USLoginViewController *vc = [LOGIN_STORYBOARD instantiateViewControllerWithIdentifier:@"LOGIN_ID"];
-            [self presentViewController:vc animated:YES completion:^{
-                
-            }];
+//            USLoginViewController *vc = [LOGIN_STORYBOARD instantiateViewControllerWithIdentifier:@"LOGIN_ID"];
+//            [self presentViewController:vc animated:YES completion:^{
+//
+//            }];
+            
+            USLoginView *loginView = [[USLoginView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            [[UIApplication sharedApplication].keyWindow addSubview:loginView];
+            
             return NO;
         }
     }

@@ -16,8 +16,10 @@
     } successBlock:^(id response) {
         //处理数据
         NSLog(@"%@",response);
-        if ([response[@"data"][@"success"] isEqual:@1]) {
-            success(response);
+        
+        if ([response[@"data"][@"code"] isEqual:@200]) {
+            NSString *successStatus = response[@"data"][@"success"];
+            success(successStatus);
         }else{
             [SVProgressHUD showErrorWithStatus:response[@"msg"]];
         }
