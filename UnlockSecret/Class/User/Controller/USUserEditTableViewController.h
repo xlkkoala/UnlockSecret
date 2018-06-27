@@ -6,12 +6,17 @@
 //  Copyright © 2018年 com.xlk. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewController.h"
 
 /**
  编辑个人资料
  */
-@interface USUserEditTableViewController : UITableViewController
+@interface USUserEditTableViewController : BaseTableViewController
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewHeader;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldNickname;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldGender;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldBirthday;
+@property (weak, nonatomic) IBOutlet UITextView *textViewSignature;
+
 
 @end

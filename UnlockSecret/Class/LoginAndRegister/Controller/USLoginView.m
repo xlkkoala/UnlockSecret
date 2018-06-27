@@ -381,8 +381,8 @@
         
     }else{
         
-        self.btnSendCode.layer.borderColor = colorGray.CGColor;
-        [self.btnSendCode setNormalTitleColor:colorGray];
+        self.btnSendCode.layer.borderColor = ColorFromRGB(190, 190, 190).CGColor;
+        [self.btnSendCode setNormalTitleColor:ColorFromRGB(190, 190, 190)];
         self.timeCount --;
         self.btnSendCode.enabled = NO;
         [self.btnSendCode setTitle:[NSString stringWithFormat:@"%ld秒后重发",(long)self.timeCount] forState:UIControlStateNormal];

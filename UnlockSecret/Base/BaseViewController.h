@@ -20,5 +20,9 @@ typedef void (^getMainQueue)(void);
 - (void)async:(asyncBlock)block;
 
 - (void)methodsInMainQueue:(getMainQueue)block;
+/**
+ 返回背景渐变颜色
+ */
+- (UIColor *)backgroundGradientColor;
 
 @end

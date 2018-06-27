@@ -6,11 +6,11 @@
 //  Copyright © 2018年 com.xlk. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewController.h"
 
 /**
  设置
  */
-@interface USSetTableViewController : UITableViewController
+@interface USSetTableViewController : BaseTableViewController
 
 @end

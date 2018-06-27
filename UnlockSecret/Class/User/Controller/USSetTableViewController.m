@@ -61,6 +61,7 @@
         tabbar.selectedIndex = 0;
         [XLKTool saveDataByPath:nil path:nil];
         [SVProgressHUD showSuccessWithStatus:@"已退出登录"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIFICATIONLOGOUT" object:nil];
         
     }];
     [alerController addAction:actionSure];

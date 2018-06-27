@@ -12,7 +12,6 @@
 #import "UIViewController+PresentViewControllerOverCurrentContext.h"
 #import "USMainLookingForDifferentVC.h"
 #import "USMainFocusProcess.h"
-#import "UIImage+ColorAtPixel.h"
 #import <MJRefresh.h>
 
 
@@ -34,10 +33,7 @@
     self.navigationItem.titleView = imageview;
     
     // 渐变色
-    UIColor *topleftColor = ColorFromRGB(43, 50, 92);
-    UIColor *bottomrightColor = ColorFromRGB(62, 37, 99);
-    UIImage *bgImg = [UIImage gradientColorImageFromColors:@[topleftColor, bottomrightColor] gradientType:GradientTypeTopToBottom imgSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT)];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImg];
+    self.view.backgroundColor = [self backgroundGradientColor];
     self.tableView.backgroundColor = UIColor.clearColor;
     
     // 其他页面点击关注用户后，通知首页刷新列表
@@ -58,6 +54,15 @@
         self.tableView.estimatedSectionHeaderHeight = 0;
         self.tableView.estimatedSectionFooterHeight = 0;
     }
+    // 退出登录
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout) name:@"NOTIFICATIONLOGOUT" object:nil];
+}
+
+- (void)logout{
+    
+    [self.arrMainList removeAllObjects];
+    [self.tableView reloadData];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)focusRefresh:(NSNotification *)notification{

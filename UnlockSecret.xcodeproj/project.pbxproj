@@ -113,6 +113,10 @@
 		6C6DD35520C947ED00379490 /* USFocusListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DD35420C947ED00379490 /* USFocusListModel.m */; };
 		6C6DD35820C9529B00379490 /* USMSubmitDifferentProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DD35720C9529B00379490 /* USMSubmitDifferentProcess.m */; };
 		6C6DD35B20C9579A00379490 /* USReleaseProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6DD35A20C9579A00379490 /* USReleaseProcess.m */; };
+		6C710E6D20E32E270041D3D9 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C710E6C20E32E270041D3D9 /* BaseTableViewController.m */; };
+		6C710E7020E338360041D3D9 /* USBirthdayDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C710E6F20E338360041D3D9 /* USBirthdayDateView.m */; };
+		6C710E7220E338420041D3D9 /* USBirthdayDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C710E7120E338420041D3D9 /* USBirthdayDateView.xib */; };
+		6C710E7520E364AF0041D3D9 /* USEditPersonalInfoProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C710E7420E364AF0041D3D9 /* USEditPersonalInfoProcess.m */; };
 		6C9AC1D220C68A9E00E8D621 /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */; };
 		6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D120C68A9E00E8D621 /* OBShapedButton.m */; };
 		6C9AC1D920C68AAA00E8D621 /* TransparentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9AC1D520C68AAA00E8D621 /* TransparentViewController.m */; };
@@ -358,6 +362,13 @@
 		6C6DD35720C9529B00379490 /* USMSubmitDifferentProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMSubmitDifferentProcess.m; sourceTree = "<group>"; };
 		6C6DD35920C9579A00379490 /* USReleaseProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseProcess.h; sourceTree = "<group>"; };
 		6C6DD35A20C9579A00379490 /* USReleaseProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseProcess.m; sourceTree = "<group>"; };
+		6C710E6B20E32E270041D3D9 /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		6C710E6C20E32E270041D3D9 /* BaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		6C710E6E20E338360041D3D9 /* USBirthdayDateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USBirthdayDateView.h; sourceTree = "<group>"; };
+		6C710E6F20E338360041D3D9 /* USBirthdayDateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USBirthdayDateView.m; sourceTree = "<group>"; };
+		6C710E7120E338420041D3D9 /* USBirthdayDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = USBirthdayDateView.xib; sourceTree = "<group>"; };
+		6C710E7320E364AF0041D3D9 /* USEditPersonalInfoProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USEditPersonalInfoProcess.h; sourceTree = "<group>"; };
+		6C710E7420E364AF0041D3D9 /* USEditPersonalInfoProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USEditPersonalInfoProcess.m; sourceTree = "<group>"; };
 		6C9AC1CE20C68A9E00E8D621 /* OBShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBShapedButton.h; sourceTree = "<group>"; };
 		6C9AC1CF20C68A9E00E8D621 /* UIImage+ColorAtPixel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPixel.m"; sourceTree = "<group>"; };
 		6C9AC1D020C68A9E00E8D621 /* UIImage+ColorAtPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorAtPixel.h"; sourceTree = "<group>"; };
@@ -449,6 +460,9 @@
 				5E643FB820CE9EC20059C4BE /* USUserInfoCell.m */,
 				5E643FBA20CFAEA50059C4BE /* USUserSecretCell.h */,
 				5E643FBB20CFAEA50059C4BE /* USUserSecretCell.m */,
+				6C710E6E20E338360041D3D9 /* USBirthdayDateView.h */,
+				6C710E6F20E338360041D3D9 /* USBirthdayDateView.m */,
+				6C710E7120E338420041D3D9 /* USBirthdayDateView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -809,6 +823,8 @@
 			children = (
 				5EBE832820C2DA2D00C5B0D9 /* BaseViewController.h */,
 				5EBE831B20C2DA2D00C5B0D9 /* BaseViewController.m */,
+				6C710E6B20E32E270041D3D9 /* BaseTableViewController.h */,
+				6C710E6C20E32E270041D3D9 /* BaseTableViewController.m */,
 				5EBE831C20C2DA2D00C5B0D9 /* BaseTabbarController.h */,
 				5EBE832720C2DA2D00C5B0D9 /* BaseTabbarController.m */,
 				5EBE832620C2DA2D00C5B0D9 /* BaseNavigationController.h */,
@@ -849,6 +865,8 @@
 				5ED5BA2E20DCE58D00A774DA /* USBrowseSecretProcess.m */,
 				5ED5BA3A20DDFB0800A774DA /* USGetUserMessage.h */,
 				5ED5BA3B20DDFB0800A774DA /* USGetUserMessage.m */,
+				6C710E7320E364AF0041D3D9 /* USEditPersonalInfoProcess.h */,
+				6C710E7420E364AF0041D3D9 /* USEditPersonalInfoProcess.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1217,6 +1235,7 @@
 				5E643FD620D0B2460059C4BE /* Login.storyboard in Resources */,
 				5EBCCC3D20CA0DA6009FB2A4 /* USSessionHeaderView.xib in Resources */,
 				6C9AC1E420C6945E00E8D621 /* USM_LookingForDifferentVC.xib in Resources */,
+				6C710E7220E338420041D3D9 /* USBirthdayDateView.xib in Resources */,
 				6C0BC35620C6749B0068564C /* origina_image_select@2x.png in Resources */,
 				5EBCCC4120CA0DA6009FB2A4 /* USSessionFooterView.xib in Resources */,
 				5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */,
@@ -1318,11 +1337,13 @@
 				5EBE83D820C2DA2E00C5B0D9 /* YQDiskCache.m in Sources */,
 				6CD44C0B20C7871800F05E20 /* USMessageTableViewCell.m in Sources */,
 				5EBE83DC20C2DA2E00C5B0D9 /* YQNetworking+RequestManager.m in Sources */,
+				6C710E7020E338360041D3D9 /* USBirthdayDateView.m in Sources */,
 				5EBCCC4420CA0DFE009FB2A4 /* USOpenSecretViewController.m in Sources */,
 				5ED5BA3220DCE9D600A774DA /* USReleaseListProcess.m in Sources */,
 				5E643FB520CE53F80059C4BE /* UIView+FrameTool.m in Sources */,
 				6CD44C2220C7F42800F05E20 /* USMainViewController.m in Sources */,
 				6CCB7D8C20E09A0A00E3966B /* USLoginView.m in Sources */,
+				6C710E7520E364AF0041D3D9 /* USEditPersonalInfoProcess.m in Sources */,
 				6C9AC1DD20C68D9400E8D621 /* RCProgressView.m in Sources */,
 				5EBE83D720C2DA2E00C5B0D9 /* YQLRUManager.m in Sources */,
 				5E3E219A20D3935200146CEB /* USSaveCommentSecretProcess.m in Sources */,
@@ -1383,6 +1404,7 @@
 				5E643FD420D0B2460059C4BE /* USLoginViewController.m in Sources */,
 				5EBCCC4020CA0DA6009FB2A4 /* USSessionFooterView.m in Sources */,
 				5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */,
+				6C710E6D20E32E270041D3D9 /* BaseTableViewController.m in Sources */,
 				5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */,
 				5EBE83D520C2DA2E00C5B0D9 /* UIColor+Hex.m in Sources */,
 				5E64403320D101A60059C4BE /* SelectLocationCell.m in Sources */,

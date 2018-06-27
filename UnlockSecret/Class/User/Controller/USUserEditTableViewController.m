@@ -8,10 +8,16 @@
 
 #import "USUserEditTableViewController.h"
 #import "USUploadImageProcess.h"
+#import "UIImage+ColorAtPixel.h"
+#import <UITextField+IJSUTextField.h>
+#import "USBirthdayDateView.h"
+#import "USEditPersonalInfoProcess.h"
+#import "USGetUserMessage.h"
 
 @interface USUserEditTableViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (nonatomic,strong) UIImagePickerController *imagePickerController;
+@property (nonatomic, copy) NSString *strHeader;
 
 @end
 
@@ -23,6 +29,10 @@
     self.imagePickerController = [[UIImagePickerController alloc] init];
     self.imagePickerController.delegate = self;
     self.imagePickerController.allowsEditing = YES;
+    
+    self.textFieldNickname.js_placeholderColor = ColorFromRGB(150, 150, 150);
+    self.textFieldGender.js_placeholderColor = ColorFromRGB(150, 150, 150);
+    self.textFieldBirthday.js_placeholderColor = ColorFromRGB(150, 150, 150);
     
     
     UIButton *btnSave = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
@@ -37,20 +47,70 @@
      self.navigationItem.rightBarButtonItem = item;
     
     [self.imageViewHeader setCornerRadius:40];
+    
+    self.tableView.backgroundColor = UIColor.clearColor;
+    self.view.backgroundColor = [self backgroundGradientColor];
+    
+    [self getUserMessage];
 }
 
+// 提交资料
 - (void)clickSave{
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if( [NSString isNull:self.strHeader] ){
+        
+        [SVProgressHUD showInfoWithStatus:@"请上传头像"];
+        return;
+    }
+    
+    if( [NSString isNull:self.textFieldNickname.text] ){
+        
+        [SVProgressHUD showInfoWithStatus:@"请填写昵称"];
+        return;
+    }
+    
+    USEditPersonalInfoProcess *editProcess = [[USEditPersonalInfoProcess alloc] init];
+    NSString *sex = [self.textFieldGender.text isEqualToString:@"男"]?@"1":@"0";
+    editProcess.dictionary = @{@"id":USER_ID,@"sex":sex,@"name":self.textFieldNickname.text,@"photo":self.strHeader,@"birthday":self.textFieldBirthday.text,@"description":self.textViewSignature.text}.mutableCopy;
+    
+    [editProcess getMessageHandleWithSuccessBlock:^(id response) {
+        
+        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    } errorBlock:^(NSError *error) {
+       
+    }];
+    
 }
 - (IBAction)clickHeader:(id)sender {
     
     [self sheetImagePickerController];
 }
 
+// 获取个人资料
+- (void)getUserMessage {
+    
+    __weak typeof(self) weakself = self;
+    USGetUserMessage *process = [[USGetUserMessage alloc] init];
+    process.dictionary = [@{@"userId":USER_ID,@"nowId":USER_ID} mutableCopy];
+    [process getMessageHandleWithSuccessBlock:^(id response) {
+       
+        USUser *userModel = (USUser *)response;
+        [weakself.imageViewHeader sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(userModel.photo, 200, 200)]];
+        weakself.strHeader = userModel.photo;
+        weakself.textFieldNickname.text = userModel.name;
+        weakself.textFieldBirthday.text = userModel.birthday;
+        weakself.textFieldGender.text = [userModel.sex integerValue] == 1?@"男":@"女";
+        weakself.textViewSignature.text = userModel.ddescription;
+        
+    } errorBlock:^(NSError *error) {
+        
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  
 }
 
 #pragma mark - Table view data source
@@ -84,6 +144,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    [self.view endEditing:YES];
     if( indexPath.row == 2 ){
         
         UIAlertController *alerController = [UIAlertController alertControllerWithTitle:@"选择性别" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -95,16 +156,29 @@
         
         UIAlertAction *actionMan = [UIAlertAction actionWithTitle:@"男" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
+            self.textFieldGender.text = @"男";
+            
         }];
         [alerController addAction:actionMan];
         
         UIAlertAction *actionWoman = [UIAlertAction actionWithTitle:@"女" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
+            self.textFieldGender.text = @"女";
         }];
         [alerController addAction:actionWoman];
         
         [self presentViewController:alerController animated:YES completion:nil];
+        
+    }else if( indexPath.row == 3 ){
+        
+        USBirthdayDateView *birthdayView = [[USBirthdayDateView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        birthdayView.birthdayDateBlock = ^(NSString *strDate) {
+            
+            self.textFieldBirthday.text = strDate;
+        };
+        [[UIApplication sharedApplication].keyWindow addSubview:birthdayView];
     }
+    
 }
 
 // 选择头像
@@ -148,13 +222,8 @@
         image = info[UIImagePickerControllerOriginalImage];
     }
     
-    //设置image的尺寸
-//    image = [[UtilityClass sharedInstance] imageWithImage:image scaledToSize:CGSizeMake(image.size.width, image.size.height)];
-    
     [self dismissViewControllerAnimated:YES completion:NULL];
     self.imageViewHeader.image = image;
-    //    NSData *data= UIImagePNGRepresentation(image);
-    NSData *data1=UIImageJPEGRepresentation(image, 0.8);
     
     [self upLoadImage:image];
     
@@ -168,6 +237,7 @@
     } wtihSuccess:^(id response) {
         
         NSLog(@"----------%@",response);
+        self.strHeader = response;
         
     } withError:^(NSError *error) {
        

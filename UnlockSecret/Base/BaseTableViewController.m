@@ -1,30 +1,33 @@
 //
-//  BaseViewController.m
+//  BaseTableViewController.m
 //  UnlockSecret
 //
-//  Created by xlk on 2018/3/20.
+//  Created by 程浪V587 on 2018/6/27.
 //  Copyright © 2018年 com.xlk. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 #import "UIImage+ColorAtPixel.h"
 
-
-@interface BaseViewController ()
+@interface BaseTableViewController ()
 
 @end
 
-@implementation BaseViewController
+@implementation BaseTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     if (self.navigationController.viewControllers.count > 1) {
         [self setLeftBackBtn];
     }
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:NAV_FONT,NSForegroundColorAttributeName:NAV_COLOR}];
+    
+    [self.navigationController.navigationBar setBarTintColor:NAV_BACKGROUNDCOLOR];
 }
 
-#pragma mark   设置导航左侧按钮
 - (void)setLeftBackBtn{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setImage:[UIImage imageNamed:@"p_back_white"] forState:UIControlStateNormal];
@@ -37,20 +40,6 @@
 - (void)backClick{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-- (void)async:(asyncBlock)block{
-    dispatch_async(dispatch_queue_create("UnlockSecret", DISPATCH_QUEUE_CONCURRENT), ^{
-        block();
-    });
-}
-
-- (void)methodsInMainQueue:(getMainQueue)block{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        block();
-    });
-}
-
-
 /**
  返回背景渐变颜色
  */
@@ -68,6 +57,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
+    return 0;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    return 0;
+}
+
+
 
 /*
 #pragma mark - Navigation
