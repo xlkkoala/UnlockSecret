@@ -25,6 +25,8 @@
 // success 1没有注册 0 已注册
 @property (nonatomic, assign) NSInteger success;
 
+@property (nonatomic, copy) NSString *phone;
+
 @end
 
 @implementation USLoginView
@@ -169,6 +171,13 @@
 }
 - (IBAction)clickBack:(id)sender {
     
+    for( int i = 1 ; i<= 4; i++ ){
+        
+        UITextField *textFieldTemp = [self viewWithTag:100 + i];
+        textFieldTemp.layer.borderColor = colorGray.CGColor;
+        textFieldTemp.text = @"";
+    }
+    
     [self.textFileldPhoneNo becomeFirstResponder];
     [UIView animateWithDuration:0.25 animations:^{
         
@@ -208,7 +217,25 @@
         
         // success 1没有注册 0 已注册
         weakself.success = [response integerValue];
-        [weakself getVerCodeIsNext:YES];
+        
+        if( [weakself.textFileldPhoneNo.text isEqualToString:weakself.phone] && weakself.timeCount <= 0 ){
+            
+            // 下一步
+            weakself.lblSendCodePhoneNo.text = StringFormat(@"发送验证码至%@",weakself.textFileldPhoneNo.text);
+            [weakself becomeTextField:weakself.textFieldCode1];
+            [UIView animateWithDuration:0.25 animations:^{
+                
+                weakself.viewLogin.alpha = 0;
+                weakself.viewCode.alpha = 1;
+                [weakself layoutIfNeeded];
+                
+            }];
+            
+        }else{
+            
+            [weakself getVerCodeIsNext:YES];
+        }
+        
         
     } errorBlock:^(NSError *error) {
         
@@ -229,10 +256,8 @@
         if (!error) {
             NSLog(@"请求短信验证成功");
             
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [SVProgressHUD showSuccessWithStatus:@"发送成功"];
-            });
+            [SVProgressHUD showSuccessWithStatus:@"发送成功"];
+            weakself.phone = weakself.textFileldPhoneNo.text;
             if( isNext ){
                 // 下一步
                 weakself.lblSendCodePhoneNo.text = StringFormat(@"发送验证码至%@",weakself.textFileldPhoneNo.text);

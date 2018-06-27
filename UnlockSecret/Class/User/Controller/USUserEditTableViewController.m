@@ -69,12 +69,14 @@
         return;
     }
     
+    [SVProgressHUD showWithStatus:@"正在保存..."];
     USEditPersonalInfoProcess *editProcess = [[USEditPersonalInfoProcess alloc] init];
     NSString *sex = [self.textFieldGender.text isEqualToString:@"男"]?@"1":@"0";
     editProcess.dictionary = @{@"id":USER_ID,@"sex":sex,@"name":self.textFieldNickname.text,@"photo":self.strHeader,@"birthday":self.textFieldBirthday.text,@"description":self.textViewSignature.text}.mutableCopy;
     
     [editProcess getMessageHandleWithSuccessBlock:^(id response) {
         
+        [SVProgressHUD setMinimumDismissTimeInterval:1];
         [SVProgressHUD showSuccessWithStatus:@"保存成功"];
         [self.navigationController popViewControllerAnimated:YES];
         
@@ -97,7 +99,7 @@
     [process getMessageHandleWithSuccessBlock:^(id response) {
        
         USUser *userModel = (USUser *)response;
-        [weakself.imageViewHeader sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(userModel.photo, 200, 200)]];
+        [weakself.imageViewHeader sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(userModel.photo, 200, 200)] placeholderImage:ImageNamed(@"icon_defult_header")];
         weakself.strHeader = userModel.photo;
         weakself.textFieldNickname.text = userModel.name;
         weakself.textFieldBirthday.text = userModel.birthday;

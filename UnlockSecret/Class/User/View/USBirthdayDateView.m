@@ -26,7 +26,17 @@
         //监听datepicker值的改变
         
         [self.datePicker addTarget:self action:@selector(dateChange:)forControlEvents:UIControlEventValueChanged];
-        self.date = [NSDate date];
+        
+        
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSDateComponents *comps = [[NSDateComponents alloc] init];
+        [comps setYear:-20];
+        [comps setDay:10];//设置最大时间为：当前时间推后10天
+        NSDate *currentDate = [calendar dateByAddingComponents:comps toDate:[NSDate date] options:0];
+    
+        self.date = currentDate;
+        [self.datePicker setDate:currentDate];
+        
     }
     return self;
 }

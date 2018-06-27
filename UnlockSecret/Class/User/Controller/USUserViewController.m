@@ -16,13 +16,17 @@
 #import "USSecretListModel.h"
 #import "USOpenSecretViewController.h"
 #import "USGetUserMessage.h"
-#define HEADER_HEIGHT SCREEN_HEIGHT/2
+#import "USUploadImageProcess.h"
+#import "USEditPersonalInfoProcess.h"
 
-@interface USUserViewController ()<UITableViewDelegate,UITableViewDataSource>
+#define HEADER_HEIGHT SCREEN_WIDTH
+
+@interface USUserViewController ()<UITableViewDelegate,UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIView *headerView;
 @property (nonatomic, strong) UIImageView *headerImageView;
+@property (nonatomic, strong) UIButton *btnBackgroundPic;
 @property (strong, nonatomic) IBOutlet UIView *secretView;//session （发布，浏览，取消）
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *aboutSecretBtnArray;//session button （发布，浏览，取消）
 @property (nonatomic, assign) NSInteger currentSelect;// 当前选择（发布/浏览/取消）
@@ -31,6 +35,8 @@
 @property (nonatomic, strong) NSMutableArray *releaseArray;
 @property (nonatomic, strong) NSMutableArray *openArray;
 @property (nonatomic, strong) NSMutableArray *likeArray;
+
+@property (nonatomic,strong) UIImagePickerController *imagePickerController;
 
 @end
 
@@ -66,10 +72,16 @@
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, _IPHONE_X?SCREEN_HEIGHT-83:SCREEN_HEIGHT-49);
     self.tableView.contentInset = UIEdgeInsetsMake(HEADER_HEIGHT-60, 0, 0, 0);
     self.tableView.estimatedRowHeight = 300;
+    
+    
+    self.imagePickerController = [[UIImagePickerController alloc] init];
+    self.imagePickerController.delegate = self;
+    self.imagePickerController.allowsEditing = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+ 
     
     [self.navigationController setNavigationBarHidden:YES animated:!self.isTabbar];
     self.isTabbar = YES;
@@ -91,6 +103,10 @@
     [process getMessageHandleWithSuccessBlock:^(id response) {
         self.user = response;
         [self releaseSecretList];
+        
+        // 加载顶部背景图
+        [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:self.headerImageView.image];
+        
     } errorBlock:^(NSError *error) {
         
     }];
@@ -137,9 +153,16 @@
     self.headerImageView.contentMode = UIViewContentModeScaleToFill;
     self.headerImageView.clipsToBounds = YES;
     [_headerView addSubview:_headerImageView];
-    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",self.user.backgroundPic]] placeholderImage:[UIImage imageNamed:@"m_xunmi"]];
+//    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:[UIImage imageNamed:@"WechatIMG15"]];
     [self.view sendSubviewToBack:self.headerView];
+    
+    self.btnBackgroundPic = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEADER_HEIGHT-85)];
+    [self.btnBackgroundPic addTarget:self action:@selector(sheetImagePickerController) forControlEvents:UIControlEventTouchUpInside];
+    [self.view insertSubview:self.btnBackgroundPic atIndex:2];
 }
+
+#pragma nark - tableview data source
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
@@ -237,6 +260,7 @@
         
     }
     self.headerImageView.height = self.headerView.height;
+    self.btnBackgroundPic.height = self.headerView.height-85;
 }
 
 - (USSecretListModel *)selectCurrentModelByRow:(NSInteger)row {
@@ -279,6 +303,98 @@
         default:
             break;
     }
+}
+
+// 选择头像
+- (void)sheetImagePickerController{
+    
+    __weak typeof(self) myself=self;
+    
+    UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *alertActionCancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alertViewController addAction:alertActionCancel];
+    
+    UIAlertAction *alertActionTPictures = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+            myself.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            
+            [myself presentViewController:myself.imagePickerController animated:YES completion:NULL];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"照相机不可用"];
+        }
+        
+    }];
+    [alertViewController addAction:alertActionTPictures];
+    
+    UIAlertAction *alertActionPhotoAlbum = [UIAlertAction actionWithTitle:@"从相册选取" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+            myself.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            
+            [myself presentViewController:myself.imagePickerController animated:YES completion:NULL];
+        }
+        
+    }];
+    [alertViewController addAction:alertActionPhotoAlbum];
+    [self presentViewController:alertViewController animated:YES completion:nil];
+}
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage * image = info[UIImagePickerControllerEditedImage];
+    if (!image) {
+        image = info[UIImagePickerControllerOriginalImage];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+   
+    [self upLoadImage:image];
+    
+}
+
+- (void)upLoadImage:(UIImage *)image{
+    
+    [SVProgressHUD show];
+    USUploadImageProcess *uploadProcess = [[USUploadImageProcess alloc] init];
+    [uploadProcess uploadImageBySource:image withProcess:^(int64_t byteRead, int64_t totalBytes) {
+        
+    } wtihSuccess:^(id response) {
+        
+        NSLog(@"----------%@",response);
+        [self reuquestSubmitPic:response image:image];
+        
+    } withError:^(NSError *error) {
+        
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        
+    }];
+}
+// 提交资料
+- (void)reuquestSubmitPic:(NSString *)pic image:(UIImage *)image{
+    
+    
+    USEditPersonalInfoProcess *editProcess = [[USEditPersonalInfoProcess alloc] init];
+    editProcess.dictionary = @{@"id":USER_ID,@"background_pic":pic}.mutableCopy;
+    
+    [editProcess getMessageHandleWithSuccessBlock:^(id response) {
+        
+        [SVProgressHUD setMinimumDismissTimeInterval:1];
+        [SVProgressHUD showSuccessWithStatus:@"上传成功"];
+        self.headerImageView.image = image;
+        
+        
+    } errorBlock:^(NSError *error) {
+        
+    }];
+    
+}
+
+#pragma mark-------------
+#pragma mark -------------UIImagePickerControllerDelegate
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
