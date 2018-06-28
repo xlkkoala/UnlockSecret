@@ -64,11 +64,15 @@
     _addBtn = [[UIButton alloc] init];
     _addBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [_addBtn setBackgroundColor:[UIColor redColor]];
-    [_addBtn setTitle:[model.attention isEqualToString:@"0"]?@"+":@"-" forState:UIControlStateNormal];
     _addBtn.center = CGPointMake(SCREEN_WIDTH/2, USER_BTN_HEIGHT/2);
     _addBtn.bounds = CGRectMake(0, 0, ADD_BTN_HEIGHT, ADD_BTN_HEIGHT);
     _addBtn.layer.cornerRadius = ADD_BTN_HEIGHT/2;
-
+    _addBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+    if ([model.attention isEqualToString:@"0"]) {
+        [_addBtn setTitle:@"+" forState:UIControlStateNormal];
+    }else{
+        _addBtn.hidden = YES;
+    }
     [self addSubview:_addBtn];
 
     

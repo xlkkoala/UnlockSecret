@@ -191,23 +191,40 @@
 
 //关注 type   1 添加  2为取消关注
 - (void)requestFocusType:(NSString *)type attentionId:(NSString *)attentionId{
+    CABasicAnimation* rotationAnimation;
+    //绕哪个轴，那么就改成什么：这里是绕y轴 ---> transform.rotation.y
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    //旋转角度
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI];
+    //每次旋转的时间（单位秒）
+    rotationAnimation.duration = 0.3;
+    rotationAnimation.cumulative = YES;
+    //重复旋转的次数，如果你想要无数次，那么设置成MAXFLOAT
+    rotationAnimation.repeatCount = MAXFLOAT;
+    [self.headerview.addBtn.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.headerview.addBtn.layer removeAllAnimations];
+        [self.headerview.addBtn setTitle:@"" forState:UIControlStateNormal];
+        [self.headerview.addBtn setBackgroundImage:[UIImage imageNamed:@"success"] forState:UIControlStateNormal];
+        self.headerview.addBtn.bounds = CGRectMake(0, 0, 20, 20);
+        self.headerview.addBtn.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
+        self.headerview.addBtn.layer.cornerRadius = 10;
+        [self.headerview.addBtn setBackgroundColor:[UIColor whiteColor]];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:0.5 animations:^{
+                self.headerview.addBtn.bounds = CGRectMake(0, 0, 0, 0);
+            } completion:^(BOOL finished) {
+                
+            }];
+        });
+    });
     
-    [SVProgressHUD showWithStatus:nil];
     USMainFocusProcess *process = [[USMainFocusProcess alloc] init];
     process.dictionary = [@{@"userId":USER_ID,@"type":type,@"attentionId":attentionId} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
-        if ([type isEqualToString:@"1"]) {
-            self.secretModel.attention = @"1";
-            self.headerview.addBtn.titleLabel.text = @"-";
-            [SVProgressHUD showSuccessWithStatus:@"已关注"];
-        }else {
-            self.secretModel.attention = @"0";
-            self.headerview.addBtn.titleLabel.text = @"+";
-            [SVProgressHUD showSuccessWithStatus:@"已取消"];
-        }
+        //不处理
     } errorBlock:^(NSError *error) {
 
-        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
 }
 
