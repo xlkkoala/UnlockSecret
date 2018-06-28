@@ -210,7 +210,7 @@
         self.headerview.addBtn.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
         self.headerview.addBtn.layer.cornerRadius = 10;
         [self.headerview.addBtn setBackgroundColor:[UIColor whiteColor]];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [UIView animateWithDuration:0.5 animations:^{
                 self.headerview.addBtn.bounds = CGRectMake(0, 0, 0, 0);
             } completion:^(BOOL finished) {

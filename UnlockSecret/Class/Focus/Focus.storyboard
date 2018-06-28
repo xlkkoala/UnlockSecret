@@ -121,9 +121,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="2oH-Sn-wsI">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="2oH-Sn-wsI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="9Yh-kd-Jb6">
                                     <rect key="frame" x="0.0" y="353.5" width="375" height="60"/>
@@ -499,6 +498,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2oH-Sn-wsI" firstAttribute="leading" secondItem="GuY-KM-9gg" secondAttribute="leading" id="CoV-vo-xMs"/>
+                            <constraint firstItem="2oH-Sn-wsI" firstAttribute="bottom" secondItem="GuY-KM-9gg" secondAttribute="bottom" id="Pdk-AN-Hej"/>
+                            <constraint firstItem="2oH-Sn-wsI" firstAttribute="trailing" secondItem="GuY-KM-9gg" secondAttribute="trailing" id="Rbb-mM-cQI"/>
+                            <constraint firstItem="2oH-Sn-wsI" firstAttribute="top" secondItem="Mim-ZZ-rjr" secondAttribute="top" id="grd-9g-6Hb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GuY-KM-9gg"/>
                     </view>
                     <navigationItem key="navigationItem" id="iGS-tG-cVE"/>
