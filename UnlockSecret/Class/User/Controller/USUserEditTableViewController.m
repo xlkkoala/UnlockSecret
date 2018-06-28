@@ -253,7 +253,7 @@
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 

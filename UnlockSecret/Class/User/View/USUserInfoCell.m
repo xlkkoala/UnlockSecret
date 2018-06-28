@@ -35,7 +35,7 @@
     self.likeNumber.text = [user.praiseCount stringValue];
     self.fansNumber.text = [user.fans stringValue];
     self.focusNumber.text = [user.attentionCount stringValue];
-    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(user.photo, 80, 80)] placeholderImage:DEFAULT_IMAGE_HEADER];
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(user.photo, 200, 200)] placeholderImage:DEFAULT_IMAGE_HEADER];
     self.nameLabel.text = user.name;
     self.signatureLabel.text = user.ddescription.length>0?[NSString stringWithFormat:@"签名:%@",user.ddescription]:@"签名:暂时没有任何心情哦～";
     [self layoutIfNeeded];

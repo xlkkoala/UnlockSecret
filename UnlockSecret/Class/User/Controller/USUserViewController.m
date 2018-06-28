@@ -67,7 +67,7 @@
     [super viewDidLoad];
     
     self.isTabbar = YES;
-    
+    NSLog(@"backgroundPic------- %@",[LoginHelper currentUser].backgroundPic);
     [self prepareHeaderView];
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, _IPHONE_X?SCREEN_HEIGHT-83:SCREEN_HEIGHT-49);
     self.tableView.contentInset = UIEdgeInsetsMake(HEADER_HEIGHT-60, 0, 0, 0);
@@ -105,7 +105,7 @@
         [self releaseSecretList];
         
         // 加载顶部背景图
-        [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:self.headerImageView.image];
+        [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL([LoginHelper currentUser].backgroundPic, 0, 0)] placeholderImage:self.headerImageView.image];
         
     } errorBlock:^(NSError *error) {
         
@@ -153,7 +153,7 @@
     self.headerImageView.contentMode = UIViewContentModeScaleToFill;
     self.headerImageView.clipsToBounds = YES;
     [_headerView addSubview:_headerImageView];
-//    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:[UIImage imageNamed:@"WechatIMG15"]];
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:[UIImage imageNamed:@"WechatIMG15"]];
     [self.view sendSubviewToBack:self.headerView];
     
     self.btnBackgroundPic = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEADER_HEIGHT-85)];
@@ -346,7 +346,7 @@
         image = info[UIImagePickerControllerOriginalImage];
     }
     
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [picker dismissViewControllerAnimated:YES completion:NULL];
    
     [self upLoadImage:image];
     
@@ -394,7 +394,7 @@
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
