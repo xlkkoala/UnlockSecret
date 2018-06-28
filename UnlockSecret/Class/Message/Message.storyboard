@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -144,16 +144,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="那个玩具，块站住" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gId-Dq-ZzI">
-                                                    <rect key="frame" x="65" y="46" width="225" height="14.5"/>
+                                                    <rect key="frame" x="65" y="46" width="98.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018-06-06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jph-6O-QZO">
-                                                    <rect key="frame" x="295" y="24" width="70" height="14.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="owa-QL-UXD"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="295" y="30.5" width="70" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -171,20 +168,25 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jqp-jG-h72" firstAttribute="top" secondItem="dgO-ml-qhN" secondAttribute="top" constant="5" id="494-wH-NcQ"/>
-                                                <constraint firstItem="Jph-6O-QZO" firstAttribute="centerY" secondItem="jqp-jG-h72" secondAttribute="centerY" id="9mc-pe-TMg"/>
                                                 <constraint firstItem="gId-Dq-ZzI" firstAttribute="leading" secondItem="dgO-ml-qhN" secondAttribute="trailing" constant="10" id="9zU-G3-x6N"/>
                                                 <constraint firstItem="Ohb-8T-EZB" firstAttribute="leading" secondItem="qkR-bp-ijn" secondAttribute="leading" id="BkN-MO-9IV"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ohb-8T-EZB" secondAttribute="bottom" id="J6t-kL-j1F"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ohb-8T-EZB" secondAttribute="trailing" id="T9z-8z-2GS"/>
                                                 <constraint firstItem="dgO-ml-qhN" firstAttribute="leading" secondItem="qkR-bp-ijn" secondAttribute="leading" constant="15" id="XYG-EF-xq2"/>
-                                                <constraint firstItem="Jph-6O-QZO" firstAttribute="leading" secondItem="gId-Dq-ZzI" secondAttribute="trailing" constant="5" id="Zix-DK-HSQ"/>
                                                 <constraint firstItem="gId-Dq-ZzI" firstAttribute="top" secondItem="jqp-jG-h72" secondAttribute="bottom" constant="5" id="gwf-iR-iZU"/>
                                                 <constraint firstAttribute="trailing" secondItem="Jph-6O-QZO" secondAttribute="trailing" constant="10" id="hVH-3M-uIz"/>
+                                                <constraint firstItem="Jph-6O-QZO" firstAttribute="centerY" secondItem="qkR-bp-ijn" secondAttribute="centerY" id="isi-Gu-OW7"/>
                                                 <constraint firstItem="dgO-ml-qhN" firstAttribute="centerY" secondItem="qkR-bp-ijn" secondAttribute="centerY" id="pu6-6C-0yQ"/>
                                                 <constraint firstItem="jqp-jG-h72" firstAttribute="leading" secondItem="dgO-ml-qhN" secondAttribute="trailing" constant="10" id="u1d-Wk-hET"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="content" destination="gId-Dq-ZzI" id="5Qa-Eh-WuO"/>
+                                            <outlet property="headImage" destination="dgO-ml-qhN" id="5ad-hS-wAI"/>
+                                            <outlet property="name" destination="jqp-jG-h72" id="5hX-Ey-ZFZ"/>
+                                            <outlet property="numbers" destination="Jph-6O-QZO" id="cVF-dr-C9T"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

@@ -21,7 +21,6 @@
 #import "USChatViewController.h"
 
 #define HEADER_HEIGHT SCREEN_HEIGHT/2
-#define  CHATVC_ID  @"CHAT_ID"
 
 @interface USFocusDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 

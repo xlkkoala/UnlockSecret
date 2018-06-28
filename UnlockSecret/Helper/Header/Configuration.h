@@ -58,6 +58,8 @@
 #define USER_ID         [NSString stringWithFormat:@"%@",[LoginHelper currentUser].userid]
 //#define USER_ID @"2"
 
+#define CHATVC_ID  @"CHAT_ID"
+
 #define DEFUALT_HEADER_IMAGE [UIImage imageNamed:@"icon_defult_header"]
 
  /*
