@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -234,10 +234,13 @@
                                                                 <constraint firstAttribute="height" constant="0.5" id="NY4-yO-tjH"/>
                                                             </constraints>
                                                         </view>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOZ-Yf-jjT">
-                                                            <rect key="frame" x="330" y="87.5" width="30" height="29"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <state key="normal" title="编辑">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOZ-Yf-jjT">
+                                                            <rect key="frame" x="330" y="87.5" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="2Wo-wj-BQ5"/>
+                                                                <constraint firstAttribute="height" constant="30" id="H79-ze-PyF"/>
+                                                            </constraints>
+                                                            <state key="normal" image="edit">
                                                                 <color key="titleColor" red="0.33725490200000002" green="0.34901960780000002" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <connections>
@@ -706,6 +709,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="edit" width="64" height="64"/>
         <image name="u_header_photo" width="64" height="64"/>
         <image name="u_set" width="27" height="27"/>
     </resources>

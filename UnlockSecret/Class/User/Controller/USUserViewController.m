@@ -73,7 +73,6 @@
     self.tableView.contentInset = UIEdgeInsetsMake(HEADER_HEIGHT-60, 0, 0, 0);
     self.tableView.estimatedRowHeight = 300;
     
-    
     self.imagePickerController = [[UIImagePickerController alloc] init];
     self.imagePickerController.delegate = self;
     self.imagePickerController.allowsEditing = YES;
@@ -81,8 +80,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
- 
-    
     [self.navigationController setNavigationBarHidden:YES animated:!self.isTabbar];
     self.isTabbar = YES;
 }
@@ -97,6 +94,9 @@
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
+
+#pragma mark --- getUserMessage
+
 - (void)getUserMessage {
     USGetUserMessage *process = [[USGetUserMessage alloc] init];
     process.dictionary = [@{@"userId":self.userId?self.userId:USER_ID,@"nowId":USER_ID} mutableCopy];
@@ -105,12 +105,14 @@
         [self releaseSecretList];
         
         // 加载顶部背景图
-        [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL([LoginHelper currentUser].backgroundPic, 0, 0)] placeholderImage:self.headerImageView.image];
+        [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL([LoginHelper currentUser].backgroundPic, 0, 0)] placeholderImage:nil];
         
     } errorBlock:^(NSError *error) {
         
     }];
 }
+
+#pragma mark --- 发布秘密列表
 
 - (void)releaseSecretList {
     USReleaseListProcess *process = [[USReleaseListProcess alloc] init];
@@ -123,6 +125,8 @@
     }];
 }
 
+#pragma mark --- 打开秘密列表
+
 - (void)openSecretList {
     USOpenSecretListProcess *process = [[USOpenSecretListProcess alloc] init];
     process.dictionary = [@{@"userId":[self.user.userid stringValue]}mutableCopy];
@@ -133,6 +137,8 @@
         
     }];
 }
+
+#pragma mark --- 关注秘密列表
 
 - (void)browseSecret {
     USBrowseSecretProcess *process = [[USBrowseSecretProcess alloc] init];
@@ -145,11 +151,12 @@
     }];
 }
 
+#pragma mark --- 更新headerview
+
 - (void)prepareHeaderView {
     self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEADER_HEIGHT)];
     [self.view addSubview:self.headerView];
     self.headerImageView = [[UIImageView alloc] initWithFrame:_headerView.bounds];
-    self.headerImageView.backgroundColor = [UIColor cyanColor];
     self.headerImageView.contentMode = UIViewContentModeScaleToFill;
     self.headerImageView.clipsToBounds = YES;
     [_headerView addSubview:_headerImageView];
@@ -263,6 +270,8 @@
     self.btnBackgroundPic.height = self.headerView.height-85;
 }
 
+#pragma mark --- 切换秘密列表
+
 - (USSecretListModel *)selectCurrentModelByRow:(NSInteger)row {
     USSecretListModel *model;
     switch (self.currentSelect) {
@@ -305,7 +314,8 @@
     }
 }
 
-// 选择头像
+#pragma mark --- 选择背景图片
+
 - (void)sheetImagePickerController{
     
     __weak typeof(self) myself=self;
@@ -340,6 +350,7 @@
     [alertViewController addAction:alertActionPhotoAlbum];
     [self presentViewController:alertViewController animated:YES completion:nil];
 }
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage * image = info[UIImagePickerControllerEditedImage];
     if (!image) {
@@ -359,8 +370,10 @@
     [uploadProcess uploadImageBySource:image withProcess:^(int64_t byteRead, int64_t totalBytes) {
         
     } wtihSuccess:^(id response) {
-        
         NSLog(@"----------%@",response);
+        USUser *user = [LoginHelper currentUser];
+        user.backgroundPic = response;
+        [XLKTool saveDataByPath:user path:nil];
         [self reuquestSubmitPic:response image:image];
         
     } withError:^(NSError *error) {
@@ -371,29 +384,22 @@
 }
 // 提交资料
 - (void)reuquestSubmitPic:(NSString *)pic image:(UIImage *)image{
-    
-    
     USEditPersonalInfoProcess *editProcess = [[USEditPersonalInfoProcess alloc] init];
     editProcess.dictionary = @{@"id":USER_ID,@"background_pic":pic}.mutableCopy;
-    
     [editProcess getMessageHandleWithSuccessBlock:^(id response) {
-        
-        [SVProgressHUD setMinimumDismissTimeInterval:1];
-        [SVProgressHUD showSuccessWithStatus:@"上传成功"];
-        self.headerImageView.image = image;
-        
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD setMinimumDismissTimeInterval:1];
+            [SVProgressHUD showSuccessWithStatus:@"上传成功"];
+            self.headerImageView.image = image;
+        });
     } errorBlock:^(NSError *error) {
         
     }];
-    
 }
 
-#pragma mark-------------
-#pragma mark -------------UIImagePickerControllerDelegate
+#pragma mark ---UIImagePickerControllerDelegate
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 

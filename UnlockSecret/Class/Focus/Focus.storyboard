@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -122,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="2oH-Sn-wsI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="9Yh-kd-Jb6">
                                     <rect key="frame" x="0.0" y="353.5" width="375" height="60"/>
@@ -502,7 +502,7 @@
                             <constraint firstItem="2oH-Sn-wsI" firstAttribute="leading" secondItem="GuY-KM-9gg" secondAttribute="leading" id="CoV-vo-xMs"/>
                             <constraint firstItem="2oH-Sn-wsI" firstAttribute="bottom" secondItem="GuY-KM-9gg" secondAttribute="bottom" id="Pdk-AN-Hej"/>
                             <constraint firstItem="2oH-Sn-wsI" firstAttribute="trailing" secondItem="GuY-KM-9gg" secondAttribute="trailing" id="Rbb-mM-cQI"/>
-                            <constraint firstItem="2oH-Sn-wsI" firstAttribute="top" secondItem="Mim-ZZ-rjr" secondAttribute="top" id="grd-9g-6Hb"/>
+                            <constraint firstItem="2oH-Sn-wsI" firstAttribute="top" secondItem="GuY-KM-9gg" secondAttribute="top" id="taK-va-jwQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GuY-KM-9gg"/>
                     </view>
@@ -517,7 +517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8j-uP-x8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="914" y="244"/>
+            <point key="canvasLocation" x="912.79999999999995" y="243.32833583208398"/>
         </scene>
     </scenes>
     <resources>

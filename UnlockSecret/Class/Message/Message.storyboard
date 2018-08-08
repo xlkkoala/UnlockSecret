@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,29 +41,31 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sL9-qx-gN7">
-                                                    <rect key="frame" x="74" y="19" width="40" height="40"/>
-                                                    <color key="backgroundColor" red="0.99215686270000003" green="0.54117647059999996" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbB-9f-Oae">
+                                                    <rect key="frame" x="74" y="22" width="40" height="40"/>
+                                                    <color key="backgroundColor" red="0.38029322389999998" green="0.93903887829999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="6G9-7C-DHO"/>
-                                                        <constraint firstAttribute="width" constant="40" id="fWY-Xc-Zjg"/>
+                                                        <constraint firstAttribute="height" constant="40" id="6GT-fF-h3e"/>
+                                                        <constraint firstAttribute="width" constant="40" id="9Rv-qc-7aN"/>
                                                     </constraints>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="fans"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borederColor">
-                                                            <color key="value" red="0.99215686270000003" green="0.54117647059999996" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                </imageView>
+                                                    <connections>
+                                                        <action selector="fansClick:" destination="Fxq-5W-U2a" eventType="touchUpInside" id="0Sf-Wr-bEd"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="sL9-qx-gN7" firstAttribute="centerX" secondItem="XEt-Is-dvl" secondAttribute="centerX" id="JEV-Rt-lbl"/>
                                                 <constraint firstAttribute="bottom" secondItem="4KC-yE-Phh" secondAttribute="bottom" constant="15" id="JVT-oo-cYi"/>
-                                                <constraint firstItem="4KC-yE-Phh" firstAttribute="top" secondItem="sL9-qx-gN7" secondAttribute="bottom" constant="8" id="RTz-Ob-qf6"/>
                                                 <constraint firstItem="4KC-yE-Phh" firstAttribute="centerX" secondItem="XEt-Is-dvl" secondAttribute="centerX" id="aeE-TN-uCe"/>
+                                                <constraint firstItem="UbB-9f-Oae" firstAttribute="centerX" secondItem="XEt-Is-dvl" secondAttribute="centerX" id="gKa-OY-UaO"/>
+                                                <constraint firstItem="4KC-yE-Phh" firstAttribute="top" secondItem="UbB-9f-Oae" secondAttribute="bottom" constant="5" id="pOm-l0-h4L"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqQ-YS-VSj">
@@ -75,29 +77,31 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V5F-ab-bzU">
-                                                    <rect key="frame" x="74" y="19" width="40" height="40"/>
-                                                    <color key="backgroundColor" red="0.99215686270000003" green="0.54117647059999996" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYM-Y0-hj5">
+                                                    <rect key="frame" x="74" y="22" width="40" height="40"/>
+                                                    <color key="backgroundColor" red="0.96862745100000003" green="0.75686274509999996" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="SB4-c8-l2p"/>
-                                                        <constraint firstAttribute="width" constant="40" id="dtF-3K-FjY"/>
+                                                        <constraint firstAttribute="width" constant="40" id="5p5-Kr-peI"/>
+                                                        <constraint firstAttribute="height" constant="40" id="zZv-25-vuG"/>
                                                     </constraints>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="pinglun"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borederColor">
-                                                            <color key="value" red="0.99215686270000003" green="0.54117647059999996" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                </imageView>
+                                                    <connections>
+                                                        <action selector="commentsClick:" destination="Fxq-5W-U2a" eventType="touchUpInside" id="5WI-a8-4JQ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="V5F-ab-bzU" firstAttribute="centerX" secondItem="hqQ-YS-VSj" secondAttribute="centerX" id="2MD-yu-wjD"/>
-                                                <constraint firstItem="XaW-RU-Rw5" firstAttribute="top" secondItem="V5F-ab-bzU" secondAttribute="bottom" constant="8" id="Dzk-4W-xys"/>
                                                 <constraint firstAttribute="bottom" secondItem="XaW-RU-Rw5" secondAttribute="bottom" constant="15" id="M1J-BZ-imz"/>
+                                                <constraint firstItem="EYM-Y0-hj5" firstAttribute="centerX" secondItem="hqQ-YS-VSj" secondAttribute="centerX" id="uBc-uo-QRd"/>
                                                 <constraint firstItem="XaW-RU-Rw5" firstAttribute="centerX" secondItem="hqQ-YS-VSj" secondAttribute="centerX" id="vHX-Fd-gid"/>
+                                                <constraint firstItem="XaW-RU-Rw5" firstAttribute="top" secondItem="EYM-Y0-hj5" secondAttribute="bottom" constant="5" id="wMH-NT-I9M"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -216,6 +220,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fans" width="64" height="64"/>
         <image name="icon_defult_header" width="55" height="55"/>
+        <image name="pinglun" width="64" height="64"/>
     </resources>
 </document>

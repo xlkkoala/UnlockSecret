@@ -79,7 +79,8 @@
     process.dictionary = [@{@"userId":self.userId?self.userId:USER_ID,@"nowId":USER_ID} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         self.user = response;
-        self.title = self.user.name;
+        self.title = [NSString stringWithFormat:@"%@的资料",self.user.name];
+        [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:[UIImage imageNamed:@"WechatIMG15"]];
         [self releaseSecretList];
     } errorBlock:^(NSError *error) {
         
@@ -145,11 +146,10 @@
     self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEADER_HEIGHT)];
     [self.view addSubview:self.headerView];
     self.headerImageView = [[UIImageView alloc] initWithFrame:_headerView.bounds];
-    self.headerImageView.backgroundColor = [UIColor cyanColor];
     self.headerImageView.contentMode = UIViewContentModeScaleToFill;
     self.headerImageView.clipsToBounds = YES;
     [_headerView addSubview:_headerImageView];
-    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",self.user.backgroundPic]] placeholderImage:[UIImage imageNamed:@"m_xunmi"]];
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:[UIImage imageNamed:@"WechatIMG15"]];
     [self.view sendSubviewToBack:self.headerView];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

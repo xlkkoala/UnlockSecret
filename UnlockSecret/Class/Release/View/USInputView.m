@@ -47,8 +47,13 @@
     _likeNumberLabel.textAlignment = NSTextAlignmentLeft;
     [likeView addSubview:_likeNumberLabel];
 
-    _likeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height/2-6, 6, 12)];
-    _likeImageView.image = [UIImage imageNamed:@"youjiantou"];
+    _likeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height/2-8, 16, 16)];
+    if ([_secretModel.praise isEqualToString:@"0"]) {
+        _likeImageView.image = [UIImage imageNamed:@"collection"];
+    }else {
+        _likeImageView.image = [UIImage imageNamed:@"havecollection"];
+    }
+    
     [likeView addSubview:_likeImageView];
     
     
@@ -66,8 +71,8 @@
     _commentNumberLabel.textAlignment = NSTextAlignmentLeft;
     [commentView addSubview:_commentNumberLabel];
     
-    _commentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height/2-6, 6, 12)];
-    _commentImageView.image = [UIImage imageNamed:@"youjiantou"];
+    _commentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height/2-8, 16, 16)];
+    _commentImageView.image = [UIImage imageNamed:@"comments"];
     [commentView addSubview:_commentImageView];
     
     
@@ -152,10 +157,10 @@
 - (void)changeLikeBtn:(BOOL)isLike {
     if (isLike == YES) {
         _secretModel.praise = @"1";
-//        _likeImageView.image = [UIImage imageNamed:@""];
+        _likeImageView.image = [UIImage imageNamed:@"havecollection"];
     }else{
         _secretModel.praise = @"0";
-//        _likeImageView.image = [UIImage imageNamed:@""];
+        _likeImageView.image = [UIImage imageNamed:@"collection"];
     }
 }
 

@@ -251,10 +251,12 @@
     [view.likeBtn setTitle:model.praise forState:UIControlStateNormal];
     //根据ispraise 判断点赞状态
     if ([model.isPraise integerValue] == 0) {
-        [view.likeBtn setBackgroundColor:[UIColor grayColor]];
+        [view.likeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [view.likeBtn setBackgroundImage:[UIImage imageNamed:@"like"] forState:UIControlStateNormal];
         view.likeBtn.userInteractionEnabled = YES;
     }else{
-        [view.likeBtn setBackgroundColor:[UIColor redColor]];
+        [view.likeBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [view.likeBtn setBackgroundImage:[UIImage imageNamed:@"havelike"] forState:UIControlStateNormal];
         view.likeBtn.userInteractionEnabled = NO;
     }
     [view.likeBtn handleControlEvent:UIControlEventTouchUpInside withBlock:^{

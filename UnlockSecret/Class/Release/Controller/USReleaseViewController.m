@@ -69,7 +69,7 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
             return self.imageDataArray.count + 1 ;
         }
     }
-    return 3;
+    return 2;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -84,10 +84,10 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
         [cell.addImageBtn addTarget:self action:@selector(selectOrDeleteImage:) forControlEvents:UIControlEventTouchUpInside];
         if (indexPath.row < self.imageDataArray.count) {
             [cell.addImageBtn setBackgroundImage:self.imageDataArray[indexPath.row] forState:UIControlStateNormal];
-            [cell.addImageBtn setTitle:@"" forState:UIControlStateNormal];
+            [cell.addImageBtn setImage:nil forState:UIControlStateNormal];
         }else{
             [cell.addImageBtn setBackgroundImage:nil forState:UIControlStateNormal];
-            [cell.addImageBtn setTitle:@"+" forState:UIControlStateNormal];
+            [cell.addImageBtn setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
         }
         return cell;
     }else {
