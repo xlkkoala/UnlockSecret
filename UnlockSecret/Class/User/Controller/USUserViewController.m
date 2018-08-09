@@ -105,7 +105,7 @@
         [self releaseSecretList];
         
         // 加载顶部背景图
-        [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL([LoginHelper currentUser].backgroundPic, 0, 0)] placeholderImage:nil];
+        [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL([LoginHelper currentUser].backgroundPic, 0, 0)] placeholderImage:BACKGOUND_IMAGE];
         
     } errorBlock:^(NSError *error) {
         
@@ -160,7 +160,7 @@
     self.headerImageView.contentMode = UIViewContentModeScaleToFill;
     self.headerImageView.clipsToBounds = YES;
     [_headerView addSubview:_headerImageView];
-    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:[UIImage imageNamed:@"WechatIMG15"]];
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:BACKGOUND_IMAGE];
     [self.view sendSubviewToBack:self.headerView];
     
     self.btnBackgroundPic = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEADER_HEIGHT-85)];
@@ -339,13 +339,11 @@
     [alertViewController addAction:alertActionTPictures];
     
     UIAlertAction *alertActionPhotoAlbum = [UIAlertAction actionWithTitle:@"从相册选取" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
             myself.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
             
             [myself presentViewController:myself.imagePickerController animated:YES completion:NULL];
         }
-        
     }];
     [alertViewController addAction:alertActionPhotoAlbum];
     [self presentViewController:alertViewController animated:YES completion:nil];
@@ -356,11 +354,8 @@
     if (!image) {
         image = info[UIImagePickerControllerOriginalImage];
     }
-    
     [picker dismissViewControllerAnimated:YES completion:NULL];
-   
     [self upLoadImage:image];
-    
 }
 
 - (void)upLoadImage:(UIImage *)image{
@@ -377,9 +372,7 @@
         [self reuquestSubmitPic:response image:image];
         
     } withError:^(NSError *error) {
-        
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-        
     }];
 }
 // 提交资料

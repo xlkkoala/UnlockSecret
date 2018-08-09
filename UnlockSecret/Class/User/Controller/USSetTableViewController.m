@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"设置";
     
 }
@@ -28,31 +27,25 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//
+//    return 2;
+//}
 
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return 3;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 44;
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if( indexPath.row == 2 ){
-        // 退出
-        [self logout];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 1) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self logout];
+        });
     }
-    
 }
 
 - (void)logout{
-    
     UIAlertController *alerController = [UIAlertController alertControllerWithTitle:nil message:@"退出登录？" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *actionSure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -70,7 +63,6 @@
     [alerController addAction:actionCancel];
     
     [self presentViewController:alerController animated:YES completion:nil];
-    
 }
 
 /*

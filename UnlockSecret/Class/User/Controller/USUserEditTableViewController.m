@@ -134,7 +134,7 @@
             return 160;
             break;
         case 4:
-            return 100;
+            return 125;
             break;
             
         default:

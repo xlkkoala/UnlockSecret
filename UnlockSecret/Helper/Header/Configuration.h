@@ -62,6 +62,8 @@
 
 #define DEFUALT_HEADER_IMAGE [UIImage imageNamed:@"icon_defult_header"]
 
+#define BACKGOUND_IMAGE [UIImage imageNamed:@"backgroundImage"]
+
  /*
  //  UserDefaults
  */

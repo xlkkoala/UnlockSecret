@@ -149,7 +149,7 @@
     self.headerImageView.contentMode = UIViewContentModeScaleToFill;
     self.headerImageView.clipsToBounds = YES;
     [_headerView addSubview:_headerImageView];
-    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:[UIImage imageNamed:@"WechatIMG15"]];
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:BACKGOUND_IMAGE];
     [self.view sendSubviewToBack:self.headerView];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
