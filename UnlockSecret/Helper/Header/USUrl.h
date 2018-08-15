@@ -43,6 +43,8 @@
 #define US_DISCUSS_DETAIL @"126"
 #define US_BROWSE_SECRET @"129" // 点赞过的秘密
 #define US_RELEASE_LABEL @"130"
+#define US_FANS_LIST @"131" // FANS
+#define US_COMMENTS_LIST @"132" // COMMENTS
 #define US_UPLOAD_PICTURE @"4023"
 
 #endif /* USUrl_h */

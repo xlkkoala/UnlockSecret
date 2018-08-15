@@ -52,6 +52,14 @@
 		5E9FCD1520C693B300780E1A /* USReleaseInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCD1420C693B300780E1A /* USReleaseInfoCell.m */; };
 		5E9FCD1820C695FC00780E1A /* USReleaseImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCD1720C695FC00780E1A /* USReleaseImageCell.m */; };
 		5E9FCD5920C78C5F00780E1A /* USLocalBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FCD5820C78C5F00780E1A /* USLocalBrowseViewController.m */; };
+		5EA0B082211C491E006A26DA /* USMessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B081211C491E006A26DA /* USMessageListController.m */; };
+		5EA0B085211C4945006A26DA /* USCommentsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B084211C4945006A26DA /* USCommentsListController.m */; };
+		5EA0B08A21240A0C006A26DA /* USFansCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B08921240A0C006A26DA /* USFansCell.m */; };
+		5EA0B08D21240B7C006A26DA /* USGetFansListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B08C21240B7C006A26DA /* USGetFansListProcess.m */; };
+		5EA0B09021240C31006A26DA /* USFansModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B08F21240C31006A26DA /* USFansModel.m */; };
+		5EA0B09321241A91006A26DA /* USReplyListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B09221241A91006A26DA /* USReplyListProcess.m */; };
+		5EA0B09621241CCC006A26DA /* USReplyHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B09521241CCC006A26DA /* USReplyHistoryModel.m */; };
+		5EA0B09921241D50006A26DA /* USReplyHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B09821241D50006A26DA /* USReplyHistoryCell.m */; };
 		5EBCCC3D20CA0DA6009FB2A4 /* USSessionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3520CA0DA5009FB2A4 /* USSessionHeaderView.xib */; };
 		5EBCCC3E20CA0DA6009FB2A4 /* USSecretHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3720CA0DA5009FB2A4 /* USSecretHeaderView.m */; };
 		5EBCCC3F20CA0DA6009FB2A4 /* USSessionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3820CA0DA5009FB2A4 /* USSessionHeaderView.m */; };
@@ -242,6 +250,22 @@
 		5E9FCD1720C695FC00780E1A /* USReleaseImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseImageCell.m; sourceTree = "<group>"; };
 		5E9FCD5720C78C5F00780E1A /* USLocalBrowseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USLocalBrowseViewController.h; sourceTree = "<group>"; };
 		5E9FCD5820C78C5F00780E1A /* USLocalBrowseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USLocalBrowseViewController.m; sourceTree = "<group>"; };
+		5EA0B080211C491E006A26DA /* USMessageListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USMessageListController.h; sourceTree = "<group>"; };
+		5EA0B081211C491E006A26DA /* USMessageListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USMessageListController.m; sourceTree = "<group>"; };
+		5EA0B083211C4945006A26DA /* USCommentsListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USCommentsListController.h; sourceTree = "<group>"; };
+		5EA0B084211C4945006A26DA /* USCommentsListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USCommentsListController.m; sourceTree = "<group>"; };
+		5EA0B08821240A0C006A26DA /* USFansCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFansCell.h; sourceTree = "<group>"; };
+		5EA0B08921240A0C006A26DA /* USFansCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFansCell.m; sourceTree = "<group>"; };
+		5EA0B08B21240B7C006A26DA /* USGetFansListProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USGetFansListProcess.h; sourceTree = "<group>"; };
+		5EA0B08C21240B7C006A26DA /* USGetFansListProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USGetFansListProcess.m; sourceTree = "<group>"; };
+		5EA0B08E21240C31006A26DA /* USFansModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USFansModel.h; sourceTree = "<group>"; };
+		5EA0B08F21240C31006A26DA /* USFansModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USFansModel.m; sourceTree = "<group>"; };
+		5EA0B09121241A91006A26DA /* USReplyListProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReplyListProcess.h; sourceTree = "<group>"; };
+		5EA0B09221241A91006A26DA /* USReplyListProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReplyListProcess.m; sourceTree = "<group>"; };
+		5EA0B09421241CCC006A26DA /* USReplyHistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReplyHistoryModel.h; sourceTree = "<group>"; };
+		5EA0B09521241CCC006A26DA /* USReplyHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReplyHistoryModel.m; sourceTree = "<group>"; };
+		5EA0B09721241D50006A26DA /* USReplyHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReplyHistoryCell.h; sourceTree = "<group>"; };
+		5EA0B09821241D50006A26DA /* USReplyHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReplyHistoryCell.m; sourceTree = "<group>"; };
 		5EBCCC3520CA0DA5009FB2A4 /* USSessionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USSessionHeaderView.xib; sourceTree = "<group>"; };
 		5EBCCC3620CA0DA5009FB2A4 /* USSecretHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USSecretHeaderView.h; sourceTree = "<group>"; };
 		5EBCCC3720CA0DA5009FB2A4 /* USSecretHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USSecretHeaderView.m; sourceTree = "<group>"; };
@@ -623,6 +647,10 @@
 				5E9FCCF520C61EA900780E1A /* USMessageNavigationController.m */,
 				5ED8FD8C20C4D75200593643 /* USMessageViewController.h */,
 				5ED8FD8D20C4D75200593643 /* USMessageViewController.m */,
+				5EA0B080211C491E006A26DA /* USMessageListController.h */,
+				5EA0B081211C491E006A26DA /* USMessageListController.m */,
+				5EA0B083211C4945006A26DA /* USCommentsListController.h */,
+				5EA0B084211C4945006A26DA /* USCommentsListController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -640,6 +668,28 @@
 				6CAB09D620E2466C00A05383 /* USSetTableViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5EA0B08621240774006A26DA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5EA0B08B21240B7C006A26DA /* USGetFansListProcess.h */,
+				5EA0B08C21240B7C006A26DA /* USGetFansListProcess.m */,
+				5EA0B09121241A91006A26DA /* USReplyListProcess.h */,
+				5EA0B09221241A91006A26DA /* USReplyListProcess.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5EA0B08721240783006A26DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EA0B08E21240C31006A26DA /* USFansModel.h */,
+				5EA0B08F21240C31006A26DA /* USFansModel.m */,
+				5EA0B09421241CCC006A26DA /* USReplyHistoryModel.h */,
+				5EA0B09521241CCC006A26DA /* USReplyHistoryModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5EBE82A320C2D73200C5B0D9 = {
@@ -920,6 +970,8 @@
 		5ED8FD7E20C4D07A00593643 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				5EA0B08721240783006A26DA /* Model */,
+				5EA0B08621240774006A26DA /* Network */,
 				5E9FCD0820C622BF00780E1A /* Controller */,
 				5E9FCCFE20C61FCE00780E1A /* Message.storyboard */,
 			);
@@ -1102,6 +1154,10 @@
 			children = (
 				6CD44C0920C7871800F05E20 /* USMessageTableViewCell.h */,
 				6CD44C0A20C7871800F05E20 /* USMessageTableViewCell.m */,
+				5EA0B08821240A0C006A26DA /* USFansCell.h */,
+				5EA0B08921240A0C006A26DA /* USFansCell.m */,
+				5EA0B09721241D50006A26DA /* USReplyHistoryCell.h */,
+				5EA0B09821241D50006A26DA /* USReplyHistoryCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1354,9 +1410,12 @@
 				5E3E218520D253F900146CEB /* USSecretDetailModel.m in Sources */,
 				5EBE83D920C2DA2E00C5B0D9 /* YQMemoryCache.m in Sources */,
 				5EBE83CB20C2DA2E00C5B0D9 /* NSString+Base64.m in Sources */,
+				5EA0B08D21240B7C006A26DA /* USGetFansListProcess.m in Sources */,
 				6CAB09D420E2400E00A05383 /* USUserEditTableViewController.m in Sources */,
 				5EBE83D120C2DA2E00C5B0D9 /* LoginHelper.m in Sources */,
 				6CD44C2020C7F3D900F05E20 /* USMainModel.m in Sources */,
+				5EA0B09621241CCC006A26DA /* USReplyHistoryModel.m in Sources */,
+				5EA0B09921241D50006A26DA /* USReplyHistoryCell.m in Sources */,
 				5EBCCC3E20CA0DA6009FB2A4 /* USSecretHeaderView.m in Sources */,
 				5EBE83E020C2DA2E00C5B0D9 /* BaseViewController.m in Sources */,
 				5E9FCCFD20C61ED800780E1A /* USUserNavigationController.m in Sources */,
@@ -1377,12 +1436,15 @@
 				5E3E218120D2523300146CEB /* USOpenSecretDetailProcess.m in Sources */,
 				5E643FCF20D0B2460059C4BE /* USRegisterProcess.m in Sources */,
 				5E9FCCF620C61EA900780E1A /* USMessageNavigationController.m in Sources */,
+				5EA0B08A21240A0C006A26DA /* USFansCell.m in Sources */,
 				5E9FCCF020C61C4500780E1A /* USFocusNavigationController.m in Sources */,
+				5EA0B09021240C31006A26DA /* USFansModel.m in Sources */,
 				5EBE82BF20C2D73400C5B0D9 /* main.m in Sources */,
 				5E643FE820D0B6950059C4BE /* MessageModel.m in Sources */,
 				5E3E219D20D393A200146CEB /* USLikeSecretProcess.m in Sources */,
 				5ED5BA3F20DE1FED00A774DA /* USFocusDetailViewController.m in Sources */,
 				5EBE83CD20C2DA2E00C5B0D9 /* NSString+CommonCryptor.m in Sources */,
+				5EA0B082211C491E006A26DA /* USMessageListController.m in Sources */,
 				5E643FBC20CFAEA50059C4BE /* USUserSecretCell.m in Sources */,
 				6C2EDBA320C7FD850091D26A /* USFocusListProcess.m in Sources */,
 				5ED5BA2F20DCE58D00A774DA /* USBrowseSecretProcess.m in Sources */,
@@ -1398,6 +1460,7 @@
 				5E3E218820D25A4C00146CEB /* USCommentListProcess.m in Sources */,
 				6C6DD35820C9529B00379490 /* USMSubmitDifferentProcess.m in Sources */,
 				5E643FE920D0B6950059C4BE /* USChatListCell.m in Sources */,
+				5EA0B085211C4945006A26DA /* USCommentsListController.m in Sources */,
 				5E9FCD1820C695FC00780E1A /* USReleaseImageCell.m in Sources */,
 				5E643FD020D0B2460059C4BE /* USLoginProcess.m in Sources */,
 				5E3E21A020D393FE00146CEB /* USUserReplyCommentProcess.m in Sources */,
@@ -1421,6 +1484,7 @@
 				5E643FB920CE9EC20059C4BE /* USUserInfoCell.m in Sources */,
 				5ED5BA2B20DB346B00A774DA /* USCommentsDetailViewController.m in Sources */,
 				5ED5BA3520DCEC0400A774DA /* USOpenSecretListProcess.m in Sources */,
+				5EA0B09321241A91006A26DA /* USReplyListProcess.m in Sources */,
 				5EBE83CE20C2DA2E00C5B0D9 /* NSData+CommonCrypto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

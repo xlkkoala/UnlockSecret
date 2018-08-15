@@ -98,17 +98,17 @@
 #pragma mark --- getUserMessage
 
 - (void)getUserMessage {
+    [SVProgressHUD show];
     USGetUserMessage *process = [[USGetUserMessage alloc] init];
     process.dictionary = [@{@"userId":self.userId?self.userId:USER_ID,@"nowId":USER_ID} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         self.user = response;
         [self releaseSecretList];
-        
         // 加载顶部背景图
         [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL([LoginHelper currentUser].backgroundPic, 0, 0)] placeholderImage:BACKGOUND_IMAGE];
-        
+        [SVProgressHUD dismiss];
     } errorBlock:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
 }
 

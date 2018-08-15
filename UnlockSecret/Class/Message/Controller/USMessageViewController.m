@@ -112,10 +112,6 @@
     vc.conversation = [self.conversationArr objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
 }
-- (IBAction)fansClick:(id)sender {
-}
-- (IBAction)commentsClick:(id)sender {
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
