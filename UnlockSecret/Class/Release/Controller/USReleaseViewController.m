@@ -69,7 +69,7 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
             return self.imageDataArray.count + 1 ;
         }
     }
-    return 2;
+    return 1;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -93,15 +93,15 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
     }else {
         USReleaseInfoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Release_Info_Cell forIndexPath:indexPath];
         switch (indexPath.row) {
+//            case 0:
+//                cell.titleLabel.text = @"贴个标签";
+//                break;
             case 0:
-                cell.titleLabel.text = @"贴个标签";
-                break;
-            case 1:
                 cell.titleLabel.text = @"所在位置";
                 break;
-            case 2:
-                cell.titleLabel.text = @"解锁后可看";
-                break;
+//            case 2:
+//                cell.titleLabel.text = @"解锁后可看";
+//                break;
             default:
                 break;
         }
@@ -110,7 +110,7 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 2 && indexPath.row == 1) {
+    if (indexPath.section == 2 && indexPath.row == 0) {
         // 选择地址
         USNearAddressViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectLocaitonVC"];
         vc.hidesBottomBarWhenPushed = YES;
@@ -122,7 +122,7 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
         [vc setSuccessBlock:^(AMapPOI *obj){
             __strong __typeof(weakSelf) strongSelf = weakSelf;
             strongSelf.poi = obj;
-            USReleaseInfoCell *cell = (USReleaseInfoCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]];
+            USReleaseInfoCell *cell = (USReleaseInfoCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
             if (obj) {
                 if (obj.name.length > 0) {
                     cell.detailLabel.text = [NSString stringWithFormat:@"%@·%@\n%@",self.poi.city,self.poi.name,self.poi.address];
