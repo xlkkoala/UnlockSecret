@@ -157,7 +157,9 @@
 - (void)changeLikeBtn:(BOOL)isLike {
     if (isLike == YES) {
         _secretModel.praise = @"1";
+        _secretModel.praise_count = [NSString stringWithFormat:@"%ld",[_secretModel.praise_count integerValue] + 1];
         _likeImageView.image = [UIImage imageNamed:@"havecollection"];
+        _likeNumberLabel.text = _secretModel.praise_count;
     }else{
         _secretModel.praise = @"0";
         _likeImageView.image = [UIImage imageNamed:@"collection"];

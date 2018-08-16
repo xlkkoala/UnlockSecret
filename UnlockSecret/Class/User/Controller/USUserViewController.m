@@ -242,7 +242,7 @@
     self.isTabbar = NO;
     if (indexPath.section == 1) {
         USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
-        vc.secretId = [self selectCurrentModelByRow:indexPath.row].uid;
+        vc.secretId = [self selectCurrentModelByRow:indexPath.row].secretId;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
