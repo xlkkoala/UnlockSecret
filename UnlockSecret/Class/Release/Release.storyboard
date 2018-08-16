@@ -130,15 +130,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="370" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.png" translatesAutoresizingMaskIntoConstraints="NO" id="UvM-2M-wgg">
-                                                    <rect key="frame" x="0.0" y="17" width="25" height="25"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="UvM-2M-wgg">
+                                                    <rect key="frame" x="0.0" y="22" width="15" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="7dw-cW-lQd"/>
-                                                        <constraint firstAttribute="height" constant="25" id="q0X-e2-BEw"/>
+                                                        <constraint firstAttribute="width" constant="15" id="7dw-cW-lQd"/>
+                                                        <constraint firstAttribute="height" constant="15" id="q0X-e2-BEw"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="贴个标签" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuH-Gu-SRA">
-                                                    <rect key="frame" x="35" y="21" width="57.5" height="17"/>
+                                                    <rect key="frame" x="25" y="21" width="57.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -474,7 +474,7 @@
     <resources>
         <image name="add" width="64" height="64"/>
         <image name="chahao" width="32" height="32"/>
-        <image name="info.png" width="28" height="28"/>
+        <image name="location" width="128" height="128"/>
         <image name="youjiantou" width="50" height="50"/>
     </resources>
 </document>

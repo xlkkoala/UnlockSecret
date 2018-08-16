@@ -60,6 +60,17 @@
 		5EA0B09321241A91006A26DA /* USReplyListProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B09221241A91006A26DA /* USReplyListProcess.m */; };
 		5EA0B09621241CCC006A26DA /* USReplyHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B09521241CCC006A26DA /* USReplyHistoryModel.m */; };
 		5EA0B09921241D50006A26DA /* USReplyHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B09821241D50006A26DA /* USReplyHistoryCell.m */; };
+		5EA0B0A721251612006A26DA /* JXDoubleBreadthFirstSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B09C21251612006A26DA /* JXDoubleBreadthFirstSearcher.m */; };
+		5EA0B0A821251612006A26DA /* JXPathSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B09E21251612006A26DA /* JXPathSearcher.m */; };
+		5EA0B0A921251612006A26DA /* JXAStarSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B09F21251612006A26DA /* JXAStarSearcher.m */; };
+		5EA0B0AA21251612006A26DA /* JXBreadthFirstSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B0A121251612006A26DA /* JXBreadthFirstSearcher.m */; };
+		5EA0B0AB21251612006A26DA /* JXPriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B0A521251612006A26DA /* JXPriorityQueue.m */; };
+		5EA0B0B021251624006A26DA /* PuzzleStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B0AD21251623006A26DA /* PuzzleStatus.m */; };
+		5EA0B0B121251624006A26DA /* PuzzlePiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B0AE21251624006A26DA /* PuzzlePiece.m */; };
+		5EA0B0B421251833006A26DA /* PuzzleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B0B321251833006A26DA /* PuzzleView.m */; };
+		5EA0B0B621251869006A26DA /* PuzzleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EA0B0B521251869006A26DA /* PuzzleView.xib */; };
+		5EA0B0B921255F5B006A26DA /* USIsOpenProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B0B821255F5B006A26DA /* USIsOpenProcess.m */; };
+		5EA0B0BC21256455006A26DA /* USGetImageProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0B0BB21256455006A26DA /* USGetImageProcess.m */; };
 		5EBCCC3D20CA0DA6009FB2A4 /* USSessionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3520CA0DA5009FB2A4 /* USSessionHeaderView.xib */; };
 		5EBCCC3E20CA0DA6009FB2A4 /* USSecretHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3720CA0DA5009FB2A4 /* USSecretHeaderView.m */; };
 		5EBCCC3F20CA0DA6009FB2A4 /* USSessionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCCC3820CA0DA5009FB2A4 /* USSessionHeaderView.m */; };
@@ -266,6 +277,27 @@
 		5EA0B09521241CCC006A26DA /* USReplyHistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReplyHistoryModel.m; sourceTree = "<group>"; };
 		5EA0B09721241D50006A26DA /* USReplyHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReplyHistoryCell.h; sourceTree = "<group>"; };
 		5EA0B09821241D50006A26DA /* USReplyHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReplyHistoryCell.m; sourceTree = "<group>"; };
+		5EA0B09C21251612006A26DA /* JXDoubleBreadthFirstSearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXDoubleBreadthFirstSearcher.m; sourceTree = "<group>"; };
+		5EA0B09D21251612006A26DA /* JXBreadthFirstSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBreadthFirstSearcher.h; sourceTree = "<group>"; };
+		5EA0B09E21251612006A26DA /* JXPathSearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPathSearcher.m; sourceTree = "<group>"; };
+		5EA0B09F21251612006A26DA /* JXAStarSearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXAStarSearcher.m; sourceTree = "<group>"; };
+		5EA0B0A021251612006A26DA /* JXDoubleBreadthFirstSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXDoubleBreadthFirstSearcher.h; sourceTree = "<group>"; };
+		5EA0B0A121251612006A26DA /* JXBreadthFirstSearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXBreadthFirstSearcher.m; sourceTree = "<group>"; };
+		5EA0B0A221251612006A26DA /* JXAStarSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXAStarSearcher.h; sourceTree = "<group>"; };
+		5EA0B0A321251612006A26DA /* JXPathSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPathSearcher.h; sourceTree = "<group>"; };
+		5EA0B0A521251612006A26DA /* JXPriorityQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPriorityQueue.m; sourceTree = "<group>"; };
+		5EA0B0A621251612006A26DA /* JXPriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPriorityQueue.h; sourceTree = "<group>"; };
+		5EA0B0AC21251623006A26DA /* PuzzleStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleStatus.h; sourceTree = "<group>"; };
+		5EA0B0AD21251623006A26DA /* PuzzleStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleStatus.m; sourceTree = "<group>"; };
+		5EA0B0AE21251624006A26DA /* PuzzlePiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzlePiece.m; sourceTree = "<group>"; };
+		5EA0B0AF21251624006A26DA /* PuzzlePiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzlePiece.h; sourceTree = "<group>"; };
+		5EA0B0B221251833006A26DA /* PuzzleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PuzzleView.h; sourceTree = "<group>"; };
+		5EA0B0B321251833006A26DA /* PuzzleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuzzleView.m; sourceTree = "<group>"; };
+		5EA0B0B521251869006A26DA /* PuzzleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PuzzleView.xib; sourceTree = "<group>"; };
+		5EA0B0B721255F5B006A26DA /* USIsOpenProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USIsOpenProcess.h; sourceTree = "<group>"; };
+		5EA0B0B821255F5B006A26DA /* USIsOpenProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USIsOpenProcess.m; sourceTree = "<group>"; };
+		5EA0B0BA21256455006A26DA /* USGetImageProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USGetImageProcess.h; sourceTree = "<group>"; };
+		5EA0B0BB21256455006A26DA /* USGetImageProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USGetImageProcess.m; sourceTree = "<group>"; };
 		5EBCCC3520CA0DA5009FB2A4 /* USSessionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USSessionHeaderView.xib; sourceTree = "<group>"; };
 		5EBCCC3620CA0DA5009FB2A4 /* USSecretHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USSecretHeaderView.h; sourceTree = "<group>"; };
 		5EBCCC3720CA0DA5009FB2A4 /* USSecretHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USSecretHeaderView.m; sourceTree = "<group>"; };
@@ -692,6 +724,48 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5EA0B09A2125151A006A26DA /* PuzzleGame */ = {
+			isa = PBXGroup;
+			children = (
+				5EA0B0B221251833006A26DA /* PuzzleView.h */,
+				5EA0B0B321251833006A26DA /* PuzzleView.m */,
+				5EA0B0B521251869006A26DA /* PuzzleView.xib */,
+				5EA0B0AC21251623006A26DA /* PuzzleStatus.h */,
+				5EA0B0AD21251623006A26DA /* PuzzleStatus.m */,
+				5EA0B0AF21251624006A26DA /* PuzzlePiece.h */,
+				5EA0B0AE21251624006A26DA /* PuzzlePiece.m */,
+				5EA0B09B21251612006A26DA /* JXPatchSearch */,
+				5EA0B0A421251612006A26DA /* JXPriorityQueue */,
+				5EA0B0BA21256455006A26DA /* USGetImageProcess.h */,
+				5EA0B0BB21256455006A26DA /* USGetImageProcess.m */,
+			);
+			path = PuzzleGame;
+			sourceTree = "<group>";
+		};
+		5EA0B09B21251612006A26DA /* JXPatchSearch */ = {
+			isa = PBXGroup;
+			children = (
+				5EA0B09C21251612006A26DA /* JXDoubleBreadthFirstSearcher.m */,
+				5EA0B09D21251612006A26DA /* JXBreadthFirstSearcher.h */,
+				5EA0B09E21251612006A26DA /* JXPathSearcher.m */,
+				5EA0B09F21251612006A26DA /* JXAStarSearcher.m */,
+				5EA0B0A021251612006A26DA /* JXDoubleBreadthFirstSearcher.h */,
+				5EA0B0A121251612006A26DA /* JXBreadthFirstSearcher.m */,
+				5EA0B0A221251612006A26DA /* JXAStarSearcher.h */,
+				5EA0B0A321251612006A26DA /* JXPathSearcher.h */,
+			);
+			path = JXPatchSearch;
+			sourceTree = "<group>";
+		};
+		5EA0B0A421251612006A26DA /* JXPriorityQueue */ = {
+			isa = PBXGroup;
+			children = (
+				5EA0B0A521251612006A26DA /* JXPriorityQueue.m */,
+				5EA0B0A621251612006A26DA /* JXPriorityQueue.h */,
+			);
+			path = JXPriorityQueue;
+			sourceTree = "<group>";
+		};
 		5EBE82A320C2D73200C5B0D9 = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +791,7 @@
 		5EBE82AE20C2D73200C5B0D9 /* UnlockSecret */ = {
 			isa = PBXGroup;
 			children = (
+				5EA0B09A2125151A006A26DA /* PuzzleGame */,
 				5EBE842F20C4CAE200C5B0D9 /* Framework */,
 				5EBE831A20C2DA2D00C5B0D9 /* Base */,
 				5EBE831020C2DA2D00C5B0D9 /* Helper */,
@@ -1057,6 +1132,8 @@
 			children = (
 				6C2EDBA220C7FD840091D26A /* USFocusListProcess.h */,
 				6C2EDBA120C7FD840091D26A /* USFocusListProcess.m */,
+				5EA0B0B721255F5B006A26DA /* USIsOpenProcess.h */,
+				5EA0B0B821255F5B006A26DA /* USIsOpenProcess.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1295,6 +1372,7 @@
 				6C0BC35620C6749B0068564C /* origina_image_select@2x.png in Resources */,
 				5EBCCC4120CA0DA6009FB2A4 /* USSessionFooterView.xib in Resources */,
 				5E9FCCE820C61A2700780E1A /* Focus.storyboard in Resources */,
+				5EA0B0B621251869006A26DA /* PuzzleView.xib in Resources */,
 				5ED5BA4420DE4D5C00A774DA /* Chat.storyboard in Resources */,
 				5EBE82BC20C2D73400C5B0D9 /* LaunchScreen.storyboard in Resources */,
 				6C0BC35720C6749B0068564C /* original_image@2x.png in Resources */,
@@ -1379,6 +1457,7 @@
 				6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */,
 				6C6DD35B20C9579A00379490 /* USReleaseProcess.m in Sources */,
 				5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */,
+				5EA0B0B021251624006A26DA /* PuzzleStatus.m in Sources */,
 				5E64403020D0FD8B0059C4BE /* USNearAddressViewController.m in Sources */,
 				5E3E218B20D2609700146CEB /* USCommentListModel.m in Sources */,
 				5EBE83D620C2DA2E00C5B0D9 /* UIView+CustomVWithCorRadius.m in Sources */,
@@ -1386,6 +1465,7 @@
 				6CCB7D9420E0ECFB00E3966B /* YNTextField.m in Sources */,
 				5EBE83DD20C2DA2E00C5B0D9 /* YQNetworking.m in Sources */,
 				5E643FEA20D0B6950059C4BE /* WeChatCell.m in Sources */,
+				5EA0B0AA21251612006A26DA /* JXBreadthFirstSearcher.m in Sources */,
 				6C2EDB9E20C7F8930091D26A /* USMainTableViewCell.m in Sources */,
 				5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */,
 				5E643FD120D0B2460059C4BE /* USCheckCodeProcess.m in Sources */,
@@ -1422,12 +1502,14 @@
 				5EBE83D320C2DA2E00C5B0D9 /* Device.m in Sources */,
 				5EBCCC4720CA1708009FB2A4 /* USInputView.m in Sources */,
 				5E9FCCF320C61E8D00780E1A /* USReleaseNavigationController.m in Sources */,
+				5EA0B0BC21256455006A26DA /* USGetImageProcess.m in Sources */,
 				5ED5BA3920DCF62300A774DA /* USSecretListModel.m in Sources */,
 				5EBE83E420C2DA2E00C5B0D9 /* USUser.m in Sources */,
 				5EBE83CC20C2DA2E00C5B0D9 /* NSData+Encryption.m in Sources */,
 				6C6DD35520C947ED00379490 /* USFocusListModel.m in Sources */,
 				5EBCCC3F20CA0DA6009FB2A4 /* USSessionHeaderView.m in Sources */,
 				5E3E219120D2751400146CEB /* USReplyModel.m in Sources */,
+				5EA0B0A921251612006A26DA /* JXAStarSearcher.m in Sources */,
 				6C6DD34A20C9212700379490 /* USMLookingDiffModel.m in Sources */,
 				5E643FD220D0B2460059C4BE /* USForgetPswProcess.m in Sources */,
 				6C2EDBA620C7FDDF0091D26A /* USMLookingForDifferentProcess.m in Sources */,
@@ -1435,10 +1517,12 @@
 				5E643FE720D0B6950059C4BE /* USChatViewController.m in Sources */,
 				5E3E218120D2523300146CEB /* USOpenSecretDetailProcess.m in Sources */,
 				5E643FCF20D0B2460059C4BE /* USRegisterProcess.m in Sources */,
+				5EA0B0B421251833006A26DA /* PuzzleView.m in Sources */,
 				5E9FCCF620C61EA900780E1A /* USMessageNavigationController.m in Sources */,
 				5EA0B08A21240A0C006A26DA /* USFansCell.m in Sources */,
 				5E9FCCF020C61C4500780E1A /* USFocusNavigationController.m in Sources */,
 				5EA0B09021240C31006A26DA /* USFansModel.m in Sources */,
+				5EA0B0A721251612006A26DA /* JXDoubleBreadthFirstSearcher.m in Sources */,
 				5EBE82BF20C2D73400C5B0D9 /* main.m in Sources */,
 				5E643FE820D0B6950059C4BE /* MessageModel.m in Sources */,
 				5E3E219D20D393A200146CEB /* USLikeSecretProcess.m in Sources */,
@@ -1448,12 +1532,14 @@
 				5E643FBC20CFAEA50059C4BE /* USUserSecretCell.m in Sources */,
 				6C2EDBA320C7FD850091D26A /* USFocusListProcess.m in Sources */,
 				5ED5BA2F20DCE58D00A774DA /* USBrowseSecretProcess.m in Sources */,
+				5EA0B0B921255F5B006A26DA /* USIsOpenProcess.m in Sources */,
 				5E9FCD5920C78C5F00780E1A /* USLocalBrowseViewController.m in Sources */,
 				5E6CEE8020CA6A5A009725E9 /* USUploadImageProcess.m in Sources */,
 				5EBE83DB20C2DA2E00C5B0D9 /* HttpRequest.m in Sources */,
 				5E3E219420D275E000146CEB /* USReplyCell.m in Sources */,
 				5EBE83E520C2DA2E00C5B0D9 /* BaseTabbarController.m in Sources */,
 				6C9AC1D920C68AAA00E8D621 /* TransparentViewController.m in Sources */,
+				5EA0B0B121251624006A26DA /* PuzzlePiece.m in Sources */,
 				6CD44C2520C7F4F900F05E20 /* USMainProcess.m in Sources */,
 				5EBE83CF20C2DA2E00C5B0D9 /* NSData+Base64.m in Sources */,
 				5E3E218E20D271E600146CEB /* USReplyDetailProcess.m in Sources */,
@@ -1467,6 +1553,7 @@
 				5E643FD420D0B2460059C4BE /* USLoginViewController.m in Sources */,
 				5EBCCC4020CA0DA6009FB2A4 /* USSessionFooterView.m in Sources */,
 				5EBE82B120C2D73200C5B0D9 /* AppDelegate.m in Sources */,
+				5EA0B0AB21251612006A26DA /* JXPriorityQueue.m in Sources */,
 				6C710E6D20E32E270041D3D9 /* BaseTableViewController.m in Sources */,
 				5ED8FD8E20C4D75200593643 /* USMessageViewController.m in Sources */,
 				5EBE83D520C2DA2E00C5B0D9 /* UIColor+Hex.m in Sources */,
@@ -1482,6 +1569,7 @@
 				5ED5BA4720DE500500A774DA /* USChatInputView.m in Sources */,
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,
 				5E643FB920CE9EC20059C4BE /* USUserInfoCell.m in Sources */,
+				5EA0B0A821251612006A26DA /* JXPathSearcher.m in Sources */,
 				5ED5BA2B20DB346B00A774DA /* USCommentsDetailViewController.m in Sources */,
 				5ED5BA3520DCEC0400A774DA /* USOpenSecretListProcess.m in Sources */,
 				5EA0B09321241A91006A26DA /* USReplyListProcess.m in Sources */,

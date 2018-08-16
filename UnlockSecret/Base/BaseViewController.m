@@ -64,6 +64,14 @@
     return [UIColor colorWithPatternImage:bgImg];
 }
 
+/// 用户提示
+- (void)alertTitle:(NSString *)title message:(NSString *)message {
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

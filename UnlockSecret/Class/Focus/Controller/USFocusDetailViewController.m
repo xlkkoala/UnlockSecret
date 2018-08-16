@@ -19,6 +19,9 @@
 #import "USMainFocusProcess.h"
 #import <JMessage/JMessage.h>
 #import "USChatViewController.h"
+#import "USIsOpenProcess.h"
+#import "PuzzleView.h"
+#import "USMainModel.h"
 
 #define HEADER_HEIGHT SCREEN_HEIGHT/2
 
@@ -206,7 +209,7 @@
         return cell;
     }
     USUserSecretCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USER_SECRET_CELL" forIndexPath:indexPath];
-    [cell changeUIByModel:[self selectCurrentModelByRow:indexPath.row]];
+    [cell changeUIByOtherModel:[self selectCurrentModelByRow:indexPath.row] user:self.user];
     return cell;
 }
 
@@ -245,10 +248,29 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-//        USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
-//        vc.secretId = [self selectCurrentModelByRow:indexPath.row].uid;
-//        [self.navigationController pushViewController:vc animated:YES];
         NSLog(@"需要解密");
+        USIsOpenProcess *process = [[USIsOpenProcess alloc] init];
+        USSecretListModel *model = [self selectCurrentModelByRow:indexPath.row];
+        process.dictionary = [@{@"userId":USER_ID,@"secretId":model.secretId}mutableCopy];
+        [process getMessageHandleWithSuccessBlock:^(id response) {
+            
+            // 判断是否被打开过，如果被打开过就直接进入
+            if ([response isEqual:@0]) {
+                USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+                vc.secretId = model.secretId;
+                [self.navigationController pushViewController:vc animated:YES];
+            }else {
+                // 打开解密界面
+                PuzzleView *view = [[PuzzleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+                USMainModel *main = [USMainModel new];
+                main.secretId = model.secretId;
+                view.mainModel = main;
+                [[UIApplication sharedApplication].keyWindow addSubview:view];
+            }
+            
+        } errorBlock:^(NSError *error) {
+            
+        }];
     }
 }
 

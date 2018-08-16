@@ -13,7 +13,8 @@
 #import "USMainLookingForDifferentVC.h"
 #import "USMainFocusProcess.h"
 #import <MJRefresh.h>
-
+#import "PuzzleView.h"
+#import "USOpenSecretViewController.h"
 
 @interface USMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -56,6 +57,11 @@
     }
     // 退出登录
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout) name:@"NOTIFICATIONLOGOUT" object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)logout{
@@ -170,26 +176,39 @@
         
         USMainModel *model = self.arrMainList[indexPath.row];
         
-        if( model.isOpen ){
+        if(model.isOpen == 1){
             
             //       已打开盒子 查看详情
-            UIViewController *openViewController = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+            USOpenSecretViewController *openViewController = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
+            openViewController.secretId = model.secretId;
             [self.navigationController pushViewController:openViewController animated:YES];
             
         }else{
             
             // 找不同
-            USMainLookingForDifferentVC *differentVC = [[USMainLookingForDifferentVC alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-            differentVC.mainModel = model;
-            differentVC.selectIndex = indexPath.row;
-            differentVC.unlockedSuccessBlock = ^(NSInteger index) {
-              //解锁成功手动修改为已打开 刷新列表
+//            USMainLookingForDifferentVC *differentVC = [[USMainLookingForDifferentVC alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+//            differentVC.mainModel = model;
+//            differentVC.selectIndex = indexPath.row;
+//            differentVC.unlockedSuccessBlock = ^(NSInteger index) {
+//              //解锁成功手动修改为已打开 刷新列表
+//                model.isOpen = 1;
+//                [self.arrMainList replaceObjectAtIndex:index withObject:model];
+//                [self.tableView reloadData];
+//
+//            };
+//            [[UIApplication sharedApplication].keyWindow addSubview:differentVC];
+            
+            PuzzleView *view = [[PuzzleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            view.mainModel = model;
+            view.puzzleBlock = ^{
+                //解锁成功手动修改为已打开 刷新列表
                 model.isOpen = 1;
-                [self.arrMainList replaceObjectAtIndex:index withObject:model];
+                [self.arrMainList replaceObjectAtIndex:indexPath.row withObject:model];
+                self.arrMainList = self.arrMainList;
                 [self.tableView reloadData];
-                
+
             };
-            [[UIApplication sharedApplication].keyWindow addSubview:differentVC];
+            [[UIApplication sharedApplication].keyWindow addSubview:view];
         }
        
     }];

@@ -39,7 +39,7 @@
     NSString *time = model.createTime;
     NSString *title = model.title;
     NSString *str = model.content;
-    NSString *imageUrl = IMAGEURL(model.photo, 60, 60);
+    NSString *imageUrl = IMAGEURL(model.photo, 120, 120);
     NSMutableArray *imageArray = [@[]mutableCopy];
     if (![model.pic isEqualToString:@""]) {
         imageArray = (NSMutableArray *)[model.pic componentsSeparatedByString:@","];
@@ -49,10 +49,10 @@
     NSInteger USER_BTN_HEIGHT = 60;
     _headImgae = [[UIButton alloc] init];
     [_headImgae setBackgroundColor:[UIColor cyanColor]];
-    _headImgae.imageView.contentMode = UIViewContentModeScaleToFill;
-//    [headImgae sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:DEFAULT_IMAGE_HEADER];
-//    [_headImgae sd_setImageWithURL:[NSURL URLWithString:imageUrl] forState:UIControlStateNormal placeholderImage:DEFAULT_IMAGE_HEADER];
-    [_headImgae sd_setBackgroundImageWithURL:[NSURL URLWithString:imageUrl] forState:UIControlStateNormal placeholderImage:DEFAULT_IMAGE_HEADER];
+    _headImgae.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+//    [_headImgae sd_setBackgroundImageWithURL:[NSURL URLWithString:imageUrl] forState:UIControlStateNormal placeholderImage:DEFAULT_IMAGE_HEADER];
+    [_headImgae sd_setImageWithURL:[NSURL URLWithString:imageUrl] forState:UIControlStateNormal placeholderImage:DEFAULT_IMAGE_HEADER];
     _headImgae.center = CGPointMake(SCREEN_WIDTH/2, 0);
     _headImgae.bounds = CGRectMake(0, 0, USER_BTN_HEIGHT, USER_BTN_HEIGHT);
     _headImgae.layer.masksToBounds = YES;

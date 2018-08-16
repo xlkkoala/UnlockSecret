@@ -19,7 +19,7 @@
     
     [self.imageViewHeader sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(model.photo, 150, 150)] placeholderImage:DEFAULT_IMAGE_HEADER];
     
-    if( model.isOpen ){
+    if( model.isOpen == 0 ){
         
         [self.imageViewSystem sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(model.open_pic, 150, 150)] placeholderImage:ImageNamed(@"m_envelope")];
     }else{

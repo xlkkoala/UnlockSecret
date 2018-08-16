@@ -63,6 +63,8 @@
 #define DEFUALT_HEADER_IMAGE [UIImage imageNamed:@"icon_defult_header"]
 
 #define BACKGOUND_IMAGE [UIImage imageNamed:@"backgroundImage"]
+#define PUZZLE_IMAGE [UIImage imageNamed:@"puzzleImage"]
+
 
  /*
  //  UserDefaults
@@ -80,5 +82,7 @@
 // 头像默认图
 #define DEFAULT_IMAGE_HEADER ImageNamed(@"icon_defult_header")
 
+
+#define URL(url) [NSURL URLWithString:url]
 
 #endif /* Configuration_h */

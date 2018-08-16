@@ -14,5 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 - (void)changeUIByModel:(USSecretListModel *)model;
-
+- (void)changeUIByOtherModel:(USSecretListModel *)model user:(USUser *)user;
 @end
