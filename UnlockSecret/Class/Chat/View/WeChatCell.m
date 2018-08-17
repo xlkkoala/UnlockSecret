@@ -191,7 +191,7 @@
                 
                 UIImageView *logoImage=[[UIImageView alloc] init];
                 logoImage.frame=CGRectMake(AppFrameWidth-10-40, masTop, 40, 40);
-                [logoImage setImageWithURL:[NSURL URLWithString:[LoginHelper currentUser].photo] placeholderImage:DEFUALT_HEADER_IMAGE];
+                [logoImage setImageWithURL:URL(IMAGEURL([LoginHelper currentUser].photo, 100, 100)) placeholderImage:DEFUALT_HEADER_IMAGE];
                 [self.contentView addSubview:logoImage];
                 
                 CGFloat maxWith=AppFrameWidth-LEFT_WITH-RIGHT_WITH-14-12-4;

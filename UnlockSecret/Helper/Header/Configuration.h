@@ -55,7 +55,7 @@
  // 用户ID
  */
 
-#define USER_ID         [NSString stringWithFormat:@"%@",[LoginHelper currentUser].userid]
+#define USER_ID          [LoginHelper currentUser].userid == nil?@"0":[NSString stringWithFormat:@"%@",[LoginHelper currentUser].userid]
 //#define USER_ID @"2"
 
 #define CHATVC_ID  @"CHAT_ID"

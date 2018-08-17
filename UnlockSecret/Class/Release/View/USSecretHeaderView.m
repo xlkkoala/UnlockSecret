@@ -43,6 +43,9 @@
     NSMutableArray *imageArray = [@[]mutableCopy];
     if (![model.pic isEqualToString:@""]) {
         imageArray = (NSMutableArray *)[model.pic componentsSeparatedByString:@","];
+        if ([imageArray.lastObject isEqualToString:@""]) {
+            [imageArray removeLastObject];
+        }
     }
     
     //头像
@@ -133,6 +136,8 @@
                                                                       (SCREEN_WIDTH - 80)/3,
                                                                       (SCREEN_WIDTH - 80)/3)];
         button.backgroundColor = [UIColor blackColor];
+        button.imageView.contentMode = UIViewContentModeScaleAspectFill;
+        [button sd_setImageWithURL:URL(IMAGEURL(imageArray[i], 120, 120)) forState:UIControlStateNormal];
         [self addSubview:button];
     }
     

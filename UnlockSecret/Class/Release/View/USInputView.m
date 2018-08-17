@@ -25,7 +25,7 @@
     _secretModel = model;
     _textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
     _textField.leftView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 6, 12)];
-    ((UIImageView *)_textField.leftView).image = [UIImage imageNamed:@"youjiantou"];
+    ((UIImageView *)_textField.leftView).image = [UIImage imageNamed:@""];
     _textField.leftViewMode = UITextFieldViewModeAlways;
     _textField.borderStyle = UITextBorderStyleRoundedRect;
     _textField.returnKeyType = UIReturnKeySend;
@@ -38,7 +38,7 @@
 //    [_textField becomeFirstResponder];
     
     UIView *likeView = [[UIView alloc] init];
-    likeView.frame = CGRectMake(self.bounds.size.width - 70, 0, 70, self.bounds.size.height);
+    likeView.frame = CGRectMake(self.bounds.size.width - 70, 0, 70, 40);
     [self addSubview:likeView];
 
     _likeNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 60, 40)];
@@ -47,7 +47,8 @@
     _likeNumberLabel.textAlignment = NSTextAlignmentLeft;
     [likeView addSubview:_likeNumberLabel];
 
-    _likeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height/2-8, 16, 16)];
+    _likeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, likeView.bounds.size.height/2-8, 16, 16)];
+    
     if ([_secretModel.praise isEqualToString:@"0"]) {
         _likeImageView.image = [UIImage imageNamed:@"collection"];
     }else {
@@ -62,7 +63,7 @@
     [likeView addSubview:_likeBtn];
     
     UIView *commentView = [[UIView alloc] init];
-    commentView.frame = CGRectMake(self.bounds.size.width - 140, 0, 70, self.bounds.size.height);
+    commentView.frame = CGRectMake(self.bounds.size.width - 140, 0, 70, 40);
     [self addSubview:commentView];
     
     _commentNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 60, 40)];
@@ -71,7 +72,7 @@
     _commentNumberLabel.textAlignment = NSTextAlignmentLeft;
     [commentView addSubview:_commentNumberLabel];
     
-    _commentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height/2-8, 16, 16)];
+    _commentImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, commentView.bounds.size.height/2-8, 16, 16)];
     _commentImageView.image = [UIImage imageNamed:@"comments"];
     [commentView addSubview:_commentImageView];
     

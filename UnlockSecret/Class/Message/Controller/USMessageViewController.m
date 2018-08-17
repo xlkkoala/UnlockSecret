@@ -81,8 +81,21 @@
     USMessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"USMessageTableViewCell" forIndexPath:indexPath];
     JMSGConversation *conversation =[_conversationArr objectAtIndex:indexPath.row];
     [cell.headImage sd_setImageWithURL:[NSURL URLWithString:conversation.avatarLocalPath] placeholderImage:[UIImage imageNamed:@"wd_tx_photo"]];
-    cell.name.text = conversation.title;
+
+    JMSGUser *user = (JMSGUser *)conversation.target;
+    if (user.nickname) {
+        cell.name.text = user.nickname;
+    }else {
+        cell.name.text = conversation.title;
+    }
+    
     cell.content.text = conversation.latestMessageContentText;
+    cell.unread.hidden = YES;
+    if (![conversation.unreadCount  isEqual: @0]) {
+        cell.unread.text = [NSString stringWithFormat:@"%@",conversation.unreadCount];
+        cell.unread.hidden = NO;
+    }
+    
     [conversation avatarData:^(NSData *data, NSString *objectId, NSError *error) {
         [self methodsInMainQueue:^{
             if (!error) {
@@ -116,6 +129,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)onReceiveMessage:(JMSGMessage *)message error:(NSError *)error{
+//    NSLog(@"receive");
+    [self getChatList];
 }
 
 /*

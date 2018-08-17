@@ -12,7 +12,7 @@
 #import "USRegisterProcess.h"
 #import "USLoginProcess.h"
 #import <SMS_SDK/SMSSDK.h>
-
+#import <JPUSHService.h>
 #define colorLine ColorFromRGB(86, 89, 125)
 #define colorGray ColorFromRGB(210, 210, 210)
 
@@ -343,6 +343,8 @@
                     tabbar.selectedIndex = [USAppData instance].currentItenIndex?[USAppData instance].currentItenIndex:0;
                     [SVProgressHUD showSuccessWithStatus:@"登录成功"];
                     [self removeFromSuperview];
+                    
+
                     
                 }else{
                     [XLKTool saveDataByPath:nil path:nil];

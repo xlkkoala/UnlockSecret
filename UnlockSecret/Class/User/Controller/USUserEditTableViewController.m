@@ -13,6 +13,7 @@
 #import "USBirthdayDateView.h"
 #import "USEditPersonalInfoProcess.h"
 #import "USGetUserMessage.h"
+#import <JMessage/JMessage.h>
 
 @interface USUserEditTableViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
@@ -79,7 +80,8 @@
         [SVProgressHUD setMinimumDismissTimeInterval:1];
         [SVProgressHUD showSuccessWithStatus:@"保存成功"];
         [self.navigationController popViewControllerAnimated:YES];
-        
+        //更改IM 的名称
+        [self changeIMName:self.textFieldNickname.text];
     } errorBlock:^(NSError *error) {
        
     }];
@@ -228,7 +230,7 @@
     self.imageViewHeader.image = image;
     
     [self upLoadImage:image];
-    
+    [self changeIMHeaderImage:image];
 }
 
 - (void)upLoadImage:(UIImage *)image{
@@ -240,11 +242,37 @@
         
         NSLog(@"----------%@",response);
         self.strHeader = response;
-        
+        USUser *user = [LoginHelper currentUser];
+        user.photo = (NSString *)response;
+        [XLKTool saveDataByPath:user path:nil];
     } withError:^(NSError *error) {
        
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         
+    }];
+}
+
+- (void)changeIMHeaderImage:(UIImage *)image {
+    JMSGUserInfo *userInfo = [[JMSGUserInfo alloc] init];
+    userInfo.avatarData = UIImageJPEGRepresentation(image, 0.8);
+    [JMSGUser updateMyInfoWithUserInfo:userInfo completionHandler:^(id resultObject, NSError *error) {
+        if (error) {
+            NSLog(@"IM---photo-------修改失败");
+        }else{
+            NSLog(@"IM---photo-------修改成功");
+        }
+    }];
+}
+
+- (void)changeIMName:(NSString *)name {
+    JMSGUserInfo *userInfo = [[JMSGUserInfo alloc] init];
+    userInfo.nickname = name;
+    [JMSGUser updateMyInfoWithUserInfo:userInfo completionHandler:^(id resultObject, NSError *error) {
+        if (error) {
+            NSLog(@"IM---name-------修改失败");
+        }else{
+            NSLog(@"IM---name-------修改成功");
+        }
     }];
 }
 

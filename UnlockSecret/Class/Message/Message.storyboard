@@ -128,7 +128,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_defult_header" translatesAutoresizingMaskIntoConstraints="NO" id="dgO-ml-qhN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_defult_header" translatesAutoresizingMaskIntoConstraints="NO" id="dgO-ml-qhN">
                                                     <rect key="frame" x="15" y="17.5" width="40" height="40"/>
                                                     <color key="backgroundColor" red="0.99215686270000003" green="0.54117647059999996" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -169,11 +169,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcr-KM-cNO">
+                                                    <rect key="frame" x="15" y="15" width="15" height="15"/>
+                                                    <color key="backgroundColor" red="1" green="0.36262757029999998" blue="0.36895081769999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="JxE-kS-IqK"/>
+                                                        <constraint firstAttribute="width" constant="15" id="nm3-qO-0Nv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="7.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="qcr-KM-cNO" firstAttribute="leading" secondItem="qkR-bp-ijn" secondAttribute="leading" constant="15" id="2fi-NU-7oF"/>
                                                 <constraint firstItem="jqp-jG-h72" firstAttribute="top" secondItem="dgO-ml-qhN" secondAttribute="top" constant="5" id="494-wH-NcQ"/>
                                                 <constraint firstItem="gId-Dq-ZzI" firstAttribute="leading" secondItem="dgO-ml-qhN" secondAttribute="trailing" constant="10" id="9zU-G3-x6N"/>
                                                 <constraint firstItem="Ohb-8T-EZB" firstAttribute="leading" secondItem="qkR-bp-ijn" secondAttribute="leading" id="BkN-MO-9IV"/>
+                                                <constraint firstItem="qcr-KM-cNO" firstAttribute="top" secondItem="qkR-bp-ijn" secondAttribute="top" constant="15" id="Et4-Uk-0Y5"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ohb-8T-EZB" secondAttribute="bottom" id="J6t-kL-j1F"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ohb-8T-EZB" secondAttribute="trailing" id="T9z-8z-2GS"/>
                                                 <constraint firstItem="dgO-ml-qhN" firstAttribute="leading" secondItem="qkR-bp-ijn" secondAttribute="leading" constant="15" id="XYG-EF-xq2"/>
@@ -190,6 +208,7 @@
                                             <outlet property="headImage" destination="dgO-ml-qhN" id="5ad-hS-wAI"/>
                                             <outlet property="name" destination="jqp-jG-h72" id="5hX-Ey-ZFZ"/>
                                             <outlet property="numbers" destination="Jph-6O-QZO" id="cVF-dr-C9T"/>
+                                            <outlet property="unread" destination="qcr-KM-cNO" id="u4z-Qg-kOm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -44,7 +44,6 @@ static NSString *const CHANNEL = @"App Store";
     [self begainPushNotification:launchOptions];
     // 注册第三方登录
     [self setJShareCongigWithQQAndWeChat];
-    
     return YES;
 }
 
@@ -94,12 +93,9 @@ static NSString *const CHANNEL = @"App Store";
     if (@available(iOS 10.0, *)) {
         if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
             [JPUSHService handleRemoteNotification:userInfo];
-            [SVProgressHUD showInfoWithStatus:@"1"];
         }
-        [SVProgressHUD showInfoWithStatus:@"2"];
     } else {
         // Fallback on earlier versions
-        [SVProgressHUD showInfoWithStatus:@"3"];
     }
     if (@available(iOS 10.0, *)) {
         completionHandler(UNNotificationPresentationOptionAlert);
@@ -116,11 +112,10 @@ static NSString *const CHANNEL = @"App Store";
     if (@available(iOS 10.0, *)) {
         if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
             [JPUSHService handleRemoteNotification:userInfo];
-            [SVProgressHUD showInfoWithStatus:@"4"];
+            UITabBarController *tabbar = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+            tabbar.selectedIndex = 3;
         }
-        [SVProgressHUD showInfoWithStatus:@"5"];
     } else {
-        [SVProgressHUD showInfoWithStatus:@"6"];
         // Fallback on earlier versions
     }
     completionHandler();  // 系统要求执行这个方法
@@ -130,9 +125,8 @@ static NSString *const CHANNEL = @"App Store";
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     // Required, iOS 7 Support
     if ([[userInfo objectForKey:@"_j_type"] isEqualToString:@"jmessage"]) {
-        [SVProgressHUD showInfoWithStatus:@"push"];
-        USChatListViewController *vc = [MAIN_STORYBOARD instantiateViewControllerWithIdentifier:@"CHAT_LIST_ID"];
-        [self.currentViewController.navigationController pushViewController:vc animated:YES];
+//        USChatListViewController *vc = [MAIN_STORYBOARD instantiateViewControllerWithIdentifier:@"CHAT_LIST_ID"];
+//        [self.currentViewController.navigationController pushViewController:vc animated:YES];
     }
     NSLog(@"%@",[userInfo objectForKey:@"_j_type"]);
     [JPUSHService handleRemoteNotification:userInfo];

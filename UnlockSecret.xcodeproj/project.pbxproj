@@ -298,6 +298,7 @@
 		5EA0B0B821255F5B006A26DA /* USIsOpenProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USIsOpenProcess.m; sourceTree = "<group>"; };
 		5EA0B0BA21256455006A26DA /* USGetImageProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USGetImageProcess.h; sourceTree = "<group>"; };
 		5EA0B0BB21256455006A26DA /* USGetImageProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USGetImageProcess.m; sourceTree = "<group>"; };
+		5EA0B0BD2126CB1C006A26DA /* UnlockSecret.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnlockSecret.entitlements; sourceTree = "<group>"; };
 		5EBCCC3520CA0DA5009FB2A4 /* USSessionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = USSessionHeaderView.xib; sourceTree = "<group>"; };
 		5EBCCC3620CA0DA5009FB2A4 /* USSecretHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USSecretHeaderView.h; sourceTree = "<group>"; };
 		5EBCCC3720CA0DA5009FB2A4 /* USSecretHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USSecretHeaderView.m; sourceTree = "<group>"; };
@@ -791,6 +792,7 @@
 		5EBE82AE20C2D73200C5B0D9 /* UnlockSecret */ = {
 			isa = PBXGroup;
 			children = (
+				5EA0B0BD2126CB1C006A26DA /* UnlockSecret.entitlements */,
 				5EA0B09A2125151A006A26DA /* PuzzleGame */,
 				5EBE842F20C4CAE200C5B0D9 /* Framework */,
 				5EBE831A20C2DA2D00C5B0D9 /* Base */,
@@ -1328,6 +1330,11 @@
 				TargetAttributes = {
 					5EBE82AB20C2D73200C5B0D9 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					5EBE82C320C2D73400C5B0D9 = {
 						CreatedOnToolsVersion = 9.3;
@@ -1743,6 +1750,7 @@
 			baseConfigurationReference = 6DC4DB13E3699003B19453A4 /* Pods-UnlockSecret.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = UnlockSecret/UnlockSecret.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CRKSDZ5EH;
 				ENABLE_BITCODE = NO;
@@ -1788,6 +1796,7 @@
 			baseConfigurationReference = BF5BDF9D2F332A9863F808D2 /* Pods-UnlockSecret.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = UnlockSecret/UnlockSecret.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CRKSDZ5EH;
 				ENABLE_BITCODE = NO;

@@ -106,7 +106,7 @@
     __weak typeof(self) weakself = self;
     
     USMainProcess *process = [[USMainProcess alloc] init];
-    process.dictionary = [@{@"userId":USER_ID?USER_ID:@"0",@"pageNumber":@(self.pageNumber),@"pageSize":@"10"} mutableCopy];
+    process.dictionary = [@{@"userId":USER_ID,@"pageNumber":@(self.pageNumber),@"pageSize":@"10"} mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         
         if( weakself.pageNumber == 0 ){

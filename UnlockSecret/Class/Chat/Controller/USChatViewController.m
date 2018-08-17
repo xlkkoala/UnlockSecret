@@ -67,8 +67,14 @@ static NSInteger const messagefristPageNumber = 20;
     [self.conversation clearUnreadCount];
     [self.tableView setContentOffset:CGPointMake(0, CGFLOAT_MAX)];
     [self.tableView reloadData];
+    [self scrollToBottom];
 }
 
+- (void)scrollToBottom {
+    NSUInteger rowCount = [self.tableView numberOfRowsInSection:0];
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:rowCount-1 inSection:0];
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+}
 
 - (void)onReceiveMessage:(JMSGMessage *)message error:(NSError *)error{
     NSLog(@"receive");
@@ -95,7 +101,6 @@ static NSInteger const messagefristPageNumber = 20;
     if (!error) {
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.dataArray.count - 1 inSection:0] atScrollPosition:0 animated:NO];
     }
-    
 }
 
 - (void)initUI{
@@ -111,12 +116,13 @@ static NSInteger const messagefristPageNumber = 20;
         NSLog(@"%f",cell.frame.size.height);
     }
     USChatInputView *inputView = [[USChatInputView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-(_IPHONE_X?(88+34+40):(64+40)), SCREEN_WIDTH, 40)];
-    inputView.backgroundColor = [UIColor redColor];
     inputView.tableView = self.tableView;
     inputView.placeHolder = @"";
     inputView.delegate = self;
     [inputView.textField resignFirstResponder];
     [self.view addSubview:inputView];
+    
+//    self.title = ((JMSGConversation *)self.conversation).;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

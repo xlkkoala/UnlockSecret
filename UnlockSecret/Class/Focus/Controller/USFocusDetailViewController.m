@@ -255,7 +255,7 @@
         [process getMessageHandleWithSuccessBlock:^(id response) {
             
             // 判断是否被打开过，如果被打开过就直接进入
-            if ([response isEqual:@0]) {
+            if ([response isEqual:@1]) {
                 USOpenSecretViewController *vc = [RELEASE_STORYBOARD instantiateViewControllerWithIdentifier:@"OPEN_SECRET_ID"];
                 vc.secretId = model.secretId;
                 [self.navigationController pushViewController:vc animated:YES];
@@ -265,6 +265,9 @@
                 USMainModel *main = [USMainModel new];
                 main.secretId = model.secretId;
                 view.mainModel = main;
+                view.puzzleBlock = ^{
+                    NSLog(@"open success");
+                };
                 [[UIApplication sharedApplication].keyWindow addSubview:view];
             }
             
