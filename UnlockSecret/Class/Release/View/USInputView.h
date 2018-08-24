@@ -40,4 +40,5 @@
 
 - (void)changeLikeBtn:(BOOL)isLike;
 
+- (void)changeCommentNumber;
 @end

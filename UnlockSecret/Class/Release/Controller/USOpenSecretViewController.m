@@ -183,6 +183,7 @@
     process.dictionary = [@{@"content":content,@"userId":USER_ID,@"secretId":self.secretModel.secretId,@"address":@""}mutableCopy];
     [process getMessageHandleWithSuccessBlock:^(id response) {
         [self getCommentList];
+        [self.inputView changeCommentNumber];
         [self.inputView.textField resignFirstResponder];
     } errorBlock:^(NSError *error) {
         [self.inputView.textField resignFirstResponder];

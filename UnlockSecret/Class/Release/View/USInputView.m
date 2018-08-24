@@ -155,6 +155,11 @@
     }
 }
 
+- (void)changeCommentNumber {
+    _secretModel.commentCount = [NSString stringWithFormat:@"%ld",[_secretModel.commentCount integerValue] + 1];
+    _commentNumberLabel.text = _secretModel.commentCount;
+}
+
 - (void)changeLikeBtn:(BOOL)isLike {
     if (isLike == YES) {
         _secretModel.praise = @"1";
