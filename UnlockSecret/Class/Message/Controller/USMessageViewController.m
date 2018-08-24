@@ -40,6 +40,8 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self getChatList];
+    // 设置badge 为 0
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)getChatList{
@@ -121,8 +123,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    USMessageTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     USChatViewController *vc = [CHAT_STORYBOARD instantiateViewControllerWithIdentifier:CHATVC_ID];
     vc.conversation = [self.conversationArr objectAtIndex:indexPath.row];
+    vc.titleName = cell.name.text;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

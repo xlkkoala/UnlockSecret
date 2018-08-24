@@ -44,6 +44,9 @@ static NSString *const CHANNEL = @"App Store";
     [self begainPushNotification:launchOptions];
     // 注册第三方登录
     [self setJShareCongigWithQQAndWeChat];
+    //
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     return YES;
 }
 

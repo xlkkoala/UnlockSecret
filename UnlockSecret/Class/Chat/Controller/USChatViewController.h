@@ -11,4 +11,5 @@
 @interface USChatViewController : BaseViewController
 @property(strong, nonatomic) id conversation;
 @property (nonatomic, strong) UIImage *headerImage;
+@property (nonatomic, strong) NSString *titleName;
 @end

@@ -26,6 +26,7 @@ static NSInteger const messagefristPageNumber = 20;
    [JMessage addDelegate:self withConversation:self.conversation];
     [self getChatHeaderImage];
     [self initUI];
+    self.title = self.titleName;
 }
 
 - (void)getChatHeaderImage{
