@@ -72,7 +72,6 @@
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, _IPHONE_X?SCREEN_HEIGHT-83:SCREEN_HEIGHT-49);
     self.tableView.contentInset = UIEdgeInsetsMake(HEADER_HEIGHT-60, 0, 0, 0);
     self.tableView.estimatedRowHeight = 300;
-    
     self.imagePickerController = [[UIImagePickerController alloc] init];
     self.imagePickerController.delegate = self;
     self.imagePickerController.allowsEditing = YES;
@@ -163,9 +162,9 @@
     [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:IMAGEURL(self.user.backgroundPic, 0, 0)] placeholderImage:BACKGOUND_IMAGE];
     [self.view sendSubviewToBack:self.headerView];
     
-    self.btnBackgroundPic = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, HEADER_HEIGHT-85)];
+    self.btnBackgroundPic = [[UIButton alloc] initWithFrame:CGRectMake(0, -HEADER_HEIGHT, SCREEN_WIDTH, HEADER_HEIGHT-85)];
     [self.btnBackgroundPic addTarget:self action:@selector(sheetImagePickerController) forControlEvents:UIControlEventTouchUpInside];
-    [self.view insertSubview:self.btnBackgroundPic atIndex:2];
+    [self.tableView addSubview:self.btnBackgroundPic];
 }
 
 #pragma nark - tableview data source
@@ -268,6 +267,10 @@
     }
     self.headerImageView.height = self.headerView.height;
     self.btnBackgroundPic.height = self.headerView.height-85;
+    
+    
+    
+    
 }
 
 #pragma mark --- 切换秘密列表
@@ -400,7 +403,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 #pragma mark - Navigation
 
