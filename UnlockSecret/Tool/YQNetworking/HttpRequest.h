@@ -17,10 +17,10 @@ typedef void (^error)(NSError *error);
 @interface HttpRequest : NSObject
 
 @property (nonatomic, strong) NSString *url;
-@property (nonatomic, strong) NSMutableDictionary *dictionary;
+@property (nonatomic, strong) NSDictionary *dictionary;
 
 
 - (void)getMessageHandleWithSuccessBlock:(success)success errorBlock:(error)failure;
 
-- (NSMutableDictionary *)encrypt:(NSString*)data queryid:(NSString *)queryid;
+- (NSDictionary *)encrypt:(NSString*)data queryid:(NSString *)queryid;
 @end

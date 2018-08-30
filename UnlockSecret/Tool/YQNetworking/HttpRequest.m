@@ -15,13 +15,22 @@
     NSLog(@"实现子类的方法");
 }
 
-- (NSMutableDictionary *)encrypt:(NSString*)data queryid:(NSString *)queryid{
+- (NSDictionary *)encrypt:(NSString*)data queryid:(NSString *)queryid{
     NSMutableDictionary *newDic = [NSMutableDictionary dictionary];
-    [newDic setObject:[self encrypt:data] forKey:@"data"];
-    [newDic setObject:queryid forKey:@"queryid"];
-    [newDic setObject:US_VERSION forKey:@"appVersion"];
-    [newDic setObject:[Device currentDevice] forKey:@"device"];
-    return newDic;
+    if (data) {
+        [newDic setValue:[self encrypt:data]?[self encrypt:data]:@"" forKey:@"data"];
+    }
+    if (queryid) {
+        [newDic setValue:queryid forKey:@"queryid"];
+    }
+    if (US_VERSION) {
+        [newDic setValue:US_VERSION forKey:@"appVersion"];
+    }
+    if ([Device currentDevice]) {
+        [newDic setValue:[Device currentDevice] forKey:@"device"];
+    }
+    
+    return (NSDictionary *)newDic;
 }
 
 - (NSString *)encrypt:(NSString *)plainText{
