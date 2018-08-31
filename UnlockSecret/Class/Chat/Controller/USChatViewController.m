@@ -73,8 +73,10 @@ static NSInteger const messagefristPageNumber = 20;
 
 - (void)scrollToBottom {
     NSUInteger rowCount = [self.tableView numberOfRowsInSection:0];
-    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:rowCount-1 inSection:0];
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+    if (rowCount != 0 && rowCount) {
+        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:rowCount-1 inSection:0];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+    }
 }
 
 - (void)onReceiveMessage:(JMSGMessage *)message error:(NSError *)error{

@@ -198,6 +198,7 @@
                         //创建单聊会话成功， resultObject为创建的会话
                         USChatViewController *vc = [CHAT_STORYBOARD instantiateViewControllerWithIdentifier:CHATVC_ID];
                         vc.conversation = resultObject;
+                        vc.titleName = self.user.name;
                         [self.navigationController pushViewController:vc animated:YES];
                     } else {
                         //创建单聊会话失败
