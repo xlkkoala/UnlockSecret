@@ -25,6 +25,7 @@
 #import "USMainFocusProcess.h"
 #import "USMainModel.h"
 #import "USFocusDetailViewController.h"
+#import "USReportProcess.h"
 
 @interface USOpenSecretViewController ()<UITableViewDelegate,UITableViewDataSource,USInputViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -374,6 +375,31 @@
     [self.tableView setContentOffset:CGPointMake(0,0) animated:NO];
     NSLog(@"move");
 }
+
+- (IBAction)reportClick:(id)sender {
+    
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"该内容是否对您产生了不适，对其进行举报？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *reportAction = [UIAlertAction actionWithTitle:@"举报" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        USReportProcess *process = [USReportProcess new];
+        process.dictionary = [@{@"userId":USER_ID,@"secretId":self.secretModel.secretId}mutableCopy];
+        [process getMessageHandleWithSuccessBlock:^(id response) {
+            [self alertTitle:@"举报成功" message:@"一旦核实，我们将对其进行封号处理，感谢您的举报，让我们共同营造良好的网络环境！" btnTitle:@"ok"];
+        } errorBlock:^(NSError *error) {
+            
+        }];
+    }];
+    [alert addAction:reportAction];
+    
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alert addAction:cancle];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+}
+
 
 #pragma mark - Navigation
 

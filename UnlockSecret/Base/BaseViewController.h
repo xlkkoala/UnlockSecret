@@ -25,6 +25,6 @@ typedef void (^getMainQueue)(void);
  */
 - (UIColor *)backgroundGradientColor;
 
-- (void)alertTitle:(NSString *)title message:(NSString *)message;
+- (void)alertTitle:(NSString *)title message:(NSString *)message btnTitle:(NSString *)btnTitle;
 
 @end

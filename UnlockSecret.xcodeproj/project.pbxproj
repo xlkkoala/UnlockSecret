@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0E965F2138DF6D0072E55C /* USReportProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E965E2138DF6D0072E55C /* USReportProcess.m */; };
 		5E3E217E20D23C0D00146CEB /* USReleaseLabelProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E217D20D23C0D00146CEB /* USReleaseLabelProcess.m */; };
 		5E3E218120D2523300146CEB /* USOpenSecretDetailProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E218020D2523300146CEB /* USOpenSecretDetailProcess.m */; };
 		5E3E218520D253F900146CEB /* USSecretDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E218420D253F900146CEB /* USSecretDetailModel.m */; };
@@ -175,6 +176,8 @@
 
 /* Begin PBXFileReference section */
 		4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnlockSecret.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E0E965D2138DF6D0072E55C /* USReportProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReportProcess.h; sourceTree = "<group>"; };
+		5E0E965E2138DF6D0072E55C /* USReportProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReportProcess.m; sourceTree = "<group>"; };
 		5E3E217C20D23C0D00146CEB /* USReleaseLabelProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseLabelProcess.h; sourceTree = "<group>"; };
 		5E3E217D20D23C0D00146CEB /* USReleaseLabelProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseLabelProcess.m; sourceTree = "<group>"; };
 		5E3E217F20D2523300146CEB /* USOpenSecretDetailProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USOpenSecretDetailProcess.h; sourceTree = "<group>"; };
@@ -1163,6 +1166,8 @@
 				5E3E219920D3935200146CEB /* USSaveCommentSecretProcess.m */,
 				5E3E219E20D393FE00146CEB /* USUserReplyCommentProcess.h */,
 				5E3E219F20D393FE00146CEB /* USUserReplyCommentProcess.m */,
+				5E0E965D2138DF6D0072E55C /* USReportProcess.h */,
+				5E0E965E2138DF6D0072E55C /* USReportProcess.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1572,6 +1577,7 @@
 				5E3E217E20D23C0D00146CEB /* USReleaseLabelProcess.m in Sources */,
 				5E6CEE8320CBD7A9009725E9 /* USAppData.m in Sources */,
 				5E643FE620D0B6950059C4BE /* USChatListViewController.m in Sources */,
+				5E0E965F2138DF6D0072E55C /* USReportProcess.m in Sources */,
 				6CAB09D720E2466C00A05383 /* USSetTableViewController.m in Sources */,
 				5ED5BA4720DE500500A774DA /* USChatInputView.m in Sources */,
 				5EBE83D020C2DA2E00C5B0D9 /* XLKTool.m in Sources */,

@@ -25,6 +25,8 @@ static NSString *const Release_TextView_Cell     = @"Release_TextView_Cell";
 static NSString *const Release_Image_Cell        = @"Release_Image_Cell";
 static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
 
+#define TERMS @"TERMS"
+
 @interface USReleaseViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,ResponseTextEndChangeDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -37,6 +39,23 @@ static NSString *const Release_Info_Cell         = @"Release_Info_Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self isAgreeTerms];
+}
+
+- (void)isAgreeTerms {
+    if (![USER_DEFAULT objectForKey:TERMS] || [[USER_DEFAULT objectForKey:TERMS] isEqualToString:@"0"]) {
+        [self showTerms];
+    }
+}
+
+- (void)showTerms {
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"已了解" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [USER_DEFAULT setValue:@"1" forKey:TERMS];
+    }];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"禁止发布任何不良或者令人反感的内容，我们提倡一个文明的网络环境，对于发现的任何发布不良内容的人，欢迎各位积极举报或者通过邮箱与我们联系，我们会第一时间进行核实，一旦查实，我们将对其进行封号处理。 " preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
+    
 }
 
 - (NSMutableArray *)imageDataArray {

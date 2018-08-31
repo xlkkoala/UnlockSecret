@@ -65,8 +65,8 @@
 }
 
 /// 用户提示
-- (void)alertTitle:(NSString *)title message:(NSString *)message {
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+- (void)alertTitle:(NSString *)title message:(NSString *)message btnTitle:(NSString *)btnTitle {
+    UIAlertAction *action = [UIAlertAction actionWithTitle:btnTitle style:UIAlertActionStyleDefault handler:nil];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:action];
     [self presentViewController:alert animated:YES completion:nil];
