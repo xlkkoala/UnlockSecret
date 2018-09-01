@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="USEulaView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fj4-pl-p41">
+                    <rect key="frame" x="40" y="136.5" width="295" height="393"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户许可协议" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-3R-ijG">
+                            <rect key="frame" x="81" y="10" width="134" height="26.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5D-4F-2ds">
+                            <rect key="frame" x="10" y="36.5" width="275" height="276.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <mutableString key="text">       用户在使用本App之前，请务必仔细阅读本条款并同意声明
+       用户直接或通过各类方式(如站外API引用等)间接使用本平台服务和数据的行为,都将被视作已无条件接受本声明所涉全部内容,若用户对本声明的任何条款有异议,请停止使用本平台所提供的全部服务。
+1:用户条款是开发者和用户之间的协议，和苹果无关，并遵守苹果商店的服务条款，且苹果公司没有任何义务提供任何维护和支持服务。
+2:开发者会对App进行不定时的升级和维护以确保服务的平稳运行。
+3:用户不得发布任何不良言论包括但不限于恐怖，色情，暴力，赌博等方面。作为内容的发表者，需自行对所发表内容负责，因所发表内容引发的一切纠纷，由该内容的发表者承担全部法律及连带责任。平台不承担任何法律及连带责任。 
+4:用户在平台发表的内容(包含但不限于平台目前各产品功能里的内容)仅表明其个人的立场和观点，并不代表平台的立场或观点。任何违反当地法律或者侵犯他们权益的言论本平台有权直接删除并对发布言论的用户进行封号处理。
+5:用户在平台发布侵犯他人知识产权或其他合法权益的内容，平台有权予以删除，并保留移交司法机关处理的权利。 
+6:个人或单位如认为平台上存在侵犯自身合法权益的内容，应准备好具有法律效应的证明材料，及时与平台取得联系，以便平台迅速做出处理。
+附则 
+　　对免责声明的解释、修改及更新权均属于平台所有。 
+       联系我们请发送邮件至stoer@lovexunmi.com</mutableString>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6o-cq-NNe">
+                            <rect key="frame" x="10" y="318" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="BGO-P7-kf6"/>
+                                <constraint firstAttribute="width" constant="20" id="L8u-fz-kIB"/>
+                            </constraints>
+                            <state key="normal" image="weixuanzhong"/>
+                            <state key="selected" backgroundImage="xuanzhong"/>
+                            <connections>
+                                <action selector="readBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="rjj-fu-BJM"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已阅对应用户协议内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yo9-I2-msN">
+                            <rect key="frame" x="40" y="321" width="123" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V71-B7-nWB">
+                            <rect key="frame" x="40" y="350.5" width="215" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="同意">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="agreeClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="T4f-gS-coN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="V71-B7-nWB" firstAttribute="top" secondItem="yo9-I2-msN" secondAttribute="bottom" constant="15" id="1Na-28-i6i"/>
+                        <constraint firstItem="Y6o-cq-NNe" firstAttribute="leading" secondItem="fj4-pl-p41" secondAttribute="leading" constant="10" id="1cA-7D-x1k"/>
+                        <constraint firstItem="yo9-I2-msN" firstAttribute="leading" secondItem="Y6o-cq-NNe" secondAttribute="trailing" constant="10" id="2pE-6a-hyc"/>
+                        <constraint firstItem="U5D-4F-2ds" firstAttribute="leading" secondItem="fj4-pl-p41" secondAttribute="leading" constant="10" id="3d6-mI-jl3"/>
+                        <constraint firstAttribute="trailing" secondItem="U5D-4F-2ds" secondAttribute="trailing" constant="10" id="97x-N5-tGi"/>
+                        <constraint firstItem="V5h-3R-ijG" firstAttribute="top" secondItem="fj4-pl-p41" secondAttribute="top" constant="10" id="9w3-t9-z8p"/>
+                        <constraint firstItem="V71-B7-nWB" firstAttribute="centerX" secondItem="fj4-pl-p41" secondAttribute="centerX" id="dqR-wu-eYZ"/>
+                        <constraint firstAttribute="width" secondItem="fj4-pl-p41" secondAttribute="height" multiplier="3:4" id="fhr-GY-f0p"/>
+                        <constraint firstAttribute="bottom" secondItem="U5D-4F-2ds" secondAttribute="bottom" constant="80" id="ivi-ph-Cro"/>
+                        <constraint firstItem="V71-B7-nWB" firstAttribute="leading" secondItem="fj4-pl-p41" secondAttribute="leading" constant="40" id="jvo-1v-wLf"/>
+                        <constraint firstItem="V5h-3R-ijG" firstAttribute="centerX" secondItem="fj4-pl-p41" secondAttribute="centerX" id="lcu-wn-8AQ"/>
+                        <constraint firstItem="Y6o-cq-NNe" firstAttribute="top" secondItem="U5D-4F-2ds" secondAttribute="bottom" constant="5" id="qsa-zw-kSR"/>
+                        <constraint firstAttribute="trailing" secondItem="V71-B7-nWB" secondAttribute="trailing" constant="40" id="ugV-s1-LJb"/>
+                        <constraint firstItem="U5D-4F-2ds" firstAttribute="top" secondItem="V5h-3R-ijG" secondAttribute="bottom" id="wLg-xk-bDa"/>
+                        <constraint firstItem="yo9-I2-msN" firstAttribute="centerY" secondItem="Y6o-cq-NNe" secondAttribute="centerY" id="xB1-Fq-fMc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="fj4-pl-p41" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fJO-zS-mx6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fj4-pl-p41" secondAttribute="trailing" constant="40" id="ra9-Q3-dIU"/>
+                <constraint firstItem="fj4-pl-p41" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="t7Q-1s-ev1"/>
+                <constraint firstItem="fj4-pl-p41" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tYh-QI-nxx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="readBtn" destination="Y6o-cq-NNe" id="T5D-CI-RIz"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="weixuanzhong" width="64" height="64"/>
+        <image name="xuanzhong" width="64" height="64"/>
+    </resources>
+</document>

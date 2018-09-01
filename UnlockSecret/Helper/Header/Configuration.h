@@ -85,4 +85,6 @@
 
 #define URL(url) [NSURL URLWithString:url]
 
+#define EULA @"EULA" //用户条款
+
 #endif /* Configuration_h */

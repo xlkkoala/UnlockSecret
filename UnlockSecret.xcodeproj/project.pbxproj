@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5E0E965F2138DF6D0072E55C /* USReportProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E965E2138DF6D0072E55C /* USReportProcess.m */; };
+		5E2C4BC0213A2C6C00BC7E10 /* USEulaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C4BBF213A2C6C00BC7E10 /* USEulaView.m */; };
+		5E2C4BC2213A2C7900BC7E10 /* USEulaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2C4BC1213A2C7900BC7E10 /* USEulaView.xib */; };
 		5E3E217E20D23C0D00146CEB /* USReleaseLabelProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E217D20D23C0D00146CEB /* USReleaseLabelProcess.m */; };
 		5E3E218120D2523300146CEB /* USOpenSecretDetailProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E218020D2523300146CEB /* USOpenSecretDetailProcess.m */; };
 		5E3E218520D253F900146CEB /* USSecretDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E218420D253F900146CEB /* USSecretDetailModel.m */; };
@@ -178,6 +180,9 @@
 		4B71CFAE5DD7D143274FCC05 /* libPods-UnlockSecret.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnlockSecret.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0E965D2138DF6D0072E55C /* USReportProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReportProcess.h; sourceTree = "<group>"; };
 		5E0E965E2138DF6D0072E55C /* USReportProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReportProcess.m; sourceTree = "<group>"; };
+		5E2C4BBE213A2C6C00BC7E10 /* USEulaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USEulaView.h; sourceTree = "<group>"; };
+		5E2C4BBF213A2C6C00BC7E10 /* USEulaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USEulaView.m; sourceTree = "<group>"; };
+		5E2C4BC1213A2C7900BC7E10 /* USEulaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = USEulaView.xib; sourceTree = "<group>"; };
 		5E3E217C20D23C0D00146CEB /* USReleaseLabelProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseLabelProcess.h; sourceTree = "<group>"; };
 		5E3E217D20D23C0D00146CEB /* USReleaseLabelProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseLabelProcess.m; sourceTree = "<group>"; };
 		5E3E217F20D2523300146CEB /* USOpenSecretDetailProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USOpenSecretDetailProcess.h; sourceTree = "<group>"; };
@@ -1220,6 +1225,9 @@
 				6C9AC1DF20C6944900E8D621 /* USMainLookingForDifferentVC.h */,
 				6C9AC1E020C6944900E8D621 /* USMainLookingForDifferentVC.m */,
 				6C9AC1E320C6945E00E8D621 /* USM_LookingForDifferentVC.xib */,
+				5E2C4BBE213A2C6C00BC7E10 /* USEulaView.h */,
+				5E2C4BBF213A2C6C00BC7E10 /* USEulaView.m */,
+				5E2C4BC1213A2C7900BC7E10 /* USEulaView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1389,6 +1397,7 @@
 				5EBE82BC20C2D73400C5B0D9 /* LaunchScreen.storyboard in Resources */,
 				6C0BC35720C6749B0068564C /* original_image@2x.png in Resources */,
 				5EBE82B920C2D73400C5B0D9 /* Assets.xcassets in Resources */,
+				5E2C4BC2213A2C7900BC7E10 /* USEulaView.xib in Resources */,
 				6C0BC35220C6651E0068564C /* focus_button@2x.png in Resources */,
 				5E9FCCEA20C61A3300780E1A /* Release.storyboard in Resources */,
 				5E9FCCFA20C61EC000780E1A /* User.storyboard in Resources */,
@@ -1469,6 +1478,7 @@
 				6C9AC1D320C68A9E00E8D621 /* OBShapedButton.m in Sources */,
 				6C6DD35B20C9579A00379490 /* USReleaseProcess.m in Sources */,
 				5E9FCCED20C61BEA00780E1A /* USMainNavigationController.m in Sources */,
+				5E2C4BC0213A2C6C00BC7E10 /* USEulaView.m in Sources */,
 				5EA0B0B021251624006A26DA /* PuzzleStatus.m in Sources */,
 				5E64403020D0FD8B0059C4BE /* USNearAddressViewController.m in Sources */,
 				5E3E218B20D2609700146CEB /* USCommentListModel.m in Sources */,

@@ -15,6 +15,8 @@
 #import <MJRefresh.h>
 #import "PuzzleView.h"
 #import "USOpenSecretViewController.h"
+#import "USEulaView.h"
+
 
 @interface USMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -28,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self getMainListData];
-    
+    [self showEulaView];
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
     imageview.image = ImageNamed(@"m_xunmi");
     self.navigationItem.titleView = imageview;
@@ -62,6 +64,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (void)showEulaView {
+    if (![USER_DEFAULT objectForKey:EULA] || [[USER_DEFAULT objectForKey:EULA] isEqualToString:@"0"]) {
+        USEulaView *eulaView = [[USEulaView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        [[UIApplication sharedApplication].keyWindow addSubview:eulaView];
+    }
 }
 
 - (void)logout{
