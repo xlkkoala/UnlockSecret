@@ -22,6 +22,7 @@
 #import "USIsOpenProcess.h"
 #import "PuzzleView.h"
 #import "USMainModel.h"
+#import "USReportUserProcess.h"
 
 #define HEADER_HEIGHT SCREEN_HEIGHT/2
 
@@ -340,6 +341,25 @@
         default:
             break;
     }
+}
+- (IBAction)reportClick:(UIBarButtonItem *)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"该用户是否发布了不良言论，对其进行举报？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *reportAction = [UIAlertAction actionWithTitle:@"举报" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        USReportUserProcess *process = [USReportUserProcess new];
+        process.dictionary = [@{@"userId":USER_ID,@"reportId":self.userId?self.userId:self.user.userid}mutableCopy];
+        [process getMessageHandleWithSuccessBlock:^(id response) {
+            [self alertTitle:@"举报成功" message:@"一旦核实，我们将对其进行封号处理，感谢您的举报，让我们共同营造良好的网络环境！" btnTitle:@"ok"];
+        } errorBlock:^(NSError *error) {
+            
+        }];
+    }];
+    [alert addAction:reportAction];
+    
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alert addAction:cancle];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,6 +10,7 @@
 		5E0E965F2138DF6D0072E55C /* USReportProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E965E2138DF6D0072E55C /* USReportProcess.m */; };
 		5E2C4BC0213A2C6C00BC7E10 /* USEulaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C4BBF213A2C6C00BC7E10 /* USEulaView.m */; };
 		5E2C4BC2213A2C7900BC7E10 /* USEulaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2C4BC1213A2C7900BC7E10 /* USEulaView.xib */; };
+		5E2C4BC5213A428600BC7E10 /* USReportUserProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C4BC4213A428600BC7E10 /* USReportUserProcess.m */; };
 		5E3E217E20D23C0D00146CEB /* USReleaseLabelProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E217D20D23C0D00146CEB /* USReleaseLabelProcess.m */; };
 		5E3E218120D2523300146CEB /* USOpenSecretDetailProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E218020D2523300146CEB /* USOpenSecretDetailProcess.m */; };
 		5E3E218520D253F900146CEB /* USSecretDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E218420D253F900146CEB /* USSecretDetailModel.m */; };
@@ -183,6 +184,8 @@
 		5E2C4BBE213A2C6C00BC7E10 /* USEulaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USEulaView.h; sourceTree = "<group>"; };
 		5E2C4BBF213A2C6C00BC7E10 /* USEulaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USEulaView.m; sourceTree = "<group>"; };
 		5E2C4BC1213A2C7900BC7E10 /* USEulaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = USEulaView.xib; sourceTree = "<group>"; };
+		5E2C4BC3213A428600BC7E10 /* USReportUserProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReportUserProcess.h; sourceTree = "<group>"; };
+		5E2C4BC4213A428600BC7E10 /* USReportUserProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReportUserProcess.m; sourceTree = "<group>"; };
 		5E3E217C20D23C0D00146CEB /* USReleaseLabelProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USReleaseLabelProcess.h; sourceTree = "<group>"; };
 		5E3E217D20D23C0D00146CEB /* USReleaseLabelProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USReleaseLabelProcess.m; sourceTree = "<group>"; };
 		5E3E217F20D2523300146CEB /* USOpenSecretDetailProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USOpenSecretDetailProcess.h; sourceTree = "<group>"; };
@@ -1144,6 +1147,8 @@
 				6C2EDBA120C7FD840091D26A /* USFocusListProcess.m */,
 				5EA0B0B721255F5B006A26DA /* USIsOpenProcess.h */,
 				5EA0B0B821255F5B006A26DA /* USIsOpenProcess.m */,
+				5E2C4BC3213A428600BC7E10 /* USReportUserProcess.h */,
+				5E2C4BC4213A428600BC7E10 /* USReportUserProcess.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1491,6 +1496,7 @@
 				6C2EDB9E20C7F8930091D26A /* USMainTableViewCell.m in Sources */,
 				5ED8FD8B20C4D73E00593643 /* USReleaseViewController.m in Sources */,
 				5E643FD120D0B2460059C4BE /* USCheckCodeProcess.m in Sources */,
+				5E2C4BC5213A428600BC7E10 /* USReportUserProcess.m in Sources */,
 				6C9AC1D220C68A9E00E8D621 /* UIImage+ColorAtPixel.m in Sources */,
 				5EBE83D820C2DA2E00C5B0D9 /* YQDiskCache.m in Sources */,
 				6CD44C0B20C7871800F05E20 /* USMessageTableViewCell.m in Sources */,

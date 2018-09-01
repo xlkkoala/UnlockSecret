@@ -47,7 +47,8 @@
 #define US_COMMENTS_LIST @"132" // COMMENTS
 #define US_ISOPENBYUSER @"133" // 判断某个秘密是否被用户打开过
 #define US_GETIMAGE @"134" // 获取拼图图片
-#define US_REPORT @"135" // 举报
+#define US_REPORT @"135" // 举报秘密
+#define US_REPORT_USER @"136" // 举报秘密
 #define US_UPLOAD_PICTURE @"4023"
 
 #endif /* USUrl_h */

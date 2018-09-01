@@ -39,7 +39,8 @@
 6:个人或单位如认为平台上存在侵犯自身合法权益的内容，应准备好具有法律效应的证明材料，及时与平台取得联系，以便平台迅速做出处理。
 附则 
 　　对免责声明的解释、修改及更新权均属于平台所有。 
-       联系我们请发送邮件至stoer@lovexunmi.com</mutableString>
+       联系我们请发送邮件至 
+       stoer@lovexunmi.com</mutableString>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -50,7 +51,7 @@
                                 <constraint firstAttribute="width" constant="20" id="L8u-fz-kIB"/>
                             </constraints>
                             <state key="normal" image="weixuanzhong"/>
-                            <state key="selected" backgroundImage="xuanzhong"/>
+                            <state key="selected" image="xuanzhong"/>
                             <connections>
                                 <action selector="readBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="rjj-fu-BJM"/>
                             </connections>

@@ -506,7 +506,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GuY-KM-9gg"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iGS-tG-cVE"/>
+                    <navigationItem key="navigationItem" id="iGS-tG-cVE">
+                        <barButtonItem key="rightBarButtonItem" title="举报" id="MzH-6D-ZGg">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="reportClick:" destination="P58-LF-o5Y" id="1d5-AA-DZK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="secretView" destination="9Yh-kd-Jb6" id="RaO-1E-Xrs"/>
                         <outlet property="tableView" destination="2oH-Sn-wsI" id="Nth-PM-EoE"/>
